@@ -742,7 +742,6 @@
     </Element>
     <Element Type="Trigger" Id="78AE2E9C">
         <Event Type="FunctionCall" Id="01CD0ACB"/>
-        <Event Type="FunctionCall" Id="A091E0CB"/>
         <Condition Type="FunctionCall" Id="30EEBBF1"/>
         <Action Type="FunctionCall" Id="50F85FE6"/>
         <Action Type="FunctionCall" Id="005D260A"/>
@@ -765,25 +764,6 @@
     <Element Type="Param" Id="2B77574E">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="00000327"/>
         <Preset Type="PresetValue" Library="Ntve" Id="00000146"/>
-    </Element>
-    <Element Type="FunctionCall" Id="A091E0CB">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000041"/>
-        <Parameter Type="Param" Id="7999183F"/>
-        <Parameter Type="Param" Id="C7AC3DAD"/>
-        <Parameter Type="Param" Id="0F14EA32"/>
-    </Element>
-    <Element Type="Param" Id="7999183F">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000325"/>
-        <Preset Type="PresetValue" Library="Ntve" Id="C84C7A78"/>
-    </Element>
-    <Element Type="Param" Id="C7AC3DAD">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000326"/>
-        <ValueType Type="region"/>
-        <ValueId Id="1"/>
-    </Element>
-    <Element Type="Param" Id="0F14EA32">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000327"/>
-        <Preset Type="PresetValue" Library="Ntve" Id="00000145"/>
     </Element>
     <Element Type="FunctionCall" Id="30EEBBF1">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>

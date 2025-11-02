@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUpgrade id="CleaningBotSpeedUpgrade" parent="Research">
+        <EffectArray Operation="Multiply" Reference="Unit,CleaningBot,Acceleration" Value="1.187500"/>
+    </CUpgrade>
+</Catalog>

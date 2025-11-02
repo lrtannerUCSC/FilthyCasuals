@@ -483,7 +483,6 @@ bool gt_ZombieCorpse_Func (bool testConds, bool runActions) {
 void gt_ZombieCorpse_Init () {
     gt_ZombieCorpse = TriggerCreate("gt_ZombieCorpse_Func");
     TriggerAddEventUnitRegion(gt_ZombieCorpse, null, RegionFromId(1), false);
-    TriggerAddEventUnitRegion(gt_ZombieCorpse, null, RegionFromId(1), true);
 }
 
 //--------------------------------------------------------------------------------------------------

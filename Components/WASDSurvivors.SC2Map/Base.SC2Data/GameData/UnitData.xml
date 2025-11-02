@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit id="EngineeringBay">
+        <AbilArray index="2" Link="CleaningBotUpgrades"/>
+        <AbilArray Link="EngineeringBayResearch"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="SJHyperionLevelUp" Type="AbilCmd" AbilCmd="CleaningBotUpgrades,Research1" Row="0" Column="2"/>
+        </CardLayouts>
+    </CUnit>
+</Catalog>

@@ -5,6 +5,7 @@
 <Actor id="OilPuddle" Variations="2"/>
 <Actor id="BloodSplats" Variations="0,1,2,3,5"/>
 <Terrain id="TheVoid"/>
+<Unit id="EngineeringBay"/>
 <Unit id="Hive"/>
 <Unit id="InfestedCivilian" Variations="2"/>
 <Unit id="CargoTruckUnitFlatbed"/>

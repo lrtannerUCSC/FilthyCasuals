@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAbilResearch id="CleaningBotUpgrades">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray index="Research1" Upgrade="CleaningBotSpeedUpgrade">
+            <Button DefaultButtonFace="SJHyperionLevelUp"/>
+        </InfoArray>
+    </CAbilResearch>
+</Catalog>
