@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Preload>
+<Actor id="SYSTEM_ActorConfig"/>
+<Actor id="HybridShearedRocks" Variations="0,2,3,4,6"/>
+<Actor id="OilPuddle" Variations="2"/>
+<Actor id="BloodSplats" Variations="0,1,2,3,5"/>
+<Terrain id="TheVoid"/>
+<Unit id="Hive"/>
+<Unit id="InfestedCivilian" Variations="2"/>
+<Unit id="CargoTruckUnitFlatbed"/>
+<Unit id="CargoTruckUnitTrailer"/>
+<Unit id="CargoTruckUnitBarrels"/>
+<Unit id="Civilian" Variations="2"/>
+<Unit id="Colonist" Variations="0"/>
+<Unit id="CivilianFemale" Variations="2"/>
+<Unit id="ColonistFemale" Variations="0"/>
+<Unit id="CleaningBot"/>
+</Preload>

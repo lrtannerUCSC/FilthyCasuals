@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PlacedObjects Version="27">
+    <ObjectDoodad Id="2074813535" Variation="5" Position="55.5,64.5,8.0163" Rotation="2.0625" Scale="1.1364,1.1364,1.1364" Type="BloodSplats">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="943314927" Position="65,62,7.9997" Rotation="1.5122" Scale="1.033,1.033,1.033" Type="BloodSplats">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="642392759" Variation="2" Position="57,56.5,7.9997" Rotation="0.434" Scale="1.1032,1.1032,1.1032" Type="BloodSplats">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1822625231" Variation="2" Position="62,62,7.9997" Rotation="0.1582" Scale="0.882,0.882,0.882" Type="BloodSplats">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="2127357480" Variation="4" Position="55,53,11.9997" Rotation="3.8547" Scale="1,1,1" Type="HybridShearedRocks">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1583158578" Variation="3" Position="57.5,60.5,7.9997" Rotation="3.041" Scale="0.8251,0.8251,0.8251" Type="BloodSplats">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1530513669" Variation="2" Position="72.5,64.5,9.9997" Rotation="4.8176" Scale="1,1,1" Type="HybridShearedRocks">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1865748792" Variation="5" Position="59,64,7.9997" Rotation="5.7983" Scale="1.0727,1.0727,1.0727" Type="BloodSplats">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="678645108" Variation="6" Position="53,62.5,9.9997" Rotation="4.457" Scale="1,1,1" Type="HybridShearedRocks">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1077598870" Position="70.5,53.5,11.9997" Rotation="5.4868" Scale="1,1,1" Type="HybridShearedRocks">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1857519076" Position="58.5,66,7.9997" Rotation="2.9345" Scale="0.9592,0.9592,0.9592" Type="BloodSplats">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1795822130" Variation="2" Position="66.5,58.5,7.9997" Rotation="5.3366" Scale="0.9348,0.9348,0.9348" Type="BloodSplats">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="2125868295" Variation="2" Position="61.5,66,7.9997" Rotation="5.2268" Scale="0.921,0.921,0.921" Type="BloodSplats">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="861152309" Variation="3" Position="54,70,10.0122" Rotation="5.1682" Scale="1,1,1" Type="HybridShearedRocks">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="463618118" Variation="2" Position="63,56.5,7.9997" Rotation="4.5727" Scale="1.0876,1.0876,1.0876" Type="BloodSplats">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1165675709" Variation="2" Position="59.8908,67.974,7.9997" Scale="1,1,1" Type="OilPuddle"/>
+    <ObjectDoodad Id="1972619905" Variation="1" Position="63,64.5,7.9997" Rotation="0.104" Scale="1.1694,1.1694,1.1694" Type="BloodSplats">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectPoint Id="391612022" Position="51.7812,111.7531,0" Scale="1,1,1" Type="Normal" Name="CorpseRegionHidingPoint" Color="0,0,0,0"/>
+    <ObjectUnit Id="1376814400" Variation="2" Position="60.5708,57.9428,0" Rotation="6.0175" Scale="1,1,1" UnitType="CivilianFemale" Player="1"/>
+    <ObjectUnit Id="721563897" Variation="2" Position="58.4174,58.6618,0" Rotation="3.2214" Scale="1,1,1" UnitType="InfestedCivilian" Player="14"/>
+    <ObjectUnit Id="697215032" Variation="2" Position="58.42,57.6657,0" Rotation="3.2214" Scale="1,1,1" UnitType="InfestedCivilian" Player="14"/>
+    <ObjectUnit Id="1583796702" Variation="2" Position="61.7893,57.683,0" Rotation="1.1596" Scale="1,1,1" UnitType="Civilian" Player="1">
+        <Texture TexSlot="main" TexProps="male,helmet,03" TexLink=""/>
+    </ObjectUnit>
+    <ObjectUnit Id="447741526" Variation="2" Position="57.4006,58.2822,0" Rotation="3.2216" Scale="1,1,1" UnitType="InfestedCivilian" Player="14"/>
+    <ObjectUnit Id="604180338" Position="62,60,0" Rotation="3.9565" Scale="1,1,1" UnitType="CleaningBot" Player="1"/>
+    <ObjectUnit Id="1352262937" Position="64.337,54.7253,0" Rotation="1.8381" Scale="1,1,1" UnitType="CargoTruckUnitBarrels" Player="1"/>
+    <ObjectUnit Id="1077203321" Position="45.5,103.5,0" Scale="1,1,1" UnitType="Hive" Player="15"/>
+    <ObjectUnit Id="1727568875" Position="61.0708,59.4428,0" Rotation="4.1545" Scale="1,1,1" UnitType="ColonistFemale" Player="1">
+        <Texture TexSlot="main" TexProps="female,04" TexLink=""/>
+    </ObjectUnit>
+    <ObjectUnit Id="70510309" Position="59.5708,56.9428,0" Rotation="5.3115" Scale="1,1,1" UnitType="Colonist" Player="1">
+        <Texture TexSlot="main" TexProps="male,02" TexLink=""/>
+    </ObjectUnit>
+    <ObjectUnit Id="1050301141" Variation="2" Position="60.2893,59.183,0" Rotation="6.0178" Scale="1,1,1" UnitType="CivilianFemale" Player="1"/>
+    <ObjectUnit Id="866279415" Position="60.7893,60.683,0" Rotation="4.1547" Scale="1,1,1" UnitType="ColonistFemale" Player="1">
+        <Texture TexSlot="main" TexProps="female,04" TexLink=""/>
+    </ObjectUnit>
+    <ObjectUnit Id="220350812" Variation="2" Position="57.4907,59.6176,0" Rotation="3.2214" Scale="1,1,1" UnitType="InfestedCivilian" Player="14"/>
+    <ObjectUnit Id="298317709" Position="65.806,63.3298,0" Rotation="3.8947" Scale="1,1,1" UnitType="CargoTruckUnitFlatbed" Player="1"/>
+    <ObjectUnit Id="1333631142" Position="59.2893,58.183,0" Rotation="5.3117" Scale="1,1,1" UnitType="Colonist" Player="1">
+        <Texture TexSlot="main" TexProps="male,02" TexLink=""/>
+    </ObjectUnit>
+    <ObjectUnit Id="757147147" Position="58.5,104.5,0" Scale="1,1,1" UnitType="Hive" Player="2"/>
+    <ObjectUnit Id="338286200" Position="51.5,104.5,0" Scale="1,1,1" UnitType="Hive" Player="1"/>
+    <ObjectUnit Id="921792117" Variation="2" Position="62.0708,56.4428,0" Rotation="1.1594" Scale="1,1,1" UnitType="Civilian" Player="1">
+        <Texture TexSlot="main" TexProps="male,helmet,03" TexLink=""/>
+    </ObjectUnit>
+    <ObjectUnit Id="96979904" Position="59.5073,62.5605,0" Rotation="1.8747" Scale="1,1,1" UnitType="CargoTruckUnitTrailer" Player="1"/>
+    <Group Type="ObjectUnit" Name="Zombies
+" Id="1">
+        <GroupObject Id="220350812"/>
+        <GroupObject Id="447741526"/>
+        <GroupObject Id="697215032"/>
+        <GroupObject Id="721563897"/>
+    </Group>
+    <Group Type="ObjectUnit" Name="Civilians
+
+" Id="2">
+        <GroupObject Id="70510309"/>
+        <GroupObject Id="96979904"/>
+        <GroupObject Id="298317709"/>
+        <GroupObject Id="604180338"/>
+        <GroupObject Id="866279415"/>
+        <GroupObject Id="921792117"/>
+        <GroupObject Id="1050301141"/>
+        <GroupObject Id="1333631142"/>
+        <GroupObject Id="1352262937"/>
+        <GroupObject Id="1376814400"/>
+        <GroupObject Id="1583796702"/>
+        <GroupObject Id="1727568875"/>
+    </Group>
+</PlacedObjects>

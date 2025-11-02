@@ -1,0 +1,532 @@
+//==================================================================================================
+// 
+// Generated Map Script
+// 
+// Name:   Just Another StarCraft II Map
+// 
+//==================================================================================================
+include "TriggerLibs/NativeLib"
+include "aiBC416B17"
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+void InitLibs () {
+    libNtve_InitLib();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Global Variables
+//--------------------------------------------------------------------------------------------------
+int[17] gv_wASDState;
+unit[17] gv_controlledUnits;
+unit[17] gv_uncontrolledUnits;
+
+void InitGlobals () {
+}
+
+//--------------------------------------------------------------------------------------------------
+// Global Function Declarations
+//--------------------------------------------------------------------------------------------------
+fixed gf_GetWASDAngle (int lp_player);
+void gf_ProcessMovement (int lp_player);
+void gf_WASDKeyDownCheck (int lp_player, int lp_keyPressed);
+void gf_WASDKeyUpCheck (int lp_player, int lp_keyPressed);
+void gf_WASDSetControlledUnit (int lp_player, unit lp_unit);
+
+//--------------------------------------------------------------------------------------------------
+// Trigger Variables
+//--------------------------------------------------------------------------------------------------
+trigger gt_MeleeInitialization;
+trigger gt_WASDSetControlledUnit;
+trigger gt_WASDKeyDownCheck;
+trigger gt_WASDKeyUpCheck;
+trigger gt_Player1Cameratest;
+trigger gt_BloodsplatRemoval;
+trigger gt_BloodsplatCreation;
+trigger gt_CorpseCreation;
+trigger gt_ZombieCorpse;
+trigger gt_CleanAnimation;
+
+//--------------------------------------------------------------------------------------------------
+// Custom AI Functions
+//--------------------------------------------------------------------------------------------------
+string[17] cai_playerAI;
+
+//--------------------------------------------------------------------------------------------------
+void InitCustomAI () {
+    int init_i;
+
+    for (init_i = 0; init_i <= 16; init_i += 1) {
+        cai_playerAI[init_i] = null;
+    }
+}
+
+//--------------------------------------------------------------------------------------------------
+void cai_start (string ai, int p) {
+    if (p < 0 || p >= 16) {
+        return;
+    }
+    cai_playerAI[p] = ai;
+
+    if (cai_playerAI[p] == "aiBC416B17") { aiBC416B17_start(p); }
+}
+
+//--------------------------------------------------------------------------------------------------
+void cai_setDefGather (int p, point val) {
+    if (p < 0 || p >= 16) {
+        return;
+    }
+    if (cai_playerAI[p] == "aiBC416B17") { aiBC416B17_setDefGather(p, val); }
+}
+
+//--------------------------------------------------------------------------------------------------
+string cai_getCustomData (int p) {
+    if (p < 0 || p >= 16) {
+        return null;
+    }
+    if (cai_playerAI[p] == "aiBC416B17") { return aiBC416B17_getCustomData(p); }
+    return null;
+}
+
+//--------------------------------------------------------------------------------------------------
+wave cai_getLastWave (int p) {
+    if (p < 0 || p >= 16) {
+        return null;
+    }
+    if (cai_playerAI[p] == "aiBC416B17") { return aiBC416B17_getLastWave(p); }
+    return null;
+}
+
+//--------------------------------------------------------------------------------------------------
+void cai_waves_run (int p, playergroup target) {
+    if (p < 0 || p >= 16) {
+        return;
+    }
+    if (cai_playerAI[p] == "aiBC416B17") { aiBC416B17_waves_run(p, target); }
+}
+
+//--------------------------------------------------------------------------------------------------
+void cai_waves_enable (int p, bool val) {
+    if (p < 0 || p >= 16) {
+        return;
+    }
+    if (cai_playerAI[p] == "aiBC416B17") { aiBC416B17_waves_enable(p, val); }
+}
+
+//--------------------------------------------------------------------------------------------------
+void cai_waves_stop (string ai) {
+    if (ai == "aiBC416B17") { aiBC416B17_waves_stop(); }
+}
+
+//--------------------------------------------------------------------------------------------------
+void cai_wave_run (int w, int p, playergroup target, bool wait) {
+    if (p < 0 || p >= 16) {
+        return;
+    }
+    if (cai_playerAI[p] == "aiBC416B17") { aiBC416B17_wave_run(w, p, target, wait); }
+}
+
+//--------------------------------------------------------------------------------------------------
+void cai_wave_enable (int w, int p, bool val) {
+    if (p < 0 || p >= 16) {
+        return;
+    }
+    if (cai_playerAI[p] == "aiBC416B17") { aiBC416B17_wave_enable(w, p, val); }
+}
+
+//--------------------------------------------------------------------------------------------------
+bool cai_wave_isEnabled (int w, int p) {
+    if (p < 0 || p >= 16) {
+        return false;
+    }
+    if (cai_playerAI[p] == "aiBC416B17") { return aiBC416B17_wave_isEnabled(w, p); }
+    return false;
+}
+
+//--------------------------------------------------------------------------------------------------
+unitgroup cai_wave_createdUnits (int w, int p) {
+    if (p < 0 || p >= 16) {
+        return null;
+    }
+    if (cai_playerAI[p] == "aiBC416B17") { return aiBC416B17_wave_createdUnits(w, p); }
+    return null;
+}
+
+//--------------------------------------------------------------------------------------------------
+wave cai_wave_createdWave (int w, int p) {
+    if (p < 0 || p >= 16) {
+        return null;
+    }
+    if (cai_playerAI[p] == "aiBC416B17") { return aiBC416B17_wave_createdWave(w, p); }
+    return null;
+}
+
+//--------------------------------------------------------------------------------------------------
+void cai_startall () {
+}
+
+//--------------------------------------------------------------------------------------------------
+void cai_runall () {
+    playergroup target = PlayerGroupEmpty();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Global Functions
+//--------------------------------------------------------------------------------------------------
+fixed gf_GetWASDAngle (int lp_player) {
+    // Variable Declarations
+    int lv_tempBits;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    lv_tempBits = gv_wASDState[lp_player]&0x0001;
+    if(lv_tempBits == 0x0001) {
+    	lv_tempBits = gv_wASDState[lp_player]&0x1010;
+    	if(lv_tempBits == 0x0000)      { return 0.0; }   // W
+    	else if(lv_tempBits == 0x1000) { return 315.0; } // W+D
+    	else                           { return 45.0; }  // W+A or W+A+D
+    } else {
+    	lv_tempBits = gv_wASDState[lp_player]&0x1110;
+    	if     (lv_tempBits == 0x0100) { return 180.0; } // S
+    	else if(lv_tempBits == 0x1100) { return 225.0; } // S+D
+    	else if(lv_tempBits == 0x1000) { return 270.0; } // D
+    	else if(lv_tempBits == 0x0010) { return 90.0; }  // A
+    	else if(lv_tempBits == 0x1010) { return 90.0; }  // A + D
+    	else if(lv_tempBits == 0x0000) { return 0.0; }   // None
+    	else                           { return 135.0; } // S+A or S+A+D
+    }
+}
+
+trigger auto_gf_ProcessMovement_Trigger = null;
+int auto_gf_ProcessMovement_lp_player;
+
+void gf_ProcessMovement (int lp_player) {
+    auto_gf_ProcessMovement_lp_player = lp_player;
+
+    if (auto_gf_ProcessMovement_Trigger == null) {
+        auto_gf_ProcessMovement_Trigger = TriggerCreate("auto_gf_ProcessMovement_TriggerFunc");
+    }
+
+    TriggerExecute(auto_gf_ProcessMovement_Trigger, false, false);
+}
+
+bool auto_gf_ProcessMovement_TriggerFunc (bool testConds, bool runActions) {
+    int lp_player = auto_gf_ProcessMovement_lp_player;
+
+    // Variable Declarations
+    unit lv_targetUnit;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    lv_targetUnit = gv_controlledUnits[lp_player];
+    while (gv_wASDState[lp_player] != 0x0000) {
+        UnitIssueOrder(
+            lv_targetUnit, 
+            OrderTargetingPoint(
+                AbilityCommand("move", 0), 
+                PointWithOffsetPolar(UnitGetPosition(lv_targetUnit), 1.2, gf_GetWASDAngle(lp_player) + CameraGetYaw(lp_player))
+                ), 
+            c_orderQueueReplace
+        );
+        Wait(0.0, c_timeGame);
+    }
+    return true;
+}
+
+void gf_WASDKeyDownCheck (int lp_player, int lp_keyPressed) {
+    // Variable Declarations
+    bool lv_originallyMoving;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if(gv_wASDState[lp_player] != 0x0000) {
+        lv_originallyMoving = true;
+    }
+    if (lp_keyPressed == c_keyW) {
+        gv_wASDState[lp_player] |= 0x0001;
+    } else if (lp_keyPressed == c_keyA) {
+        gv_wASDState[lp_player] |= 0x0010;
+    } else if (lp_keyPressed == c_keyS) {
+        gv_wASDState[lp_player] |= 0x0100;
+    } else if (lp_keyPressed == c_keyD) {
+        gv_wASDState[lp_player] |= 0x1000;
+    }
+    if(!lv_originallyMoving) {
+        gf_ProcessMovement(lp_player);
+    }
+}
+
+void gf_WASDKeyUpCheck (int lp_player, int lp_keyPressed) {
+    // Automatic Variable Declarations
+    // Implementation
+    if (lp_keyPressed == c_keyW) {
+        gv_wASDState[lp_player] ^= 0x0001;
+    } else if (lp_keyPressed == c_keyA) {
+        gv_wASDState[lp_player] ^= 0x0010;
+    } else if (lp_keyPressed == c_keyS) {
+        gv_wASDState[lp_player] ^= 0x0100;
+    } else if (lp_keyPressed == c_keyD) {
+        gv_wASDState[lp_player] ^= 0x1000;
+    }
+}
+
+void gf_WASDSetControlledUnit (int lp_player, unit lp_unit) {
+    // Automatic Variable Declarations
+    // Implementation
+    gv_controlledUnits[lp_player] = lp_unit;
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Melee Initialization
+//--------------------------------------------------------------------------------------------------
+bool gt_MeleeInitialization_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    MeleeInitResources();
+    MeleeInitUnits();
+    MeleeInitAI();
+    MeleeInitOptions();
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_MeleeInitialization_Init () {
+    gt_MeleeInitialization = TriggerCreate("gt_MeleeInitialization_Func");
+    TriggerAddEventMapInit(gt_MeleeInitialization);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: WASD Set Controlled Unit
+//--------------------------------------------------------------------------------------------------
+bool gt_WASDSetControlledUnit_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_WASDSetControlledUnit(1, UnitFromId(604180338));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_WASDSetControlledUnit_Init () {
+    gt_WASDSetControlledUnit = TriggerCreate("gt_WASDSetControlledUnit_Func");
+    TriggerAddEventMapInit(gt_WASDSetControlledUnit);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: WASD KeyDown Check
+//--------------------------------------------------------------------------------------------------
+bool gt_WASDKeyDownCheck_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_WASDKeyDownCheck(EventPlayer(), EventKeyPressed());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_WASDKeyDownCheck_Init () {
+    gt_WASDKeyDownCheck = TriggerCreate("gt_WASDKeyDownCheck_Func");
+    TriggerAddEventKeyPressed(gt_WASDKeyDownCheck, c_playerAny, c_keyNone, true, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: WASD KeyUp Check
+//--------------------------------------------------------------------------------------------------
+bool gt_WASDKeyUpCheck_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_WASDKeyUpCheck(EventPlayer(), EventKeyPressed());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_WASDKeyUpCheck_Init () {
+    gt_WASDKeyUpCheck = TriggerCreate("gt_WASDKeyUpCheck_Func");
+    TriggerAddEventKeyPressed(gt_WASDKeyUpCheck, c_playerAny, c_keyNone, false, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Player 1 Camera test
+//--------------------------------------------------------------------------------------------------
+bool gt_Player1Cameratest_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    while (true) {
+        CameraPan(1, UnitGetPosition(gv_controlledUnits[1]), 0.06, -1, 0.0, false);
+        Wait(0.0, c_timeReal);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_Player1Cameratest_Init () {
+    gt_Player1Cameratest = TriggerCreate("gt_Player1Cameratest_Func");
+    TriggerAddEventMapInit(gt_Player1Cameratest);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Bloodsplat Removal
+//--------------------------------------------------------------------------------------------------
+bool gt_BloodsplatRemoval_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_ShowHideDoodadsInRegion(false, RegionCircle(UnitGetPosition(gv_controlledUnits[1]), 0.5), null);
+    libNtve_gf_RemoveDoodadsinRegion(RegionCircle(UnitGetPosition(gv_controlledUnits[1]), 0.5), null);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_BloodsplatRemoval_Init () {
+    gt_BloodsplatRemoval = TriggerCreate("gt_BloodsplatRemoval_Func");
+    TriggerAddEventUnitOrder(gt_BloodsplatRemoval, UnitRefFromVariable("gv_controlledUnits[1]"), AbilityCommand("move", 0));
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Bloodsplat Creation
+//--------------------------------------------------------------------------------------------------
+bool gt_BloodsplatCreation_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_CreateActorAtPoint("BloodSplats", UnitGetPosition(EventUnit()));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_BloodsplatCreation_Init () {
+    gt_BloodsplatCreation = TriggerCreate("gt_BloodsplatCreation_Func");
+    TriggerAddEventUnitDied(gt_BloodsplatCreation, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Corpse Creation
+//--------------------------------------------------------------------------------------------------
+bool gt_CorpseCreation_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetOwner(EventUnit()) == 1))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    RegionAddCircle(RegionFromId(1), true, UnitGetPosition(EventUnit()), 1.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_CorpseCreation_Init () {
+    gt_CorpseCreation = TriggerCreate("gt_CorpseCreation_Func");
+    TriggerAddEventUnitDied(gt_CorpseCreation, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Zombie Corpse
+//--------------------------------------------------------------------------------------------------
+bool gt_ZombieCorpse_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetOwner(EventUnit()) == 14))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    RegionSetCenter(RegionFromId(1), PointFromId(391612022));
+    libNtve_gf_CreateUnitsWithDefaultFacing(1, "InfestedCivilian", 0, 14, UnitGetPosition(EventUnit()));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_ZombieCorpse_Init () {
+    gt_ZombieCorpse = TriggerCreate("gt_ZombieCorpse_Func");
+    TriggerAddEventUnitRegion(gt_ZombieCorpse, null, RegionFromId(1), false);
+    TriggerAddEventUnitRegion(gt_ZombieCorpse, null, RegionFromId(1), true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Clean Animation
+//--------------------------------------------------------------------------------------------------
+bool gt_CleanAnimation_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_PauseUnit(gv_controlledUnits[1], true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_CleanAnimation_Init () {
+    gt_CleanAnimation = TriggerCreate("gt_CleanAnimation_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger Initialization
+//--------------------------------------------------------------------------------------------------
+void InitTriggers () {
+    gt_MeleeInitialization_Init();
+    gt_WASDSetControlledUnit_Init();
+    gt_WASDKeyDownCheck_Init();
+    gt_WASDKeyUpCheck_Init();
+    gt_Player1Cameratest_Init();
+    gt_BloodsplatRemoval_Init();
+    gt_BloodsplatCreation_Init();
+    gt_CorpseCreation_Init();
+    gt_ZombieCorpse_Init();
+    gt_CleanAnimation_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Map Initialization
+//--------------------------------------------------------------------------------------------------
+void InitMap () {
+    InitLibs();
+    InitGlobals();
+    InitCustomAI();
+    InitTriggers();
+}

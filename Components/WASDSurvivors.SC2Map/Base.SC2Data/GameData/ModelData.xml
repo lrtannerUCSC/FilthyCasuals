@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CModel id="BloodSplats2" parent="Doodad">
+        <RadiusLoose value="2.000000"/>
+        <VariationCount value="6"/>
+    </CModel>
+</Catalog>

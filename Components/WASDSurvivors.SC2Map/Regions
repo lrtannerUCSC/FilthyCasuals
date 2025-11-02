@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Regions>
+    <region id="1">
+        <name value="CorpseRegion"/>
+        <shape type="circle">
+            <center value="60.5026,55.4511"/>
+            <radius value="0.5842"/>
+        </shape>
+    </region>
+</Regions>

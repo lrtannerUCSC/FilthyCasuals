@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CActorSound id="SoundEmitter">
+        <Terms value=""/>
+        <Flags index="SuppressCreationErrors" value="0"/>
+        <On Terms="Effect.PurifierBeamDamage.Start; EffectExecuteIndex 1" Send="Create"/>
+        <On Terms="Effect.PurifierBeamPersistent.Stop" Send="Destroy"/>
+        <Host Subject=""/>
+        <Sound value="Mothership_AttackImpact"/>
+    </CActorSound>
+    <CActorSound id="SoundEmitter2" parent="SoundContinuous">
+        <Terms value="!HasScopeFlag DisableSoundEmitters"/>
+        <Flags index="SuppressCreationErrors" value="1"/>
+        <Host Subject="::Creator"/>
+    </CActorSound>
+</Catalog>

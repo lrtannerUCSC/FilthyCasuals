@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AIData>
+    <Definition Id="BC416B17" Color="1">
+        <TargetPlayer Value="1"/>
+        <RepeatWaves Value="5"/>
+        <Step Type="Wave" Id="1">
+            <CreateUnits/>
+            <ConfigTrigger Value="7C5C54F3"/>
+            <Unit Type="SMMutalisk">
+                <Count DiffLevel="1" Value="3"/>
+                <Count DiffLevel="2" Value="3"/>
+                <Count DiffLevel="3" Value="3"/>
+                <Count DiffLevel="4" Value="3"/>
+                <Count DiffLevel="5" Value="3"/>
+                <Count DiffLevel="6" Value="3"/>
+                <Count DiffLevel="7" Value="3"/>
+                <Count DiffLevel="8" Value="3"/>
+                <Count DiffLevel="9" Value="3"/>
+                <Count DiffLevel="10" Value="3"/>
+            </Unit>
+        </Step>
+    </Definition>
+</AIData>
