@@ -7,4 +7,11 @@
             <radius value="0.5842"/>
         </shape>
     </region>
+    <region id="2">
+        <name value="Baracks"/>
+        <shape type="circle">
+            <center value="60.1696,67.84"/>
+            <radius value="2.021"/>
+        </shape>
+    </region>
 </Regions>

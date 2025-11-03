@@ -47,6 +47,7 @@ trigger gt_WASDKeyDownCheck;
 trigger gt_WASDKeyUpCheck;
 trigger gt_Player1Cameratest;
 trigger gt_BloodsplatRemoval;
+trigger gt_CivillianToTroop;
 trigger gt_BloodsplatCreation;
 trigger gt_CorpseCreation;
 trigger gt_ZombieCorpse;
@@ -415,6 +416,37 @@ void gt_BloodsplatRemoval_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: CivillianToTroop
+//--------------------------------------------------------------------------------------------------
+bool gt_CivillianToTroop_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetOwner(EventUnit()) == 1))) {
+            return false;
+        }
+
+        if (!((UnitGroupHasUnit(UnitGroupFromId(2), EventUnit()) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_ReplaceUnit(EventUnit(), "Marine", libNtve_ge_ReplaceUnitOptions_NewUnitsDefault);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_CivillianToTroop_Init () {
+    gt_CivillianToTroop = TriggerCreate("gt_CivillianToTroop_Func");
+    TriggerAddEventUnitRegion(gt_CivillianToTroop, null, RegionFromId(2), true);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Bloodsplat Creation
 //--------------------------------------------------------------------------------------------------
 bool gt_BloodsplatCreation_Func (bool testConds, bool runActions) {
@@ -519,6 +551,7 @@ void InitTriggers () {
     gt_WASDKeyUpCheck_Init();
     gt_Player1Cameratest_Init();
     gt_BloodsplatRemoval_Init();
+    gt_CivillianToTroop_Init();
     gt_BloodsplatCreation_Init();
     gt_CorpseCreation_Init();
     gt_ZombieCorpse_Init();

@@ -14,6 +14,7 @@ ParamDef/Name/D46B7E95=Player
 Trigger/Name/0A8BDC7F=WASD KeyUp Check
 Trigger/Name/4860F4E7=Bloodsplat Removal
 Trigger/Name/4A48394F=Player 1 Camera test
+Trigger/Name/55EC30F2=CivillianToTroop
 Trigger/Name/57B50502=WASD Set Controlled Unit
 Trigger/Name/5DFA447D=Clean Animation
 Trigger/Name/78AE2E9C=Zombie Corpse
