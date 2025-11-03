@@ -48,6 +48,7 @@ trigger gt_WASDKeyUpCheck;
 trigger gt_Player1Cameratest;
 trigger gt_BloodsplatRemoval;
 trigger gt_CivillianToTroop;
+trigger gt_CivillianToSCV;
 trigger gt_CivillianToMedic;
 trigger gt_BloodsplatCreation;
 trigger gt_CorpseCreation;
@@ -449,6 +450,38 @@ void gt_CivillianToTroop_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: CivillianToSCV
+//--------------------------------------------------------------------------------------------------
+bool gt_CivillianToSCV_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetOwner(EventUnit()) == 1))) {
+            return false;
+        }
+
+        if (!((UnitGroupHasUnit(UnitGroupFromId(2), EventUnit()) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    Wait(2.0, c_timeGame);
+    libNtve_gf_ReplaceUnit(EventUnit(), "SCV", libNtve_ge_ReplaceUnitOptions_NewUnitsDefault);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_CivillianToSCV_Init () {
+    gt_CivillianToSCV = TriggerCreate("gt_CivillianToSCV_Func");
+    TriggerAddEventUnitRegion(gt_CivillianToSCV, null, RegionFromId(4), true);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: CivillianToMedic
 //--------------------------------------------------------------------------------------------------
 bool gt_CivillianToMedic_Func (bool testConds, bool runActions) {
@@ -586,6 +619,7 @@ void InitTriggers () {
     gt_Player1Cameratest_Init();
     gt_BloodsplatRemoval_Init();
     gt_CivillianToTroop_Init();
+    gt_CivillianToSCV_Init();
     gt_CivillianToMedic_Init();
     gt_BloodsplatCreation_Init();
     gt_CorpseCreation_Init();

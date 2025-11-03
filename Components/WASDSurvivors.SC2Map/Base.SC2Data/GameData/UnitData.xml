@@ -11,12 +11,12 @@
             <LayoutButtons index="4" Face="SJHyperionLevelUp" AbilCmd="CleaningBotUpgrades,Research1" Row="0" Column="0"/>
             <LayoutButtons index="5" Face="HyperionVoidCoopHyperjump" AbilCmd="CleaningBotUpgrades,Research2" Row="0" Column="1"/>
             <LayoutButtons index="6" Face="SelectBuilder" Type="SelectBuilder" AbilCmd="" Row="2"/>
-            <LayoutButtons index="7" removed="1"/>
-            <LayoutButtons index="8" removed="1"/>
-            <LayoutButtons index="9" removed="1"/>
-            <LayoutButtons index="10" removed="1"/>
-            <LayoutButtons index="11" removed="1"/>
-            <LayoutButtons index="12" removed="1"/>
+            <LayoutButtons index="7" Face="TerranInfantryWeaponsLevel1" AbilCmd="EngineeringBayResearch,Research3" Column="0"/>
+            <LayoutButtons index="8" Face="TerranInfantryWeaponsLevel2" AbilCmd="EngineeringBayResearch,Research4"/>
+            <LayoutButtons index="9" Face="TerranInfantryWeaponsLevel3" AbilCmd="EngineeringBayResearch,Research5" Row="1" Column="0"/>
+            <LayoutButtons index="10" Face="TerranInfantryArmorLevel1" AbilCmd="EngineeringBayResearch,Research7" Row="1"/>
+            <LayoutButtons index="11" Face="TerranInfantryArmorLevel2" AbilCmd="EngineeringBayResearch,Research8" Row="1"/>
+            <LayoutButtons index="12" Face="TerranInfantryArmorLevel3" Type="AbilCmd" AbilCmd="EngineeringBayResearch,Research9" Column="1"/>
             <LayoutButtons index="13" removed="1"/>
         </CardLayouts>
     </CUnit>

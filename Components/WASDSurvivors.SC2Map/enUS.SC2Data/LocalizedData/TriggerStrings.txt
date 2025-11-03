@@ -21,6 +21,7 @@ Trigger/Name/7827BD83=CivillianToMedic
 Trigger/Name/78AE2E9C=Zombie Corpse
 Trigger/Name/7ACBE4E3=Corpse Creation
 Trigger/Name/7C5C54F3=Melee Initialization
+Trigger/Name/DD4A9286=CivillianToSCV
 Trigger/Name/E52C0093=WASD KeyDown Check
 Trigger/Name/F9863731=Bloodsplat Creation
 Variable/Name/04AA97EA=Controlled Units
