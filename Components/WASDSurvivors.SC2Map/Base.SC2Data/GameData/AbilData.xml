@@ -5,5 +5,8 @@
         <InfoArray index="Research1" Upgrade="CleaningBotSpeedUpgrade">
             <Button DefaultButtonFace="SJHyperionLevelUp"/>
         </InfoArray>
+        <InfoArray index="Research2" Upgrade="CleaningBotRadiusUpgrade">
+            <Button DefaultButtonFace="HyperionVoidCoopHyperjump"/>
+        </InfoArray>
     </CAbilResearch>
 </Catalog>

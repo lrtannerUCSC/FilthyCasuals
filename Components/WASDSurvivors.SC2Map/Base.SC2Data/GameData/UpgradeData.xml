@@ -2,5 +2,9 @@
 <Catalog>
     <CUpgrade id="CleaningBotSpeedUpgrade" parent="Research">
         <EffectArray Operation="Multiply" Reference="Unit,CleaningBot,Speed" Value="2"/>
+        <MaxLevel value="5"/>
+    </CUpgrade>
+    <CUpgrade id="CleaningBotRadiusUpgrade">
+        <MaxLevel value="5"/>
     </CUpgrade>
 </Catalog>

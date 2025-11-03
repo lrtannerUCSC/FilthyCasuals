@@ -3,7 +3,7 @@
     <region id="1">
         <name value="CorpseRegion"/>
         <shape type="circle">
-            <center value="60.5026,55.4511"/>
+            <center value="77.6811,48.7026"/>
             <radius value="0.5842"/>
         </shape>
     </region>

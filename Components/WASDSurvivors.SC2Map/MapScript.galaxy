@@ -21,8 +21,12 @@ void InitLibs () {
 int[17] gv_wASDState;
 unit[17] gv_controlledUnits;
 unit[17] gv_uncontrolledUnits;
+fixed gv_cleaningRadius;
+fixed gv_cleaningBotRadiusUpgradeLevel;
 
 void InitGlobals () {
+    gv_cleaningRadius = ((gv_cleaningBotRadiusUpgradeLevel + 1.0) * 0.5);
+    gv_cleaningBotRadiusUpgradeLevel = TechTreeUpgradeCount(1, "CleaningBotRadiusUpgrade", c_techCountCompleteOnly);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -399,8 +403,8 @@ bool gt_BloodsplatRemoval_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    libNtve_gf_ShowHideDoodadsInRegion(false, RegionCircle(UnitGetPosition(gv_controlledUnits[1]), 0.5), null);
-    libNtve_gf_RemoveDoodadsinRegion(RegionCircle(UnitGetPosition(gv_controlledUnits[1]), 0.5), null);
+    libNtve_gf_ShowHideDoodadsInRegion(false, RegionCircle(UnitGetPosition(gv_controlledUnits[1]), gv_cleaningRadius), null);
+    libNtve_gf_RemoveDoodadsinRegion(RegionCircle(UnitGetPosition(gv_controlledUnits[1]), gv_cleaningRadius), null);
     return true;
 }
 
@@ -447,7 +451,7 @@ bool gt_CorpseCreation_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    RegionAddCircle(RegionFromId(1), true, UnitGetPosition(EventUnit()), 1.0);
+    libNtve_gf_CreateUnitsWithDefaultFacing(1, "InfestedCivilian", 0, 14, UnitGetPosition(EventUnit()));
     return true;
 }
 
@@ -482,6 +486,7 @@ bool gt_ZombieCorpse_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void gt_ZombieCorpse_Init () {
     gt_ZombieCorpse = TriggerCreate("gt_ZombieCorpse_Func");
+    TriggerAddEventUnitRegion(gt_ZombieCorpse, null, RegionFromId(1), true);
     TriggerAddEventUnitRegion(gt_ZombieCorpse, null, RegionFromId(1), false);
 }
 
