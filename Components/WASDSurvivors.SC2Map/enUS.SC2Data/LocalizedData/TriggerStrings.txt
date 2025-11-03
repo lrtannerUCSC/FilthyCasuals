@@ -17,6 +17,7 @@ Trigger/Name/4A48394F=Player 1 Camera test
 Trigger/Name/55EC30F2=CivillianToTroop
 Trigger/Name/57B50502=WASD Set Controlled Unit
 Trigger/Name/5DFA447D=Clean Animation
+Trigger/Name/7827BD83=CivillianToMedic
 Trigger/Name/78AE2E9C=Zombie Corpse
 Trigger/Name/7ACBE4E3=Corpse Creation
 Trigger/Name/7C5C54F3=Melee Initialization

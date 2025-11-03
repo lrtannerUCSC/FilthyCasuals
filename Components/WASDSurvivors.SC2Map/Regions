@@ -8,10 +8,17 @@
         </shape>
     </region>
     <region id="2">
-        <name value="Baracks"/>
+        <name value="Barracks"/>
         <shape type="circle">
             <center value="60.1696,67.84"/>
             <radius value="2.021"/>
+        </shape>
+    </region>
+    <region id="3">
+        <name value="Hospital"/>
+        <shape type="circle">
+            <center value="63.378,50.2004"/>
+            <radius value="2.1198"/>
         </shape>
     </region>
 </Regions>
