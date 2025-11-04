@@ -4,6 +4,7 @@
 <Actor id="HybridShearedRocks" Variations="0,2,3,4,6"/>
 <Actor id="OilPuddle" Variations="2"/>
 <Actor id="BloodSplats" Variations="0,1,2,3,5"/>
+<Sound id="Alert_ZergEvolutionComplete" Variations="0"/>
 <Terrain id="TheVoid"/>
 <Unit id="EngineeringBay"/>
 <Unit id="Hive"/>
