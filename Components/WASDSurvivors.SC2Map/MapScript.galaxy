@@ -46,15 +46,6 @@ int gv_h6Level;
 int gv_h8Level;
 int gv_h9Level;
 int gv_h10Level;
-int gv_weaponUpgrades;
-int gv_armorUpgrades;
-int gv_healthUpgrades;
-int gv_protossSpecialsButton;
-int gv_terranSpecialsButton;
-int gv_upgradeMainDialog;
-int gv_minimizeMainDialog;
-int gv_openUpgradesButton;
-int gv_minimizedUpgradeDialog;
 int gv_barracksDialog;
 int gv_barracksTroop1;
 int gv_barracksTroop2;
@@ -71,6 +62,15 @@ int gv_townHall4;
 int gv_minimizeTownHall;
 int gv_townHallInteractDialog;
 int gv_townHallInteractButton;
+int gv_weaponUpgrades;
+int gv_armorUpgrades;
+int gv_healthUpgrades;
+int gv_protossSpecialsButton;
+int gv_terranSpecialsButton;
+int gv_upgradeMainDialog;
+int gv_minimizeMainDialog;
+int gv_openUpgradesButton;
+int gv_minimizedUpgradeDialog;
 int gv_protossSpecialUpgradesDialog;
 int gv_minimizeProtossSpecialUpgrades;
 int gv_fluxVanes;
@@ -251,15 +251,6 @@ void InitGlobals () {
     gv_h8Level = 1;
     gv_h9Level = 1;
     gv_h10Level = 1;
-    gv_weaponUpgrades = c_invalidDialogControlId;
-    gv_armorUpgrades = c_invalidDialogControlId;
-    gv_healthUpgrades = c_invalidDialogControlId;
-    gv_protossSpecialsButton = c_invalidDialogControlId;
-    gv_terranSpecialsButton = c_invalidDialogControlId;
-    gv_upgradeMainDialog = c_invalidDialogId;
-    gv_minimizeMainDialog = c_invalidDialogControlId;
-    gv_openUpgradesButton = c_invalidDialogControlId;
-    gv_minimizedUpgradeDialog = c_invalidDialogId;
     gv_barracksDialog = c_invalidDialogId;
     gv_barracksTroop1 = c_invalidDialogControlId;
     gv_barracksTroop2 = c_invalidDialogControlId;
@@ -276,6 +267,15 @@ void InitGlobals () {
     gv_minimizeTownHall = c_invalidDialogControlId;
     gv_townHallInteractDialog = c_invalidDialogId;
     gv_townHallInteractButton = c_invalidDialogControlId;
+    gv_weaponUpgrades = c_invalidDialogControlId;
+    gv_armorUpgrades = c_invalidDialogControlId;
+    gv_healthUpgrades = c_invalidDialogControlId;
+    gv_protossSpecialsButton = c_invalidDialogControlId;
+    gv_terranSpecialsButton = c_invalidDialogControlId;
+    gv_upgradeMainDialog = c_invalidDialogId;
+    gv_minimizeMainDialog = c_invalidDialogControlId;
+    gv_openUpgradesButton = c_invalidDialogControlId;
+    gv_minimizedUpgradeDialog = c_invalidDialogId;
     gv_protossSpecialUpgradesDialog = c_invalidDialogId;
     gv_minimizeProtossSpecialUpgrades = c_invalidDialogControlId;
     gv_fluxVanes = c_invalidDialogControlId;
@@ -454,9 +454,6 @@ trigger gt_Hatch6a;
 trigger gt_Hatch8a;
 trigger gt_Hatch9a;
 trigger gt_Hatch10a;
-trigger gt_MinimizedDialog;
-trigger gt_MaximizeUpgrades;
-trigger gt_MainUpgradesDialog;
 trigger gt_BarracksDialog;
 trigger gt_BarracksDialogButtons;
 trigger gt_BarracksInteractPopUp;
@@ -467,6 +464,9 @@ trigger gt_TownHallButtons;
 trigger gt_TownHallInteractPopUp;
 trigger gt_TownHallInteractRemovePopUp;
 trigger gt_TownHallDialogInitialization;
+trigger gt_MinimizedDialog;
+trigger gt_MaximizeUpgrades;
+trigger gt_MainUpgradesDialog;
 trigger gt_UpgradesDialogButtons;
 trigger gt_MinimizeRaceDialog;
 trigger gt_ProtossSpecialUpgradesDialog;
@@ -1167,87 +1167,6 @@ void gt_Hatch10a_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: Minimized Dialog
-//--------------------------------------------------------------------------------------------------
-bool gt_MinimizedDialog_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    DialogCreate(300, 75, c_anchorTopLeft, 0, 35, false);
-    gv_minimizedUpgradeDialog = DialogLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_minimizedUpgradeDialog, 250, 50, c_anchorCenter, 0, 0, StringExternal("Param/Value/70C3A390"), StringExternal("Param/Value/05C4937D"), "");
-    gv_openUpgradesButton = DialogControlLastCreated();
-    DialogSetVisible(gv_minimizedUpgradeDialog, PlayerGroupAll(), true);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_MinimizedDialog_Init () {
-    gt_MinimizedDialog = TriggerCreate("gt_MinimizedDialog_Func");
-    TriggerAddEventMapInit(gt_MinimizedDialog);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Maximize Upgrades
-//--------------------------------------------------------------------------------------------------
-bool gt_MaximizeUpgrades_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((EventDialogControl() == gv_openUpgradesButton)) {
-        DialogSetVisible(gv_minimizedUpgradeDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_upgradeMainDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_MaximizeUpgrades_Init () {
-    gt_MaximizeUpgrades = TriggerCreate("gt_MaximizeUpgrades_Func");
-    TriggerAddEventDialogControl(gt_MaximizeUpgrades, EventPlayer(), c_invalidDialogControlId, c_triggerControlEventTypeClick);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Main Upgrades Dialog
-//--------------------------------------------------------------------------------------------------
-bool gt_MainUpgradesDialog_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    DialogCreate(500, 800, c_anchorTopLeft, 0, 35, false);
-    gv_upgradeMainDialog = DialogLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_upgradeMainDialog, 150, 50, c_anchorTopLeft, 50, 50, StringExternal("Param/Value/0E3E7DE2"), StringExternal("Param/Value/4CA0A023"), "");
-    gv_armorUpgrades = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_upgradeMainDialog, 150, 50, c_anchorTopRight, 150, 50, StringExternal("Param/Value/C9803897"), StringExternal("Param/Value/DB0BAC03"), "");
-    gv_healthUpgrades = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_upgradeMainDialog, 150, 50, c_anchorTopLeft, 50, 100, StringExternal("Param/Value/2B970AFF"), StringExternal("Param/Value/814F1491"), "");
-    gv_weaponUpgrades = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_upgradeMainDialog, 200, 50, c_anchorTopLeft, 50, 150, StringExternal("Param/Value/5A2F5F27"), StringExternal("Param/Value/627F449C"), "");
-    gv_protossSpecialsButton = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_upgradeMainDialog, 200, 50, c_anchorTopLeft, 50, 200, StringExternal("Param/Value/2815DA11"), StringExternal("Param/Value/33FCCD83"), "");
-    gv_terranSpecialsButton = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_upgradeMainDialog, 50, 50, c_anchorTopRight, 50, 50, StringExternal("Param/Value/8F1BE2EC"), StringExternal("Param/Value/8E825056"), "");
-    gv_minimizeMainDialog = DialogControlLastCreated();
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_MainUpgradesDialog_Init () {
-    gt_MainUpgradesDialog = TriggerCreate("gt_MainUpgradesDialog_Func");
-    TriggerAddEventMapInit(gt_MainUpgradesDialog);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: Barracks Dialog
 //--------------------------------------------------------------------------------------------------
 bool gt_BarracksDialog_Func (bool testConds, bool runActions) {
@@ -1286,6 +1205,10 @@ bool gt_BarracksDialogButtons_Func (bool testConds, bool runActions) {
     // Actions
     if (!runActions) {
         return true;
+    }
+
+    if ((EventDialogControl() == gv_barracksTroop1)) {
+        UnitSetPosition(UnitGroupRandomUnit(UnitGroupFromId(2), c_unitCountAlive), PointFromId(639841058), true);
     }
 
     if ((EventDialogControl() == gv_minimizeBarracks)) {
@@ -1486,6 +1409,87 @@ void gt_TownHallDialogInitialization_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: Minimized Dialog
+//--------------------------------------------------------------------------------------------------
+bool gt_MinimizedDialog_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    DialogCreate(300, 75, c_anchorTopLeft, 0, 35, false);
+    gv_minimizedUpgradeDialog = DialogLastCreated();
+    libNtve_gf_CreateDialogItemButton(gv_minimizedUpgradeDialog, 250, 50, c_anchorCenter, 0, 0, StringExternal("Param/Value/70C3A390"), StringExternal("Param/Value/05C4937D"), "");
+    gv_openUpgradesButton = DialogControlLastCreated();
+    DialogSetVisible(gv_minimizedUpgradeDialog, PlayerGroupAll(), true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_MinimizedDialog_Init () {
+    gt_MinimizedDialog = TriggerCreate("gt_MinimizedDialog_Func");
+    TriggerAddEventMapInit(gt_MinimizedDialog);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Maximize Upgrades
+//--------------------------------------------------------------------------------------------------
+bool gt_MaximizeUpgrades_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((EventDialogControl() == gv_openUpgradesButton)) {
+        DialogSetVisible(gv_minimizedUpgradeDialog, PlayerGroupSingle(EventPlayer()), false);
+        DialogSetVisible(gv_upgradeMainDialog, PlayerGroupSingle(EventPlayer()), true);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_MaximizeUpgrades_Init () {
+    gt_MaximizeUpgrades = TriggerCreate("gt_MaximizeUpgrades_Func");
+    TriggerAddEventDialogControl(gt_MaximizeUpgrades, EventPlayer(), c_invalidDialogControlId, c_triggerControlEventTypeClick);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Main Upgrades Dialog
+//--------------------------------------------------------------------------------------------------
+bool gt_MainUpgradesDialog_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    DialogCreate(500, 800, c_anchorTopLeft, 0, 35, false);
+    gv_upgradeMainDialog = DialogLastCreated();
+    libNtve_gf_CreateDialogItemButton(gv_upgradeMainDialog, 150, 50, c_anchorTopLeft, 50, 50, StringExternal("Param/Value/0E3E7DE2"), StringExternal("Param/Value/4CA0A023"), "");
+    gv_armorUpgrades = DialogControlLastCreated();
+    libNtve_gf_CreateDialogItemButton(gv_upgradeMainDialog, 150, 50, c_anchorTopRight, 150, 50, StringExternal("Param/Value/C9803897"), StringExternal("Param/Value/DB0BAC03"), "");
+    gv_healthUpgrades = DialogControlLastCreated();
+    libNtve_gf_CreateDialogItemButton(gv_upgradeMainDialog, 150, 50, c_anchorTopLeft, 50, 100, StringExternal("Param/Value/2B970AFF"), StringExternal("Param/Value/814F1491"), "");
+    gv_weaponUpgrades = DialogControlLastCreated();
+    libNtve_gf_CreateDialogItemButton(gv_upgradeMainDialog, 200, 50, c_anchorTopLeft, 50, 150, StringExternal("Param/Value/5A2F5F27"), StringExternal("Param/Value/627F449C"), "");
+    gv_protossSpecialsButton = DialogControlLastCreated();
+    libNtve_gf_CreateDialogItemButton(gv_upgradeMainDialog, 200, 50, c_anchorTopLeft, 50, 200, StringExternal("Param/Value/2815DA11"), StringExternal("Param/Value/33FCCD83"), "");
+    gv_terranSpecialsButton = DialogControlLastCreated();
+    libNtve_gf_CreateDialogItemButton(gv_upgradeMainDialog, 50, 50, c_anchorTopRight, 50, 50, StringExternal("Param/Value/8F1BE2EC"), StringExternal("Param/Value/8E825056"), "");
+    gv_minimizeMainDialog = DialogControlLastCreated();
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_MainUpgradesDialog_Init () {
+    gt_MainUpgradesDialog = TriggerCreate("gt_MainUpgradesDialog_Func");
+    TriggerAddEventMapInit(gt_MainUpgradesDialog);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Upgrades Dialog Buttons
 //--------------------------------------------------------------------------------------------------
 bool gt_UpgradesDialogButtons_Func (bool testConds, bool runActions) {
@@ -1511,12 +1515,12 @@ bool gt_UpgradesDialogButtons_Func (bool testConds, bool runActions) {
     }
 
     if ((EventDialogControl() == gv_barracksInteractButton)) {
-        DialogSetVisible(gv_upgradeMainDialog, PlayerGroupSingle(EventPlayer()), false);
+        DialogSetVisible(gv_barracksInteractDialog, PlayerGroupSingle(EventPlayer()), false);
         DialogSetVisible(gv_barracksDialog, PlayerGroupSingle(EventPlayer()), true);
     }
 
     if ((EventDialogControl() == gv_townHallInteractButton)) {
-        DialogSetVisible(gv_upgradeMainDialog, PlayerGroupSingle(EventPlayer()), false);
+        DialogSetVisible(gv_townHallInteractDialog, PlayerGroupSingle(EventPlayer()), false);
         DialogSetVisible(gv_townHallDialog, PlayerGroupSingle(EventPlayer()), true);
     }
 
@@ -4113,9 +4117,6 @@ void InitTriggers () {
     gt_Hatch8a_Init();
     gt_Hatch9a_Init();
     gt_Hatch10a_Init();
-    gt_MinimizedDialog_Init();
-    gt_MaximizeUpgrades_Init();
-    gt_MainUpgradesDialog_Init();
     gt_BarracksDialog_Init();
     gt_BarracksDialogButtons_Init();
     gt_BarracksInteractPopUp_Init();
@@ -4126,6 +4127,9 @@ void InitTriggers () {
     gt_TownHallInteractPopUp_Init();
     gt_TownHallInteractRemovePopUp_Init();
     gt_TownHallDialogInitialization_Init();
+    gt_MinimizedDialog_Init();
+    gt_MaximizeUpgrades_Init();
+    gt_MainUpgradesDialog_Init();
     gt_UpgradesDialogButtons_Init();
     gt_MinimizeRaceDialog_Init();
     gt_ProtossSpecialUpgradesDialog_Init();
