@@ -17,4 +17,5 @@
 <Unit id="CivilianFemale" Variations="2"/>
 <Unit id="ColonistFemale" Variations="0"/>
 <Unit id="CleaningBot"/>
+<Unit id="CivZombieSpawner"/>
 </Preload>

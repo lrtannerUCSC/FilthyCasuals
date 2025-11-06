@@ -1,4 +1,5 @@
 ﻿Abil/Name/CleaningBotUpgrades=CleaningBotUpgrades
+Button/Tooltip/CivZombieSpawner=Must be destroyed if Infested.
 DocInfo/DescLong=Completely devoid of any description whatsoever.
 DocInfo/DescShort=Any
 DocInfo/Name=Just Another StarCraft II Map
@@ -330,5 +331,6 @@ Param/Value/FD9956DE=Armor Upgrade Level 5
 Param/Value/FDFCFD97=Minimize
 Param/Value/FE198804=Cost: 1250 Minerals
 Param/Value/FFE5CB15=Weapons Upgrade Level 5
+Unit/Name/CivZombieSpawner=CivZombieSpawner
 Upgrade/Name/CleaningBotRadiusUpgrade=CleaningBotRadiusUpgrade
 Upgrade/Name/CleaningBotSpeedUpgrade=CleaningBotSpeedUpgrade

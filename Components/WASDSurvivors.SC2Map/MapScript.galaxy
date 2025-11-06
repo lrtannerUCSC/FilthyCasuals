@@ -509,6 +509,8 @@ trigger gt_WASDKeyUpCheck;
 trigger gt_Player1Cameratest;
 trigger gt_BloodsplatRemoval;
 trigger gt_CivillianToTroop;
+trigger gt_ZombieRunnerA;
+trigger gt_ZombieRunnerB;
 trigger gt_CivillianToSCV;
 trigger gt_CivillianToMedic;
 trigger gt_BloodsplatCreation;
@@ -3943,6 +3945,48 @@ void gt_CivillianToTroop_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: ZombieRunnerA
+//--------------------------------------------------------------------------------------------------
+bool gt_ZombieRunnerA_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    Wait(2.0, c_timeGame);
+    UnitIssueOrder(EventUnit(), OrderTargetingPoint(AbilityCommand("attack", 2), PointFromId(1498365247)), c_orderQueueReplace);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_ZombieRunnerA_Init () {
+    gt_ZombieRunnerA = TriggerCreate("gt_ZombieRunnerA_Func");
+    TriggerAddEventUnitRegion(gt_ZombieRunnerA, null, RegionFromId(5), true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: ZombieRunnerB
+//--------------------------------------------------------------------------------------------------
+bool gt_ZombieRunnerB_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    Wait(2.0, c_timeGame);
+    UnitIssueOrder(EventUnit(), OrderTargetingPoint(AbilityCommand("attack", 2), PointFromId(1498365247)), c_orderQueueReplace);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_ZombieRunnerB_Init () {
+    gt_ZombieRunnerB = TriggerCreate("gt_ZombieRunnerB_Func");
+    TriggerAddEventUnitRegion(gt_ZombieRunnerB, null, RegionFromId(6), true);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: CivillianToSCV
 //--------------------------------------------------------------------------------------------------
 bool gt_CivillianToSCV_Func (bool testConds, bool runActions) {
@@ -4172,6 +4216,8 @@ void InitTriggers () {
     gt_Player1Cameratest_Init();
     gt_BloodsplatRemoval_Init();
     gt_CivillianToTroop_Init();
+    gt_ZombieRunnerA_Init();
+    gt_ZombieRunnerB_Init();
     gt_CivillianToSCV_Init();
     gt_CivillianToMedic_Init();
     gt_BloodsplatCreation_Init();

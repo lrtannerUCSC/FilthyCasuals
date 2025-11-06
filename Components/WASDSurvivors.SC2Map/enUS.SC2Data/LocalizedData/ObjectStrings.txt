@@ -1,3 +1,4 @@
 ﻿AI/Name/BC416B17=Survivor AI
+Actor/Name/CivZombieSpawner=CivZombieSpawner
 Actor/Name/SoundEmitter2=SoundEmitter
 Model/Name/BloodSplats2=Blood Splats

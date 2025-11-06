@@ -28,4 +28,18 @@
             <radius value="2.29"/>
         </shape>
     </region>
+    <region id="5">
+        <name value="SpawnerA"/>
+        <shape type="circle">
+            <center value="47.5,84.5"/>
+            <radius value="2.8283"/>
+        </shape>
+    </region>
+    <region id="6">
+        <name value="SpawnerB"/>
+        <shape type="circle">
+            <center value="66.5,84.5"/>
+            <radius value="2.8283"/>
+        </shape>
+    </region>
 </Regions>
