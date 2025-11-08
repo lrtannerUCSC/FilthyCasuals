@@ -1,4 +1,6 @@
 ﻿AI/Name/BC416B17=Survivor AI
+Abil/EditorPrefix/TrainCivilians=Civilian -
 Actor/Name/CivZombieSpawner=CivZombieSpawner
 Actor/Name/SoundEmitter2=SoundEmitter
+Actor/Name/TownHallActor=TownHallActor
 Model/Name/BloodSplats2=Blood Splats

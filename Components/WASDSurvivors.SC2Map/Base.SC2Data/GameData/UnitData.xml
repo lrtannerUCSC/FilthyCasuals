@@ -64,6 +64,68 @@
             <Cooldown Link="InfestedBunker/Revive"/>
         </ReviveInfoBase>
     </CUnit>
+    <CUnit id="TownHall">
+        <DeathRevealRadius value="3"/>
+        <ReviveType value="CommandCenter"/>
+        <Facing value="315"/>
+        <Race value="Terr"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDefeat" value="1"/>
+        <FlagArray index="PenaltyRevealed" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="400"/>
+        <LifeMax value="400"/>
+        <LifeArmor value="2"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranBuildingPlating"/>
+        <Sight value="10"/>
+        <CostResource index="Minerals" value="100"/>
+        <RepairTime value="15"/>
+        <AttackTargetPriority value="19"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="BunkerTransport"/>
+        <AbilArray Link="Rally"/>
+        <AbilArray Link="TrainCivilians"/>
+        <AbilArray Link="que1"/>
+        <CardLayouts>
+            <LayoutButtons Face="BunkerLoad" Type="AbilCmd" AbilCmd="BunkerTransport,Load" Row="2" Column="0"/>
+            <LayoutButtons Face="BunkerUnloadAll" Type="AbilCmd" AbilCmd="BunkerTransport,UnloadAll" Row="2" Column="1"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="SalvageInfestedBunkerer,255" Row="2" Column="4"/>
+            <LayoutButtons Face="CommanderPrestigeKerriganCreep" Type="AbilCmd" AbilCmd="TrainCivilians,Train1" Row="0" Column="0"/>
+        </CardLayouts>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <Footprint value="Footprint3x3Contour"/>
+        <PlacementFootprint value="Footprint3x3"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="150"/>
+        <SubgroupPriority value="13"/>
+        <MinimapRadius value="1.25"/>
+        <EditorCategories value=""/>
+        <TacticalAI value="CommandCenter"/>
+        <LeaderAlias value="CommandCenter"/>
+        <HotkeyAlias value="InfestedBunker"/>
+        <SelectAlias value="CommandCenter"/>
+        <SubgroupAlias value="CommandCenter"/>
+        <AIEvaluateAlias value="CommandCenter"/>
+        <IdleCommand value="TrainCivilians,Train1"/>
+        <ReviveInfoBase>
+            <Charge Link="InfestedBunker/Revive"/>
+            <Cooldown Link="InfestedBunker/Revive"/>
+        </ReviveInfoBase>
+    </CUnit>
     <CUnit id="CleaningBot">
         <CardLayouts index="0">
             <LayoutButtons index="4" removed="1"/>

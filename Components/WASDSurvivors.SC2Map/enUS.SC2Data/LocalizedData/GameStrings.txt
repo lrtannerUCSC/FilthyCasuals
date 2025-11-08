@@ -1,5 +1,7 @@
 ﻿Abil/Name/CleaningBotUpgrades=CleaningBotUpgrades
+Abil/Name/TrainCivilians=Train (Civilians)
 Button/Tooltip/CivZombieSpawner=Must be destroyed if Infested.
+Button/Tooltip/TownHall=The central hub for gaining civilians, towers, and upgrades.
 DocInfo/DescLong=Completely devoid of any description whatsoever.
 DocInfo/DescShort=Any
 DocInfo/Name=Just Another StarCraft II Map
@@ -332,5 +334,6 @@ Param/Value/FDFCFD97=Minimize
 Param/Value/FE198804=Cost: 1250 Minerals
 Param/Value/FFE5CB15=Weapons Upgrade Level 5
 Unit/Name/CivZombieSpawner=CivZombieSpawner
+Unit/Name/TownHall=TownHall
 Upgrade/Name/CleaningBotRadiusUpgrade=CleaningBotRadiusUpgrade
 Upgrade/Name/CleaningBotSpeedUpgrade=CleaningBotSpeedUpgrade

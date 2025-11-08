@@ -45,6 +45,52 @@
             <Image value="Assets\Textures\Wireframe-Terran-Bunker.dds"/>
         </Wireframe>
     </CActorUnit>
+    <CActorUnit id="TownHallActor" parent="GenericUnitStandard" unitName="TownHall">
+        <Aliases value="_UnitHuge"/>
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Send="AnimGroupApply Work Work,Start Work,End"/>
+        <On Terms="Behavior.ColonyInfestation.On" Send="Create InfestationBunker"/>
+        <On Terms="Behavior.InfestedVisual.On" Send="Create InfestationBunker"/>
+        <On Terms="Behavior.ColonyInfestation.On" Send="StatusSet Infested 1"/>
+        <On Terms="Behavior.InfestedVisual.On" Send="StatusSet Infested 1"/>
+        <On Terms="UnitDeathCustomize; IsStatus Infested 1" Target="InfestationBunker" Send="Signal InfestationDeathSmall"/>
+        <Model value="CommandCenter"/>
+        <BuildModel value="CommandCenter"/>
+        <DeathArray index="Normal" ModelLink="BunkerDeath" SoundLink="Bunker_Explode"/>
+        <DeathActorModel value="ColonyInfestationBuildingDeath"/>
+        <PlacementModel value="CommandCenter"/>
+        <BarOffset value="70"/>
+        <BarWidth value="138"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Terran-Bunker.dds"/>
+        </GroupIcon>
+        <GroupSoundArray index="What" value=""/>
+        <GroupSoundArray index="Yes" value=""/>
+        <GroupSoundArray index="Attack" value=""/>
+        <GroupSoundArray index="Board" value=""/>
+        <HeroIcon value="Assets\Textures\btn-building-terran-bunker.dds"/>
+        <HighlightTooltip value="Unit/Name/TownHallActor"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-buildingarmor.dds"/>
+        <NameOffset value="60"/>
+        <SoundArray index="Birth" value=""/>
+        <SoundArray index="Ready" value=""/>
+        <SoundArray index="Help" value=""/>
+        <SoundArray index="What" value=""/>
+        <SoundArray index="Yes" value=""/>
+        <SoundArray index="Attack" value=""/>
+        <SoundArray index="Pissed" value=""/>
+        <SoundArray index="Movement" value=""/>
+        <SoundArray index="Turning" value=""/>
+        <SoundArray index="Board" value=""/>
+        <SoundArray index="Click" value=""/>
+        <SoundArray index="ClickError" value=""/>
+        <SoundArray index="Highlight" value=""/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-building-terran-bunker.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Terran-Bunker.dds"/>
+        </Wireframe>
+    </CActorUnit>
     <CActorSound id="SoundEmitter">
         <Flags index="SuppressCreationErrors" value="0"/>
         <On Terms="Effect.PurifierBeamDamage.Start; EffectExecuteIndex 1" Send="Create"/>

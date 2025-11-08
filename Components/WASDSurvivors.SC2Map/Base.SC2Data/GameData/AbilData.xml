@@ -9,4 +9,17 @@
             <Button DefaultButtonFace="HyperionVoidCoopHyperjump"/>
         </InfoArray>
     </CAbilResearch>
+    <CAbilTrain id="TrainCivilians">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <InfoArray index="Train1" Time="2">
+            <Button DefaultButtonFace="CommanderPrestigeKerriganCreep"/>
+            <Unit value="Civilian"/>
+        </InfoArray>
+        <InfoArray index="Train2" Time="2"/>
+        <InfoArray index="Train3" Time="6">
+            <Button State="Restricted"/>
+        </InfoArray>
+        <InfoArray index="Train4" Time="6"/>
+        <InfoArray index="Train5" Time="6"/>
+    </CAbilTrain>
 </Catalog>
