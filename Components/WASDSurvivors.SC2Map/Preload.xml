@@ -7,9 +7,10 @@
 <Sound id="Alert_ZergEvolutionComplete" Variations="0"/>
 <Terrain id="TheVoid"/>
 <Unit id="EngineeringBay"/>
+<Unit id="AutoTurret"/>
 <Unit id="SupplyDepotLowered"/>
 <Unit id="Hive"/>
-<Unit id="InfestedCivilian" Variations="2"/>
+<Unit id="InfestedCivilian"/>
 <Unit id="CargoTruckUnitFlatbed"/>
 <Unit id="CargoTruckUnitTrailer"/>
 <Unit id="CargoTruckUnitBarrels"/>
@@ -18,6 +19,7 @@
 <Unit id="CivilianFemale" Variations="2"/>
 <Unit id="ColonistFemale" Variations="0"/>
 <Unit id="CleaningBot"/>
-<Unit id="CivZombieSpawner"/>
 <Unit id="TownHall"/>
+<Unit id="CivSpawner" Variations="4"/>
+<Unit id="InfestedTerranSpawner"/>
 </Preload>

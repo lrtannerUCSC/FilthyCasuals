@@ -52,7 +52,6 @@
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
     <ObjectPoint Id="1498365247" Position="57.5,84,0" Scale="1,1,1" Type="Normal" Name="AmovePoint" Color="0,0,0,0"/>
-    <ObjectPoint Id="391612022" Position="51.7812,111.7531,0" Scale="1,1,1" Type="Normal" Name="CorpseRegionHidingPoint" Color="0,0,0,0"/>
     <ObjectPoint Id="639841058" Position="66.3833,50.6574,0" Scale="1,1,1" Type="Normal" Name="Barracks" Color="0,0,0,0"/>
     <ObjectUnit Id="1167295670" Position="49,69,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
     <ObjectUnit Id="1376814400" Variation="2" Position="61.3066,57.9428,0.386" Rotation="6.0175" Scale="1,1,1" UnitType="CivilianFemale" Player="1">
@@ -63,22 +62,19 @@
     <ObjectUnit Id="1050301141" Variation="2" Position="61.0251,59.183,0.386" Rotation="6.0178" Scale="1,1,1" UnitType="CivilianFemale" Player="1">
         <Flag Index="HeightOffset" Value="1"/>
     </ObjectUnit>
-    <ObjectUnit Id="886696031" Position="47.5,84.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CivZombieSpawner" Player="2"/>
+    <ObjectUnit Id="886696031" Position="47.5,84.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="2"/>
     <ObjectUnit Id="298317709" Position="66.5417,63.3298,0.386" Rotation="3.8947" Scale="1,1,1" UnitType="CargoTruckUnitFlatbed" Player="1">
         <Flag Index="HeightOffset" Value="1"/>
     </ObjectUnit>
-    <ObjectUnit Id="220350812" Variation="2" Position="56.4536,59.6176,0" Rotation="3.2214" Scale="1,1,1" UnitType="InfestedCivilian" Player="14"/>
+    <ObjectUnit Id="1124788479" Position="59,60,0" Rotation="2.7492" Scale="1,1,1" UnitType="AutoTurret" Player="1"/>
     <ObjectUnit Id="1738549460" Position="45,69,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
     <ObjectUnit Id="757147147" Position="58.5,104.5,0" Scale="1,1,1" UnitType="Hive" Player="2"/>
-    <ObjectUnit Id="1101346206" Position="66.5,84.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CivZombieSpawner" Player="1"/>
+    <ObjectUnit Id="1101346206" Position="66.5,84.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="1"/>
     <ObjectUnit Id="1583796702" Variation="2" Position="62.5251,57.683,0.386" Rotation="1.1596" Scale="1,1,1" UnitType="Civilian" Player="1">
         <Flag Index="HeightOffset" Value="1"/>
         <Texture TexSlot="main" TexProps="male,helmet,03" TexLink=""/>
     </ObjectUnit>
-    <ObjectUnit Id="697215032" Variation="2" Position="57.3828,57.6657,0" Rotation="3.2214" Scale="1,1,1" UnitType="InfestedCivilian" Player="14"/>
-    <ObjectUnit Id="721563897" Variation="2" Position="57.3803,58.6618,0" Rotation="3.2214" Scale="1,1,1" UnitType="InfestedCivilian" Player="14"/>
     <ObjectUnit Id="604180338" Position="62.434,59.4926,0" Rotation="3.098" Scale="1,1,1" UnitType="CleaningBot" Player="1"/>
-    <ObjectUnit Id="447741526" Variation="2" Position="56.3635,58.2822,0" Rotation="3.2216" Scale="1,1,1" UnitType="InfestedCivilian" Player="14"/>
     <ObjectUnit Id="70232309" Position="67.5,60.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="EngineeringBay" Player="1"/>
     <ObjectUnit Id="1352262937" Position="65.0727,54.7253,0.386" Rotation="1.8381" Scale="1,1,1" UnitType="CargoTruckUnitBarrels" Player="1">
         <Flag Index="HeightOffset" Value="1"/>
@@ -103,6 +99,7 @@
         <Texture TexSlot="main" TexProps="male,02" TexLink=""/>
     </ObjectUnit>
     <ObjectUnit Id="2000468100" Position="72.5,59.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="TownHall" Player="1"/>
+    <ObjectUnit Id="2027491687" Variation="4" Position="61.5,54.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CivSpawner" Player="1"/>
     <ObjectUnit Id="338286200" Position="51.5,104.5,0" Scale="1,1,1" UnitType="Hive" Player="1"/>
     <ObjectUnit Id="96979904" Position="60.2431,62.5605,0.386" Rotation="1.8747" Scale="1,1,1" UnitType="CargoTruckUnitTrailer" Player="1">
         <Flag Index="HeightOffset" Value="1"/>
@@ -111,12 +108,6 @@
         <Flag Index="HeightOffset" Value="1"/>
         <Texture TexSlot="main" TexProps="male,helmet,03" TexLink=""/>
     </ObjectUnit>
-    <Group Type="ObjectUnit" Name="Zombies " Id="1">
-        <GroupObject Id="220350812"/>
-        <GroupObject Id="447741526"/>
-        <GroupObject Id="697215032"/>
-        <GroupObject Id="721563897"/>
-    </Group>
     <Group Type="ObjectUnit" Name="Civilians  " Id="2">
         <GroupObject Id="70510309"/>
         <GroupObject Id="96979904"/>

@@ -9,6 +9,12 @@
             <Button DefaultButtonFace="HyperionVoidCoopHyperjump"/>
         </InfoArray>
     </CAbilResearch>
+    <CAbilResearch id="GatlingTurretUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray index="Research1" Upgrade="GatlingTurretUpgrade">
+            <Button DefaultButtonFace="BuildAutoTurret"/>
+        </InfoArray>
+    </CAbilResearch>
     <CAbilTrain id="TrainCivilians">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
         <InfoArray index="Train1" Time="2">
@@ -22,4 +28,7 @@
         <InfoArray index="Train4" Time="6"/>
         <InfoArray index="Train5" Time="6"/>
     </CAbilTrain>
+    <CAbilQueue id="que1">
+        <QueueSize value="2"/>
+    </CAbilQueue>
 </Catalog>

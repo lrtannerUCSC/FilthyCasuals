@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-    <CActorUnit id="CivZombieSpawner" parent="GenericUnitStandard" unitName="CivZombieSpawner">
+    <CActorUnit id="InfestedTerranSpawnerActor" parent="GenericUnitStandard" unitName="InfestedTerranSpawner">
         <Aliases value="_UnitHuge"/>
         <EditorCategories value=""/>
         <On Terms="ActorCreation" Send="AnimGroupApply Work Work,Start Work,End"/>
@@ -24,6 +24,7 @@
         <GroupSoundArray index="Attack" value=""/>
         <GroupSoundArray index="Board" value=""/>
         <HeroIcon value="Assets\Textures\btn-building-terran-bunker.dds"/>
+        <HighlightTooltip value="Unit/Name/InfestedTerranSpawnerActor"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-buildingarmor.dds"/>
         <NameOffset value="60"/>
         <SoundArray index="Birth" value=""/>
@@ -44,6 +45,65 @@
         <Wireframe>
             <Image value="Assets\Textures\Wireframe-Terran-Bunker.dds"/>
         </Wireframe>
+    </CActorUnit>
+    <CActorUnit id="GatlingTower" parent="GenericUnitStandard" unitName="GatlingTurret">
+        <Macros value="UnpoweredAnim"/>
+        <Macros value="BuildingFlattenTerrainMacro"/>
+        <Macros value="ProtossBuildingPowerUp"/>
+        <On index="26" Terms="ProgressLevel" Send="ActionImpact"/>
+        <On index="27" Terms="FlyerHelperChange; FlyerHelper Selected; !HasStatus FlyerHelper" Target="FlyerHelperSplat" Send="Destroy"/>
+        <On index="28" Terms="FlyerHelperChange; FlyerHelper All; ValidateUnit IsFlying; !ScopeContains FlyerHelperSplat" Send="Create FlyerHelperSplat"/>
+        <On index="29" Terms="UnitBirth.*.Normal" Send="$Birth 0 0.000000"/>
+        <On index="30" Terms="UnitFidget" Send="AnimPlay Fidget Fidget"/>
+        <On index="31" Terms="UnitMovementUpdate.*.Walk" Target="" Send="AnimClear Fidget"/>
+        <On index="32" Terms="UnitDetectedByViewer.*.On; ValidateUnit IsHallucination" Send="Signal HallucinationTintOn"/>
+        <On index="33" Terms="UnitDetectedByViewer.*.Off; ValidateUnit IsHallucination" Target="_HallucinationTinter" Send="Signal HallucinationTintOff"/>
+        <On index="34" Terms="UnitDeathCustomize; ValidateUnit HasAntiGravProtoss" Send="DeathCustomize AntiGravProtoss"/>
+        <On index="35" Terms="UnitDeathCustomize; ValidateUnit HasAntiGravTerran" Send="DeathCustomize AntiGravTerran"/>
+        <On index="36" Terms="UnitDeathCustomize; ValidateUnit HasAntiGravZerg" Send="DeathCustomize AntiGravZerg"/>
+        <On index="37" Terms="Behavior.PhoenixAntiGrav.On" Send="ModelSuddenMotionStart"/>
+        <On index="38" Terms="Behavior.PhoenixAntiGrav.Off" Target="_HallucinationTinter" Send="ModelSuddenMotionStop"/>
+        <On index="39" Terms="UnitTaunt.*.Start; Taunt" Target="_HallucinationTinter" Send="AnimPlay Cheer Stand,Victory"/>
+        <On index="40" Terms="UnitTaunt.*.Stop; Taunt" Send="AnimClear Cheer"/>
+        <On index="41" Terms="UnitTaunt.*.Start; Taunt Dance" Send="AnimPlay Dance Stand,Dance"/>
+        <On index="42" Terms="UnitTaunt.*.Stop; Taunt Dance" Send="AnimClear Dance"/>
+        <On index="43" Terms="Abil.attack.ReadyStart" Send="AnimGroupApply Ready"/>
+        <On index="44" Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On index="45" Terms="WeaponStart.*.AttackStart; AnimPlaying Birth" Send="AnimClear Birth"/>
+        <On index="46" Terms="Transition" Send="AnimBracketStop Attack"/>
+        <On Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit CasterIsUnpoweredAndNotUnderConstruction" Send="DeathCustomize Variation2"/>
+        <On Terms="UnitBirth" Send="AnimPlay Birth Stand,Unpowered,End 0 0.000000 0.000000"/>
+        <Model value="VikingAssault"/>
+        <EventDataSound Name="BuildingWarpIn" Actor="UnitSound" Sound="Protoss_BuildingWarpIn"/>
+        <BuildModel value="PhotonCannonBirth"/>
+        <DeathArray index="Normal" ModelLink="PhotonCannonDeath" SoundLink="PhotonCannon_Explode"/>
+        <DeathArray index="UnderConstruction" ModelLink="ProtossWarpInDeath" SoundLink="PhotonCannon_Explode"/>
+        <DeathCustoms ModelLink="PhotonCannonDeathUnpowered" SoundLink="PhotonCannon_Explode" Name="Variation2"/>
+        <PlacementModel value="VikingAssault"/>
+        <PlacementSound value="Protoss_BuildingPlacementSmall"/>
+        <PortraitModel value="ExecutorPortrait"/>
+        <BarOffset value="60"/>
+        <BarWidth value="75"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\wireframe-terran-viking-assault.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-unit-terran-vikingassault.dds"/>
+        <HighlightTooltip value="Unit/Name/GatlingTower"/>
+        <LifeArmorIcon value="Assets\Textures\btn-armor-protoss-buildingplating.dds"/>
+        <SoundArray index="Ready" value="PhotonCannon_What"/>
+        <SoundArray index="What" value="PhotonCannon_What"/>
+        <SoundArray index="Construction" value="Protoss_ConstructionWhat"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-unit-terran-vikingassault.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-terran-viking-assault.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-Protoss-PhotonCannon-Shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-PhotonCannon-Shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-PhotonCannon-Shield03.dds"/>
+        </WireframeShield>
     </CActorUnit>
     <CActorUnit id="TownHallActor" parent="GenericUnitStandard" unitName="TownHall">
         <Aliases value="_UnitHuge"/>
@@ -103,4 +163,50 @@
         <Flags index="SuppressCreationErrors" value="1"/>
         <Host Subject="::Creator"/>
     </CActorSound>
+    <CActorUnit id="CivSpawnerActor" parent="GenericUnitStandard" unitName="CivSpawner">
+        <Aliases value="_UnitHuge"/>
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Send="AnimGroupApply Work Work,Start Work,End"/>
+        <On Terms="Behavior.ColonyInfestation.On" Send="Create InfestationBunker"/>
+        <On Terms="Behavior.InfestedVisual.On" Send="Create InfestationBunker"/>
+        <On Terms="Behavior.ColonyInfestation.On" Send="StatusSet Infested 1"/>
+        <On Terms="Behavior.InfestedVisual.On" Send="StatusSet Infested 1"/>
+        <On Terms="UnitDeathCustomize; IsStatus Infested 1" Target="InfestationBunker" Send="Signal InfestationDeathSmall"/>
+        <Model value="ColonistHutDoodad"/>
+        <BuildModel value="ColonistHutDoodad"/>
+        <DeathArray index="Normal" ModelLink="BunkerDeath" SoundLink="Bunker_Explode"/>
+        <DeathActorModel value="ColonyInfestationBuildingDeath"/>
+        <PlacementModel value="ColonistHutDoodad"/>
+        <BarOffset value="70"/>
+        <BarWidth value="138"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Terran-Bunker.dds"/>
+        </GroupIcon>
+        <GroupSoundArray index="What" value=""/>
+        <GroupSoundArray index="Yes" value=""/>
+        <GroupSoundArray index="Attack" value=""/>
+        <GroupSoundArray index="Board" value=""/>
+        <HeroIcon value="Assets\Textures\btn-building-terran-bunker.dds"/>
+        <HighlightTooltip value="Unit/Name/CivSpawnerActor"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-buildingarmor.dds"/>
+        <NameOffset value="60"/>
+        <SoundArray index="Birth" value=""/>
+        <SoundArray index="Ready" value=""/>
+        <SoundArray index="Help" value=""/>
+        <SoundArray index="What" value=""/>
+        <SoundArray index="Yes" value=""/>
+        <SoundArray index="Attack" value=""/>
+        <SoundArray index="Pissed" value=""/>
+        <SoundArray index="Movement" value=""/>
+        <SoundArray index="Turning" value=""/>
+        <SoundArray index="Board" value=""/>
+        <SoundArray index="Click" value=""/>
+        <SoundArray index="ClickError" value=""/>
+        <SoundArray index="Highlight" value=""/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+        <UnitIcon value="Assets\Textures\btn-building-terran-bunker.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Terran-Bunker.dds"/>
+        </Wireframe>
+    </CActorUnit>
 </Catalog>

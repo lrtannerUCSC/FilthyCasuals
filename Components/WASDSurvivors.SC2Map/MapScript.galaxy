@@ -18,6 +18,9 @@ void InitLibs () {
 //--------------------------------------------------------------------------------------------------
 // Global Variables
 //--------------------------------------------------------------------------------------------------
+int[17] gv_wASDState;
+unit[17] gv_controlledUnits;
+unit[17] gv_uncontrolledUnits;
 int[2] gv_interact;
 int gv_textH1;
 int gv_textH2;
@@ -221,9 +224,6 @@ int gv_shipWeaponsButton3;
 int gv_shipWeaponsButton4;
 int gv_shipWeaponsButton5;
 int gv_backtoTerranShip;
-int[17] gv_wASDState;
-unit[17] gv_controlledUnits;
-unit[17] gv_uncontrolledUnits;
 fixed gv_cleaningRadius;
 fixed gv_cleaningBotRadiusUpgradeLevel;
 
@@ -443,6 +443,10 @@ void gf_WASDSetControlledUnit (int lp_player, unit lp_unit);
 // Trigger Variables
 //--------------------------------------------------------------------------------------------------
 trigger gt_MeleeInitialization;
+trigger gt_Player1Cameratest;
+trigger gt_WASDSetControlledUnit;
+trigger gt_WASDKeyDownCheck;
+trigger gt_WASDKeyUpCheck;
 trigger gt_StartTimedUpgradesinfirstarea;
 trigger gt_Hatch1a;
 trigger gt_Hatch2a;
@@ -503,16 +507,11 @@ trigger gt_Upgrade7;
 trigger gt_Upgrade8;
 trigger gt_Upgrade9;
 trigger gt_Upgrade10;
-trigger gt_WASDSetControlledUnit;
-trigger gt_WASDKeyDownCheck;
-trigger gt_WASDKeyUpCheck;
-trigger gt_Player1Cameratest;
 trigger gt_BloodsplatRemoval;
 trigger gt_CivillianToTroop;
 trigger gt_ZombieRunnerA;
 trigger gt_ZombieRunnerB;
-trigger gt_CivillianToSCV;
-trigger gt_CivillianToMedic;
+trigger gt_GatlingTurretUpgrade;
 trigger gt_BloodsplatCreation;
 trigger gt_CorpseCreation;
 trigger gt_ZombieCorpse;
@@ -776,6 +775,89 @@ bool gt_MeleeInitialization_Func (bool testConds, bool runActions) {
 void gt_MeleeInitialization_Init () {
     gt_MeleeInitialization = TriggerCreate("gt_MeleeInitialization_Func");
     TriggerAddEventMapInit(gt_MeleeInitialization);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Player 1 Camera test
+//--------------------------------------------------------------------------------------------------
+bool gt_Player1Cameratest_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    while (true) {
+        CameraPan(1, UnitGetPosition(gv_controlledUnits[1]), 0.06, -1, 0.0, false);
+        Wait(0.0, c_timeReal);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_Player1Cameratest_Init () {
+    gt_Player1Cameratest = TriggerCreate("gt_Player1Cameratest_Func");
+    TriggerAddEventMapInit(gt_Player1Cameratest);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: WASD Set Controlled Unit
+//--------------------------------------------------------------------------------------------------
+bool gt_WASDSetControlledUnit_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_WASDSetControlledUnit(1, UnitFromId(604180338));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_WASDSetControlledUnit_Init () {
+    gt_WASDSetControlledUnit = TriggerCreate("gt_WASDSetControlledUnit_Func");
+    TriggerAddEventMapInit(gt_WASDSetControlledUnit);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: WASD KeyDown Check
+//--------------------------------------------------------------------------------------------------
+bool gt_WASDKeyDownCheck_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_WASDKeyDownCheck(EventPlayer(), EventKeyPressed());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_WASDKeyDownCheck_Init () {
+    gt_WASDKeyDownCheck = TriggerCreate("gt_WASDKeyDownCheck_Func");
+    TriggerAddEventKeyPressed(gt_WASDKeyDownCheck, c_playerAny, c_keyNone, true, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: WASD KeyUp Check
+//--------------------------------------------------------------------------------------------------
+bool gt_WASDKeyUpCheck_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gf_WASDKeyUpCheck(EventPlayer(), EventKeyPressed());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_WASDKeyUpCheck_Init () {
+    gt_WASDKeyUpCheck = TriggerCreate("gt_WASDKeyUpCheck_Func");
+    TriggerAddEventKeyPressed(gt_WASDKeyUpCheck, c_playerAny, c_keyNone, false, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -1362,7 +1444,6 @@ bool gt_TownHallInteractPopUp_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void gt_TownHallInteractPopUp_Init () {
     gt_TownHallInteractPopUp = TriggerCreate("gt_TownHallInteractPopUp_Func");
-    TriggerAddEventUnitRegion(gt_TownHallInteractPopUp, UnitRefFromUnit(UnitFromId(604180338)), RegionFromId(3), true);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -1383,7 +1464,6 @@ bool gt_TownHallInteractRemovePopUp_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void gt_TownHallInteractRemovePopUp_Init () {
     gt_TownHallInteractRemovePopUp = TriggerCreate("gt_TownHallInteractRemovePopUp_Func");
-    TriggerAddEventUnitRegion(gt_TownHallInteractRemovePopUp, UnitRefFromUnit(UnitFromId(604180338)), RegionFromId(3), false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -3809,89 +3889,6 @@ void gt_Upgrade10_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: WASD Set Controlled Unit
-//--------------------------------------------------------------------------------------------------
-bool gt_WASDSetControlledUnit_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    gf_WASDSetControlledUnit(1, UnitFromId(604180338));
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_WASDSetControlledUnit_Init () {
-    gt_WASDSetControlledUnit = TriggerCreate("gt_WASDSetControlledUnit_Func");
-    TriggerAddEventMapInit(gt_WASDSetControlledUnit);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: WASD KeyDown Check
-//--------------------------------------------------------------------------------------------------
-bool gt_WASDKeyDownCheck_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    gf_WASDKeyDownCheck(EventPlayer(), EventKeyPressed());
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_WASDKeyDownCheck_Init () {
-    gt_WASDKeyDownCheck = TriggerCreate("gt_WASDKeyDownCheck_Func");
-    TriggerAddEventKeyPressed(gt_WASDKeyDownCheck, c_playerAny, c_keyNone, true, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: WASD KeyUp Check
-//--------------------------------------------------------------------------------------------------
-bool gt_WASDKeyUpCheck_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    gf_WASDKeyUpCheck(EventPlayer(), EventKeyPressed());
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_WASDKeyUpCheck_Init () {
-    gt_WASDKeyUpCheck = TriggerCreate("gt_WASDKeyUpCheck_Func");
-    TriggerAddEventKeyPressed(gt_WASDKeyUpCheck, c_playerAny, c_keyNone, false, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Player 1 Camera test
-//--------------------------------------------------------------------------------------------------
-bool gt_Player1Cameratest_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    while (true) {
-        CameraPan(1, UnitGetPosition(gv_controlledUnits[1]), 0.06, -1, 0.0, false);
-        Wait(0.0, c_timeReal);
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_Player1Cameratest_Init () {
-    gt_Player1Cameratest = TriggerCreate("gt_Player1Cameratest_Func");
-    TriggerAddEventMapInit(gt_Player1Cameratest);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: Bloodsplat Removal
 //--------------------------------------------------------------------------------------------------
 bool gt_BloodsplatRemoval_Func (bool testConds, bool runActions) {
@@ -3987,67 +3984,23 @@ void gt_ZombieRunnerB_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: CivillianToSCV
+// Trigger: GatlingTurretUpgrade
 //--------------------------------------------------------------------------------------------------
-bool gt_CivillianToSCV_Func (bool testConds, bool runActions) {
+bool gt_GatlingTurretUpgrade_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!((UnitGetOwner(EventUnit()) == 1))) {
-            return false;
-        }
-
-        if (!((UnitGroupHasUnit(UnitGroupFromId(2), EventUnit()) == true))) {
-            return false;
-        }
-    }
-
     // Actions
     if (!runActions) {
         return true;
     }
 
-    Wait(2.0, c_timeGame);
-    libNtve_gf_ReplaceUnit(EventUnit(), "SCV", libNtve_ge_ReplaceUnitOptions_NewUnitsDefault);
+    libNtve_gf_ReplaceUnit(UnitFromId(1124788479), "GatlingTurret", libNtve_ge_ReplaceUnitOptions_NewUnitssMax);
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_CivillianToSCV_Init () {
-    gt_CivillianToSCV = TriggerCreate("gt_CivillianToSCV_Func");
-    TriggerAddEventUnitRegion(gt_CivillianToSCV, null, RegionFromId(4), true);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CivillianToMedic
-//--------------------------------------------------------------------------------------------------
-bool gt_CivillianToMedic_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!((UnitGetOwner(EventUnit()) == 1))) {
-            return false;
-        }
-
-        if (!((UnitGroupHasUnit(UnitGroupFromId(2), EventUnit()) == true))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    Wait(2.0, c_timeGame);
-    libNtve_gf_ReplaceUnit(EventUnit(), "Medic", libNtve_ge_ReplaceUnitOptions_NewUnitsDefault);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_CivillianToMedic_Init () {
-    gt_CivillianToMedic = TriggerCreate("gt_CivillianToMedic_Func");
-    TriggerAddEventUnitRegion(gt_CivillianToMedic, null, RegionFromId(3), true);
+void gt_GatlingTurretUpgrade_Init () {
+    gt_GatlingTurretUpgrade = TriggerCreate("gt_GatlingTurretUpgrade_Func");
+    TriggerAddEventUnitAbility(gt_GatlingTurretUpgrade, UnitRefFromUnit(UnitFromId(2000468100)), AbilityCommand("GatlingTurretUpgrade", 0), c_unitAbilStageAll, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -4114,7 +4067,6 @@ bool gt_ZombieCorpse_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    RegionSetCenter(RegionFromId(1), PointFromId(391612022));
     libNtve_gf_CreateUnitsWithDefaultFacing(1, "InfestedCivilian", 0, 14, UnitGetPosition(EventUnit()));
     return true;
 }
@@ -4122,8 +4074,6 @@ bool gt_ZombieCorpse_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void gt_ZombieCorpse_Init () {
     gt_ZombieCorpse = TriggerCreate("gt_ZombieCorpse_Func");
-    TriggerAddEventUnitRegion(gt_ZombieCorpse, null, RegionFromId(1), true);
-    TriggerAddEventUnitRegion(gt_ZombieCorpse, null, RegionFromId(1), false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -4150,6 +4100,10 @@ void gt_CleanAnimation_Init () {
 //--------------------------------------------------------------------------------------------------
 void InitTriggers () {
     gt_MeleeInitialization_Init();
+    gt_Player1Cameratest_Init();
+    gt_WASDSetControlledUnit_Init();
+    gt_WASDKeyDownCheck_Init();
+    gt_WASDKeyUpCheck_Init();
     gt_StartTimedUpgradesinfirstarea_Init();
     gt_Hatch1a_Init();
     gt_Hatch2a_Init();
@@ -4210,16 +4164,11 @@ void InitTriggers () {
     gt_Upgrade8_Init();
     gt_Upgrade9_Init();
     gt_Upgrade10_Init();
-    gt_WASDSetControlledUnit_Init();
-    gt_WASDKeyDownCheck_Init();
-    gt_WASDKeyUpCheck_Init();
-    gt_Player1Cameratest_Init();
     gt_BloodsplatRemoval_Init();
     gt_CivillianToTroop_Init();
     gt_ZombieRunnerA_Init();
     gt_ZombieRunnerB_Init();
-    gt_CivillianToSCV_Init();
-    gt_CivillianToMedic_Init();
+    gt_GatlingTurretUpgrade_Init();
     gt_BloodsplatCreation_Init();
     gt_CorpseCreation_Init();
     gt_ZombieCorpse_Init();

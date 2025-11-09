@@ -1,33 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Regions>
-    <region id="1">
-        <name value="CorpseRegion"/>
-        <shape type="circle">
-            <center value="77.6811,48.7026"/>
-            <radius value="0.5842"/>
-        </shape>
-    </region>
-    <region id="2">
-        <name value="Barracks"/>
-        <shape type="circle">
-            <center value="66.4038,50.621"/>
-            <radius value="2.021"/>
-        </shape>
-    </region>
-    <region id="3">
-        <name value="Town Hall"/>
-        <shape type="circle">
-            <center value="61.7458,50.2004"/>
-            <radius value="2.1198"/>
-        </shape>
-    </region>
-    <region id="4">
-        <name value="Factory"/>
-        <shape type="circle">
-            <center value="59.9128,68.1811"/>
-            <radius value="2.29"/>
-        </shape>
-    </region>
     <region id="5">
         <name value="SpawnerA"/>
         <shape type="circle">
@@ -40,6 +12,13 @@
         <shape type="circle">
             <center value="66.5,84.5"/>
             <radius value="2.8283"/>
+        </shape>
+    </region>
+    <region id="2">
+        <name value="Barracks"/>
+        <shape type="circle">
+            <center value="66.4038,50.621"/>
+            <radius value="2.021"/>
         </shape>
     </region>
 </Regions>

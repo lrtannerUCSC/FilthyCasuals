@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CButton id="BuildAutoTurret"/>
+    <CButton id="CommanderPrestigeKerriganCreep">
+        <Name value="Button/Name/TrainCivilian"/>
+        <AlertName value="Button/Name/TrainCivilian"/>
+    </CButton>
+</Catalog>
