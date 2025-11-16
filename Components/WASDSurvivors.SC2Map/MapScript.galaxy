@@ -227,6 +227,7 @@ int gv_backtoTerranShip;
 fixed gv_cleaningRadius;
 fixed gv_cleaningBotRadiusUpgradeLevel;
 unitgroup gv_civUnitGroup;
+unitgroup gv_marineTrainingGroup;
 
 void InitGlobals () {
     int init_i;
@@ -430,6 +431,7 @@ void InitGlobals () {
     gv_cleaningRadius = ((gv_cleaningBotRadiusUpgradeLevel + 1.0) * 0.5);
     gv_cleaningBotRadiusUpgradeLevel = TechTreeUpgradeCount(1, "CleaningBotRadiusUpgrade", c_techCountCompleteOnly);
     gv_civUnitGroup = UnitGroupFromId(1);
+    gv_marineTrainingGroup = UnitGroupFromId(2);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -460,7 +462,7 @@ trigger gt_Hatch6a;
 trigger gt_Hatch8a;
 trigger gt_Hatch9a;
 trigger gt_Hatch10a;
-trigger gt_RemoveTrainedCivilian;
+trigger gt_TroopTrainingFilter;
 trigger gt_BarracksDialog;
 trigger gt_BarracksDialogButtons;
 trigger gt_BarracksInteractPopUp;
@@ -1254,17 +1256,13 @@ void gt_Hatch10a_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: RemoveTrainedCivilian
+// Trigger: TroopTrainingFilter
 //--------------------------------------------------------------------------------------------------
-bool gt_RemoveTrainedCivilian_Func (bool testConds, bool runActions) {
+bool gt_TroopTrainingFilter_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
         if (!((UnitGetOwner(EventUnit()) == 1))) {
-            return false;
-        }
-
-        if (!((UnitGroupHasUnit(UnitGroupFromId(1), EventUnit()) == true))) {
             return false;
         }
     }
@@ -1274,15 +1272,22 @@ bool gt_RemoveTrainedCivilian_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    Wait(14.0, c_timeGame);
-    UnitRemove(EventUnit());
+    if ((UnitGroupHasUnit(gv_marineTrainingGroup, EventUnit()) == true)) {
+        UnitPutInTransport(EventUnit(), UnitFromId(1146560453));
+        UnitIssueOrder(UnitFromId(1146560453), Order(AbilityCommand("BarracksTrain", 0)), c_orderQueueAddToEnd);
+        TriggerDebugOutput(1, StringExternal("Param/Value/ABB6D938"), true);
+        Wait(24.0, c_timeGame);
+        UnitRemove(EventUnit());
+        TriggerDebugOutput(1, StringExternal("Param/Value/801D3673"), true);
+    }
+
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_RemoveTrainedCivilian_Init () {
-    gt_RemoveTrainedCivilian = TriggerCreate("gt_RemoveTrainedCivilian_Func");
-    TriggerAddEventUnitRegion(gt_RemoveTrainedCivilian, null, RegionFromId(2), true);
+void gt_TroopTrainingFilter_Init () {
+    gt_TroopTrainingFilter = TriggerCreate("gt_TroopTrainingFilter_Func");
+    TriggerAddEventUnitRegion(gt_TroopTrainingFilter, null, RegionFromId(2), true);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -1320,7 +1325,12 @@ void gt_BarracksDialog_Init () {
 // Trigger: Barracks Dialog Buttons
 //--------------------------------------------------------------------------------------------------
 bool gt_BarracksDialogButtons_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_civ;
+
     // Automatic Variable Declarations
+    // Variable Initialization
+
     // Actions
     if (!runActions) {
         return true;
@@ -1328,20 +1338,19 @@ bool gt_BarracksDialogButtons_Func (bool testConds, bool runActions) {
 
     if ((EventDialogControl() == gv_barracksTroop1)) {
         if ((UnitQueueItemCount(UnitFromId(1146560453), 4) < 1)) {
-            if ((UnitGroupCount(UnitGroupFromId(1), c_unitCountAll) > 1)) {
-                TriggerDebugOutput(1, StringExternal("Param/Value/ABCD0F0E"), true);
-                UnitSetPosition(UnitGroupUnit(UnitGroupFromId(1), 1), PointFromId(639841058), true);
-                UnitPutInTransport(UnitGroupUnit(UnitGroupFromId(1), 1), UnitFromId(1146560453));
-                UnitGroupRemove(UnitGroupFromId(1), UnitGroupUnit(UnitGroupFromId(1), 1));
-                UnitRemove(UnitGroupUnit(UnitGroupFromId(1), 1));
-                UnitIssueOrder(UnitFromId(1146560453), Order(AbilityCommand("BarracksTrain", 0)), c_orderQueueAddToEnd);
+            if ((UnitGroupCount(gv_civUnitGroup, c_unitCountAll) >= 1)) {
+                TriggerDebugOutput(1, StringExternal("Param/Value/ECB7C7D0"), true);
+                lv_civ = UnitGroupRandomUnit(gv_civUnitGroup, c_unitCountAlive);
+                UnitGroupRemove(gv_civUnitGroup, lv_civ);
+                UnitGroupAdd(gv_marineTrainingGroup, lv_civ);
+                UnitIssueOrder(lv_civ, OrderTargetingUnit(AbilityCommand("move", 0), UnitFromId(1146560453)), c_orderQueueReplace);
             }
             else {
-                TriggerDebugOutput(1, StringExternal("Param/Value/8632D94F"), true);
+                TriggerDebugOutput(1, StringExternal("Param/Value/309C0941"), true);
             }
         }
         else {
-            TriggerDebugOutput(1, StringExternal("Param/Value/319CDE6E"), true);
+            TriggerDebugOutput(1, StringExternal("Param/Value/E012187D"), true);
         }
     }
 
@@ -4032,6 +4041,7 @@ void gt_GatlingTurretUpgrade_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_CivSpawnerGrouper_Func (bool testConds, bool runActions) {
     // Variable Declarations
+    unit lv_civ;
     int lv_numCivs;
 
     // Automatic Variable Declarations
@@ -4042,9 +4052,9 @@ bool gt_CivSpawnerGrouper_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    TriggerDebugOutput(1, StringExternal("Param/Value/64D2553B"), true);
-    UnitGroupAdd(gv_civUnitGroup, EventUnitCreatedUnit());
-    lv_numCivs = UnitGroupCount(UnitGroupFromId(1), c_unitCountAlive);
+    lv_civ = EventUnitCreatedUnit();
+    UnitGroupAdd(gv_civUnitGroup, lv_civ);
+    lv_numCivs = UnitGroupCount(gv_civUnitGroup, c_unitCountAll);
     TriggerDebugOutput(1, IntToText(lv_numCivs), true);
     return true;
 }
@@ -4167,7 +4177,7 @@ void InitTriggers () {
     gt_Hatch8a_Init();
     gt_Hatch9a_Init();
     gt_Hatch10a_Init();
-    gt_RemoveTrainedCivilian_Init();
+    gt_TroopTrainingFilter_Init();
     gt_BarracksDialog_Init();
     gt_BarracksDialogButtons_Init();
     gt_BarracksInteractPopUp_Init();

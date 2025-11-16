@@ -17,7 +17,7 @@
     <region id="2">
         <name value="Barracks"/>
         <shape type="circle">
-            <center value="53.181,63.497"/>
+            <center value="53.4743,63.7756"/>
             <radius value="2.5"/>
         </shape>
     </region>
@@ -26,13 +26,6 @@
         <shape type="circle">
             <center value="62.3037,64.8867"/>
             <radius value="2.944"/>
-        </shape>
-    </region>
-    <region id="3">
-        <name value="CivSpawner"/>
-        <shape type="circle">
-            <center value="68.5861,68.9301"/>
-            <radius value="2.5"/>
         </shape>
     </region>
 </Regions>

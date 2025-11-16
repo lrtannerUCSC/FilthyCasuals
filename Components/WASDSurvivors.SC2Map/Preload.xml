@@ -9,7 +9,7 @@
 <Unit id="SupplyDepotLowered"/>
 <Unit id="Hive"/>
 <Unit id="InfestedCivilian"/>
-<Unit id="Colonist" Variations="0"/>
+<Unit id="Civilian" Variations="1"/>
 <Unit id="CleaningBot"/>
 <Unit id="CustomBarracks"/>
 <Unit id="InfestedTerranSpawner"/>
