@@ -226,6 +226,7 @@
     <CUnit id="Marine">
         <CostResource index="Minerals" value="0"/>
     </CUnit>
+    <CUnit id="Bloodsplat" parent="Shape"/>
     <CUnit id="TownHall">
         <DeathRevealRadius value="3"/>
         <ReviveType value="CommandCenter"/>

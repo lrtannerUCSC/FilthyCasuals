@@ -49,6 +49,8 @@ int gv_h6Level;
 int gv_h8Level;
 int gv_h9Level;
 int gv_h10Level;
+unitgroup gv_civUnitGroup;
+unitgroup gv_marineTrainingGroup;
 int gv_barracksDialog;
 int gv_barracksTroop1;
 int gv_barracksTroop2;
@@ -226,8 +228,6 @@ int gv_shipWeaponsButton5;
 int gv_backtoTerranShip;
 fixed gv_cleaningRadius;
 fixed gv_cleaningBotRadiusUpgradeLevel;
-unitgroup gv_civUnitGroup;
-unitgroup gv_marineTrainingGroup;
 
 void InitGlobals () {
     int init_i;
@@ -253,6 +253,8 @@ void InitGlobals () {
     gv_h8Level = 1;
     gv_h9Level = 1;
     gv_h10Level = 1;
+    gv_civUnitGroup = UnitGroupFromId(1);
+    gv_marineTrainingGroup = UnitGroupFromId(2);
     gv_barracksDialog = c_invalidDialogId;
     gv_barracksTroop1 = c_invalidDialogControlId;
     gv_barracksTroop2 = c_invalidDialogControlId;
@@ -430,8 +432,6 @@ void InitGlobals () {
     gv_backtoTerranShip = c_invalidDialogControlId;
     gv_cleaningRadius = ((gv_cleaningBotRadiusUpgradeLevel + 1.0) * 0.5);
     gv_cleaningBotRadiusUpgradeLevel = TechTreeUpgradeCount(1, "CleaningBotRadiusUpgrade", c_techCountCompleteOnly);
-    gv_civUnitGroup = UnitGroupFromId(1);
-    gv_marineTrainingGroup = UnitGroupFromId(2);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -462,6 +462,7 @@ trigger gt_Hatch6a;
 trigger gt_Hatch8a;
 trigger gt_Hatch9a;
 trigger gt_Hatch10a;
+trigger gt_CivSpawnerGrouper;
 trigger gt_TroopTrainingFilter;
 trigger gt_BarracksDialog;
 trigger gt_BarracksDialogButtons;
@@ -473,6 +474,7 @@ trigger gt_TownHallButtons;
 trigger gt_TownHallInteractPopUp;
 trigger gt_TownHallInteractRemovePopUp;
 trigger gt_TownHallDialogInitialization;
+trigger gt_GatlingTurretUpgrade;
 trigger gt_MinimizedDialog;
 trigger gt_MaximizeUpgrades;
 trigger gt_MainUpgradesDialog;
@@ -512,15 +514,10 @@ trigger gt_Upgrade7;
 trigger gt_Upgrade8;
 trigger gt_Upgrade9;
 trigger gt_Upgrade10;
-trigger gt_BloodsplatRemoval;
 trigger gt_ZombieRunnerA;
 trigger gt_ZombieRunnerB;
-trigger gt_GatlingTurretUpgrade;
-trigger gt_CivSpawnerGrouper;
 trigger gt_BloodsplatCreation;
-trigger gt_CorpseCreation;
-trigger gt_ZombieCorpse;
-trigger gt_CleanAnimation;
+trigger gt_BloodToMinerals;
 
 //--------------------------------------------------------------------------------------------------
 // Custom AI Functions
@@ -1256,6 +1253,34 @@ void gt_Hatch10a_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: CivSpawnerGrouper
+//--------------------------------------------------------------------------------------------------
+bool gt_CivSpawnerGrouper_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_civ;
+    int lv_numCivs;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_civ = EventUnitCreatedUnit();
+    UnitGroupAdd(gv_civUnitGroup, lv_civ);
+    lv_numCivs = UnitGroupCount(gv_civUnitGroup, c_unitCountAll);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_CivSpawnerGrouper_Init () {
+    gt_CivSpawnerGrouper = TriggerCreate("gt_CivSpawnerGrouper_Func");
+    TriggerAddEventUnitCreated(gt_CivSpawnerGrouper, UnitRefFromUnit(UnitFromId(2027491687)), null, null);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: TroopTrainingFilter
 //--------------------------------------------------------------------------------------------------
 bool gt_TroopTrainingFilter_Func (bool testConds, bool runActions) {
@@ -1553,6 +1578,26 @@ bool gt_TownHallDialogInitialization_Func (bool testConds, bool runActions) {
 void gt_TownHallDialogInitialization_Init () {
     gt_TownHallDialogInitialization = TriggerCreate("gt_TownHallDialogInitialization_Func");
     TriggerAddEventMapInit(gt_TownHallDialogInitialization);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: GatlingTurretUpgrade
+//--------------------------------------------------------------------------------------------------
+bool gt_GatlingTurretUpgrade_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_ReplaceUnit(UnitFromId(1124788479), "GatlingTurret", libNtve_ge_ReplaceUnitOptions_NewUnitssMax);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_GatlingTurretUpgrade_Init () {
+    gt_GatlingTurretUpgrade = TriggerCreate("gt_GatlingTurretUpgrade_Func");
+    TriggerAddEventUnitAbility(gt_GatlingTurretUpgrade, UnitRefFromUnit(UnitFromId(2000468100)), AbilityCommand("GatlingTurretUpgrade", 0), c_unitAbilStageAll, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -3954,27 +3999,6 @@ void gt_Upgrade10_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: Bloodsplat Removal
-//--------------------------------------------------------------------------------------------------
-bool gt_BloodsplatRemoval_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    libNtve_gf_ShowHideDoodadsInRegion(false, RegionCircle(UnitGetPosition(gv_controlledUnits[1]), gv_cleaningRadius), null);
-    libNtve_gf_RemoveDoodadsinRegion(RegionCircle(UnitGetPosition(gv_controlledUnits[1]), gv_cleaningRadius), null);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_BloodsplatRemoval_Init () {
-    gt_BloodsplatRemoval = TriggerCreate("gt_BloodsplatRemoval_Func");
-    TriggerAddEventUnitOrder(gt_BloodsplatRemoval, UnitRefFromVariable("gv_controlledUnits[1]"), AbilityCommand("move", 0));
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: ZombieRunnerA
 //--------------------------------------------------------------------------------------------------
 bool gt_ZombieRunnerA_Func (bool testConds, bool runActions) {
@@ -4017,55 +4041,6 @@ void gt_ZombieRunnerB_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: GatlingTurretUpgrade
-//--------------------------------------------------------------------------------------------------
-bool gt_GatlingTurretUpgrade_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    libNtve_gf_ReplaceUnit(UnitFromId(1124788479), "GatlingTurret", libNtve_ge_ReplaceUnitOptions_NewUnitssMax);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_GatlingTurretUpgrade_Init () {
-    gt_GatlingTurretUpgrade = TriggerCreate("gt_GatlingTurretUpgrade_Func");
-    TriggerAddEventUnitAbility(gt_GatlingTurretUpgrade, UnitRefFromUnit(UnitFromId(2000468100)), AbilityCommand("GatlingTurretUpgrade", 0), c_unitAbilStageAll, false);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CivSpawnerGrouper
-//--------------------------------------------------------------------------------------------------
-bool gt_CivSpawnerGrouper_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    unit lv_civ;
-    int lv_numCivs;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    lv_civ = EventUnitCreatedUnit();
-    UnitGroupAdd(gv_civUnitGroup, lv_civ);
-    lv_numCivs = UnitGroupCount(gv_civUnitGroup, c_unitCountAll);
-    TriggerDebugOutput(1, IntToText(lv_numCivs), true);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_CivSpawnerGrouper_Init () {
-    gt_CivSpawnerGrouper = TriggerCreate("gt_CivSpawnerGrouper_Func");
-    TriggerAddEventUnitCreated(gt_CivSpawnerGrouper, UnitRefFromUnit(UnitFromId(2027491687)), null, null);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: Bloodsplat Creation
 //--------------------------------------------------------------------------------------------------
 bool gt_BloodsplatCreation_Func (bool testConds, bool runActions) {
@@ -4075,7 +4050,7 @@ bool gt_BloodsplatCreation_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    libNtve_gf_CreateActorAtPoint("BloodSplats", UnitGetPosition(EventUnit()));
+    libNtve_gf_ReplaceUnit(EventUnit(), "Bloodsplat", libNtve_ge_ReplaceUnitOptions_NewUnitssMax);
     return true;
 }
 
@@ -4086,13 +4061,13 @@ void gt_BloodsplatCreation_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: Corpse Creation
+// Trigger: BloodToMinerals
 //--------------------------------------------------------------------------------------------------
-bool gt_CorpseCreation_Func (bool testConds, bool runActions) {
+bool gt_BloodToMinerals_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     // Conditions
     if (testConds) {
-        if (!((UnitGetOwner(EventUnit()) == 1))) {
+        if (!((UnitGetType(EventUnit()) == "Bloodsplat"))) {
             return false;
         }
     }
@@ -4102,59 +4077,16 @@ bool gt_CorpseCreation_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    libNtve_gf_CreateUnitsWithDefaultFacing(1, "InfestedCivilian", 0, 14, UnitGetPosition(EventUnit()));
+    PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperAdd, 10);
+    UnitRemove(EventUnit());
+    TriggerDebugOutput(1, StringExternal("Param/Value/CD1C1EC2"), true);
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_CorpseCreation_Init () {
-    gt_CorpseCreation = TriggerCreate("gt_CorpseCreation_Func");
-    TriggerAddEventUnitDied(gt_CorpseCreation, null);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Zombie Corpse
-//--------------------------------------------------------------------------------------------------
-bool gt_ZombieCorpse_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!((UnitGetOwner(EventUnit()) == 14))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    libNtve_gf_CreateUnitsWithDefaultFacing(1, "InfestedCivilian", 0, 14, UnitGetPosition(EventUnit()));
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_ZombieCorpse_Init () {
-    gt_ZombieCorpse = TriggerCreate("gt_ZombieCorpse_Func");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Clean Animation
-//--------------------------------------------------------------------------------------------------
-bool gt_CleanAnimation_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    libNtve_gf_PauseUnit(gv_controlledUnits[1], true);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_CleanAnimation_Init () {
-    gt_CleanAnimation = TriggerCreate("gt_CleanAnimation_Func");
+void gt_BloodToMinerals_Init () {
+    gt_BloodToMinerals = TriggerCreate("gt_BloodToMinerals_Func");
+    TriggerAddEventUnitRange(gt_BloodToMinerals, null, UnitFromId(604180338), 2.0, true);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -4177,6 +4109,7 @@ void InitTriggers () {
     gt_Hatch8a_Init();
     gt_Hatch9a_Init();
     gt_Hatch10a_Init();
+    gt_CivSpawnerGrouper_Init();
     gt_TroopTrainingFilter_Init();
     gt_BarracksDialog_Init();
     gt_BarracksDialogButtons_Init();
@@ -4188,6 +4121,7 @@ void InitTriggers () {
     gt_TownHallInteractPopUp_Init();
     gt_TownHallInteractRemovePopUp_Init();
     gt_TownHallDialogInitialization_Init();
+    gt_GatlingTurretUpgrade_Init();
     gt_MinimizedDialog_Init();
     gt_MaximizeUpgrades_Init();
     gt_MainUpgradesDialog_Init();
@@ -4227,15 +4161,10 @@ void InitTriggers () {
     gt_Upgrade8_Init();
     gt_Upgrade9_Init();
     gt_Upgrade10_Init();
-    gt_BloodsplatRemoval_Init();
     gt_ZombieRunnerA_Init();
     gt_ZombieRunnerB_Init();
-    gt_GatlingTurretUpgrade_Init();
-    gt_CivSpawnerGrouper_Init();
     gt_BloodsplatCreation_Init();
-    gt_CorpseCreation_Init();
-    gt_ZombieCorpse_Init();
-    gt_CleanAnimation_Init();
+    gt_BloodToMinerals_Init();
 }
 
 //--------------------------------------------------------------------------------------------------

@@ -142,6 +142,13 @@
             <Image value="Assets\Textures\Wireframe-Protoss-PhotonCannon-Shield03.dds"/>
         </WireframeShield>
     </CActorUnit>
+    <CActorUnit id="BloodsplatActor" parent="PolygonBase" unitName="Bloodsplat">
+        <Model value="BloodSplats"/>
+        <BuildModel value="BloodSplats"/>
+        <DeathArray index="Normal" ModelLink="ShapeBowl"/>
+        <PlacementModel value="BloodSplats"/>
+        <HighlightTooltip value="Unit/Name/BloodsplatActor"/>
+    </CActorUnit>
     <CActorStateMonitor id="TerranFlamesMediumBuilding2" parent="TerranFlames">
         <On Terms="UnitCreation.SupplyDepot" Send="Create"/>
         <On Terms="UnitCreation.SupplyDepotLowered" Send="Create"/>

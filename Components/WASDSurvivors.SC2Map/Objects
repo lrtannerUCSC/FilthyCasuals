@@ -1,74 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PlacedObjects Version="27">
-    <ObjectDoodad Id="2074813535" Variation="5" Position="77.0634,53.784,7.7624" Rotation="2.0625" Scale="1.1364,1.1364,1.1364" Type="BloodSplats">
-        <Flag Index="HeightOffset" Value="1"/>
-        <Flag Index="HeightAbsolute" Value="1"/>
-    </ObjectDoodad>
-    <ObjectDoodad Id="943314927" Position="86.5634,51.284,7.737" Rotation="1.5122" Scale="1.033,1.033,1.033" Type="BloodSplats">
-        <Flag Index="HeightOffset" Value="1"/>
-        <Flag Index="HeightAbsolute" Value="1"/>
-    </ObjectDoodad>
-    <ObjectDoodad Id="642392759" Variation="2" Position="78.5634,45.784,7.737" Rotation="0.434" Scale="1.1032,1.1032,1.1032" Type="BloodSplats">
-        <Flag Index="HeightOffset" Value="1"/>
-        <Flag Index="HeightAbsolute" Value="1"/>
-    </ObjectDoodad>
-    <ObjectDoodad Id="1822625231" Variation="2" Position="83.5634,51.284,7.737" Rotation="0.1582" Scale="0.882,0.882,0.882" Type="BloodSplats">
-        <Flag Index="HeightOffset" Value="1"/>
-        <Flag Index="HeightAbsolute" Value="1"/>
-    </ObjectDoodad>
-    <ObjectDoodad Id="1583158578" Variation="3" Position="79.0634,49.784,7.737" Rotation="3.041" Scale="0.8251,0.8251,0.8251" Type="BloodSplats">
-        <Flag Index="HeightOffset" Value="1"/>
-        <Flag Index="HeightAbsolute" Value="1"/>
-    </ObjectDoodad>
-    <ObjectDoodad Id="1865748792" Variation="5" Position="80.5634,53.284,7.737" Rotation="5.7983" Scale="1.0727,1.0727,1.0727" Type="BloodSplats">
-        <Flag Index="HeightOffset" Value="1"/>
-        <Flag Index="HeightAbsolute" Value="1"/>
-    </ObjectDoodad>
-    <ObjectDoodad Id="1857519076" Position="80.0634,55.284,7.737" Rotation="2.9345" Scale="0.9592,0.9592,0.9592" Type="BloodSplats">
-        <Flag Index="HeightOffset" Value="1"/>
-        <Flag Index="HeightAbsolute" Value="1"/>
-    </ObjectDoodad>
-    <ObjectDoodad Id="1795822130" Variation="2" Position="88.0634,47.784,7.7368" Rotation="5.3366" Scale="0.9348,0.9348,0.9348" Type="BloodSplats">
-        <Flag Index="HeightOffset" Value="1"/>
-        <Flag Index="HeightAbsolute" Value="1"/>
-    </ObjectDoodad>
-    <ObjectDoodad Id="2125868295" Variation="2" Position="83.0634,55.284,7.737" Rotation="5.2268" Scale="0.921,0.921,0.921" Type="BloodSplats">
-        <Flag Index="HeightOffset" Value="1"/>
-        <Flag Index="HeightAbsolute" Value="1"/>
-    </ObjectDoodad>
-    <ObjectDoodad Id="463618118" Variation="2" Position="84.5634,45.784,7.7368" Rotation="4.5727" Scale="1.0876,1.0876,1.0876" Type="BloodSplats">
-        <Flag Index="HeightOffset" Value="1"/>
-        <Flag Index="HeightAbsolute" Value="1"/>
-    </ObjectDoodad>
-    <ObjectDoodad Id="1165675709" Variation="2" Position="59.8908,67.974,7.9997" Scale="1,1,1" Type="OilPuddle">
-        <Flag Index="HeightAbsolute" Value="1"/>
-    </ObjectDoodad>
-    <ObjectDoodad Id="1972619905" Variation="1" Position="84.5634,53.784,7.737" Rotation="0.104" Scale="1.1694,1.1694,1.1694" Type="BloodSplats">
-        <Flag Index="HeightOffset" Value="1"/>
-        <Flag Index="HeightAbsolute" Value="1"/>
-    </ObjectDoodad>
     <ObjectPoint Id="1498365247" Position="57.5,84,0" Scale="1,1,1" Type="Normal" Name="AmovePoint" Color="0,0,0,0"/>
     <ObjectUnit Id="1167295670" Position="71,68,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
-    <ObjectUnit Id="604180338" Position="62.434,59.4926,0" Rotation="3.098" Scale="1,1,1" UnitType="CleaningBot" Player="1"/>
-    <ObjectUnit Id="1077203321" Position="45.5,103.5,0" Scale="1,1,1" UnitType="Hive" Player="15"/>
-    <ObjectUnit Id="1800607729" Position="69,71,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
+    <ObjectUnit Id="1805907476" Variation="1" Position="45.566,67.6176,0" Rotation="2.4042" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="331671007" Position="71,72,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
     <ObjectUnit Id="869389186" Position="73,69,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
+    <ObjectUnit Id="2074915891" Variation="3" Position="45.6057,69.2221,0" Rotation="5.1115" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="1369964722" Variation="1" Position="51.5451,63.1503,0" Rotation="5.2751" Scale="1,1,1" UnitType="Civilian" Player="1">
         <Texture TexSlot="main" TexProps="male,helmet,01" TexLink=""/>
     </ObjectUnit>
-    <ObjectUnit Id="2128551097" Position="71,70,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
+    <ObjectUnit Id="108459423" Variation="3" Position="44.8508,65.391,0" Rotation="6.1367" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="886696031" Position="47.5,84.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="2"/>
     <ObjectUnit Id="1124788479" Position="58,59,0" Rotation="2.7492" Scale="1,1,1" UnitType="AutoTurret" Player="1"/>
-    <ObjectUnit Id="2000468100" Position="62.5,64.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="TownHall" Player="1"/>
     <ObjectUnit Id="1738549460" Position="67,71,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
-    <ObjectUnit Id="2027491687" Variation="4" Position="68.5,68.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CivSpawner" Player="1"/>
     <ObjectUnit Id="757147147" Position="58.5,104.5,0" Scale="1,1,1" UnitType="Hive" Player="2"/>
+    <ObjectUnit Id="1101346206" Position="66.5,84.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="1"/>
+    <ObjectUnit Id="1004822785" Variation="4" Position="48.2038,68.6823,0" Rotation="0.208" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
+    <ObjectUnit Id="604180338" Position="62.434,59.4926,0" Rotation="3.098" Scale="1,1,1" UnitType="CleaningBot" Player="1"/>
+    <ObjectUnit Id="1077203321" Position="45.5,103.5,0" Scale="1,1,1" UnitType="Hive" Player="15"/>
+    <ObjectUnit Id="1800607729" Position="69,71,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
+    <ObjectUnit Id="1061943518" Variation="3" Position="47.4926,66.5605,0" Rotation="6.095" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
+    <ObjectUnit Id="2128551097" Position="71,70,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
+    <ObjectUnit Id="2000468100" Position="62.5,64.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="TownHall" Player="1"/>
+    <ObjectUnit Id="2027491687" Variation="4" Position="68.5,68.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CivSpawner" Player="1"/>
     <ObjectUnit Id="687000942" Variation="1" Position="59.8745,59.6962,0" Rotation="3.1367" Scale="1,1,1" UnitType="Civilian" Player="1">
         <Texture TexSlot="main" TexProps="male,helmet,01" TexLink=""/>
     </ObjectUnit>
-    <ObjectUnit Id="1101346206" Position="66.5,84.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="1"/>
     <ObjectUnit Id="338286200" Position="51.5,104.5,0" Scale="1,1,1" UnitType="Hive" Player="1"/>
+    <ObjectUnit Id="1545419560" Position="46.8901,64.109,0" Rotation="5.0712" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="1146560453" Position="53.5,63.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CustomBarracks" Player="1"/>
     <Group Type="ObjectUnit" Name="Civilians
 " Id="1">

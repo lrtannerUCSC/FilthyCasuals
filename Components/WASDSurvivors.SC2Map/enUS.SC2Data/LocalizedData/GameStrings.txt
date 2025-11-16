@@ -289,6 +289,7 @@ Param/Value/C9803897=<s val="ArmoryDescriptionBlue">View Health Upgrades</s>
 Param/Value/CA539EF1=Cost: 1000 Minerals
 Param/Value/CABD562B=Cost: 200 Minerals
 Param/Value/CBE5FC33=Armor Upgrade Level 10
+Param/Value/CD1C1EC2=+10 minerals
 Param/Value/CD4A7C08=Minimize
 Param/Value/CE3D230F=Cost: 500 Minerals, 1 Vespene Gas
 Param/Value/CFBC83F4=_
@@ -297,7 +298,6 @@ Param/Value/D2721C91=Cost: 100 Minerals
 Param/Value/D2801D63=Weapon Upgrade Level 2
 Param/Value/D3872980=Ship Upgrades
 Param/Value/D5DDEC3B=Seeker Missile (Raven)
-Param/Value/D5F8EF0F=new civ added via region
 Param/Value/D9EE05D6=Cost: 2500 Minerals
 Param/Value/DA117219=Go Back
 Param/Value/DB0BAC03=<s val="ArmoryDescription">Health</s>
@@ -344,6 +344,7 @@ Param/Value/FD9956DE=Armor Upgrade Level 5
 Param/Value/FDFCFD97=Minimize
 Param/Value/FE198804=Cost: 1250 Minerals
 Param/Value/FFE5CB15=Weapons Upgrade Level 5
+Unit/Name/Bloodsplat=Bloodsplat
 Unit/Name/CivSpawner=Civ Spawner
 Unit/Name/CustomBarracks=Custom Barracks
 Unit/Name/GatlingTurret=Gatling Turret

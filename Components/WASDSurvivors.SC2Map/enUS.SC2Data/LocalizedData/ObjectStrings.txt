@@ -3,6 +3,7 @@ Abil/EditorPrefix/GatlingTurretUpgrade=Turret -
 Abil/EditorPrefix/TrainCivilians=Civilian -
 Actor/EditorPrefix/InfestedTerranSpawnerActor=Zombie -
 Actor/Name/BarracksSplat2=Barracks Splat
+Actor/Name/BloodsplatActor=Bloodsplat Actor
 Actor/Name/CivSpawnerActor=CivSpawnerActor
 Actor/Name/CustomBarracksActor=Custom Barracks Actor
 Actor/Name/FireSuppressionBots2=Fire Suppression Bots
