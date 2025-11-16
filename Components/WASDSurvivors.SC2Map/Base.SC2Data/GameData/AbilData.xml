@@ -23,7 +23,7 @@
     </CAbilTrain>
     <CAbilTrain id="TrainCivilians">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
-        <InfoArray index="Train1" Time="2">
+        <InfoArray index="Train1" Time="5">
             <Button DefaultButtonFace="CommanderPrestigeKerriganCreep"/>
             <Unit value="Civilian"/>
         </InfoArray>
