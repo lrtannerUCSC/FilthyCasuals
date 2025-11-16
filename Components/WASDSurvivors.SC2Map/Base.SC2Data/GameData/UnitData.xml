@@ -295,6 +295,9 @@
         <CardLayouts index="0">
             <LayoutButtons index="4" removed="1"/>
         </CardLayouts>
+        <EnergyMax value="2"/>
+        <AttackTargetPriority value="0"/>
+        <Radius value="0.5"/>
     </CUnit>
     <CUnit id="EngineeringBay">
         <AbilArray index="2" Link="CleaningBotUpgrades"/>

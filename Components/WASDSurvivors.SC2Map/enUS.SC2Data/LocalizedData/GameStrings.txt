@@ -222,6 +222,7 @@ Param/Value/939AE400=Armor Upgrade Level 5
 Param/Value/93DA9951=Gravitic Boosters/Drive
 Param/Value/95201071=Back
 Param/Value/9520A7F2=Cost: 2500 Minerals
+Param/Value/98EBF589=+10 minerals
 Param/Value/9969ED0A=Cost: 1000 Minerals
 Param/Value/9C24ED04=Cost: 1000 Minerals
 Param/Value/9C529FCB=Weapon Upgrade Level 2
@@ -289,7 +290,6 @@ Param/Value/C9803897=<s val="ArmoryDescriptionBlue">View Health Upgrades</s>
 Param/Value/CA539EF1=Cost: 1000 Minerals
 Param/Value/CABD562B=Cost: 200 Minerals
 Param/Value/CBE5FC33=Armor Upgrade Level 10
-Param/Value/CD1C1EC2=+10 minerals
 Param/Value/CD4A7C08=Minimize
 Param/Value/CE3D230F=Cost: 500 Minerals, 1 Vespene Gas
 Param/Value/CFBC83F4=_
