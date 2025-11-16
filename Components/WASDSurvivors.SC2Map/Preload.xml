@@ -11,15 +11,10 @@
 <Unit id="SupplyDepotLowered"/>
 <Unit id="Hive"/>
 <Unit id="InfestedCivilian"/>
-<Unit id="CargoTruckUnitFlatbed"/>
-<Unit id="CargoTruckUnitTrailer"/>
-<Unit id="CargoTruckUnitBarrels"/>
-<Unit id="Civilian" Variations="2"/>
 <Unit id="Colonist" Variations="0"/>
-<Unit id="CivilianFemale" Variations="2"/>
-<Unit id="ColonistFemale" Variations="0"/>
 <Unit id="CleaningBot"/>
+<Unit id="InfestedTerranSpawner"/>
 <Unit id="TownHall"/>
 <Unit id="CivSpawner" Variations="4"/>
-<Unit id="InfestedTerranSpawner"/>
+<Unit id="CustomBarracks"/>
 </Preload>

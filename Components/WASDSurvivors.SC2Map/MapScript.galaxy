@@ -458,6 +458,7 @@ trigger gt_Hatch6a;
 trigger gt_Hatch8a;
 trigger gt_Hatch9a;
 trigger gt_Hatch10a;
+trigger gt_RemoveTrainedCivilian;
 trigger gt_BarracksDialog;
 trigger gt_BarracksDialogButtons;
 trigger gt_BarracksInteractPopUp;
@@ -508,10 +509,11 @@ trigger gt_Upgrade8;
 trigger gt_Upgrade9;
 trigger gt_Upgrade10;
 trigger gt_BloodsplatRemoval;
-trigger gt_CivillianToTroop;
 trigger gt_ZombieRunnerA;
 trigger gt_ZombieRunnerB;
 trigger gt_GatlingTurretUpgrade;
+trigger gt_CivSpawnerGrouper;
+trigger gt_CivSpawnerGrouper2;
 trigger gt_BloodsplatCreation;
 trigger gt_CorpseCreation;
 trigger gt_ZombieCorpse;
@@ -1251,6 +1253,38 @@ void gt_Hatch10a_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: RemoveTrainedCivilian
+//--------------------------------------------------------------------------------------------------
+bool gt_RemoveTrainedCivilian_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetOwner(EventUnit()) == 1))) {
+            return false;
+        }
+
+        if (!((UnitGroupHasUnit(UnitGroupFromId(1), EventUnit()) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    Wait(14.0, c_timeGame);
+    UnitRemove(EventUnit());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_RemoveTrainedCivilian_Init () {
+    gt_RemoveTrainedCivilian = TriggerCreate("gt_RemoveTrainedCivilian_Func");
+    TriggerAddEventUnitRegion(gt_RemoveTrainedCivilian, null, RegionFromId(2), true);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Barracks Dialog
 //--------------------------------------------------------------------------------------------------
 bool gt_BarracksDialog_Func (bool testConds, bool runActions) {
@@ -1292,7 +1326,20 @@ bool gt_BarracksDialogButtons_Func (bool testConds, bool runActions) {
     }
 
     if ((EventDialogControl() == gv_barracksTroop1)) {
-        UnitSetPosition(UnitGroupRandomUnit(UnitGroupFromId(2), c_unitCountAlive), PointFromId(639841058), true);
+        if ((UnitGroupCount(UnitGroupFromId(2), c_unitCountAll) < 1)) {
+            if ((UnitGroupCount(UnitGroupFromId(1), c_unitCountAll) > 3)) {
+                TriggerDebugOutput(1, StringExternal("Param/Value/ABCD0F0E"), true);
+                UnitSetPosition(UnitGroupUnit(UnitGroupFromId(1), 1), PointFromId(639841058), true);
+                UnitGroupAdd(UnitGroupFromId(2), UnitGroupUnit(UnitGroupFromId(1), 1));
+                UnitPutInTransport(UnitGroupUnit(UnitGroupFromId(1), 1), UnitFromId(1146560453));
+                UnitGroupRemove(UnitGroupFromId(1), UnitGroupUnit(UnitGroupFromId(1), 1));
+                UnitIssueOrder(UnitFromId(1146560453), Order(AbilityCommand("BarracksTrain", 0)), c_orderQueueAddToEnd);
+            }
+
+        }
+        else {
+            TriggerDebugOutput(1, StringExternal("Param/Value/319CDE6E"), true);
+        }
     }
 
     if ((EventDialogControl() == gv_minimizeBarracks)) {
@@ -1414,6 +1461,10 @@ bool gt_TownHallButtons_Func (bool testConds, bool runActions) {
         return true;
     }
 
+    if ((EventDialogControl() == gv_townHall1)) {
+        libNtve_gf_ReplaceUnit(UnitFromId(1124788479), "GatlingTurret", libNtve_ge_ReplaceUnitOptions_NewUnitssMax);
+    }
+
     if ((EventDialogControl() == gv_minimizeTownHall)) {
         DialogSetVisible(gv_townHallDialog, PlayerGroupSingle(EventPlayer()), false);
     }
@@ -1444,6 +1495,7 @@ bool gt_TownHallInteractPopUp_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void gt_TownHallInteractPopUp_Init () {
     gt_TownHallInteractPopUp = TriggerCreate("gt_TownHallInteractPopUp_Func");
+    TriggerAddEventUnitRegion(gt_TownHallInteractPopUp, UnitRefFromUnit(UnitFromId(604180338)), RegionFromId(1), true);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -1464,6 +1516,7 @@ bool gt_TownHallInteractRemovePopUp_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void gt_TownHallInteractRemovePopUp_Init () {
     gt_TownHallInteractRemovePopUp = TriggerCreate("gt_TownHallInteractRemovePopUp_Func");
+    TriggerAddEventUnitRegion(gt_TownHallInteractRemovePopUp, UnitRefFromUnit(UnitFromId(604180338)), RegionFromId(1), false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -3910,38 +3963,6 @@ void gt_BloodsplatRemoval_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: CivillianToTroop
-//--------------------------------------------------------------------------------------------------
-bool gt_CivillianToTroop_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!((UnitGetOwner(EventUnit()) == 1))) {
-            return false;
-        }
-
-        if (!((UnitGroupHasUnit(UnitGroupFromId(2), EventUnit()) == true))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    Wait(2.0, c_timeGame);
-    libNtve_gf_ReplaceUnit(EventUnit(), "Marine", libNtve_ge_ReplaceUnitOptions_NewUnitsDefault);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_CivillianToTroop_Init () {
-    gt_CivillianToTroop = TriggerCreate("gt_CivillianToTroop_Func");
-    TriggerAddEventUnitRegion(gt_CivillianToTroop, null, RegionFromId(2), true);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: ZombieRunnerA
 //--------------------------------------------------------------------------------------------------
 bool gt_ZombieRunnerA_Func (bool testConds, bool runActions) {
@@ -4001,6 +4022,53 @@ bool gt_GatlingTurretUpgrade_Func (bool testConds, bool runActions) {
 void gt_GatlingTurretUpgrade_Init () {
     gt_GatlingTurretUpgrade = TriggerCreate("gt_GatlingTurretUpgrade_Func");
     TriggerAddEventUnitAbility(gt_GatlingTurretUpgrade, UnitRefFromUnit(UnitFromId(2000468100)), AbilityCommand("GatlingTurretUpgrade", 0), c_unitAbilStageAll, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CivSpawnerGrouper
+//--------------------------------------------------------------------------------------------------
+bool gt_CivSpawnerGrouper_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitGroupAdd(UnitGroupFromId(1), EventUnitCreatedUnit());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_CivSpawnerGrouper_Init () {
+    gt_CivSpawnerGrouper = TriggerCreate("gt_CivSpawnerGrouper_Func");
+    TriggerAddEventUnitCreated(gt_CivSpawnerGrouper, UnitRefFromUnit(UnitFromId(2027491687)), null, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CivSpawnerGrouper2
+//--------------------------------------------------------------------------------------------------
+bool gt_CivSpawnerGrouper2_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetOwner(EventUnit()) == 1))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitGroupAdd(UnitGroupFromId(1), EventUnit());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_CivSpawnerGrouper2_Init () {
+    gt_CivSpawnerGrouper2 = TriggerCreate("gt_CivSpawnerGrouper2_Func");
+    TriggerAddEventUnitRegion(gt_CivSpawnerGrouper2, null, RegionFromId(3), true);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -4115,6 +4183,7 @@ void InitTriggers () {
     gt_Hatch8a_Init();
     gt_Hatch9a_Init();
     gt_Hatch10a_Init();
+    gt_RemoveTrainedCivilian_Init();
     gt_BarracksDialog_Init();
     gt_BarracksDialogButtons_Init();
     gt_BarracksInteractPopUp_Init();
@@ -4165,10 +4234,11 @@ void InitTriggers () {
     gt_Upgrade9_Init();
     gt_Upgrade10_Init();
     gt_BloodsplatRemoval_Init();
-    gt_CivillianToTroop_Init();
     gt_ZombieRunnerA_Init();
     gt_ZombieRunnerB_Init();
     gt_GatlingTurretUpgrade_Init();
+    gt_CivSpawnerGrouper_Init();
+    gt_CivSpawnerGrouper2_Init();
     gt_BloodsplatCreation_Init();
     gt_CorpseCreation_Init();
     gt_ZombieCorpse_Init();

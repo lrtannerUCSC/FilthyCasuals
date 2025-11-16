@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CActorUnit id="CustomBarracksActor" parent="TerranBuildingFlyerEx" unitName="CustomBarracks">
+        <On Terms="Behavior.ColonyInfestation.On" Send="Create InfestationBarracks"/>
+        <On Terms="UnitDeathCustomize.BarracksFlying" Send="DeathCustomize Flying"/>
+        <Model value="Barracks"/>
+        <BuildModel value="Barracks"/>
+        <DeathArray index="Normal" ModelLink="BarracksDeath"/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranLargeBuildingDeath" SoundLink="Barracks_Explode"/>
+        <DeathCustoms index="5" ModelLink="BarracksFlyDeath" SoundLink="Barracks_Explode" Name="Flying"/>
+        <PlacementModel value="BarracksPlacement"/>
+        <PortraitModel value="BarracksPortrait"/>
+        <BarOffset value="155"/>
+        <BarWidth value="160"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Terran-Barracks.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\btn-building-terran-Barracks.dds"/>
+        <HighlightTooltip value="Unit/Name/CustomBarracksActor"/>
+        <NameOffset value="110"/>
+        <SoundArray index="Ready" value="Barracks_Ready"/>
+        <SoundArray index="What" value="Barracks_What"/>
+        <SoundArray index="Movement" value="Barracks_Movement"/>
+        <UnitIcon value="Assets\Textures\btn-building-terran-Barracks.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Terran-Barracks.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorSplat id="BarracksSplat2" parent="TerranBuildingMorphSplat" unitName="CustomBarracks">
+        <Model value="BarracksSplat"/>
+    </CActorSplat>
+    <CActorModel id="FireSuppressionBots2" parent="ModelAnimationStyleContinuous">
+        <On Terms="Behavior.FireSuppressionSystem.On" Send="Create"/>
+        <On Terms="Behavior.FireSuppressionSystem.On" Send="Create FireSuppressionBots_Loop"/>
+        <On Terms="Behavior.FireSuppressionSystem.Off" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Model value="FireSuppressionBots"/>
+    </CActorModel>
     <CActorUnit id="InfestedTerranSpawnerActor" parent="GenericUnitStandard" unitName="InfestedTerranSpawner">
         <Aliases value="_UnitHuge"/>
         <EditorCategories value=""/>
@@ -105,6 +142,31 @@
             <Image value="Assets\Textures\Wireframe-Protoss-PhotonCannon-Shield03.dds"/>
         </WireframeShield>
     </CActorUnit>
+    <CActorStateMonitor id="TerranFlamesMediumBuilding2" parent="TerranFlames">
+        <On Terms="UnitCreation.SupplyDepot" Send="Create"/>
+        <On Terms="UnitCreation.SupplyDepotLowered" Send="Create"/>
+        <On Terms="UnitCreation.Refinery" Send="Create"/>
+        <On Terms="UnitCreation.CustomBarracks" Send="Create"/>
+        <On Terms="UnitCreation.BarracksFlying" Send="Create"/>
+        <On Terms="UnitCreation.EngineeringBay" Send="Create"/>
+        <On Terms="UnitCreation.Bunker" Send="Create"/>
+        <On Terms="UnitCreation.GhostAcademy" Send="Create"/>
+        <On Terms="UnitCreation.MercCompound" Send="Create"/>
+        <On Terms="UnitCreation.Factory" Send="Create"/>
+        <On Terms="UnitCreation.FactoryFlying" Send="Create"/>
+        <On Terms="UnitCreation.Armory" Send="Create"/>
+        <On Terms="UnitCreation.Starport" Send="Create"/>
+        <On Terms="UnitCreation.StarportFlying" Send="Create"/>
+        <On Terms="UnitCreation.FusionCore" Send="Create"/>
+        <On Terms="StateChange; StateValid Fire" Send="Create TerranFlameLoopMedium"/>
+        <On Terms="StateChange; !StateValid Fire" Target="TerranFlameLoopMedium" Send="Destroy"/>
+        <On Terms="UnitCreation.AutomatedRefinery" Send="Create"/>
+        <On Terms="UnitCreation.HomeLarge" Send="Create"/>
+        <On Terms="UnitCreation.ScienceFacility" Send="Create"/>
+        <On Terms="UnitCreation.FacilityPOwerCore" Send="Create"/>
+        <On Terms="UnitCreation.RefineryTerrazine" Send="Create"/>
+        <On Terms="UnitCreation.RefineryPipes" Send="Create"/>
+    </CActorStateMonitor>
     <CActorUnit id="TownHallActor" parent="GenericUnitStandard" unitName="TownHall">
         <Aliases value="_UnitHuge"/>
         <EditorCategories value=""/>

@@ -2,10 +2,14 @@
 Abil/EditorPrefix/GatlingTurretUpgrade=Turret -
 Abil/EditorPrefix/TrainCivilians=Civilian -
 Actor/EditorPrefix/InfestedTerranSpawnerActor=Zombie -
+Actor/Name/BarracksSplat2=Barracks Splat
 Actor/Name/CivSpawnerActor=CivSpawnerActor
+Actor/Name/CustomBarracksActor=Custom Barracks Actor
+Actor/Name/FireSuppressionBots2=Fire Suppression Bots
 Actor/Name/GatlingTower=Gatling Tower
 Actor/Name/InfestedTerranSpawnerActor=Infested Terran Spawner Actor
 Actor/Name/SoundEmitter2=SoundEmitter
+Actor/Name/TerranFlamesMediumBuilding2=Terran Flames Medium Building
 Actor/Name/TownHallActor=TownHallActor
 Button/EditorPrefix/CommanderPrestigeKerriganCreep=Civilian -
 Model/Name/BloodSplats2=Blood Splats

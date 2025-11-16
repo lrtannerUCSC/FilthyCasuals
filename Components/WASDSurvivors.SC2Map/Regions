@@ -21,4 +21,18 @@
             <radius value="2.021"/>
         </shape>
     </region>
+    <region id="1">
+        <name value="Town Hall"/>
+        <shape type="circle">
+            <center value="72.2365,60.2597"/>
+            <radius value="2.944"/>
+        </shape>
+    </region>
+    <region id="3">
+        <name value="CivSpawner"/>
+        <shape type="circle">
+            <center value="61.3745,54.8078"/>
+            <radius value="1.7675"/>
+        </shape>
+    </region>
 </Regions>
