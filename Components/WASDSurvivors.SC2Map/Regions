@@ -17,22 +17,22 @@
     <region id="2">
         <name value="Barracks"/>
         <shape type="circle">
-            <center value="66.4038,50.621"/>
-            <radius value="2.021"/>
+            <center value="53.181,63.497"/>
+            <radius value="2.5"/>
         </shape>
     </region>
     <region id="1">
         <name value="Town Hall"/>
         <shape type="circle">
-            <center value="72.2365,60.2597"/>
+            <center value="62.3037,64.8867"/>
             <radius value="2.944"/>
         </shape>
     </region>
     <region id="3">
         <name value="CivSpawner"/>
         <shape type="circle">
-            <center value="61.3745,54.8078"/>
-            <radius value="1.7675"/>
+            <center value="68.5861,68.9301"/>
+            <radius value="2.5"/>
         </shape>
     </region>
 </Regions>

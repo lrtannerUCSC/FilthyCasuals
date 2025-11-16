@@ -1,85 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PlacedObjects Version="27">
-    <ObjectDoodad Id="2074813535" Variation="5" Position="55.5,64.5,8.0163" Rotation="2.0625" Scale="1.1364,1.1364,1.1364" Type="BloodSplats">
+    <ObjectDoodad Id="2074813535" Variation="5" Position="77.0634,53.784,7.7624" Rotation="2.0625" Scale="1.1364,1.1364,1.1364" Type="BloodSplats">
+        <Flag Index="HeightOffset" Value="1"/>
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="943314927" Position="65,62,7.9997" Rotation="1.5122" Scale="1.033,1.033,1.033" Type="BloodSplats">
+    <ObjectDoodad Id="642392759" Variation="2" Position="78.5634,45.784,7.737" Rotation="0.434" Scale="1.1032,1.1032,1.1032" Type="BloodSplats">
+        <Flag Index="HeightOffset" Value="1"/>
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="642392759" Variation="2" Position="57,56.5,7.9997" Rotation="0.434" Scale="1.1032,1.1032,1.1032" Type="BloodSplats">
+    <ObjectDoodad Id="943314927" Position="86.5634,51.284,7.737" Rotation="1.5122" Scale="1.033,1.033,1.033" Type="BloodSplats">
+        <Flag Index="HeightOffset" Value="1"/>
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="1822625231" Variation="2" Position="62,62,7.9997" Rotation="0.1582" Scale="0.882,0.882,0.882" Type="BloodSplats">
+    <ObjectDoodad Id="1822625231" Variation="2" Position="83.5634,51.284,7.737" Rotation="0.1582" Scale="0.882,0.882,0.882" Type="BloodSplats">
+        <Flag Index="HeightOffset" Value="1"/>
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="2127357480" Variation="4" Position="55,53,11.9997" Rotation="3.8547" Scale="1,1,1" Type="HybridShearedRocks">
+    <ObjectDoodad Id="1583158578" Variation="3" Position="79.0634,49.784,7.737" Rotation="3.041" Scale="0.8251,0.8251,0.8251" Type="BloodSplats">
+        <Flag Index="HeightOffset" Value="1"/>
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="1583158578" Variation="3" Position="57.5,60.5,7.9997" Rotation="3.041" Scale="0.8251,0.8251,0.8251" Type="BloodSplats">
+    <ObjectDoodad Id="1865748792" Variation="5" Position="80.5634,53.284,7.737" Rotation="5.7983" Scale="1.0727,1.0727,1.0727" Type="BloodSplats">
+        <Flag Index="HeightOffset" Value="1"/>
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="1530513669" Variation="2" Position="72.5,64.5,9.9997" Rotation="4.8176" Scale="1,1,1" Type="HybridShearedRocks">
+    <ObjectDoodad Id="1857519076" Position="80.0634,55.284,7.737" Rotation="2.9345" Scale="0.9592,0.9592,0.9592" Type="BloodSplats">
+        <Flag Index="HeightOffset" Value="1"/>
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="1865748792" Variation="5" Position="59,64,7.9997" Rotation="5.7983" Scale="1.0727,1.0727,1.0727" Type="BloodSplats">
+    <ObjectDoodad Id="1795822130" Variation="2" Position="88.0634,47.784,7.7368" Rotation="5.3366" Scale="0.9348,0.9348,0.9348" Type="BloodSplats">
+        <Flag Index="HeightOffset" Value="1"/>
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="678645108" Variation="6" Position="53,62.5,9.9997" Rotation="4.457" Scale="1,1,1" Type="HybridShearedRocks">
+    <ObjectDoodad Id="2125868295" Variation="2" Position="83.0634,55.284,7.737" Rotation="5.2268" Scale="0.921,0.921,0.921" Type="BloodSplats">
+        <Flag Index="HeightOffset" Value="1"/>
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="1077598870" Position="70.5,53.5,11.9997" Rotation="5.4868" Scale="1,1,1" Type="HybridShearedRocks">
-        <Flag Index="HeightAbsolute" Value="1"/>
-    </ObjectDoodad>
-    <ObjectDoodad Id="1857519076" Position="58.5,66,7.9997" Rotation="2.9345" Scale="0.9592,0.9592,0.9592" Type="BloodSplats">
-        <Flag Index="HeightAbsolute" Value="1"/>
-    </ObjectDoodad>
-    <ObjectDoodad Id="1795822130" Variation="2" Position="66.5,58.5,7.9997" Rotation="5.3366" Scale="0.9348,0.9348,0.9348" Type="BloodSplats">
-        <Flag Index="HeightAbsolute" Value="1"/>
-    </ObjectDoodad>
-    <ObjectDoodad Id="2125868295" Variation="2" Position="61.5,66,7.9997" Rotation="5.2268" Scale="0.921,0.921,0.921" Type="BloodSplats">
-        <Flag Index="HeightAbsolute" Value="1"/>
-    </ObjectDoodad>
-    <ObjectDoodad Id="861152309" Variation="3" Position="54,70,10.0122" Rotation="5.1682" Scale="1,1,1" Type="HybridShearedRocks">
-        <Flag Index="HeightAbsolute" Value="1"/>
-    </ObjectDoodad>
-    <ObjectDoodad Id="463618118" Variation="2" Position="63,56.5,7.9997" Rotation="4.5727" Scale="1.0876,1.0876,1.0876" Type="BloodSplats">
+    <ObjectDoodad Id="463618118" Variation="2" Position="84.5634,45.784,7.7368" Rotation="4.5727" Scale="1.0876,1.0876,1.0876" Type="BloodSplats">
+        <Flag Index="HeightOffset" Value="1"/>
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
     <ObjectDoodad Id="1165675709" Variation="2" Position="59.8908,67.974,7.9997" Scale="1,1,1" Type="OilPuddle">
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="1972619905" Variation="1" Position="63,64.5,7.9997" Rotation="0.104" Scale="1.1694,1.1694,1.1694" Type="BloodSplats">
+    <ObjectDoodad Id="1972619905" Variation="1" Position="84.5634,53.784,7.737" Rotation="0.104" Scale="1.1694,1.1694,1.1694" Type="BloodSplats">
+        <Flag Index="HeightOffset" Value="1"/>
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
     <ObjectPoint Id="1498365247" Position="57.5,84,0" Scale="1,1,1" Type="Normal" Name="AmovePoint" Color="0,0,0,0"/>
-    <ObjectPoint Id="1021640481" Position="65.096,49.4338,0" Scale="1,1,1" Type="Normal" Name="Barracks Exit" Color="0,0,0,0"/>
-    <ObjectPoint Id="639841058" Position="66.3833,50.6574,0" Scale="1,1,1" Type="Normal" Name="Barracks" Color="0,0,0,0"/>
-    <ObjectPoint Id="72362755" Position="65.3242,57.1992,0" Scale="1,1,1" Type="Normal" Name="Point 001" Color="0,0,0,0"/>
-    <ObjectUnit Id="1167295670" Position="49,69,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
-    <ObjectUnit Id="331671007" Position="47,68,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
-    <ObjectUnit Id="869389186" Position="49,67,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
+    <ObjectPoint Id="639841058" Position="52.71,62.4958,0" Scale="1,1,1" Type="Normal" Name="Barracks" Color="0,0,0,0"/>
+    <ObjectUnit Id="1167295670" Position="71,68,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
+    <ObjectUnit Id="12331957" Position="59.2026,57.8718,0.386" Rotation="5.3112" Scale="1,1,1" UnitType="Colonist" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+        <Texture TexSlot="main" TexProps="male,02" TexLink=""/>
+    </ObjectUnit>
+    <ObjectUnit Id="1887011655" Position="58.7133,57.1254,0.386" Rotation="5.3112" Scale="1,1,1" UnitType="Colonist" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+        <Texture TexSlot="main" TexProps="male,02" TexLink=""/>
+    </ObjectUnit>
+    <ObjectUnit Id="2025085678" Position="59.915,55.7641,0.386" Rotation="5.3112" Scale="1,1,1" UnitType="Colonist" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+        <Texture TexSlot="main" TexProps="male,02" TexLink=""/>
+    </ObjectUnit>
+    <ObjectUnit Id="1275527970" Position="59.74,56.29,0.386" Rotation="5.3112" Scale="1,1,1" UnitType="Colonist" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+        <Texture TexSlot="main" TexProps="male,02" TexLink=""/>
+    </ObjectUnit>
+    <ObjectUnit Id="331671007" Position="71,72,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
+    <ObjectUnit Id="869389186" Position="73,69,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
     <ObjectUnit Id="886696031" Position="47.5,84.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="2"/>
-    <ObjectUnit Id="1124788479" Position="59,60,0" Rotation="2.7492" Scale="1,1,1" UnitType="AutoTurret" Player="1"/>
-    <ObjectUnit Id="1738549460" Position="45,69,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
+    <ObjectUnit Id="1124788479" Position="59,54,0" Rotation="2.7492" Scale="1,1,1" UnitType="AutoTurret" Player="1"/>
+    <ObjectUnit Id="1738549460" Position="67,71,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
     <ObjectUnit Id="757147147" Position="58.5,104.5,0" Scale="1,1,1" UnitType="Hive" Player="2"/>
     <ObjectUnit Id="1101346206" Position="66.5,84.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="1"/>
     <ObjectUnit Id="604180338" Position="62.434,59.4926,0" Rotation="3.098" Scale="1,1,1" UnitType="CleaningBot" Player="1"/>
-    <ObjectUnit Id="70232309" Position="67.5,60.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="EngineeringBay" Player="1"/>
+    <ObjectUnit Id="238958832" Position="60.9543,55.9941,0.386" Rotation="5.3112" Scale="1,1,1" UnitType="Colonist" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+        <Texture TexSlot="main" TexProps="male,02" TexLink=""/>
+    </ObjectUnit>
     <ObjectUnit Id="1077203321" Position="45.5,103.5,0" Scale="1,1,1" UnitType="Hive" Player="15"/>
-    <ObjectUnit Id="1800607729" Position="47,70,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
+    <ObjectUnit Id="339671056" Position="58.517,56.2565,0.386" Rotation="5.3112" Scale="1,1,1" UnitType="Colonist" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+        <Texture TexSlot="main" TexProps="male,02" TexLink=""/>
+    </ObjectUnit>
+    <ObjectUnit Id="1800607729" Position="69,71,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
     <ObjectUnit Id="70510309" Position="60.3066,56.9428,0.386" Rotation="5.3115" Scale="1,1,1" UnitType="Colonist" Player="1">
         <Flag Index="HeightOffset" Value="1"/>
         <Texture TexSlot="main" TexProps="male,02" TexLink=""/>
     </ObjectUnit>
-    <ObjectUnit Id="2128551097" Position="49,71,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
-    <ObjectUnit Id="2000468100" Position="72.5,59.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="TownHall" Player="1"/>
-    <ObjectUnit Id="2027491687" Variation="4" Position="61.5,54.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CivSpawner" Player="1"/>
+    <ObjectUnit Id="1193702584" Position="60.7797,57.8395,0.386" Rotation="5.3112" Scale="1,1,1" UnitType="Colonist" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+        <Texture TexSlot="main" TexProps="male,02" TexLink=""/>
+    </ObjectUnit>
+    <ObjectUnit Id="2128551097" Position="71,70,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
+    <ObjectUnit Id="872167654" Position="61.4926,56.9912,0.386" Rotation="5.3112" Scale="1,1,1" UnitType="Colonist" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+        <Texture TexSlot="main" TexProps="male,02" TexLink=""/>
+    </ObjectUnit>
+    <ObjectUnit Id="2000468100" Position="62.5,64.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="TownHall" Player="1"/>
+    <ObjectUnit Id="2027491687" Variation="4" Position="68.5,68.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CivSpawner" Player="1"/>
     <ObjectUnit Id="338286200" Position="51.5,104.5,0" Scale="1,1,1" UnitType="Hive" Player="1"/>
-    <ObjectUnit Id="1146560453" Position="66.5,50.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CustomBarracks" Player="1"/>
-    <Group Type="ObjectUnit" Name="Civilians
-" Id="1">
+    <ObjectUnit Id="1146560453" Position="53.5,63.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CustomBarracks" Player="1"/>
+    <Group Type="ObjectUnit" Name="Civilians " Id="1">
         <GroupObject Id="70510309"/>
+        <GroupObject Id="12331957"/>
+        <GroupObject Id="1887011655"/>
+        <GroupObject Id="2025085678"/>
+        <GroupObject Id="1275527970"/>
+        <GroupObject Id="238958832"/>
+        <GroupObject Id="339671056"/>
+        <GroupObject Id="1193702584"/>
+        <GroupObject Id="872167654"/>
     </Group>
-    <Group Type="ObjectUnit" Name="Barracks Training
-" Id="2"/>
 </PlacedObjects>

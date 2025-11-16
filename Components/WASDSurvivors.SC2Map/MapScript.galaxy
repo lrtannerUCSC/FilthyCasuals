@@ -226,6 +226,7 @@ int gv_shipWeaponsButton5;
 int gv_backtoTerranShip;
 fixed gv_cleaningRadius;
 fixed gv_cleaningBotRadiusUpgradeLevel;
+unitgroup gv_civUnitGroup;
 
 void InitGlobals () {
     int init_i;
@@ -428,6 +429,7 @@ void InitGlobals () {
     gv_backtoTerranShip = c_invalidDialogControlId;
     gv_cleaningRadius = ((gv_cleaningBotRadiusUpgradeLevel + 1.0) * 0.5);
     gv_cleaningBotRadiusUpgradeLevel = TechTreeUpgradeCount(1, "CleaningBotRadiusUpgrade", c_techCountCompleteOnly);
+    gv_civUnitGroup = UnitGroupFromId(1);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -513,7 +515,6 @@ trigger gt_ZombieRunnerA;
 trigger gt_ZombieRunnerB;
 trigger gt_GatlingTurretUpgrade;
 trigger gt_CivSpawnerGrouper;
-trigger gt_CivSpawnerGrouper2;
 trigger gt_BloodsplatCreation;
 trigger gt_CorpseCreation;
 trigger gt_ZombieCorpse;
@@ -1326,16 +1327,17 @@ bool gt_BarracksDialogButtons_Func (bool testConds, bool runActions) {
     }
 
     if ((EventDialogControl() == gv_barracksTroop1)) {
-        if ((UnitGroupCount(UnitGroupFromId(2), c_unitCountAll) < 1)) {
-            if ((UnitGroupCount(UnitGroupFromId(1), c_unitCountAll) > 3)) {
+        if ((UnitQueueItemCount(UnitFromId(1146560453), 4) < 1)) {
+            if ((UnitGroupCount(UnitGroupFromId(1), c_unitCountAll) > 1)) {
                 TriggerDebugOutput(1, StringExternal("Param/Value/ABCD0F0E"), true);
                 UnitSetPosition(UnitGroupUnit(UnitGroupFromId(1), 1), PointFromId(639841058), true);
-                UnitGroupAdd(UnitGroupFromId(2), UnitGroupUnit(UnitGroupFromId(1), 1));
                 UnitPutInTransport(UnitGroupUnit(UnitGroupFromId(1), 1), UnitFromId(1146560453));
                 UnitGroupRemove(UnitGroupFromId(1), UnitGroupUnit(UnitGroupFromId(1), 1));
                 UnitIssueOrder(UnitFromId(1146560453), Order(AbilityCommand("BarracksTrain", 0)), c_orderQueueAddToEnd);
             }
-
+            else {
+                TriggerDebugOutput(1, StringExternal("Param/Value/8632D94F"), true);
+            }
         }
         else {
             TriggerDebugOutput(1, StringExternal("Param/Value/319CDE6E"), true);
@@ -4028,13 +4030,21 @@ void gt_GatlingTurretUpgrade_Init () {
 // Trigger: CivSpawnerGrouper
 //--------------------------------------------------------------------------------------------------
 bool gt_CivSpawnerGrouper_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_numCivs;
+
     // Automatic Variable Declarations
+    // Variable Initialization
+
     // Actions
     if (!runActions) {
         return true;
     }
 
-    UnitGroupAdd(UnitGroupFromId(1), EventUnitCreatedUnit());
+    TriggerDebugOutput(1, StringExternal("Param/Value/64D2553B"), true);
+    UnitGroupAdd(gv_civUnitGroup, EventUnitCreatedUnit());
+    lv_numCivs = UnitGroupCount(UnitGroupFromId(1), c_unitCountAlive);
+    TriggerDebugOutput(1, IntToText(lv_numCivs), true);
     return true;
 }
 
@@ -4042,33 +4052,6 @@ bool gt_CivSpawnerGrouper_Func (bool testConds, bool runActions) {
 void gt_CivSpawnerGrouper_Init () {
     gt_CivSpawnerGrouper = TriggerCreate("gt_CivSpawnerGrouper_Func");
     TriggerAddEventUnitCreated(gt_CivSpawnerGrouper, UnitRefFromUnit(UnitFromId(2027491687)), null, null);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CivSpawnerGrouper2
-//--------------------------------------------------------------------------------------------------
-bool gt_CivSpawnerGrouper2_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!((UnitGetOwner(EventUnit()) == 1))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    UnitGroupAdd(UnitGroupFromId(1), EventUnit());
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_CivSpawnerGrouper2_Init () {
-    gt_CivSpawnerGrouper2 = TriggerCreate("gt_CivSpawnerGrouper2_Func");
-    TriggerAddEventUnitRegion(gt_CivSpawnerGrouper2, null, RegionFromId(3), true);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -4238,7 +4221,6 @@ void InitTriggers () {
     gt_ZombieRunnerB_Init();
     gt_GatlingTurretUpgrade_Init();
     gt_CivSpawnerGrouper_Init();
-    gt_CivSpawnerGrouper2_Init();
     gt_BloodsplatCreation_Init();
     gt_CorpseCreation_Init();
     gt_ZombieCorpse_Init();

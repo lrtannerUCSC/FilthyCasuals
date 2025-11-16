@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Preload>
 <Actor id="SYSTEM_ActorConfig"/>
-<Actor id="HybridShearedRocks" Variations="0,2,3,4,6"/>
 <Actor id="OilPuddle" Variations="2"/>
 <Actor id="BloodSplats" Variations="0,1,2,3,5"/>
 <Sound id="Alert_ZergEvolutionComplete" Variations="0"/>
 <Terrain id="TheVoid"/>
-<Unit id="EngineeringBay"/>
 <Unit id="AutoTurret"/>
 <Unit id="SupplyDepotLowered"/>
 <Unit id="Hive"/>
 <Unit id="InfestedCivilian"/>
 <Unit id="Colonist" Variations="0"/>
 <Unit id="CleaningBot"/>
+<Unit id="CustomBarracks"/>
 <Unit id="InfestedTerranSpawner"/>
 <Unit id="TownHall"/>
 <Unit id="CivSpawner" Variations="4"/>
-<Unit id="CustomBarracks"/>
 </Preload>
