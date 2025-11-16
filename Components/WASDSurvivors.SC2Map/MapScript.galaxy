@@ -1333,6 +1333,7 @@ bool gt_BarracksDialogButtons_Func (bool testConds, bool runActions) {
                 UnitSetPosition(UnitGroupUnit(UnitGroupFromId(1), 1), PointFromId(639841058), true);
                 UnitPutInTransport(UnitGroupUnit(UnitGroupFromId(1), 1), UnitFromId(1146560453));
                 UnitGroupRemove(UnitGroupFromId(1), UnitGroupUnit(UnitGroupFromId(1), 1));
+                UnitRemove(UnitGroupUnit(UnitGroupFromId(1), 1));
                 UnitIssueOrder(UnitFromId(1146560453), Order(AbilityCommand("BarracksTrain", 0)), c_orderQueueAddToEnd);
             }
             else {
