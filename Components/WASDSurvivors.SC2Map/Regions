@@ -28,4 +28,11 @@
             <radius value="2.944"/>
         </shape>
     </region>
+    <region id="3">
+        <name value="Engineering Bay"/>
+        <shape type="circle">
+            <center value="64.431,55.8461"/>
+            <radius value="2.2753"/>
+        </shape>
+    </region>
 </Regions>

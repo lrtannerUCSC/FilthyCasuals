@@ -67,6 +67,14 @@ int gv_townHall4;
 int gv_minimizeTownHall;
 int gv_townHallInteractDialog;
 int gv_townHallInteractButton;
+int gv_eBayDialog;
+int gv_eBay1;
+int gv_eBay2;
+int gv_eBay3;
+int gv_eBay4;
+int gv_minimizeEBay;
+int gv_eBayInteractDialog;
+int gv_eBayInteractButton;
 int gv_weaponUpgrades;
 int gv_armorUpgrades;
 int gv_healthUpgrades;
@@ -226,7 +234,6 @@ int gv_shipWeaponsButton3;
 int gv_shipWeaponsButton4;
 int gv_shipWeaponsButton5;
 int gv_backtoTerranShip;
-fixed gv_cleaningRadius;
 
 void InitGlobals () {
     int init_i;
@@ -270,6 +277,14 @@ void InitGlobals () {
     gv_minimizeTownHall = c_invalidDialogControlId;
     gv_townHallInteractDialog = c_invalidDialogId;
     gv_townHallInteractButton = c_invalidDialogControlId;
+    gv_eBayDialog = c_invalidDialogId;
+    gv_eBay1 = c_invalidDialogControlId;
+    gv_eBay2 = c_invalidDialogControlId;
+    gv_eBay3 = c_invalidDialogControlId;
+    gv_eBay4 = c_invalidDialogControlId;
+    gv_minimizeEBay = c_invalidDialogControlId;
+    gv_eBayInteractDialog = c_invalidDialogId;
+    gv_eBayInteractButton = c_invalidDialogControlId;
     gv_weaponUpgrades = c_invalidDialogControlId;
     gv_armorUpgrades = c_invalidDialogControlId;
     gv_healthUpgrades = c_invalidDialogControlId;
@@ -429,7 +444,6 @@ void InitGlobals () {
     gv_shipWeaponsButton4 = c_invalidDialogControlId;
     gv_shipWeaponsButton5 = c_invalidDialogControlId;
     gv_backtoTerranShip = c_invalidDialogControlId;
-    gv_cleaningRadius = 8.0;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -462,22 +476,27 @@ trigger gt_Hatch8a;
 trigger gt_Hatch9a;
 trigger gt_Hatch10a;
 trigger gt_CivSpawnerGrouper;
+trigger gt_UpgradesDialogButtons;
 trigger gt_TroopTrainingFilter;
 trigger gt_BarracksDialog;
 trigger gt_BarracksDialogButtons;
 trigger gt_BarracksInteractPopUp;
 trigger gt_BarracksInteractRemovePopUp;
 trigger gt_BarracksDialogInitialization;
+trigger gt_GatlingTurretUpgrade;
 trigger gt_TownHallDialog;
 trigger gt_TownHallButtons;
 trigger gt_TownHallInteractPopUp;
 trigger gt_TownHallInteractRemovePopUp;
 trigger gt_TownHallDialogInitialization;
-trigger gt_GatlingTurretUpgrade;
+trigger gt_EBayDialog;
+trigger gt_EBayButtons;
+trigger gt_EBayInteractPopUp;
+trigger gt_EBayRemovePopUp;
+trigger gt_EBayDialogInitialization;
 trigger gt_MinimizedDialog;
 trigger gt_MaximizeUpgrades;
 trigger gt_MainUpgradesDialog;
-trigger gt_UpgradesDialogButtons;
 trigger gt_MinimizeRaceDialog;
 trigger gt_ProtossSpecialUpgradesDialog;
 trigger gt_ProtossSpecialUpgradesButtons;
@@ -782,19 +801,7 @@ void gt_MeleeInitialization_Init () {
 // Trigger: Debug Messages
 //--------------------------------------------------------------------------------------------------
 bool gt_DebugMessages_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    int lv_cleaningRadius;
-
     // Automatic Variable Declarations
-    // Variable Initialization
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    lv_cleaningRadius = UnitGetPropertyInt(UnitFromId(604180338), c_unitPropEnergyMax, c_unitPropCurrent);
-    TriggerDebugOutput(1, IntToText(lv_cleaningRadius), true);
     return true;
 }
 
@@ -1306,6 +1313,50 @@ void gt_CivSpawnerGrouper_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: Upgrades Dialog Buttons
+//--------------------------------------------------------------------------------------------------
+bool gt_UpgradesDialogButtons_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((EventDialogControl() == gv_armorUpgrades)) {
+        DialogSetVisible(gv_upgradeMainDialog, PlayerGroupSingle(EventPlayer()), false);
+        DialogSetVisible(gv_armorDialog, PlayerGroupSingle(EventPlayer()), true);
+    }
+
+    if ((EventDialogControl() == gv_weaponUpgrades)) {
+        DialogSetVisible(gv_upgradeMainDialog, PlayerGroupSingle(EventPlayer()), false);
+        DialogSetVisible(gv_weaponsDialog, PlayerGroupSingle(EventPlayer()), true);
+    }
+
+    if ((EventDialogControl() == gv_eBayInteractButton)) {
+        DialogSetVisible(gv_eBayInteractDialog, PlayerGroupSingle(EventPlayer()), false);
+        DialogSetVisible(gv_eBayDialog, PlayerGroupSingle(EventPlayer()), true);
+    }
+
+    if ((EventDialogControl() == gv_barracksInteractButton)) {
+        DialogSetVisible(gv_barracksInteractDialog, PlayerGroupSingle(EventPlayer()), false);
+        DialogSetVisible(gv_barracksDialog, PlayerGroupSingle(EventPlayer()), true);
+    }
+
+    if ((EventDialogControl() == gv_townHallInteractButton)) {
+        DialogSetVisible(gv_townHallInteractDialog, PlayerGroupSingle(EventPlayer()), false);
+        DialogSetVisible(gv_townHallDialog, PlayerGroupSingle(EventPlayer()), true);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_UpgradesDialogButtons_Init () {
+    gt_UpgradesDialogButtons = TriggerCreate("gt_UpgradesDialogButtons_Func");
+    TriggerAddEventDialogControl(gt_UpgradesDialogButtons, EventPlayer(), c_invalidDialogControlId, c_triggerControlEventTypeClick);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: TroopTrainingFilter
 //--------------------------------------------------------------------------------------------------
 bool gt_TroopTrainingFilter_Func (bool testConds, bool runActions) {
@@ -1483,6 +1534,26 @@ void gt_BarracksDialogInitialization_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: GatlingTurretUpgrade
+//--------------------------------------------------------------------------------------------------
+bool gt_GatlingTurretUpgrade_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_ReplaceUnit(UnitFromId(1124788479), "GatlingTurret", libNtve_ge_ReplaceUnitOptions_NewUnitssMax);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_GatlingTurretUpgrade_Init () {
+    gt_GatlingTurretUpgrade = TriggerCreate("gt_GatlingTurretUpgrade_Func");
+    TriggerAddEventUnitAbility(gt_GatlingTurretUpgrade, UnitRefFromUnit(UnitFromId(2000468100)), AbilityCommand("GatlingTurretUpgrade", 0), c_unitAbilStageAll, false);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Town Hall Dialog
 //--------------------------------------------------------------------------------------------------
 bool gt_TownHallDialog_Func (bool testConds, bool runActions) {
@@ -1606,23 +1677,127 @@ void gt_TownHallDialogInitialization_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: GatlingTurretUpgrade
+// Trigger: EBay Dialog
 //--------------------------------------------------------------------------------------------------
-bool gt_GatlingTurretUpgrade_Func (bool testConds, bool runActions) {
+bool gt_EBayDialog_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     // Actions
     if (!runActions) {
         return true;
     }
 
-    libNtve_gf_ReplaceUnit(UnitFromId(1124788479), "GatlingTurret", libNtve_ge_ReplaceUnitOptions_NewUnitssMax);
+    DialogCreate(500, 800, c_anchorTopLeft, 0, 35, false);
+    gv_eBayDialog = DialogLastCreated();
+    libNtve_gf_CreateDialogItemButton(gv_eBayDialog, 50, 50, c_anchorTopRight, 50, 50, StringExternal("Param/Value/D35F4E8D"), StringExternal("Param/Value/EB56BEBC"), "");
+    gv_minimizeEBay = DialogControlLastCreated();
+    libNtve_gf_CreateDialogItemButton(gv_eBayDialog, 350, 50, c_anchorTopLeft, 50, 50, StringExternal("Param/Value/42987602"), StringExternal("Param/Value/B25B88DB"), "");
+    gv_eBay1 = DialogControlLastCreated();
+    libNtve_gf_CreateDialogItemButton(gv_eBayDialog, 350, 50, c_anchorTopLeft, 50, 100, StringExternal("Param/Value/239E8691"), StringExternal("Param/Value/7F11C94B"), "");
+    gv_eBay2 = DialogControlLastCreated();
+    libNtve_gf_CreateDialogItemButton(gv_eBayDialog, 350, 50, c_anchorTopLeft, 50, 150, StringExternal("Param/Value/46D4613A"), StringExternal("Param/Value/8308AACC"), "");
+    gv_eBay3 = DialogControlLastCreated();
+    libNtve_gf_CreateDialogItemButton(gv_eBayDialog, 350, 50, c_anchorTopLeft, 50, 200, StringExternal("Param/Value/0AA4BCE2"), StringExternal("Param/Value/BF96852B"), "");
+    gv_eBay4 = DialogControlLastCreated();
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_GatlingTurretUpgrade_Init () {
-    gt_GatlingTurretUpgrade = TriggerCreate("gt_GatlingTurretUpgrade_Func");
-    TriggerAddEventUnitAbility(gt_GatlingTurretUpgrade, UnitRefFromUnit(UnitFromId(2000468100)), AbilityCommand("GatlingTurretUpgrade", 0), c_unitAbilStageAll, false);
+void gt_EBayDialog_Init () {
+    gt_EBayDialog = TriggerCreate("gt_EBayDialog_Func");
+    TriggerAddEventMapInit(gt_EBayDialog);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: EBay Buttons
+//--------------------------------------------------------------------------------------------------
+bool gt_EBayButtons_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((EventDialogControl() == gv_eBay1)) {
+        UnitSetPropertyFixed(UnitFromId(604180338), c_unitPropEnergyMax, (UnitGetPropertyInt(UnitFromId(604180338), c_unitPropEnergyMax, c_unitPropCurrent)+2.0));
+        TriggerDebugOutput(1, StringExternal("Param/Value/A8D80365"), true);
+    }
+
+    if ((EventDialogControl() == gv_minimizeEBay)) {
+        DialogSetVisible(gv_eBayDialog, PlayerGroupSingle(EventPlayer()), false);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_EBayButtons_Init () {
+    gt_EBayButtons = TriggerCreate("gt_EBayButtons_Func");
+    TriggerAddEventDialogControl(gt_EBayButtons, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: EBay Interact Pop Up
+//--------------------------------------------------------------------------------------------------
+bool gt_EBayInteractPopUp_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    DialogSetVisible(gv_eBayInteractDialog, PlayerGroupAll(), true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_EBayInteractPopUp_Init () {
+    gt_EBayInteractPopUp = TriggerCreate("gt_EBayInteractPopUp_Func");
+    TriggerAddEventUnitRegion(gt_EBayInteractPopUp, UnitRefFromUnit(UnitFromId(604180338)), RegionFromId(3), true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: EBay Remove Pop Up
+//--------------------------------------------------------------------------------------------------
+bool gt_EBayRemovePopUp_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    DialogSetVisible(gv_eBayInteractDialog, PlayerGroupAll(), false);
+    DialogSetVisible(gv_eBayDialog, PlayerGroupAll(), false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_EBayRemovePopUp_Init () {
+    gt_EBayRemovePopUp = TriggerCreate("gt_EBayRemovePopUp_Func");
+    TriggerAddEventUnitRegion(gt_EBayRemovePopUp, UnitRefFromUnit(UnitFromId(604180338)), RegionFromId(3), false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: EBay Dialog Initialization
+//--------------------------------------------------------------------------------------------------
+bool gt_EBayDialogInitialization_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    DialogCreate(300, 100, c_anchorCenter, 0, 35, false);
+    gv_eBayInteractDialog = DialogLastCreated();
+    libNtve_gf_CreateDialogItemButton(gv_eBayInteractDialog, 200, 50, c_anchorCenter, 0, 0, StringExternal("Param/Value/6B680B5F"), StringExternal("Param/Value/174580F4"), "");
+    gv_eBayInteractButton = DialogControlLastCreated();
+    DialogSetVisible(gv_eBayInteractDialog, PlayerGroupAll(), false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_EBayDialogInitialization_Init () {
+    gt_EBayDialogInitialization = TriggerCreate("gt_EBayDialogInitialization_Func");
+    TriggerAddEventMapInit(gt_EBayDialogInitialization);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -1704,50 +1879,6 @@ bool gt_MainUpgradesDialog_Func (bool testConds, bool runActions) {
 void gt_MainUpgradesDialog_Init () {
     gt_MainUpgradesDialog = TriggerCreate("gt_MainUpgradesDialog_Func");
     TriggerAddEventMapInit(gt_MainUpgradesDialog);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Upgrades Dialog Buttons
-//--------------------------------------------------------------------------------------------------
-bool gt_UpgradesDialogButtons_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((EventDialogControl() == gv_armorUpgrades)) {
-        DialogSetVisible(gv_upgradeMainDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_armorDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_weaponUpgrades)) {
-        DialogSetVisible(gv_upgradeMainDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_weaponsDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_healthUpgrades)) {
-        DialogSetVisible(gv_upgradeMainDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_healthDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_barracksInteractButton)) {
-        DialogSetVisible(gv_barracksInteractDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_barracksDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_townHallInteractButton)) {
-        DialogSetVisible(gv_townHallInteractDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_townHallDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_UpgradesDialogButtons_Init () {
-    gt_UpgradesDialogButtons = TriggerCreate("gt_UpgradesDialogButtons_Func");
-    TriggerAddEventDialogControl(gt_UpgradesDialogButtons, EventPlayer(), c_invalidDialogControlId, c_triggerControlEventTypeClick);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -4111,7 +4242,7 @@ bool gt_BloodToMinerals_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void gt_BloodToMinerals_Init () {
     gt_BloodToMinerals = TriggerCreate("gt_BloodToMinerals_Func");
-    TriggerAddEventUnitRange(gt_BloodToMinerals, null, UnitFromId(604180338), UnitGetPropertyFixed(UnitFromId(604180338), c_unitPropEnergyMax, c_unitPropCurrent), true);
+    TriggerAddEventUnitRange(gt_BloodToMinerals, null, UnitFromId(604180338), UnitGetPropertyInt(UnitFromId(604180338), c_unitPropEnergyMax, c_unitPropCurrent), true);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -4136,22 +4267,27 @@ void InitTriggers () {
     gt_Hatch9a_Init();
     gt_Hatch10a_Init();
     gt_CivSpawnerGrouper_Init();
+    gt_UpgradesDialogButtons_Init();
     gt_TroopTrainingFilter_Init();
     gt_BarracksDialog_Init();
     gt_BarracksDialogButtons_Init();
     gt_BarracksInteractPopUp_Init();
     gt_BarracksInteractRemovePopUp_Init();
     gt_BarracksDialogInitialization_Init();
+    gt_GatlingTurretUpgrade_Init();
     gt_TownHallDialog_Init();
     gt_TownHallButtons_Init();
     gt_TownHallInteractPopUp_Init();
     gt_TownHallInteractRemovePopUp_Init();
     gt_TownHallDialogInitialization_Init();
-    gt_GatlingTurretUpgrade_Init();
+    gt_EBayDialog_Init();
+    gt_EBayButtons_Init();
+    gt_EBayInteractPopUp_Init();
+    gt_EBayRemovePopUp_Init();
+    gt_EBayDialogInitialization_Init();
     gt_MinimizedDialog_Init();
     gt_MaximizeUpgrades_Init();
     gt_MainUpgradesDialog_Init();
-    gt_UpgradesDialogButtons_Init();
     gt_MinimizeRaceDialog_Init();
     gt_ProtossSpecialUpgradesDialog_Init();
     gt_ProtossSpecialUpgradesButtons_Init();

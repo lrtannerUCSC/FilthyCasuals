@@ -2,24 +2,25 @@
 <PlacedObjects Version="27">
     <ObjectPoint Id="1498365247" Position="57.5,84,0" Scale="1,1,1" Type="Normal" Name="AmovePoint" Color="0,0,0,0"/>
     <ObjectUnit Id="1167295670" Position="71,68,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
-    <ObjectUnit Id="1805907476" Variation="1" Position="45.566,67.6176,0" Rotation="2.4042" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
+    <ObjectUnit Id="1805907476" Variation="1" Position="53.113,54.5461,0" Rotation="2.4042" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="331671007" Position="71,72,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
     <ObjectUnit Id="869389186" Position="73,69,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
-    <ObjectUnit Id="2074915891" Variation="3" Position="45.6057,69.2221,0" Rotation="5.1115" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
+    <ObjectUnit Id="2074915891" Variation="3" Position="53.1528,56.1506,0" Rotation="5.1115" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="1369964722" Variation="1" Position="51.5451,63.1503,0" Rotation="5.2751" Scale="1,1,1" UnitType="Civilian" Player="1">
         <Texture TexSlot="main" TexProps="male,helmet,01" TexLink=""/>
     </ObjectUnit>
-    <ObjectUnit Id="108459423" Variation="3" Position="44.8508,65.391,0" Rotation="6.1367" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
+    <ObjectUnit Id="108459423" Variation="3" Position="52.398,52.3195,0" Rotation="6.1367" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="886696031" Position="47.5,84.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="2"/>
     <ObjectUnit Id="1124788479" Position="58,59,0" Rotation="2.7492" Scale="1,1,1" UnitType="AutoTurret" Player="1"/>
     <ObjectUnit Id="1738549460" Position="67,71,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
     <ObjectUnit Id="757147147" Position="58.5,104.5,0" Scale="1,1,1" UnitType="Hive" Player="2"/>
     <ObjectUnit Id="1101346206" Position="66.5,84.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="1"/>
-    <ObjectUnit Id="1004822785" Variation="4" Position="48.2038,68.6823,0" Rotation="0.208" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
+    <ObjectUnit Id="1004822785" Variation="4" Position="55.751,55.6108,0" Rotation="0.208" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="604180338" Position="62.434,59.4926,0" Rotation="3.098" Scale="1,1,1" UnitType="CleaningBot" Player="1"/>
+    <ObjectUnit Id="337158176" Position="64.5,55.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="EngineeringBay" Player="1"/>
     <ObjectUnit Id="1077203321" Position="45.5,103.5,0" Scale="1,1,1" UnitType="Hive" Player="15"/>
     <ObjectUnit Id="1800607729" Position="69,71,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
-    <ObjectUnit Id="1061943518" Variation="3" Position="47.4926,66.5605,0" Rotation="6.095" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
+    <ObjectUnit Id="1061943518" Variation="3" Position="55.0397,53.489,0" Rotation="6.095" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="2128551097" Position="71,70,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
     <ObjectUnit Id="2000468100" Position="62.5,64.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="TownHall" Player="1"/>
     <ObjectUnit Id="2027491687" Variation="4" Position="68.5,68.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CivSpawner" Player="1"/>
@@ -27,7 +28,7 @@
         <Texture TexSlot="main" TexProps="male,helmet,01" TexLink=""/>
     </ObjectUnit>
     <ObjectUnit Id="338286200" Position="51.5,104.5,0" Scale="1,1,1" UnitType="Hive" Player="1"/>
-    <ObjectUnit Id="1545419560" Position="46.8901,64.109,0" Rotation="5.0712" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
+    <ObjectUnit Id="1545419560" Position="54.4372,51.0373,0" Rotation="5.0712" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="1146560453" Position="53.5,63.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CustomBarracks" Player="1"/>
     <Group Type="ObjectUnit" Name="Civilians
 " Id="1">
@@ -36,5 +37,9 @@
     <Group Type="ObjectUnit" Name="MarineTraining
 " Id="2">
         <GroupObject Id="1369964722"/>
+    </Group>
+    <Group Type="ObjectUnit" Name="Bloodsplats to remove
+" Id="3">
+        <GroupObject Id="1004822785"/>
     </Group>
 </PlacedObjects>

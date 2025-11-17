@@ -3,6 +3,7 @@
 <Actor id="SYSTEM_ActorConfig"/>
 <Sound id="Alert_ZergEvolutionComplete" Variations="0"/>
 <Terrain id="TheVoid"/>
+<Unit id="EngineeringBay"/>
 <Unit id="AutoTurret"/>
 <Unit id="SupplyDepotLowered"/>
 <Unit id="Hive"/>
