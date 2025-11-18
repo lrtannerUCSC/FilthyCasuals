@@ -1,7 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CModel id="ActorForceField2" parent="Doodad">
+        <Model value="Assets\Doodads\ActorForceField\ActorForceField.m3"/>
+    </CModel>
     <CModel id="BloodSplats2" parent="Doodad">
         <RadiusLoose value="2.000000"/>
         <VariationCount value="6"/>
+    </CModel>
+    <CModel id="CorrosiveBileImpact2" parent="ImpactFX">
+        <Model value="Assets\Effects\Zerg\CorrosiveBileImpact\CorrosiveBileImpact.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CModel>
+    <CModel id="InfestedExploderPortrait2" parent="Portrait" Race="Zerg">
+        <Model value="Assets\Portraits\Zerg\InfestedColonistPortrait\InfestedColonistPortrait.m3"/>
+        <FacialController value="LocalizedData\Facial\InfestedCivilianPortrait.fxa"/>
+        <Flags index="Facial" value="1"/>
+        <Image value="Assets\Textures\InfestedColonistPortrait_Static.dds"/>
+        <Lighting value="InfestedColonistPortrait"/>
+    </CModel>
+    <CModel id="InfestedFatBomber_Civilian2" parent="Unit" Race="Zerg">
+        <Model value="Assets\Units\Zerg\InfestedFatBomber_Civilian\InfestedFatBomber_Civilian.m3"/>
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraMid04"/>
+        <ScaleMax value="1.200000,1.200000,1.200000"/>
+        <ScaleMin value="1.200000,1.200000,1.200000"/>
+        <SelectionRadius value="0.400000"/>
+        <TechPurchaseCamera value="Star2CameraMid04"/>
+        <TextureDeclares Prefix="infestedcolonist_">
+            <Adaptions Slot="main"/>
+        </TextureDeclares>
+        <UnitGlossaryCamera value="Star2CameraMid04"/>
+        <Variations Probability="1">
+            <TextureExpressionsForEditor Slot="main.diffuse" Expression="RequireAny 06"/>
+        </Variations>
+    </CModel>
+    <CModel id="InfestedFatBomber_Civilian_Death2" parent="UnitDeath">
+        <Model value="Assets\Units\Zerg\InfestedFatBomber_Civilian_Death\InfestedFatBomber_Civilian_Death.m3"/>
+        <LowQualityModel value="ZergSmallUnitDeathLow"/>
+        <EditorCategories value="Race:Zerg"/>
+        <Lighting value="InfestedCivilianDeath"/>
+        <TextureDeclares Prefix="infestedcolonist_">
+            <Adaptions Slot="main"/>
+        </TextureDeclares>
+    </CModel>
+    <CModel id="Invisible2" Race="Neutral">
+        <Model value="Assets\Units\Test\InvisibleUnit\InvisibleUnit.m3"/>
+        <EditorCategories value="Race:Neutral"/>
+        <Flags index="TeenSafe" value="1"/>
+        <Radius value="-1.000000"/>
+        <SelectionRadius value="0.000000"/>
+        <ShadowRadius value="0.000000"/>
+    </CModel>
+    <CModel id="MendBuff2" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Zerg\MendBuff\MendBuff.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="ProtossSmallUnitDeathLow2" parent="UnitDeath" Race="Protoss">
+        <Model value="Assets\Effects\Protoss\ProtossUnitDeath\ProtossUnitDeath_Low.m3"/>
+        <Flags index="TeenSafe" value="1"/>
+        <ScaleMax value="1.250000,1.250000,1.250000"/>
+        <ScaleMin value="1.250000,1.250000,1.250000"/>
+        <SelectionRadius value="0.400000"/>
+        <ShadowRadius value="0.400000"/>
+    </CModel>
+    <CModel id="TerranSmallUnitDeathLow2" parent="UnitDeath" Race="Terran">
+        <Model value="Assets\Effects\Terran\TerranSmallUnitDeath\TerranSmallUnitDeath_Low.m3"/>
+        <Flags index="TeenSafe" value="1"/>
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
+        <SelectionRadius value="0.454300"/>
+        <ShadowRadius value="0.454300"/>
+    </CModel>
+    <CModel id="ZergSmallUnitDeathLow2" parent="UnitDeath" Race="Zerg">
+        <Model value="Assets\Effects\Zerg\ZergSmallUnitDeath\ZergSmallUnitDeath_low.m3"/>
+        <Flags index="TeenSafe" value="1"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+        <SelectionRadius value="0.625000"/>
+        <ShadowRadius value="0.625000"/>
     </CModel>
 </Catalog>

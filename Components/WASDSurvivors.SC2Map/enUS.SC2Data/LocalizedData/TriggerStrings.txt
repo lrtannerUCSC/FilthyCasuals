@@ -17,6 +17,7 @@ Category/Name/A710D351=WASD Movement
 Category/Name/A82BC511=Hatchery Timed Temporary Upgrades
 Category/Name/CB27E6DB=Ground Upgrades
 Category/Name/CB87D547=Engineering Bay
+Category/Name/E64D88B4=EnemyLogic
 Category/Name/FB0891AB=Protoss Special Upgrades
 FunctionDef/Name/10EA304A=WASD KeyUp Check
 FunctionDef/Name/26594FA6=WASD KeyDown Check

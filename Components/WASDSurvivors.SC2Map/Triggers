@@ -6,6 +6,7 @@
         <Item Type="Category" Id="A710D351"/>
         <Item Type="Variable" Id="1B267031"/>
         <Item Type="Category" Id="6E83D2BF"/>
+        <Item Type="Category" Id="E64D88B4"/>
         <Item Type="Trigger" Id="D999150F"/>
         <Item Type="Trigger" Id="443D2784"/>
         <Item Type="Trigger" Id="F9863731"/>
@@ -51594,6 +51595,8 @@
         <Value>ProtossGroundWeaponsAI</Value>
         <ValueType Type="gamelink"/>
         <ValueGameType Type="Upgrade"/>
+    </Element>
+    <Element Type="Category" Id="E64D88B4">
     </Element>
     <Element Type="Trigger" Id="D999150F">
         <Event Type="FunctionCall" Id="DBC56689"/>

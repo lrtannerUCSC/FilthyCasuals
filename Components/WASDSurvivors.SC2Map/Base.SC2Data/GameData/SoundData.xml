@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CSound id="InfestedCivilian_Explode2" parent="Combat">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Explosions\Zerg_ExplosionSmall0.wav" Pitch="-3.000000,6.000000" Volume="-6.000000,-4.000000"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Explosions\Zerg_ExplosionSmall1.wav" Pitch="-3.000000,6.000000" Volume="-6.000000,-4.000000"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Explosions\Zerg_ExplosionSmall2.wav" Pitch="-3.000000,6.000000" Volume="-6.000000,-4.000000"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Explosions\Zerg_ExplosionSmall3.wav" Pitch="-3.000000,6.000000" Volume="-6.000000,-4.000000"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Explosions\Zerg_ExplosionSmall4.wav" Pitch="-3.000000,6.000000" Volume="-6.000000,-4.000000"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Explosions\Zerg_ExplosionSmall5.wav" Pitch="-3.000000,6.000000" Volume="-6.000000,-4.000000"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Explosions\Zerg_ExplosionSmall6.wav" Pitch="-3.000000,6.000000" Volume="-6.000000,-4.000000"/>
+        <DupeMuteCount value="6"/>
+        <Volume value="-6.000000,-4.000000"/>
+    </CSound>
+    <CSound id="InfestedTerranPissed2" parent="Pissed">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="LocalizedData\Sounds\ZergUnitVO\InfestedTerran\InfestedTerran_Pissed00.ogg" FacialAnim="InfestedTerran_Pissed00"/>
+        <AssetArray File="LocalizedData\Sounds\ZergUnitVO\InfestedTerran\InfestedTerran_Pissed01.ogg" FacialAnim="InfestedTerran_Pissed01"/>
+    </CSound>
+    <CSound id="InfestedTerranReady2" parent="Ready" Race="Terran">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="LocalizedData\Sounds\ZergUnitVO\InfestedTerran\InfestedTerran_Ready00.ogg" FacialAnim="InfestedTerran_Ready00"/>
+        <Category value="Voice"/>
+        <Pitch value="-2.000000,1.000000"/>
+        <Volume value="-2.000000,1.000000"/>
+    </CSound>
+    <CSound id="InfestedTerranWhat2" parent="Voice">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="LocalizedData\Sounds\ZergUnitVO\InfestedTerran\InfestedTerran_What00.ogg" FacialAnim="InfestedTerran_What00"/>
+        <AssetArray File="LocalizedData\Sounds\ZergUnitVO\InfestedTerran\InfestedTerran_What01.ogg" FacialAnim="InfestedTerran_What01"/>
+    </CSound>
+    <CSound id="InfestedTerranYes2" parent="Voice">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="LocalizedData\Sounds\ZergUnitVO\InfestedTerran\InfestedTerran_Attack00.ogg" FacialAnim="InfestedTerran_Attack00"/>
+        <AssetArray File="LocalizedData\Sounds\ZergUnitVO\InfestedTerran\InfestedTerran_Attack01.ogg" FacialAnim="InfestedTerran_Attack01"/>
+        <Flags index="VariationFallback" value="0"/>
+    </CSound>
+</Catalog>

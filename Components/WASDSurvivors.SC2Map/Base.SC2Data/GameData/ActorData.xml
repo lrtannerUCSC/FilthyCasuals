@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CActorForceSphere id="BanelingAttackForce2">
+        <On Terms="Effect.VolatileBurstU.Start; At Caster" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create BanelingAttackForceUp"/>
+        <On Terms="Effect.HotSBanelingExplodeLargeSearch2.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.HotSBanelingExplodeLargeSearchAll2.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.SlivanCreepExplodeDamage.Start; At Caster" Send="Create"/>
+        <HostSiteOps Ops="SOpShadow SOpRandomPointInCircleDot25"/>
+        <Model value="ActorForceField2"/>
+        <Duration value="0.300000"/>
+        <Magnitude value="16.000000,8.000000"/>
+        <Radius value="2.100000,0.300000"/>
+    </CActorForceSphere>
+    <CActorModel id="CorrosiveBileImpact2" parent="ModelAnimationStyleOneShot">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Effect.HotSBanelingExplodeLargeDirect2.Start; At Target; ValidateEffect HaveHotSCorrosiveBileAndNotStructure" Send="Create"/>
+        <On Terms="Effect.HotSBanelingExplodeSmallDirect.Start; At Target; ValidateEffect HaveHotSCorrosiveBileAndNotStructure" Send="Create"/>
+        <On Terms="ActorCreation; ValidateEffect HaveHotSHunter" Send="ModelSwap CorrosiveBileImpactB"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter" HoldRotation="1"/>
+        <AutoScaleFactor value="0.800000"/>
+    </CActorModel>
     <CActorUnit id="CustomBarracksActor" parent="TerranBuildingFlyerEx" unitName="CustomBarracks">
         <On Terms="Behavior.ColonyInfestation.On" Send="Create InfestationBarracks"/>
         <On Terms="UnitDeathCustomize.BarracksFlying" Send="DeathCustomize Flying"/>
@@ -37,8 +59,58 @@
         <HostSiteOps Ops="SOpAttachCenter"/>
         <Model value="FireSuppressionBots"/>
     </CActorModel>
+    <CActorUnit id="InfestedExploder2" parent="GenericBurrowerStandard" unitSound="InfestedCivilian" unitName="InfestedExploder2">
+        <Aliases value="_UnitSmall"/>
+        <Macros value="UnloadDropAnim"/>
+        <Macros value="ZergBurrowStandardAnimMacro"/>
+        <Macros value="ZergSmallBurrowEffects"/>
+        <Model value="InfestedFatBomber_Civilian2"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="InfestedFatBomber_Civilian2"/>
+        <DeathArray index="Normal" ModelLink="InfestedFatBomber_Civilian_Death2" SoundLink="InfestedCivilian_Explode2"/>
+        <DeathCustoms index="0" ModelLink="ZergSmallUnitDeathLow2"/>
+        <DeathCustoms index="1" ModelLink="ProtossSmallUnitDeathLow2"/>
+        <DeathCustoms index="2" ModelLink="TerranSmallUnitDeathLow2"/>
+        <DeathCustoms index="3" ModelLink="ZergSmallUnitDeathLow2"/>
+        <DeathCustoms index="4" ModelLink="Invisible2"/>
+        <PlacementModel value="InfestedFatBomber_Civilian2"/>
+        <PortraitModel value="InfestedExploderPortrait2"/>
+        <WalkAnimMoveSpeed value="1.8007"/>
+        <BarOffset value="45"/>
+        <BarWidth value="36"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Zerg-Infestedcolonist.dds"/>
+        </GroupIcon>
+        <GroupSoundArray index="Birth" value="InfestedTerranBirth"/>
+        <GroupSoundArray index="Ready" value="InfestedTerranReady2"/>
+        <GroupSoundArray index="Help" value="InfestedTerranHelp"/>
+        <GroupSoundArray index="What" value="InfestedTerranWhat2"/>
+        <GroupSoundArray index="Yes" value="InfestedTerranYes2"/>
+        <GroupSoundArray index="Attack" value="InfestedTerranYes2"/>
+        <GroupSoundArray index="Pissed" value="InfestedTerranPissed2"/>
+        <GroupSoundArray index="Board" value="InfestedCivilian_GroupBoard"/>
+        <HeroIcon value="Assets\Textures\btn-unit-zerg-infestedcolonist.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
+        <SoundArray index="Birth" value="InfestedTerranBirth"/>
+        <SoundArray index="Ready" value="InfestedTerranReady2"/>
+        <SoundArray index="Help" value="InfestedTerranHelp"/>
+        <SoundArray index="What" value="InfestedTerranWhat2"/>
+        <SoundArray index="Yes" value="InfestedTerranYes2"/>
+        <SoundArray index="Attack" value="InfestedTerranYes2"/>
+        <SoundArray index="Pissed" value="InfestedTerranPissed2"/>
+        <SoundArray index="Movement" value="InfestedTerranMovement"/>
+        <SoundArray index="Turning" value="InfestedTerranCampaignTurning"/>
+        <SoundArray index="Board" value="InfestedTerranCampaignBoard"/>
+        <SoundArray index="Click" value="InfestedTerranCampaignClick"/>
+        <SoundArray index="ClickError" value="InfestedTerranCampaignClickError"/>
+        <SoundArray index="Highlight" value="InfestedTerranCampaignHighlight"/>
+        <UnitIcon value="Assets\Textures\btn-unit-zerg-infestedcolonist.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Zerg-Infestedcolonist.dds"/>
+        </Wireframe>
+    </CActorUnit>
     <CActorUnit id="InfestedTerranSpawnerActor" parent="GenericUnitStandard" unitName="InfestedTerranSpawner">
-        <Aliases value="_UnitHuge"/>
+        <Aliases value="_UnitSmall"/>
         <EditorCategories value=""/>
         <On Terms="ActorCreation" Send="AnimGroupApply Work Work,Start Work,End"/>
         <On Terms="Behavior.ColonyInfestation.On" Send="Create InfestationBunker"/>
@@ -46,11 +118,11 @@
         <On Terms="Behavior.ColonyInfestation.On" Send="StatusSet Infested 1"/>
         <On Terms="Behavior.InfestedVisual.On" Send="StatusSet Infested 1"/>
         <On Terms="UnitDeathCustomize; IsStatus Infested 1" Target="InfestationBunker" Send="Signal InfestationDeathSmall"/>
-        <Model value="InfestedBunker"/>
-        <BuildModel value="InfestedBunker"/>
+        <Model value="ZergEggNestSmall"/>
+        <BuildModel value="ZergEggNestSmall"/>
         <DeathArray index="Normal" ModelLink="BunkerDeath" SoundLink="Bunker_Explode"/>
         <DeathActorModel value="ColonyInfestationBuildingDeath"/>
-        <PlacementModel value="InfestedBunker"/>
+        <PlacementModel value="ZergEggNestSmall"/>
         <BarOffset value="70"/>
         <BarWidth value="138"/>
         <GroupIcon>
@@ -149,6 +221,24 @@
         <PlacementModel value="BloodSplats"/>
         <HighlightTooltip value="Unit/Name/BloodsplatActor"/>
     </CActorUnit>
+    <CActorModel id="RegenerativeBileBuff2" parent="ModelAnimationStyleOneShot">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Effect.HotSBanelingExplodeLargeHealSearchHeal2.Start; At Target; !ValidateUnit HaveHotSHunter" Send="Create"/>
+        <On Terms="Effect.HotSBanelingExplodeSmallHealSearchHeal.Start; At Target; !ValidateUnit HaveHotSHunter" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter SOpForwardNorth" HoldRotation="1"/>
+        <Model value="MendBuff2"/>
+    </CActorModel>
+    <CActorModel id="RegenerativeBileBuffB2" parent="ModelAnimationStyleOneShot">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Effect.HotSBanelingExplodeLargeHealSearchHeal2.Start; At Target; ValidatePlayer HaveHotSHunter" Send="Create"/>
+        <On Terms="Effect.HotSBanelingExplodeSmallHealSearchHeal.Start; At Target; ValidatePlayer HaveHotSHunter" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter SOpForwardNorth" HoldRotation="1"/>
+        <Model value="MendBuff2"/>
+    </CActorModel>
     <CActorStateMonitor id="TerranFlamesMediumBuilding2" parent="TerranFlames">
         <On Terms="UnitCreation.SupplyDepot" Send="Create"/>
         <On Terms="UnitCreation.SupplyDepotLowered" Send="Create"/>

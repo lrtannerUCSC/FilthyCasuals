@@ -1,0 +1,9 @@
+﻿Button/Hotkey/Attack2=A
+Button/Hotkey/BurrowDown2=R
+Button/Hotkey/DisableBuildingAttack2=G
+Button/Hotkey/EnableBuildingAttack2=F
+Button/Hotkey/Explode2=X
+Button/Hotkey/Move2=M
+Button/Hotkey/MoveHoldPosition2=H
+Button/Hotkey/MovePatrol2=P
+Button/Hotkey/Stop2=S

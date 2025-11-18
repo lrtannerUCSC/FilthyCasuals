@@ -1,8 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CButton id="Attack2">
+        <Icon value="Assets\Textures\btn-command-attack.dds"/>
+        <AlertIcon value="Assets\Textures\btn-command-attack.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+        <TintRacially value="1"/>
+        <Universal value="1"/>
+        <SimpleDisplayText value="SimpleDisplay/Attack2"/>
+    </CButton>
+    <CButton id="BanelingCorrosiveBile2">
+        <Icon value="Assets\Textures\BTN-Upgrade-Zerg-CorrosiveAcid.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Upgrade-Zerg-CorrosiveAcid.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="BanelingHeal2">
+        <Icon value="Assets\Textures\BTN-Upgrade-Zerg-RegenerativeBile.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Upgrade-Zerg-RegenerativeBile.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
     <CButton id="BuildAutoTurret"/>
+    <CButton id="BurrowDown2">
+        <Icon value="Assets\Textures\btn-ability-zerg-burrow-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-burrow-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+        <Universal value="1"/>
+    </CButton>
     <CButton id="CommanderPrestigeKerriganCreep">
         <Name value="Button/Name/TrainCivilian"/>
         <AlertName value="Button/Name/TrainCivilian"/>
+    </CButton>
+    <CButton id="DisableBuildingAttack2">
+        <Icon value="Assets\Textures\btn-ability-zerg-explode-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-explode-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="EnableBuildingAttack2">
+        <Icon value="Assets\Textures\btn-ability-zerg-attackstructure-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-attackstructure-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="Explode2">
+        <Icon value="Assets\Textures\btn-ability-zerg-explode-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-explode-color.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="Move2">
+        <Icon value="Assets\Textures\btn-command-move.dds"/>
+        <AlertIcon value="Assets\Textures\btn-command-move.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+        <TintRacially value="1"/>
+        <Universal value="1"/>
+        <SimpleDisplayText value="SimpleDisplay/Move2"/>
+    </CButton>
+    <CButton id="MoveHoldPosition2">
+        <Icon value="Assets\Textures\btn-command-holdposition.dds"/>
+        <AlertIcon value="Assets\Textures\btn-command-holdposition.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+        <TintRacially value="1"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="MovePatrol2">
+        <Icon value="Assets\Textures\btn-command-patrol.dds"/>
+        <AlertIcon value="Assets\Textures\btn-command-patrol.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+        <TintRacially value="1"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="RuptureUpgrade2">
+        <Icon value="Assets\Textures\BTN-Upgrade-Zerg-Rupture.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Upgrade-Zerg-Rupture.dds"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CButton>
+    <CButton id="Stop2">
+        <Icon value="Assets\Textures\btn-command-stop.dds"/>
+        <AlertIcon value="Assets\Textures\btn-command-stop.dds"/>
+        <EditorCategories value="Race:Neutral"/>
+        <TintRacially value="1"/>
+        <Universal value="1"/>
     </CButton>
 </Catalog>

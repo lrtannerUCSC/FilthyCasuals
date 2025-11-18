@@ -4,11 +4,21 @@
         <cliffSetList num="1">
             <cliffSet i="0" name="TheVoidCliff0"/>
         </cliffSetList>
-        <vertData quantizeBias="1.000213e+00" quantizeScale="1.525906e-04" standardHeight="8.000000e+00" name="t3HeightMap"/>
+        <rampList num="8">
+            <ramp dir="1" hi="2" lo="1" leftLo="u(0.000000e+00, 1.000000e+00) r(1.000000e+00, 0.000000e+00) c=(5.700000e+01, 3.800000e+01) w=1.000000e+00 h=2.000000e+00" leftHi="u(0.000000e+00, 0.000000e+00) r(0.000000e+00, 0.000000e+00) c=(-4.000000e+00, 0.000000e+00) w=0.000000e+00 h=0.000000e+00" rightLo="u(0.000000e+00, 1.000000e+00) r(1.000000e+00, 0.000000e+00) c=(7.100000e+01, 3.800000e+01) w=1.000000e+00 h=2.000000e+00" rightHi="u(0.000000e+00, 0.000000e+00) r(0.000000e+00, 0.000000e+00) c=(6.000000e+00, 0.000000e+00) w=0.000000e+00 h=0.000000e+00" base="u(0.000000e+00, 1.000000e+00) r(1.000000e+00, 0.000000e+00) c=(6.400000e+01, 3.900000e+01) w=8.000000e+00 h=1.000000e+00" mid="u(0.000000e+00, 1.000000e+00) r(1.000000e+00, 0.000000e+00) c=(6.400000e+01, 3.800000e+01) w=6.000000e+00 h=2.000000e+00" cid="0" leftLoVar="0" leftHiVar="4294967295" rightLoVar="0" rightHiVar="4294967295"/>
+            <ramp dir="3" hi="2" lo="1" leftLo="u(1.000000e+00, 0.000000e+00) r(0.000000e+00, -1.000000e+00) c=(4.800000e+01, 5.500000e+01) w=1.000000e+00 h=2.000000e+00" leftHi="u(0.000000e+00, 0.000000e+00) r(0.000000e+00, 0.000000e+00) c=(0.000000e+00, 2.000000e+00) w=0.000000e+00 h=0.000000e+00" rightLo="u(1.000000e+00, 0.000000e+00) r(0.000000e+00, -1.000000e+00) c=(4.800000e+01, 4.900000e+01) w=1.000000e+00 h=2.000000e+00" rightHi="u(0.000000e+00, 0.000000e+00) r(0.000000e+00, 0.000000e+00) c=(0.000000e+00, -2.000000e+00) w=0.000000e+00 h=0.000000e+00" base="u(1.000000e+00, 0.000000e+00) r(0.000000e+00, -1.000000e+00) c=(4.900000e+01, 5.200000e+01) w=4.000000e+00 h=1.000000e+00" mid="u(1.000000e+00, 0.000000e+00) r(0.000000e+00, -1.000000e+00) c=(4.800000e+01, 5.200000e+01) w=2.000000e+00 h=2.000000e+00" cid="0" leftLoVar="0" leftHiVar="4294967295" rightLoVar="0" rightHiVar="4294967295"/>
+            <ramp dir="2" hi="2" lo="1" leftLo="u(-1.000000e+00, 0.000000e+00) r(0.000000e+00, 1.000000e+00) c=(8.000000e+01, 4.900000e+01) w=1.000000e+00 h=2.000000e+00" leftHi="u(0.000000e+00, 0.000000e+00) r(0.000000e+00, 0.000000e+00) c=(0.000000e+00, -2.000000e+00) w=0.000000e+00 h=0.000000e+00" rightLo="u(-1.000000e+00, 0.000000e+00) r(0.000000e+00, 1.000000e+00) c=(8.000000e+01, 5.500000e+01) w=1.000000e+00 h=2.000000e+00" rightHi="u(0.000000e+00, 0.000000e+00) r(0.000000e+00, 0.000000e+00) c=(0.000000e+00, 2.000000e+00) w=0.000000e+00 h=0.000000e+00" base="u(-1.000000e+00, 0.000000e+00) r(0.000000e+00, 1.000000e+00) c=(7.900000e+01, 5.200000e+01) w=4.000000e+00 h=1.000000e+00" mid="u(-1.000000e+00, 0.000000e+00) r(0.000000e+00, 1.000000e+00) c=(8.000000e+01, 5.200000e+01) w=2.000000e+00 h=2.000000e+00" cid="0" leftLoVar="0" leftHiVar="4294967295" rightLoVar="0" rightHiVar="4294967295"/>
+            <ramp dir="3" hi="2" lo="1" leftLo="u(1.000000e+00, 0.000000e+00) r(0.000000e+00, -1.000000e+00) c=(3.800000e+01, 7.100000e+01) w=1.000000e+00 h=2.000000e+00" leftHi="u(0.000000e+00, 0.000000e+00) r(0.000000e+00, 0.000000e+00) c=(0.000000e+00, 4.000000e+00) w=0.000000e+00 h=0.000000e+00" rightLo="u(1.000000e+00, 0.000000e+00) r(0.000000e+00, -1.000000e+00) c=(3.800000e+01, 5.700000e+01) w=1.000000e+00 h=2.000000e+00" rightHi="u(0.000000e+00, 0.000000e+00) r(0.000000e+00, 0.000000e+00) c=(0.000000e+00, -6.000000e+00) w=0.000000e+00 h=0.000000e+00" base="u(1.000000e+00, 0.000000e+00) r(0.000000e+00, -1.000000e+00) c=(3.900000e+01, 6.400000e+01) w=8.000000e+00 h=1.000000e+00" mid="u(1.000000e+00, 0.000000e+00) r(0.000000e+00, -1.000000e+00) c=(3.800000e+01, 6.400000e+01) w=6.000000e+00 h=2.000000e+00" cid="0" leftLoVar="0" leftHiVar="4294967295" rightLoVar="0" rightHiVar="4294967295"/>
+            <ramp dir="2" hi="2" lo="1" leftLo="u(-1.000000e+00, 0.000000e+00) r(0.000000e+00, 1.000000e+00) c=(8.800000e+01, 5.700000e+01) w=1.000000e+00 h=2.000000e+00" leftHi="u(0.000000e+00, 0.000000e+00) r(0.000000e+00, 0.000000e+00) c=(0.000000e+00, -8.000000e+00) w=0.000000e+00 h=0.000000e+00" rightLo="u(-1.000000e+00, 0.000000e+00) r(0.000000e+00, 1.000000e+00) c=(8.800000e+01, 7.100000e+01) w=1.000000e+00 h=2.000000e+00" rightHi="u(0.000000e+00, 0.000000e+00) r(0.000000e+00, 0.000000e+00) c=(0.000000e+00, 2.000000e+00) w=0.000000e+00 h=0.000000e+00" base="u(-1.000000e+00, 0.000000e+00) r(0.000000e+00, 1.000000e+00) c=(8.700000e+01, 6.400000e+01) w=8.000000e+00 h=1.000000e+00" mid="u(-1.000000e+00, 0.000000e+00) r(0.000000e+00, 1.000000e+00) c=(8.800000e+01, 6.400000e+01) w=6.000000e+00 h=2.000000e+00" cid="0" leftLoVar="0" leftHiVar="4294967295" rightLoVar="0" rightHiVar="4294967295"/>
+            <ramp dir="3" hi="2" lo="1" leftLo="u(1.000000e+00, 0.000000e+00) r(0.000000e+00, -1.000000e+00) c=(4.800000e+01, 7.900000e+01) w=1.000000e+00 h=2.000000e+00" leftHi="u(0.000000e+00, 0.000000e+00) r(0.000000e+00, 0.000000e+00) c=(0.000000e+00, 2.000000e+00) w=0.000000e+00 h=0.000000e+00" rightLo="u(1.000000e+00, 0.000000e+00) r(0.000000e+00, -1.000000e+00) c=(4.800000e+01, 7.300000e+01) w=1.000000e+00 h=2.000000e+00" rightHi="u(0.000000e+00, 0.000000e+00) r(0.000000e+00, 0.000000e+00) c=(0.000000e+00, -2.000000e+00) w=0.000000e+00 h=0.000000e+00" base="u(1.000000e+00, 0.000000e+00) r(0.000000e+00, -1.000000e+00) c=(4.900000e+01, 7.600000e+01) w=4.000000e+00 h=1.000000e+00" mid="u(1.000000e+00, 0.000000e+00) r(0.000000e+00, -1.000000e+00) c=(4.800000e+01, 7.600000e+01) w=2.000000e+00 h=2.000000e+00" cid="0" leftLoVar="0" leftHiVar="4294967295" rightLoVar="0" rightHiVar="4294967295"/>
+            <ramp dir="2" hi="2" lo="1" leftLo="u(-1.000000e+00, 0.000000e+00) r(0.000000e+00, 1.000000e+00) c=(8.000000e+01, 7.300000e+01) w=1.000000e+00 h=2.000000e+00" leftHi="u(0.000000e+00, 0.000000e+00) r(0.000000e+00, 0.000000e+00) c=(0.000000e+00, -2.000000e+00) w=0.000000e+00 h=0.000000e+00" rightLo="u(-1.000000e+00, 0.000000e+00) r(0.000000e+00, 1.000000e+00) c=(8.000000e+01, 7.900000e+01) w=1.000000e+00 h=2.000000e+00" rightHi="u(0.000000e+00, 0.000000e+00) r(0.000000e+00, 0.000000e+00) c=(0.000000e+00, 2.000000e+00) w=0.000000e+00 h=0.000000e+00" base="u(-1.000000e+00, 0.000000e+00) r(0.000000e+00, 1.000000e+00) c=(7.900000e+01, 7.600000e+01) w=4.000000e+00 h=1.000000e+00" mid="u(-1.000000e+00, 0.000000e+00) r(0.000000e+00, 1.000000e+00) c=(8.000000e+01, 7.600000e+01) w=2.000000e+00 h=2.000000e+00" cid="0" leftLoVar="0" leftHiVar="4294967295" rightLoVar="0" rightHiVar="4294967295"/>
+            <ramp dir="0" hi="2" lo="1" leftLo="u(0.000000e+00, -1.000000e+00) r(-1.000000e+00, 0.000000e+00) c=(7.100000e+01, 9.000000e+01) w=1.000000e+00 h=2.000000e+00" leftHi="u(0.000000e+00, 0.000000e+00) r(0.000000e+00, 0.000000e+00) c=(6.000000e+00, 0.000000e+00) w=0.000000e+00 h=0.000000e+00" rightLo="u(0.000000e+00, -1.000000e+00) r(-1.000000e+00, 0.000000e+00) c=(5.700000e+01, 9.000000e+01) w=1.000000e+00 h=2.000000e+00" rightHi="u(0.000000e+00, 0.000000e+00) r(0.000000e+00, 0.000000e+00) c=(-4.000000e+00, 0.000000e+00) w=0.000000e+00 h=0.000000e+00" base="u(0.000000e+00, -1.000000e+00) r(-1.000000e+00, 0.000000e+00) c=(6.400000e+01, 8.900000e+01) w=8.000000e+00 h=1.000000e+00" mid="u(0.000000e+00, -1.000000e+00) r(-1.000000e+00, 0.000000e+00) c=(6.400000e+01, 9.000000e+01) w=6.000000e+00 h=2.000000e+00" cid="0" leftLoVar="0" leftHiVar="4294967295" rightLoVar="0" rightHiVar="4294967295"/>
+        </rampList>
+        <vertData quantizeBias="1.000362e+00" quantizeScale="1.525904e-04" standardHeight="8.000000e+00" name="t3HeightMap"/>
         <masks name="t3TextureMasks"/>
         <textureSetList num="8">
             <textureSet i="0" name="TheVoid"/>
-            <textureSet i="1" name=""/>
+            <textureSet i="1" name="AiurCityNight"/>
             <textureSet i="2" name=""/>
             <textureSet i="3" name=""/>
             <textureSet i="4" name=""/>
@@ -24,14 +34,14 @@
             <texture i="4" name="Void4"/>
             <texture i="5" name="Void6"/>
             <texture i="6" name="Void1"/>
-            <texture i="7" name=""/>
-            <texture i="8" name=""/>
-            <texture i="9" name=""/>
-            <texture i="10" name=""/>
-            <texture i="11" name=""/>
-            <texture i="12" name=""/>
-            <texture i="13" name=""/>
-            <texture i="14" name=""/>
+            <texture i="7" name="Void7"/>
+            <texture i="8" name="AiurTemple4"/>
+            <texture i="9" name="AiurTemple1"/>
+            <texture i="10" name="AiurCity4"/>
+            <texture i="11" name="AiurCity2"/>
+            <texture i="12" name="AiurCity5"/>
+            <texture i="13" name="AiurCity6"/>
+            <texture i="14" name="AiurCity7"/>
             <texture i="15" name=""/>
             <texture i="16" name=""/>
             <texture i="17" name=""/>
@@ -170,8 +180,8 @@
             <blockTextureSet i="84" tileSet="0"/>
             <blockTextureSet i="85" tileSet="0"/>
             <blockTextureSet i="86" tileSet="0"/>
-            <blockTextureSet i="87" tileSet="0"/>
-            <blockTextureSet i="88" tileSet="0"/>
+            <blockTextureSet i="87" tileSet="1"/>
+            <blockTextureSet i="88" tileSet="1"/>
             <blockTextureSet i="89" tileSet="0"/>
             <blockTextureSet i="90" tileSet="0"/>
             <blockTextureSet i="91" tileSet="0"/>
@@ -185,10 +195,10 @@
             <blockTextureSet i="99" tileSet="0"/>
             <blockTextureSet i="100" tileSet="0"/>
             <blockTextureSet i="101" tileSet="0"/>
-            <blockTextureSet i="102" tileSet="0"/>
-            <blockTextureSet i="103" tileSet="0"/>
-            <blockTextureSet i="104" tileSet="0"/>
-            <blockTextureSet i="105" tileSet="0"/>
+            <blockTextureSet i="102" tileSet="1"/>
+            <blockTextureSet i="103" tileSet="1"/>
+            <blockTextureSet i="104" tileSet="1"/>
+            <blockTextureSet i="105" tileSet="1"/>
             <blockTextureSet i="106" tileSet="0"/>
             <blockTextureSet i="107" tileSet="0"/>
             <blockTextureSet i="108" tileSet="0"/>
@@ -200,12 +210,12 @@
             <blockTextureSet i="114" tileSet="0"/>
             <blockTextureSet i="115" tileSet="0"/>
             <blockTextureSet i="116" tileSet="0"/>
-            <blockTextureSet i="117" tileSet="0"/>
-            <blockTextureSet i="118" tileSet="0"/>
-            <blockTextureSet i="119" tileSet="0"/>
-            <blockTextureSet i="120" tileSet="0"/>
-            <blockTextureSet i="121" tileSet="0"/>
-            <blockTextureSet i="122" tileSet="0"/>
+            <blockTextureSet i="117" tileSet="1"/>
+            <blockTextureSet i="118" tileSet="1"/>
+            <blockTextureSet i="119" tileSet="1"/>
+            <blockTextureSet i="120" tileSet="1"/>
+            <blockTextureSet i="121" tileSet="1"/>
+            <blockTextureSet i="122" tileSet="1"/>
             <blockTextureSet i="123" tileSet="0"/>
             <blockTextureSet i="124" tileSet="0"/>
             <blockTextureSet i="125" tileSet="0"/>
@@ -216,12 +226,12 @@
             <blockTextureSet i="130" tileSet="0"/>
             <blockTextureSet i="131" tileSet="0"/>
             <blockTextureSet i="132" tileSet="0"/>
-            <blockTextureSet i="133" tileSet="0"/>
-            <blockTextureSet i="134" tileSet="0"/>
-            <blockTextureSet i="135" tileSet="0"/>
-            <blockTextureSet i="136" tileSet="0"/>
-            <blockTextureSet i="137" tileSet="0"/>
-            <blockTextureSet i="138" tileSet="0"/>
+            <blockTextureSet i="133" tileSet="1"/>
+            <blockTextureSet i="134" tileSet="1"/>
+            <blockTextureSet i="135" tileSet="1"/>
+            <blockTextureSet i="136" tileSet="1"/>
+            <blockTextureSet i="137" tileSet="1"/>
+            <blockTextureSet i="138" tileSet="1"/>
             <blockTextureSet i="139" tileSet="0"/>
             <blockTextureSet i="140" tileSet="0"/>
             <blockTextureSet i="141" tileSet="0"/>
@@ -233,10 +243,10 @@
             <blockTextureSet i="147" tileSet="0"/>
             <blockTextureSet i="148" tileSet="0"/>
             <blockTextureSet i="149" tileSet="0"/>
-            <blockTextureSet i="150" tileSet="0"/>
-            <blockTextureSet i="151" tileSet="0"/>
-            <blockTextureSet i="152" tileSet="0"/>
-            <blockTextureSet i="153" tileSet="0"/>
+            <blockTextureSet i="150" tileSet="1"/>
+            <blockTextureSet i="151" tileSet="1"/>
+            <blockTextureSet i="152" tileSet="1"/>
+            <blockTextureSet i="153" tileSet="1"/>
             <blockTextureSet i="154" tileSet="0"/>
             <blockTextureSet i="155" tileSet="0"/>
             <blockTextureSet i="156" tileSet="0"/>
@@ -250,8 +260,8 @@
             <blockTextureSet i="164" tileSet="0"/>
             <blockTextureSet i="165" tileSet="0"/>
             <blockTextureSet i="166" tileSet="0"/>
-            <blockTextureSet i="167" tileSet="0"/>
-            <blockTextureSet i="168" tileSet="0"/>
+            <blockTextureSet i="167" tileSet="1"/>
+            <blockTextureSet i="168" tileSet="1"/>
             <blockTextureSet i="169" tileSet="0"/>
             <blockTextureSet i="170" tileSet="0"/>
             <blockTextureSet i="171" tileSet="0"/>
@@ -340,6 +350,159 @@
             <blockTextureSet i="254" tileSet="0"/>
             <blockTextureSet i="255" tileSet="0"/>
         </blockTextureSetList>
-        <cliffCellList num="4096" numOccupied="0"/>
+        <cliffCellList num="4096" numOccupied="152">
+            <cc i="1180" f="2" cid="0" cvar="0"/>
+            <cc i="1181" f="2" cid="0" cvar="0"/>
+            <cc i="1182" f="2" cid="0" cvar="0"/>
+            <cc i="1183" f="2" cid="0" cvar="0"/>
+            <cc i="1184" f="2" cid="0" cvar="0"/>
+            <cc i="1185" f="2" cid="0" cvar="0"/>
+            <cc i="1186" f="2" cid="0" cvar="0"/>
+            <cc i="1187" f="2" cid="0" cvar="0"/>
+            <cc i="1244" f="2" cid="0" cvar="2"/>
+            <cc i="1245" f="2" cid="0" cvar="2"/>
+            <cc i="1246" f="2" cid="0" cvar="3"/>
+            <cc i="1247" f="2" cid="0" cvar="2"/>
+            <cc i="1248" f="2" cid="0" cvar="1"/>
+            <cc i="1249" f="2" cid="0" cvar="2"/>
+            <cc i="1250" f="2" cid="0" cvar="0"/>
+            <cc i="1251" f="2" cid="0" cvar="2"/>
+            <cc i="1308" f="1" cid="0" cvar="0"/>
+            <cc i="1315" f="1" cid="0" cvar="3"/>
+            <cc i="1372" f="1" cid="0" cvar="0"/>
+            <cc i="1379" f="1" cid="0" cvar="0"/>
+            <cc i="1436" f="1" cid="0" cvar="1"/>
+            <cc i="1443" f="1" cid="0" cvar="3"/>
+            <cc i="1500" f="1" cid="0" cvar="0"/>
+            <cc i="1507" f="1" cid="0" cvar="0"/>
+            <cc i="1559" f="2" cid="0" cvar="2"/>
+            <cc i="1560" f="2" cid="0" cvar="2"/>
+            <cc i="1561" f="1" cid="0" cvar="2"/>
+            <cc i="1562" f="1" cid="0" cvar="3"/>
+            <cc i="1563" f="1" cid="0" cvar="1"/>
+            <cc i="1564" f="1" cid="0" cvar="1"/>
+            <cc i="1571" f="1" cid="0" cvar="0"/>
+            <cc i="1572" f="1" cid="0" cvar="2"/>
+            <cc i="1573" f="1" cid="0" cvar="3"/>
+            <cc i="1574" f="1" cid="0" cvar="0"/>
+            <cc i="1575" f="2" cid="0" cvar="0"/>
+            <cc i="1576" f="2" cid="0" cvar="2"/>
+            <cc i="1623" f="2" cid="0" cvar="1"/>
+            <cc i="1624" f="2" cid="0" cvar="1"/>
+            <cc i="1639" f="2" cid="0" cvar="1"/>
+            <cc i="1640" f="2" cid="0" cvar="1"/>
+            <cc i="1687" f="2" cid="0" cvar="0"/>
+            <cc i="1688" f="2" cid="0" cvar="0"/>
+            <cc i="1695" f="1" cid="0" cvar="2"/>
+            <cc i="1696" f="1" cid="0" cvar="0"/>
+            <cc i="1697" f="1" cid="0" cvar="3"/>
+            <cc i="1703" f="2" cid="0" cvar="0"/>
+            <cc i="1704" f="2" cid="0" cvar="1"/>
+            <cc i="1751" f="2" cid="0" cvar="2"/>
+            <cc i="1752" f="2" cid="0" cvar="2"/>
+            <cc i="1759" f="1" cid="0" cvar="3"/>
+            <cc i="1760" f="1" cid="0" cvar="3"/>
+            <cc i="1761" f="1" cid="0" cvar="2"/>
+            <cc i="1767" f="2" cid="0" cvar="2"/>
+            <cc i="1768" f="2" cid="0" cvar="1"/>
+            <cc i="1810" f="2" cid="0" cvar="0"/>
+            <cc i="1811" f="2" cid="0" cvar="0"/>
+            <cc i="1812" f="1" cid="0" cvar="3"/>
+            <cc i="1813" f="1" cid="0" cvar="0"/>
+            <cc i="1814" f="1" cid="0" cvar="2"/>
+            <cc i="1815" f="1" cid="0" cvar="3"/>
+            <cc i="1816" f="1" cid="0" cvar="3"/>
+            <cc i="1831" f="1" cid="0" cvar="2"/>
+            <cc i="1832" f="1" cid="0" cvar="1"/>
+            <cc i="1833" f="1" cid="0" cvar="1"/>
+            <cc i="1834" f="1" cid="0" cvar="2"/>
+            <cc i="1835" f="2" cid="0" cvar="2"/>
+            <cc i="1836" f="2" cid="0" cvar="1"/>
+            <cc i="1874" f="2" cid="0" cvar="0"/>
+            <cc i="1875" f="2" cid="0" cvar="0"/>
+            <cc i="1899" f="2" cid="0" cvar="3"/>
+            <cc i="1900" f="2" cid="0" cvar="3"/>
+            <cc i="1938" f="2" cid="0" cvar="0"/>
+            <cc i="1939" f="2" cid="0" cvar="3"/>
+            <cc i="1963" f="2" cid="0" cvar="0"/>
+            <cc i="1964" f="2" cid="0" cvar="2"/>
+            <cc i="2002" f="2" cid="0" cvar="0"/>
+            <cc i="2003" f="2" cid="0" cvar="3"/>
+            <cc i="2027" f="2" cid="0" cvar="0"/>
+            <cc i="2028" f="2" cid="0" cvar="3"/>
+            <cc i="2066" f="2" cid="0" cvar="0"/>
+            <cc i="2067" f="2" cid="0" cvar="0"/>
+            <cc i="2091" f="2" cid="0" cvar="2"/>
+            <cc i="2092" f="2" cid="0" cvar="3"/>
+            <cc i="2130" f="2" cid="0" cvar="0"/>
+            <cc i="2131" f="2" cid="0" cvar="2"/>
+            <cc i="2155" f="2" cid="0" cvar="1"/>
+            <cc i="2156" f="2" cid="0" cvar="0"/>
+            <cc i="2194" f="2" cid="0" cvar="0"/>
+            <cc i="2195" f="2" cid="0" cvar="3"/>
+            <cc i="2219" f="2" cid="0" cvar="2"/>
+            <cc i="2220" f="2" cid="0" cvar="1"/>
+            <cc i="2258" f="2" cid="0" cvar="0"/>
+            <cc i="2259" f="2" cid="0" cvar="3"/>
+            <cc i="2260" f="1" cid="0" cvar="0"/>
+            <cc i="2261" f="1" cid="0" cvar="0"/>
+            <cc i="2262" f="1" cid="0" cvar="1"/>
+            <cc i="2263" f="1" cid="0" cvar="2"/>
+            <cc i="2264" f="1" cid="0" cvar="0"/>
+            <cc i="2279" f="1" cid="0" cvar="1"/>
+            <cc i="2280" f="1" cid="0" cvar="1"/>
+            <cc i="2281" f="1" cid="0" cvar="2"/>
+            <cc i="2282" f="1" cid="0" cvar="3"/>
+            <cc i="2283" f="2" cid="0" cvar="2"/>
+            <cc i="2284" f="2" cid="0" cvar="2"/>
+            <cc i="2327" f="2" cid="0" cvar="2"/>
+            <cc i="2328" f="2" cid="0" cvar="3"/>
+            <cc i="2343" f="2" cid="0" cvar="3"/>
+            <cc i="2344" f="2" cid="0" cvar="1"/>
+            <cc i="2391" f="2" cid="0" cvar="2"/>
+            <cc i="2392" f="2" cid="0" cvar="1"/>
+            <cc i="2407" f="2" cid="0" cvar="2"/>
+            <cc i="2408" f="2" cid="0" cvar="0"/>
+            <cc i="2455" f="2" cid="0" cvar="0"/>
+            <cc i="2456" f="2" cid="0" cvar="3"/>
+            <cc i="2471" f="2" cid="0" cvar="1"/>
+            <cc i="2472" f="2" cid="0" cvar="0"/>
+            <cc i="2519" f="2" cid="0" cvar="2"/>
+            <cc i="2520" f="2" cid="0" cvar="2"/>
+            <cc i="2521" f="1" cid="0" cvar="0"/>
+            <cc i="2522" f="1" cid="0" cvar="2"/>
+            <cc i="2523" f="1" cid="0" cvar="2"/>
+            <cc i="2524" f="1" cid="0" cvar="2"/>
+            <cc i="2532" f="1" cid="0" cvar="1"/>
+            <cc i="2533" f="1" cid="0" cvar="1"/>
+            <cc i="2534" f="1" cid="0" cvar="1"/>
+            <cc i="2535" f="2" cid="0" cvar="1"/>
+            <cc i="2536" f="2" cid="0" cvar="3"/>
+            <cc i="2588" f="1" cid="0" cvar="0"/>
+            <cc i="2595" f="1" cid="0" cvar="0"/>
+            <cc i="2596" f="1" cid="0" cvar="3"/>
+            <cc i="2652" f="1" cid="0" cvar="2"/>
+            <cc i="2659" f="1" cid="0" cvar="0"/>
+            <cc i="2716" f="1" cid="0" cvar="2"/>
+            <cc i="2723" f="1" cid="0" cvar="3"/>
+            <cc i="2780" f="1" cid="0" cvar="1"/>
+            <cc i="2787" f="1" cid="0" cvar="0"/>
+            <cc i="2844" f="2" cid="0" cvar="2"/>
+            <cc i="2845" f="2" cid="0" cvar="0"/>
+            <cc i="2846" f="2" cid="0" cvar="1"/>
+            <cc i="2847" f="2" cid="0" cvar="1"/>
+            <cc i="2848" f="2" cid="0" cvar="0"/>
+            <cc i="2849" f="2" cid="0" cvar="3"/>
+            <cc i="2850" f="2" cid="0" cvar="3"/>
+            <cc i="2851" f="2" cid="0" cvar="2"/>
+            <cc i="2908" f="2" cid="0" cvar="0"/>
+            <cc i="2909" f="2" cid="0" cvar="0"/>
+            <cc i="2910" f="2" cid="0" cvar="0"/>
+            <cc i="2911" f="2" cid="0" cvar="0"/>
+            <cc i="2912" f="2" cid="0" cvar="0"/>
+            <cc i="2913" f="2" cid="0" cvar="0"/>
+            <cc i="2914" f="2" cid="0" cvar="0"/>
+            <cc i="2915" f="2" cid="0" cvar="0"/>
+        </cliffCellList>
     </heightMap>
 </terrain>

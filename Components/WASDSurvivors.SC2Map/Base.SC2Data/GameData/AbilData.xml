@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CAbilMorph id="BurrowInfestedExploderDown2">
+        <AbilSetId value="BrwD"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="BurrowDown">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <ActorKey value="BurrowDown"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="SuppressMovement" value="1"/>
+        <InfoArray Unit="InfestedExploderBurrowed2" RandomDelayMax="0.37">
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="1.333"/>
+            </SectionArray>
+            <SectionArray index="Mover">
+                <DurationArray index="Delay" value="1.333"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="1.333"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
     <CAbilResearch id="CleaningBotUpgrades">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <InfoArray index="Research1" Upgrade="CleaningBotSpeedUpgrade">
@@ -9,12 +30,49 @@
             <Button DefaultButtonFace="HyperionVoidCoopHyperjump"/>
         </InfoArray>
     </CAbilResearch>
+    <CAbilBuild id="CreepTumorBuild">
+        <Range value="5"/>
+        <!--EffectArray index="Finish" value="CreepTumorLaunchMissile"/>
+        <EffectArray index="Cancel" value="CreepTumorLaunchMissile"/-->
+    </CAbilBuild>
+    <CAbilEffectInstant id="ExplodeHeal2">
+        <AbilSetId value="Explode"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Effect index="0" value="HotSBanelingDeathExplodeLargeSet2"/>
+        <Cost>
+            <Cooldown Link="Abil/Explode" TimeUse="0.5"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Explode" Requirements="HaveHotSBanelingHeal"/>
+    </CAbilEffectInstant>
     <CAbilResearch id="GatlingTurretUpgrade">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <InfoArray index="Research1" Upgrade="GatlingTurretUpgrade">
             <Button DefaultButtonFace="BuildAutoTurret"/>
         </InfoArray>
     </CAbilResearch>
+    <CAbilBehavior id="GenerateCreep">
+        <CmdButtonArray index="On" Requirements=""/>
+        <Flags index="ToggledOn" value="1"/>
+        <BehaviorArray index="0" value="makeCreep2x2Purifier"/>
+    </CAbilBehavior>
+    <CAbilTrain id="InfestedMonsterTrain">
+        <InfoArray index="Train1">
+            <Cooldown TimeUse="5"/>
+            <Flags index="AutoCast" value="1"/>
+            <Flags index="AutoCastOn" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train2" Time="8">
+            <Flags index="AutoCast" value="1"/>
+            <Flags index="AutoCastOn" value="1"/>
+        </InfoArray>
+        <InfoArray index="Train3" Time="15">
+            <Button DefaultButtonFace="MasteryStukovVolatileChance" State="Available"/>
+            <Unit index="0" value="InfestedExploder"/>
+            <Unit value="InfestedCivilian"/>
+            <Flags index="AutoCast" value="1"/>
+            <Flags index="AutoCastOn" value="1"/>
+        </InfoArray>
+    </CAbilTrain>
     <CAbilTrain id="MengskMercTrain">
         <InfoArray index="Train1">
             <Button DefaultButtonFace="" State="Available"/>
@@ -34,7 +92,34 @@
         <InfoArray index="Train4" Time="6"/>
         <InfoArray index="Train5" Time="6"/>
     </CAbilTrain>
+    <CAbilBehavior id="VolatileBurstBuilding2">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="On" DefaultButtonFace="EnableBuildingAttack">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="Off" DefaultButtonFace="DisableBuildingAttack">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Flags index="Toggle" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <BehaviorArray value="VolatileBurstBuilding"/>
+    </CAbilBehavior>
+    <CAbilAttack id="attack2">
+        <TargetMessage value="Abil/TargetMessage/attack2"/>
+        <MinAttackSpeedMultiplier value="0.25"/>
+        <MaxAttackSpeedMultiplier value="128"/>
+    </CAbilAttack>
+    <CAbilMove id="move2">
+        <FleeRange value="5"/>
+        <FleeTime value="5"/>
+        <FollowRangeSlop value="1"/>
+        <FollowAcquireRange value="6"/>
+        <MinPatrolDistance value="1"/>
+    </CAbilMove>
     <CAbilQueue id="que1">
         <QueueSize value="2"/>
     </CAbilQueue>
+    <CAbilStop id="stop2">
+        <CmdButtonArray index="HoldFire" DefaultButtonFace="HoldFireSpecial"/>
+    </CAbilStop>
 </Catalog>

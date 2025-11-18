@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CRequirement id="HaveHotSBanelingCorrosiveBile3">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="CountUpgradeHotSBanelingCorrosiveBileCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveHotSBanelingHeal2">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="CountUpgradeHotSBanelingHealCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="HaveHotSRupture2">
+        <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="CountUpgradeHotsRuptureCompleteOnly"/>
+    </CRequirement>
+</Catalog>
