@@ -14,7 +14,6 @@ Actor/Name/CorrosiveBileImpact2=Corrosive Bile Impact
 Actor/Name/CustomBarracksActor=Custom Barracks Actor
 Actor/Name/FireSuppressionBots2=Fire Suppression Bots
 Actor/Name/GatlingTower=Gatling Tower
-Actor/Name/InfestedExploder2=Volatile Infested
 Actor/Name/InfestedTerranSpawnerActor=Infested Terran Spawner Actor
 Actor/Name/RegenerativeBileBuff2=Regenerative Bile Buff
 Actor/Name/RegenerativeBileBuffB2=Regenerative Bile Buff B

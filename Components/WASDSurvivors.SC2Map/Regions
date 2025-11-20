@@ -35,4 +35,13 @@
             <radius value="2.2753"/>
         </shape>
     </region>
+    <region id="4">
+        <name value="Amove Random Target"/>
+        <color value="255,197,197,197"/>
+        <shape type="diamond">
+            <center value="64.5,63.0002"/>
+            <width value="26.5136"/>
+            <height value="24.3925"/>
+        </shape>
+    </region>
 </Regions>

@@ -4164,8 +4164,7 @@ bool gt_ZombieRunnerA_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    Wait(2.0, c_timeGame);
-    UnitIssueOrder(EventUnit(), OrderTargetingPoint(AbilityCommand("attack", 2), PointFromId(1498365247)), c_orderQueueReplace);
+    UnitIssueOrder(EventUnit(), OrderTargetingPoint(AbilityCommand("attack", 2), RegionRandomPoint(RegionFromId(4))), c_orderQueueReplace);
     return true;
 }
 
@@ -4206,7 +4205,7 @@ bool gt_BloodsplatCreation_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    libNtve_gf_ReplaceUnit(EventUnit(), "Bloodsplat", libNtve_ge_ReplaceUnitOptions_NewUnitssMax);
+    libNtve_gf_CreateUnitsWithDefaultFacing(1, "Bloodsplat", 0, 0, UnitGetPosition(EventUnit()));
     return true;
 }
 

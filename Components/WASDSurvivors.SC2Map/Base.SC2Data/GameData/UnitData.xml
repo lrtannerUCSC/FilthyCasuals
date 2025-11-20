@@ -179,8 +179,9 @@
     </CUnit>
     <CUnit id="InfestedCivilian"/>
     <CUnit id="InfestedExploder">
-        <AbilArray Link="GenerateCreep"/>
         <CostResource index="Minerals" value="0"/>
+        <AbilArray Link="GenerateCreep"/>
+        <HotkeyAlias value="InfestedExploder"/>
     </CUnit>
     <CUnit id="InfestedTerranCampaign"/>
     <CUnit id="InfestedTerranSpawner">
@@ -209,7 +210,6 @@
         <LifeArmor value="2"/>
         <LifeArmorName value="Unit/LifeArmorName/TerranBuildingPlating"/>
         <Sight value="10"/>
-        <CostResource index="Minerals" value="100"/>
         <RepairTime value="15"/>
         <AttackTargetPriority value="19"/>
         <AbilArray Link="BuildInProgress"/>
@@ -221,10 +221,10 @@
             <LayoutButtons Face="BunkerLoad" Type="AbilCmd" AbilCmd="BunkerTransport,Load" Row="2" Column="0"/>
             <LayoutButtons Face="BunkerUnloadAll" Type="AbilCmd" AbilCmd="BunkerTransport,UnloadAll" Row="2" Column="1"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
-            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="SalvageInfestedBunkerer,1" Row="2" Column="4"/>
-            <LayoutButtons Face="InfestedCivilian" Type="AbilCmd" AbilCmd="InfestedMonsterTrain,Train1" Row="0" Column="0"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="SalvageInfestedBunkerer,255" Row="2" Column="4"/>
+            <LayoutButtons Face="InfestedAbomination" Type="AbilCmd" AbilCmd="InfestedMonsterTrain,Train3" Row="0" Column="0"/>
             <LayoutButtons Face="InfestedTerranCampaign" Type="AbilCmd" AbilCmd="InfestedMonsterTrain,Train2" Row="0" Column="1"/>
-            <LayoutButtons Face="InfestedAbomination" Type="AbilCmd" AbilCmd="InfestedMonsterTrain,Train3" Row="0" Column="2"/>
+            <LayoutButtons Face="InfestedCivilian" Type="AbilCmd" AbilCmd="InfestedMonsterTrain,Train1" Row="0" Column="2"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -245,6 +245,10 @@
             <Charge Link="InfestedBunker/Revive"/>
             <Cooldown Link="InfestedBunker/Revive"/>
         </ReviveInfoBase>
+        <EnergyMax value="15"/>
+        <EnergyRegenRate value="2"/>
+        <BehaviorArray Link="makeCreep4x4"/>
+        <BehaviorArray Link="InfestedVisual"/>
     </CUnit>
     <CUnit id="GatlingTurret">
         <ReviveType value="GatlingTower"/>
@@ -389,6 +393,9 @@
         <EnergyMax value="2"/>
         <AttackTargetPriority value="0"/>
         <Radius value="0.5"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Hero" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
     </CUnit>
     <CUnit id="EngineeringBay">
         <AbilArray index="2" Link="CleaningBotUpgrades"/>

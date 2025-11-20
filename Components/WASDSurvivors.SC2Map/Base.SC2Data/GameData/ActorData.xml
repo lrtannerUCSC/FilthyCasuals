@@ -59,56 +59,6 @@
         <HostSiteOps Ops="SOpAttachCenter"/>
         <Model value="FireSuppressionBots"/>
     </CActorModel>
-    <CActorUnit id="InfestedExploder2" parent="GenericBurrowerStandard" unitSound="InfestedCivilian" unitName="InfestedExploder2">
-        <Aliases value="_UnitSmall"/>
-        <Macros value="UnloadDropAnim"/>
-        <Macros value="ZergBurrowStandardAnimMacro"/>
-        <Macros value="ZergSmallBurrowEffects"/>
-        <Model value="InfestedFatBomber_Civilian2"/>
-        <ModelFlags index="OutlineEmitter" value="1"/>
-        <BuildModel value="InfestedFatBomber_Civilian2"/>
-        <DeathArray index="Normal" ModelLink="InfestedFatBomber_Civilian_Death2" SoundLink="InfestedCivilian_Explode2"/>
-        <DeathCustoms index="0" ModelLink="ZergSmallUnitDeathLow2"/>
-        <DeathCustoms index="1" ModelLink="ProtossSmallUnitDeathLow2"/>
-        <DeathCustoms index="2" ModelLink="TerranSmallUnitDeathLow2"/>
-        <DeathCustoms index="3" ModelLink="ZergSmallUnitDeathLow2"/>
-        <DeathCustoms index="4" ModelLink="Invisible2"/>
-        <PlacementModel value="InfestedFatBomber_Civilian2"/>
-        <PortraitModel value="InfestedExploderPortrait2"/>
-        <WalkAnimMoveSpeed value="1.8007"/>
-        <BarOffset value="45"/>
-        <BarWidth value="36"/>
-        <GroupIcon>
-            <Image value="Assets\Textures\Wireframe-Zerg-Infestedcolonist.dds"/>
-        </GroupIcon>
-        <GroupSoundArray index="Birth" value="InfestedTerranBirth"/>
-        <GroupSoundArray index="Ready" value="InfestedTerranReady2"/>
-        <GroupSoundArray index="Help" value="InfestedTerranHelp"/>
-        <GroupSoundArray index="What" value="InfestedTerranWhat2"/>
-        <GroupSoundArray index="Yes" value="InfestedTerranYes2"/>
-        <GroupSoundArray index="Attack" value="InfestedTerranYes2"/>
-        <GroupSoundArray index="Pissed" value="InfestedTerranPissed2"/>
-        <GroupSoundArray index="Board" value="InfestedCivilian_GroupBoard"/>
-        <HeroIcon value="Assets\Textures\btn-unit-zerg-infestedcolonist.dds"/>
-        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
-        <SoundArray index="Birth" value="InfestedTerranBirth"/>
-        <SoundArray index="Ready" value="InfestedTerranReady2"/>
-        <SoundArray index="Help" value="InfestedTerranHelp"/>
-        <SoundArray index="What" value="InfestedTerranWhat2"/>
-        <SoundArray index="Yes" value="InfestedTerranYes2"/>
-        <SoundArray index="Attack" value="InfestedTerranYes2"/>
-        <SoundArray index="Pissed" value="InfestedTerranPissed2"/>
-        <SoundArray index="Movement" value="InfestedTerranMovement"/>
-        <SoundArray index="Turning" value="InfestedTerranCampaignTurning"/>
-        <SoundArray index="Board" value="InfestedTerranCampaignBoard"/>
-        <SoundArray index="Click" value="InfestedTerranCampaignClick"/>
-        <SoundArray index="ClickError" value="InfestedTerranCampaignClickError"/>
-        <SoundArray index="Highlight" value="InfestedTerranCampaignHighlight"/>
-        <UnitIcon value="Assets\Textures\btn-unit-zerg-infestedcolonist.dds"/>
-        <Wireframe>
-            <Image value="Assets\Textures\Wireframe-Zerg-Infestedcolonist.dds"/>
-        </Wireframe>
-    </CActorUnit>
     <CActorUnit id="InfestedTerranSpawnerActor" parent="GenericUnitStandard" unitName="InfestedTerranSpawner">
         <Aliases value="_UnitSmall"/>
         <EditorCategories value=""/>
