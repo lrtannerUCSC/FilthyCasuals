@@ -2,14 +2,14 @@
 <PlacedObjects Version="27">
     <ObjectPoint Id="1498365247" Position="64,68,0" Scale="1,1,1" Type="Normal" Name="AmovePoint" Color="0,0,0,0"/>
     <ObjectUnit Id="1167295670" Position="72,68,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
-    <ObjectUnit Id="1805907476" Variation="1" Position="54,54.5,0" Rotation="2.4042" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="331671007" Position="72,72,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
+    <ObjectUnit Id="1805907476" Variation="1" Position="54,54.5,0" Rotation="2.4042" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="869389186" Position="74,69,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
-    <ObjectUnit Id="1083481896" Position="13.5,14.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="2"/>
-    <ObjectUnit Id="2074915891" Variation="3" Position="54,56,0" Rotation="5.1115" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="1369964722" Variation="1" Position="52.5,63,0" Rotation="5.2751" Scale="1,1,1" UnitType="Civilian" Player="1">
         <Texture TexSlot="main" TexProps="male,helmet,01" TexLink=""/>
     </ObjectUnit>
+    <ObjectUnit Id="2074915891" Variation="3" Position="54,56,0" Rotation="5.1115" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
+    <ObjectUnit Id="1083481896" Position="13.5,14.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="2"/>
     <ObjectUnit Id="108459423" Variation="3" Position="53.5,52.5,0" Rotation="6.1367" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="1124788479" Position="59,59,0" Rotation="2.7492" Scale="1,1,1" UnitType="AutoTurret" Player="1"/>
     <ObjectUnit Id="1738549460" Position="68,71,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
@@ -22,12 +22,12 @@
     <ObjectUnit Id="2128551097" Position="72,70,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
     <ObjectUnit Id="2000468100" Position="63.5,64.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="TownHall" Player="1"/>
     <ObjectUnit Id="2027491687" Variation="4" Position="69.5,68.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CivSpawner" Player="1"/>
-    <ObjectUnit Id="1153351004" Position="68.5,60.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="1"/>
     <ObjectUnit Id="687000942" Variation="1" Position="61,59.5,0" Rotation="3.1367" Scale="1,1,1" UnitType="Civilian" Player="1">
         <Texture TexSlot="main" TexProps="male,helmet,01" TexLink=""/>
     </ObjectUnit>
-    <ObjectUnit Id="1545419560" Position="55.5,51,0" Rotation="5.0712" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
+    <ObjectUnit Id="1153351004" Position="68.5,60.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="1"/>
     <ObjectUnit Id="1146560453" Position="54.5,63.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CustomBarracks" Player="1"/>
+    <ObjectUnit Id="1545419560" Position="55.5,51,0" Rotation="5.0712" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <Group Type="ObjectUnit" Name="Civilians " Id="1">
         <GroupObject Id="687000942"/>
     </Group>

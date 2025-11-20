@@ -57,15 +57,16 @@
     </CAbilBehavior>
     <CAbilTrain id="InfestedMonsterTrain">
         <InfoArray index="Train1">
-            <Cooldown TimeUse="5"/>
             <Flags index="AutoCast" value="1"/>
             <Flags index="AutoCastOn" value="1"/>
         </InfoArray>
         <InfoArray index="Train2" Time="8">
+            <Cooldown TimeStart="2"/>
             <Flags index="AutoCast" value="1"/>
             <Flags index="AutoCastOn" value="1"/>
         </InfoArray>
         <InfoArray index="Train3" Time="15">
+            <Cooldown TimeStart="5"/>
             <Button DefaultButtonFace="MasteryStukovVolatileChance" State="Available"/>
             <Unit index="0" value="InfestedExploder"/>
             <Unit value="InfestedCivilian"/>
@@ -79,6 +80,9 @@
             <Unit index="0" removed="1"/>
         </InfoArray>
     </CAbilTrain>
+    <CAbilEffectTarget id="TimeWarp">
+        <TargetFilters index="0" value="-;Ally,Neutral,Enemy,Missile,Stasis,Dead,Hidden"/>
+    </CAbilEffectTarget>
     <CAbilTrain id="TrainCivilians">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
         <InfoArray index="Train1" Time="5">
@@ -118,6 +122,9 @@
     </CAbilMove>
     <CAbilQueue id="que1">
         <QueueSize value="2"/>
+    </CAbilQueue>
+    <CAbilQueue id="que8">
+        <QueueCount value="3"/>
     </CAbilQueue>
     <CAbilStop id="stop2">
         <CmdButtonArray index="HoldFire" DefaultButtonFace="HoldFireSpecial"/>

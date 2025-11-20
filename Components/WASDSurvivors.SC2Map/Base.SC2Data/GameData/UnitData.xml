@@ -180,6 +180,7 @@
     <CUnit id="InfestedCivilian"/>
     <CUnit id="InfestedExploder">
         <AbilArray Link="GenerateCreep"/>
+        <CostResource index="Minerals" value="0"/>
     </CUnit>
     <CUnit id="InfestedTerranCampaign"/>
     <CUnit id="InfestedTerranSpawner">
