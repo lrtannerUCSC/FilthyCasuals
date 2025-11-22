@@ -59,6 +59,20 @@ int gv_barracksTroop4;
 int gv_minimizeBarracks;
 int gv_barracksInteractDialog;
 int gv_barracksInteractButton;
+unitgroup gv_primaryTurretGroup;
+unitgroup gv_primaryBunkerGroup;
+unit gv_primaryTurret1;
+unit gv_primaryTurret2;
+unit gv_primaryTurret3;
+unit gv_primaryTurret4;
+unit gv_primaryTurret5;
+unit gv_primaryTurret6;
+unit gv_primaryTurret7;
+unit gv_primaryTurret8;
+unit gv_primaryBunkerWest;
+unit gv_primaryBunkerNorth;
+unit gv_primaryBunkerEast;
+unit gv_primaryBunkerSouth;
 int gv_townHallDialog;
 int gv_townHall1;
 int gv_townHall2;
@@ -269,6 +283,16 @@ void InitGlobals () {
     gv_minimizeBarracks = c_invalidDialogControlId;
     gv_barracksInteractDialog = c_invalidDialogId;
     gv_barracksInteractButton = c_invalidDialogControlId;
+    gv_primaryTurretGroup = UnitGroupFromId(4);
+    gv_primaryBunkerGroup = UnitGroupFromId(5);
+    gv_primaryTurret1 = UnitFromId(1199064782);
+    gv_primaryTurret2 = UnitFromId(2018740584);
+    gv_primaryTurret3 = UnitFromId(1124788479);
+    gv_primaryTurret4 = UnitFromId(1788554473);
+    gv_primaryTurret5 = UnitFromId(1325730094);
+    gv_primaryTurret6 = UnitFromId(496745205);
+    gv_primaryTurret7 = UnitFromId(1548413122);
+    gv_primaryTurret8 = UnitFromId(74971372);
     gv_townHallDialog = c_invalidDialogId;
     gv_townHall1 = c_invalidDialogControlId;
     gv_townHall2 = c_invalidDialogControlId;
@@ -483,7 +507,6 @@ trigger gt_BarracksDialogButtons;
 trigger gt_BarracksInteractPopUp;
 trigger gt_BarracksInteractRemovePopUp;
 trigger gt_BarracksDialogInitialization;
-trigger gt_GatlingTurretUpgrade;
 trigger gt_TownHallDialog;
 trigger gt_TownHallButtons;
 trigger gt_TownHallInteractPopUp;
@@ -1534,26 +1557,6 @@ void gt_BarracksDialogInitialization_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: GatlingTurretUpgrade
-//--------------------------------------------------------------------------------------------------
-bool gt_GatlingTurretUpgrade_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    libNtve_gf_ReplaceUnit(UnitFromId(1124788479), "GatlingTurret", libNtve_ge_ReplaceUnitOptions_NewUnitssMax);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_GatlingTurretUpgrade_Init () {
-    gt_GatlingTurretUpgrade = TriggerCreate("gt_GatlingTurretUpgrade_Func");
-    TriggerAddEventUnitAbility(gt_GatlingTurretUpgrade, UnitRefFromUnit(UnitFromId(2000468100)), AbilityCommand("GatlingTurretUpgrade", 0), c_unitAbilStageAll, false);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: Town Hall Dialog
 //--------------------------------------------------------------------------------------------------
 bool gt_TownHallDialog_Func (bool testConds, bool runActions) {
@@ -1589,13 +1592,125 @@ void gt_TownHallDialog_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_TownHallButtons_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
+    unitgroup auto1F72CC95_g;
+    int auto1F72CC95_u;
+    unit auto1F72CC95_var;
+
     // Actions
     if (!runActions) {
         return true;
     }
 
     if ((EventDialogControl() == gv_townHall1)) {
-        libNtve_gf_ReplaceUnit(UnitFromId(1124788479), "GatlingTurret", libNtve_ge_ReplaceUnitOptions_NewUnitssMax);
+        auto1F72CC95_g = gv_primaryTurretGroup;
+        auto1F72CC95_u = UnitGroupCount(auto1F72CC95_g, c_unitCountAll);
+        for (;; auto1F72CC95_u -= 1) {
+            auto1F72CC95_var = UnitGroupUnitFromEnd(auto1F72CC95_g, auto1F72CC95_u);
+            if (auto1F72CC95_var == null) { break; }
+            UnitRemove(auto1F72CC95_var);
+        }
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "GatlingTurret", 0, 1, PointFromId(1254703413));
+        UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
+        gv_primaryTurret1 = UnitLastCreated();
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "GatlingTurret", 0, 1, PointFromId(359470782));
+        UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
+        gv_primaryTurret2 = UnitLastCreated();
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "GatlingTurret", 0, 1, PointFromId(1850856916));
+        UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
+        gv_primaryTurret3 = UnitLastCreated();
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "GatlingTurret", 0, 1, PointFromId(1014000409));
+        UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
+        gv_primaryTurret4 = UnitLastCreated();
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "GatlingTurret", 0, 1, PointFromId(1632167838));
+        UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
+        gv_primaryTurret5 = UnitLastCreated();
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "GatlingTurret", 0, 1, PointFromId(1837512800));
+        UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
+        gv_primaryTurret6 = UnitLastCreated();
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "GatlingTurret", 0, 1, PointFromId(939566783));
+        UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
+        gv_primaryTurret7 = UnitLastCreated();
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "GatlingTurret", 0, 1, PointFromId(1027684936));
+        UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
+        gv_primaryTurret8 = UnitLastCreated();
+    }
+
+    if ((EventDialogControl() == gv_townHall2)) {
+        if (((UnitGetType(gv_primaryTurret1) != "AutoTurret") && (UnitGetType(gv_primaryTurret1) != "GatlingTurret"))) {
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(1254703413));
+            UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
+            gv_primaryTurret1 = UnitLastCreated();
+        }
+
+        if (((UnitGetType(gv_primaryTurret2) != "AutoTurret") && (UnitGetType(gv_primaryTurret2) != "GatlingTurret"))) {
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(359470782));
+            UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
+            gv_primaryTurret2 = UnitLastCreated();
+        }
+
+        if (((UnitGetType(gv_primaryTurret3) != "AutoTurret") && (UnitGetType(gv_primaryTurret3) != "GatlingTurret"))) {
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(1850856916));
+            UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
+            gv_primaryTurret3 = UnitLastCreated();
+        }
+
+        if (((UnitGetType(gv_primaryTurret4) != "AutoTurret") && (UnitGetType(gv_primaryTurret4) != "GatlingTurret"))) {
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(1014000409));
+            UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
+            gv_primaryTurret4 = UnitLastCreated();
+        }
+
+        if (((UnitGetType(gv_primaryTurret5) != "AutoTurret") && (UnitGetType(gv_primaryTurret5) != "GatlingTurret"))) {
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(1632167838));
+            UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
+            gv_primaryTurret5 = UnitLastCreated();
+        }
+
+        if (((UnitGetType(gv_primaryTurret6) != "AutoTurret") && (UnitGetType(gv_primaryTurret6) != "GatlingTurret"))) {
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(1837512800));
+            UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
+            gv_primaryTurret6 = UnitLastCreated();
+        }
+
+        if (((UnitGetType(gv_primaryTurret7) != "AutoTurret") && (UnitGetType(gv_primaryTurret7) != "GatlingTurret"))) {
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(939566783));
+            UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
+            gv_primaryTurret7 = UnitLastCreated();
+        }
+
+        if (((UnitGetType(gv_primaryTurret8) != "AutoTurret") && (UnitGetType(gv_primaryTurret8) != "GatlingTurret"))) {
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(1027684936));
+            UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
+            gv_primaryTurret8 = UnitLastCreated();
+        }
+
+    }
+
+    if ((EventDialogControl() == gv_townHall3)) {
+        if ((UnitGetType(gv_primaryBunkerSouth) != "Bunker")) {
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "Bunker", 0, 1, PointFromId(843315713));
+            UnitGroupAdd(gv_primaryBunkerGroup, UnitLastCreated());
+            gv_primaryBunkerSouth = UnitLastCreated();
+        }
+
+        if ((UnitGetType(gv_primaryBunkerNorth) != "Bunker")) {
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "Bunker", 0, 1, PointFromId(1666459151));
+            UnitGroupAdd(gv_primaryBunkerGroup, UnitLastCreated());
+            gv_primaryBunkerNorth = UnitLastCreated();
+        }
+
+        if ((UnitGetType(gv_primaryBunkerEast) != "Bunker")) {
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "Bunker", 0, 1, PointFromId(1442256660));
+            UnitGroupAdd(gv_primaryBunkerGroup, UnitLastCreated());
+            gv_primaryBunkerEast = UnitLastCreated();
+        }
+
+        if ((UnitGetType(gv_primaryBunkerWest) != "Bunker")) {
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "Bunker", 0, 1, PointFromId(1869422634));
+            UnitGroupAdd(gv_primaryBunkerGroup, UnitLastCreated());
+            gv_primaryBunkerWest = UnitLastCreated();
+        }
+
     }
 
     if ((EventDialogControl() == gv_minimizeTownHall)) {
@@ -4273,7 +4388,6 @@ void InitTriggers () {
     gt_BarracksInteractPopUp_Init();
     gt_BarracksInteractRemovePopUp_Init();
     gt_BarracksDialogInitialization_Init();
-    gt_GatlingTurretUpgrade_Init();
     gt_TownHallDialog_Init();
     gt_TownHallButtons_Init();
     gt_TownHallInteractPopUp_Init();

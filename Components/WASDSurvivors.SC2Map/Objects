@@ -1,33 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PlacedObjects Version="27">
+    <ObjectPoint Id="1442256660" Position="78.48,64.71,0" Scale="1,1,1" Type="Normal" Name="East Bunker" Color="0,0,0,0"/>
+    <ObjectPoint Id="1850856916" Position="57.896,51.0834,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 3 Point" Color="0,0,0,0"/>
+    <ObjectPoint Id="1869422634" Position="47.2,64.5598,0" Scale="1,1,1" Type="Normal" Name="West Bunker" Color="0,0,0,0"/>
+    <ObjectPoint Id="1666459151" Position="64.0197,82.13,0" Scale="1,1,1" Type="Normal" Name="North Bunker" Color="0,0,0,0"/>
+    <ObjectPoint Id="1632167838" Position="70.0397,51.19,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 5 Point" Color="0,0,0,0"/>
+    <ObjectPoint Id="1254703413" Position="49.88,57.39,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 1 Point" Color="0,0,0,0"/>
     <ObjectPoint Id="1498365247" Position="64,68,0" Scale="1,1,1" Type="Normal" Name="AmovePoint" Color="0,0,0,0"/>
+    <ObjectPoint Id="359470782" Position="49.8298,70.49,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 2 Point" Color="0,0,0,0"/>
+    <ObjectPoint Id="1014000409" Position="57.9,79.3698,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 4 Point" Color="0,0,0,0"/>
+    <ObjectPoint Id="843315713" Position="63.91,49.5,0" Scale="1,1,1" Type="Normal" Name="South Bunker" Color="0,0,0,0"/>
+    <ObjectPoint Id="939566783" Position="77,57.24,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 7 Point" Color="0,0,0,0"/>
+    <ObjectPoint Id="1027684936" Position="77.1198,71.38,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 8 Point" Color="0,0,0,0"/>
+    <ObjectPoint Id="1837512800" Position="71.0898,79.42,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 6 Point" Color="0,0,0,0"/>
     <ObjectUnit Id="1167295670" Position="72,68,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
-    <ObjectUnit Id="1805907476" Variation="1" Position="54,54.5,0" Rotation="2.4042" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
+    <ObjectUnit Id="1140454451" Position="49.4165,63.7163,0" Rotation="2.5434" Scale="1,1,1" UnitType="Marine" Player="1"/>
+    <ObjectUnit Id="496745205" Position="71,79,0" Rotation="2.749" Scale="1,1,1" UnitType="AutoTurret" Player="1"/>
     <ObjectUnit Id="331671007" Position="72,72,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
+    <ObjectUnit Id="1805907476" Variation="1" Position="54,54.5,0" Rotation="2.4042" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
+    <ObjectUnit Id="254011185" Position="69.5,73.5,0" Rotation="2.7832" Scale="1,1,1" UnitType="Bunker" Player="1"/>
     <ObjectUnit Id="869389186" Position="74,69,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
-    <ObjectUnit Id="1083481896" Position="13.5,14.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="2"/>
-    <ObjectUnit Id="2074915891" Variation="3" Position="54,56,0" Rotation="5.1115" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="1369964722" Variation="1" Position="52.5,63,0" Rotation="5.2751" Scale="1,1,1" UnitType="Civilian" Player="1">
         <Texture TexSlot="main" TexProps="male,helmet,01" TexLink=""/>
     </ObjectUnit>
+    <ObjectUnit Id="2074915891" Variation="3" Position="54,56,0" Rotation="5.1115" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
+    <ObjectUnit Id="1083481896" Position="13.5,14.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="2"/>
+    <ObjectUnit Id="2020208731" Position="50.122,64.5927,0" Rotation="0.6142" Scale="1,1,1" UnitType="Marine" Player="1"/>
     <ObjectUnit Id="108459423" Variation="3" Position="53.5,52.5,0" Rotation="6.1367" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
-    <ObjectUnit Id="1124788479" Position="59,59,0" Rotation="2.7492" Scale="1,1,1" UnitType="AutoTurret" Player="1"/>
+    <ObjectUnit Id="1124788479" Position="58,51,0" Rotation="2.7492" Scale="1,1,1" UnitType="AutoTurret" Player="1"/>
+    <ObjectUnit Id="1199064782" Position="50,57,0" Rotation="2.749" Scale="1,1,1" UnitType="AutoTurret" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
     <ObjectUnit Id="1738549460" Position="68,71,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
+    <ObjectUnit Id="1548413122" Position="77,57,0" Rotation="2.749" Scale="1,1,1" UnitType="AutoTurret" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="1325730094" Position="70,51,0" Rotation="2.749" Scale="1,1,1" UnitType="AutoTurret" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="74971372" Position="77,71,0" Rotation="2.749" Scale="1,1,1" UnitType="AutoTurret" Player="1"/>
     <ObjectUnit Id="1004822785" Variation="4" Position="57,55.5,0" Rotation="0.208" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="604180338" Position="63.5,59.5,0" Rotation="3.098" Scale="1,1,1" UnitType="CleaningBot" Player="1"/>
+    <ObjectUnit Id="2018740584" Position="50,70,0" Rotation="2.749" Scale="1,1,1" UnitType="AutoTurret" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
     <ObjectUnit Id="337158176" Position="65.5,55.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="EngineeringBay" Player="1"/>
     <ObjectUnit Id="758019242" Position="105.5,22.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="2"/>
+    <ObjectUnit Id="1997866697" Position="48.9606,62.812,0" Rotation="0.28" Scale="1,1,1" UnitType="Marine" Player="1"/>
     <ObjectUnit Id="1800607729" Position="70,71,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
     <ObjectUnit Id="1061943518" Variation="3" Position="56,53.5,0" Rotation="6.095" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
+    <ObjectUnit Id="835939183" Position="50.1503,63.0571,0" Rotation="6.1557" Scale="1,1,1" UnitType="Marine" Player="1"/>
     <ObjectUnit Id="2128551097" Position="72,70,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1"/>
     <ObjectUnit Id="2000468100" Position="63.5,64.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="TownHall" Player="1"/>
     <ObjectUnit Id="2027491687" Variation="4" Position="69.5,68.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CivSpawner" Player="1"/>
-    <ObjectUnit Id="1153351004" Position="68.5,60.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="1"/>
     <ObjectUnit Id="687000942" Variation="1" Position="61,59.5,0" Rotation="3.1367" Scale="1,1,1" UnitType="Civilian" Player="1">
         <Texture TexSlot="main" TexProps="male,helmet,01" TexLink=""/>
     </ObjectUnit>
-    <ObjectUnit Id="1545419560" Position="55.5,51,0" Rotation="5.0712" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
+    <ObjectUnit Id="1788554473" Position="58,79,0" Rotation="2.749" Scale="1,1,1" UnitType="AutoTurret" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
     <ObjectUnit Id="1146560453" Position="54.5,63.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CustomBarracks" Player="1"/>
+    <ObjectUnit Id="1545419560" Position="55.5,51,0" Rotation="5.0712" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <Group Type="ObjectUnit" Name="Civilians " Id="1">
         <GroupObject Id="687000942"/>
     </Group>
@@ -36,5 +69,19 @@
     </Group>
     <Group Type="ObjectUnit" Name="Bloodsplats to remove " Id="3">
         <GroupObject Id="1004822785"/>
+    </Group>
+    <Group Type="ObjectUnit" Name="Primary Turrets" Id="4">
+        <GroupObject Id="74971372"/>
+        <GroupObject Id="496745205"/>
+        <GroupObject Id="1124788479"/>
+        <GroupObject Id="1199064782"/>
+        <GroupObject Id="1325730094"/>
+        <GroupObject Id="1548413122"/>
+        <GroupObject Id="1788554473"/>
+        <GroupObject Id="2018740584"/>
+    </Group>
+    <Group Type="ObjectUnit" Name="Primary Bunkers
+" Id="5">
+        <GroupObject Id="254011185"/>
     </Group>
 </PlacedObjects>
