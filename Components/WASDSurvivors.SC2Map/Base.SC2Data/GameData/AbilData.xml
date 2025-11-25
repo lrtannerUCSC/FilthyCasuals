@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CAbilTrain id="BarracksTrain">
+        <InfoArray index="Train1" Time="20"/>
+    </CAbilTrain>
     <CAbilMorph id="BurrowInfestedExploderDown2">
         <AbilSetId value="BrwD"/>
         <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>
@@ -91,7 +94,7 @@
     </CAbilEffectTarget>
     <CAbilTrain id="TrainCivilians">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
-        <InfoArray index="Train1" Time="5">
+        <InfoArray index="Train1" Time="20">
             <Button DefaultButtonFace="CommanderPrestigeKerriganCreep"/>
             <Unit value="Civilian"/>
         </InfoArray>

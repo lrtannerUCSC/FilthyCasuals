@@ -1,303 +1,555 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PlacedObjects Version="27">
-    <ObjectDoodad Id="399446423" Variation="3" Position="95,77,7.9992" Scale="1,1,1" Type="Tarsonis_Building_Barricade"/>
-    <ObjectDoodad Id="402392781" Variation="11" Position="21,44.5,7.999" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight"/>
-    <ObjectDoodad Id="1766934988" Variation="1" Position="65.5,16.5,7.9987" Rotation="2.1984" Scale="1,1,1" Type="WreckedCargoTruckCorpse"/>
-    <ObjectDoodad Id="1503967269" Position="19,18,7.9987" Rotation="1.0317" Scale="1.086,1.086,1.086" Type="InfestedHomeSmall"/>
-    <ObjectDoodad Id="1938665900" Variation="8" Position="24.5,26.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight"/>
-    <ObjectDoodad Id="461501968" Variation="1" Position="26,43,7.999" Rotation="0.6245" Scale="1,1,1" Type="KorhalDestroyedBuilding"/>
-    <ObjectDoodad Id="316821639" Variation="10" Position="82.5,23.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight"/>
-    <ObjectDoodad Id="1679005260" Variation="1" Position="88,14.5,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="2053715440" Position="104.5,95,7.9987" Rotation="4.3093" Scale="1,1,1" Type="Korhal_SiegeTank_Destroyed"/>
-    <ObjectDoodad Id="267526766" Variation="5" Position="29,39,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight"/>
-    <ObjectDoodad Id="1699259144" Position="33.5,57.5,7.9992" Rotation="0.177" Scale="1,1,1" Type="BunkerWrecked"/>
-    <ObjectDoodad Id="241869021" Position="105,85,7.9987" Rotation="2.5817" Scale="1,1,1" Type="WreckedSandbags"/>
-    <ObjectDoodad Id="1858120191" Variation="1" Position="122,85,7.9987" Rotation="4.822" Scale="1,1,1" Type="WreckedMule"/>
-    <ObjectDoodad Id="1194961284" Variation="1" Position="22.5,31.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight"/>
-    <ObjectDoodad Id="622495541" Variation="1" Position="84.5,89.5,7.999" Rotation="2.2512" Scale="1,1,1" Type="WreckedVehicles"/>
-    <ObjectDoodad Id="883729542" Position="101.5,90.5,7.9987" Rotation="5.9985" Scale="1,1,1" Type="BunkerWrecked"/>
-    <ObjectDoodad Id="366412101" Variation="1" Position="39,31.5,7.999" Rotation="1.2587" Scale="1,1,1" Type="Korhal_Mart_Destroyed"/>
-    <ObjectDoodad Id="434667771" Position="59.5,66.5,9.9992" Rotation="6.2636" Scale="1,1,1" Type="ColonistSupplyCrate"/>
-    <ObjectDoodad Id="1602698235" Variation="2" Position="72.5,69.5,9.9992" Rotation="5.3708" Scale="1,1,1" Type="ColonistSupplyCrate"/>
-    <ObjectDoodad Id="605166903" Variation="2" Position="112,36,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight"/>
+    <ObjectDoodad Id="399446423" Variation="3" Position="95,77,7.9992" Scale="1,1,1" Type="Tarsonis_Building_Barricade">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="402392781" Variation="11" Position="21,44.5,7.999" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1766934988" Variation="1" Position="65.5,16.5,7.9987" Rotation="2.1984" Scale="1,1,1" Type="WreckedCargoTruckCorpse">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1503967269" Position="19,18,7.9987" Rotation="1.0317" Scale="1.086,1.086,1.086" Type="InfestedHomeSmall">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1938665900" Variation="8" Position="24.5,26.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="461501968" Variation="1" Position="26,43,7.999" Rotation="0.6245" Scale="1,1,1" Type="KorhalDestroyedBuilding">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1679005260" Variation="1" Position="88,14.5,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="316821639" Variation="10" Position="82.5,23.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="267526766" Variation="5" Position="29,39,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="2053715440" Position="104.5,95,7.9987" Rotation="4.3093" Scale="1,1,1" Type="Korhal_SiegeTank_Destroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1699259144" Position="33.5,57.5,7.9992" Rotation="0.177" Scale="1,1,1" Type="BunkerWrecked">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="241869021" Position="105,85,7.9987" Rotation="2.5817" Scale="1,1,1" Type="WreckedSandbags">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1858120191" Variation="1" Position="122,85,7.9987" Rotation="4.822" Scale="1,1,1" Type="WreckedMule">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="622495541" Variation="1" Position="84.5,89.5,7.999" Rotation="2.2512" Scale="1,1,1" Type="WreckedVehicles">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1194961284" Variation="1" Position="22.5,31.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="366412101" Variation="1" Position="39,31.5,7.999" Rotation="1.2587" Scale="1,1,1" Type="Korhal_Mart_Destroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="883729542" Position="101.5,90.5,7.9987" Rotation="5.9985" Scale="1,1,1" Type="BunkerWrecked">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="434667771" Position="59.5,66.5,9.9992" Rotation="6.2636" Scale="1,1,1" Type="ColonistSupplyCrate">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1602698235" Variation="2" Position="72.5,69.5,9.9992" Rotation="5.3708" Scale="1,1,1" Type="ColonistSupplyCrate">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
     <ObjectDoodad Id="245014465" Variation="1" Position="113,48.5,9.863" Rotation="6.245" Scale="1,1,1" Type="KorhalDestroyedBuilding">
         <Flag Index="HeightOffset" Value="1"/>
+        <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="1210493007" Variation="1" Position="43,104.5,7.999" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="1335586142" Position="111.5,97.5,7.9987" Rotation="5.183" Scale="1,1,1" Type="BarracksWrecked"/>
-    <ObjectDoodad Id="422966621" Position="80.5,45.5,7.9992" Rotation="5.5151" Scale="1,1,1" Type="BunkerWrecked"/>
-    <ObjectDoodad Id="1304899133" Variation="2" Position="105,83,7.9987" Rotation="4.7121" Scale="1,1,1" Type="WreckedSandbags"/>
-    <ObjectDoodad Id="647387507" Position="101,87,7.9987" Rotation="1.3708" Scale="1,1,1" Type="WreckedSandbags"/>
-    <ObjectDoodad Id="928357717" Position="112,14,7.9987" Scale="1,1,1" Type="Tarsonis_Building_Barricade"/>
+    <ObjectDoodad Id="605166903" Variation="2" Position="112,36,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1210493007" Variation="1" Position="43,104.5,7.999" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1304899133" Variation="2" Position="105,83,7.9987" Rotation="4.7121" Scale="1,1,1" Type="WreckedSandbags">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="422966621" Position="80.5,45.5,7.9992" Rotation="5.5151" Scale="1,1,1" Type="BunkerWrecked">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1335586142" Position="111.5,97.5,7.9987" Rotation="5.183" Scale="1,1,1" Type="BarracksWrecked">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="647387507" Position="101,87,7.9987" Rotation="1.3708" Scale="1,1,1" Type="WreckedSandbags">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
     <ObjectDoodad Id="444545014" Variation="3" Position="30,24.5,7.9987" Rotation="4.0541" Scale="1,1,1" Type="Tarsonis_Rubble" Pitch="6.1723" Roll="6.1977">
         <Flag Index="HeightOffset" Value="1"/>
+        <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="808013595" Variation="1" Position="74,14.5,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="1814799689" Variation="1" Position="13,10.5,7.9987" Rotation="5.1" Scale="1.1218,1.1218,1.1218" Type="InfestedHomeLarge"/>
-    <ObjectDoodad Id="1423385374" Variation="3" Position="67.5,58.5,9.9992" Rotation="2.7226" Scale="1,1,1" Type="Streetlight"/>
-    <ObjectDoodad Id="739423009" Variation="4" Position="89.5,85.5,7.9992" Rotation="1.3757" Scale="1,1,1" Type="WreckedVehicles"/>
-    <ObjectDoodad Id="968873255" Variation="2" Position="29.5,99,7.999" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="1374969419" Variation="2" Position="41.5,25.5,7.9987" Rotation="0.814" Scale="1,1,1" Type="KorhalDestroyedBuilding"/>
-    <ObjectDoodad Id="1625591104" Position="116.5,39.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight"/>
+    <ObjectDoodad Id="928357717" Position="112,14,7.9987" Scale="1,1,1" Type="Tarsonis_Building_Barricade">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="808013595" Variation="1" Position="74,14.5,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1814799689" Variation="1" Position="13,10.5,7.9987" Rotation="5.1" Scale="1.1218,1.1218,1.1218" Type="InfestedHomeLarge">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1423385374" Variation="3" Position="67.5,58.5,9.9992" Rotation="2.7226" Scale="1,1,1" Type="Streetlight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="739423009" Variation="4" Position="89.5,85.5,7.9992" Rotation="1.3757" Scale="1,1,1" Type="WreckedVehicles">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="968873255" Variation="2" Position="29.5,99,7.999" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1374969419" Variation="2" Position="41.5,25.5,7.9987" Rotation="0.814" Scale="1,1,1" Type="KorhalDestroyedBuilding">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
     <ObjectDoodad Id="1691588327" Variation="3" Position="58.5,70.5,9.9992" Rotation="2.2597" Scale="1,1,1" Type="Streetlight">
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="18878049" Position="41.5,83.5,7.9992" Rotation="0.7238" Scale="1,1,1" Type="BunkerWrecked"/>
-    <ObjectDoodad Id="518565417" Variation="5" Position="110,39.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight"/>
-    <ObjectDoodad Id="1850067202" Variation="5" Position="25.5,54,7.999" Rotation="1.5793" Scale="1,1,1" Type="Tarsonis_Building_Barricade"/>
-    <ObjectDoodad Id="719661117" Variation="5" Position="42,95,7.999" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="471720245" Position="111.5,81.5,7.9987" Rotation="2.116" Scale="1,1,1" Type="BunkerWrecked"/>
-    <ObjectDoodad Id="521206089" Variation="2" Position="57.5,58.5,9.9992" Rotation="4.9555" Scale="1,1,1" Type="ColonistSupplyCrate"/>
+    <ObjectDoodad Id="1625591104" Position="116.5,39.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="18878049" Position="41.5,83.5,7.9992" Rotation="0.7238" Scale="1,1,1" Type="BunkerWrecked">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="518565417" Variation="5" Position="110,39.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="719661117" Variation="5" Position="42,95,7.999" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1850067202" Variation="5" Position="25.5,54,7.999" Rotation="1.5793" Scale="1,1,1" Type="Tarsonis_Building_Barricade">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="471720245" Position="111.5,81.5,7.9987" Rotation="2.116" Scale="1,1,1" Type="BunkerWrecked">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="690541357" Position="22.5,83.5,7.999" Rotation="6.0268" Scale="1,1,1" Type="Korhal_Mart_Destroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1135752377" Variation="2" Position="16.5,42.5,7.9987" Rotation="0.578" Scale="1,1,1" Type="TrucksDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
     <ObjectDoodad Id="2102029669" Variation="2" Position="95,38.5,7.999" Rotation="3.638" Scale="1,1,1" Type="KorhalDestroyedBuilding" Pitch="0.0292" Roll="5.9614">
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="1135752377" Variation="2" Position="16.5,42.5,7.9987" Rotation="0.578" Scale="1,1,1" Type="TrucksDestroyed"/>
-    <ObjectDoodad Id="690541357" Position="22.5,83.5,7.999" Rotation="6.0268" Scale="1,1,1" Type="Korhal_Mart_Destroyed"/>
-    <ObjectDoodad Id="126958335" Position="109.5,26.5,7.9987" Rotation="0.1435" Scale="0.898,0.898,0.898" Type="InfestedHomeSmall"/>
-    <ObjectDoodad Id="1509515169" Variation="7" Position="71.5,69.5,9.9992" Rotation="5.7387" Scale="1,1,1" Type="ColonistSupplyCrate"/>
-    <ObjectDoodad Id="272575733" Position="123,88,7.9987" Rotation="3.27" Scale="1,1,1" Type="WreckedMule"/>
-    <ObjectDoodad Id="735222150" Variation="5" Position="82.5,29,7.999" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight"/>
-    <ObjectDoodad Id="60101094" Variation="2" Position="53.5,98,7.9992" Scale="1,1,1" Type="Tarsonis_Building_Barricade"/>
-    <ObjectDoodad Id="196461362" Position="103,87,7.9987" Rotation="4.5783" Scale="1,1,1" Type="WreckedSandbags"/>
-    <ObjectDoodad Id="2068469501" Position="116,93,7.9987" Rotation="0.5744" Scale="1,1,1" Type="WreckedMule"/>
-    <ObjectDoodad Id="768743649" Variation="2" Position="86.5,85.5,7.9992" Rotation="4.956" Scale="1,1,1" Type="WreckedVehicles"/>
-    <ObjectDoodad Id="350636050" Variation="5" Position="17.5,38.5,7.9987" Rotation="3.7536" Scale="1,1,1" Type="WreckedVehicles"/>
-    <ObjectDoodad Id="1738359924" Variation="2" Position="32,104.5,7.999" Rotation="4.378" Scale="1,1,1" Type="Korhal_Mart_Destroyed"/>
-    <ObjectDoodad Id="124923741" Variation="3" Position="58.5,58.5,9.9992" Rotation="0.8464" Scale="1,1,1" Type="Streetlight"/>
-    <ObjectDoodad Id="847335086" Variation="6" Position="20.5,26.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight"/>
+    <ObjectDoodad Id="521206089" Variation="2" Position="57.5,58.5,9.9992" Rotation="4.9555" Scale="1,1,1" Type="ColonistSupplyCrate">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="126958335" Position="109.5,26.5,7.9987" Rotation="0.1435" Scale="0.898,0.898,0.898" Type="InfestedHomeSmall">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="272575733" Position="123,88,7.9987" Rotation="3.27" Scale="1,1,1" Type="WreckedMule">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1509515169" Variation="7" Position="71.5,69.5,9.9992" Rotation="5.7387" Scale="1,1,1" Type="ColonistSupplyCrate">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="735222150" Variation="5" Position="82.5,29,7.999" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="196461362" Position="103,87,7.9987" Rotation="4.5783" Scale="1,1,1" Type="WreckedSandbags">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="60101094" Variation="2" Position="53.5,98,7.9992" Scale="1,1,1" Type="Tarsonis_Building_Barricade">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="2068469501" Position="116,93,7.9987" Rotation="0.5744" Scale="1,1,1" Type="WreckedMule">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="768743649" Variation="2" Position="86.5,85.5,7.9992" Rotation="4.956" Scale="1,1,1" Type="WreckedVehicles">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1738359924" Variation="2" Position="32,104.5,7.999" Rotation="4.378" Scale="1,1,1" Type="Korhal_Mart_Destroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="350636050" Variation="5" Position="17.5,38.5,7.9987" Rotation="3.7536" Scale="1,1,1" Type="WreckedVehicles">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="124923741" Variation="3" Position="58.5,58.5,9.9992" Rotation="0.8464" Scale="1,1,1" Type="Streetlight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="847335086" Variation="6" Position="20.5,26.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
     <ObjectDoodad Id="942332246" Variation="3" Position="40.5,40.5,7.9152" Rotation="4.4147" Scale="1,1,1" Type="Tarsonis_Rubble" Pitch="0.1335" Roll="0.0407">
         <Flag Index="HeightOffset" Value="1"/>
+        <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="678305539" Position="120.5,78.5,7.9987" Rotation="5.141" Scale="1,1,1" Type="Korhal_SiegeTank_Destroyed"/>
-    <ObjectDoodad Id="1724350986" Variation="9" Position="24.5,93,7.999" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="991736367" Variation="6" Position="55.5,55.5,9.9992" Rotation="5.4416" Scale="1,1,1" Type="ColonistSupplyCrate"/>
-    <ObjectDoodad Id="132904006" Variation="2" Position="106,80,7.9987" Rotation="2.9787" Scale="1,1,1" Type="WreckedSandbags"/>
-    <ObjectDoodad Id="978484172" Variation="1" Position="100,15.5,7.9987" Rotation="1.9973" Scale="0.9794,0.9794,0.9794" Type="InfestedHomeSmall"/>
-    <ObjectDoodad Id="1922794326" Position="99,5.5,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="1078540350" Variation="4" Position="6,90.5,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="2100263279" Position="108.5,92.5,7.9987" Rotation="0.3803" Scale="1,1,1" Type="BarracksWrecked"/>
-    <ObjectDoodad Id="981597091" Variation="10" Position="13,85,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="660428934" Variation="2" Position="76.5,67.5,9.9992" Rotation="3.65" Scale="1,1,1" Type="ColonistSupplyCrate"/>
-    <ObjectDoodad Id="385196132" Position="118,89,7.9987" Rotation="3.6003" Scale="1,1,1" Type="CommandCenterWrecked"/>
+    <ObjectDoodad Id="678305539" Position="120.5,78.5,7.9987" Rotation="5.141" Scale="1,1,1" Type="Korhal_SiegeTank_Destroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1724350986" Variation="9" Position="24.5,93,7.999" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="991736367" Variation="6" Position="55.5,55.5,9.9992" Rotation="5.4416" Scale="1,1,1" Type="ColonistSupplyCrate">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="132904006" Variation="2" Position="106,80,7.9987" Rotation="2.9787" Scale="1,1,1" Type="WreckedSandbags">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="978484172" Variation="1" Position="100,15.5,7.9987" Rotation="1.9973" Scale="0.9794,0.9794,0.9794" Type="InfestedHomeSmall">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="2100263279" Position="108.5,92.5,7.9987" Rotation="0.3803" Scale="1,1,1" Type="BarracksWrecked">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1078540350" Variation="4" Position="6,90.5,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1922794326" Position="99,5.5,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="981597091" Variation="10" Position="13,85,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="385196132" Position="118,89,7.9987" Rotation="3.6003" Scale="1,1,1" Type="CommandCenterWrecked">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="660428934" Variation="2" Position="76.5,67.5,9.9992" Rotation="3.65" Scale="1,1,1" Type="ColonistSupplyCrate">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
     <ObjectDoodad Id="88425560" Variation="2" Position="107,79.5,7.9987" Rotation="3.5971" Scale="1,1,1" Type="WreckedSandbags">
         <Flag Index="HeightOffset" Value="1"/>
+        <Flag Index="HeightAbsolute" Value="1"/>
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="1875099647" Variation="1" Position="55.5,75.5,9.9992" Rotation="1.2651" Scale="1,1,1" Type="ColonistSupplyCrate"/>
-    <ObjectDoodad Id="242481105" Variation="2" Position="65.5,12.5,7.9987" Rotation="2.2048" Scale="1,1,1" Type="WreckedCargoTruckCorpse"/>
-    <ObjectDoodad Id="56799641" Position="32.5,71.5,7.9992" Rotation="1.4895" Scale="1,1,1" Type="BunkerWrecked"/>
-    <ObjectDoodad Id="182507981" Variation="3" Position="21,11.5,7.9987" Rotation="1.8837" Scale="1,1,1" Type="Tarsonis_Rubble"/>
-    <ObjectDoodad Id="1851586005" Position="81.5,25.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight"/>
-    <ObjectDoodad Id="2075083854" Variation="8" Position="81,3.5,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="1256511663" Variation="7" Position="88,3.5,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="2140896340" Position="20.5,37.5,7.9987" Rotation="0.3466" Scale="1,1,1" Type="WreckedVehicles"/>
+    <ObjectDoodad Id="1875099647" Variation="1" Position="55.5,75.5,9.9992" Rotation="1.2651" Scale="1,1,1" Type="ColonistSupplyCrate">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="242481105" Variation="2" Position="65.5,12.5,7.9987" Rotation="2.2048" Scale="1,1,1" Type="WreckedCargoTruckCorpse">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="182507981" Variation="3" Position="21,11.5,7.9987" Rotation="1.8837" Scale="1,1,1" Type="Tarsonis_Rubble">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="56799641" Position="32.5,71.5,7.9992" Rotation="1.4895" Scale="1,1,1" Type="BunkerWrecked">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1851586005" Position="81.5,25.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="2075083854" Variation="8" Position="81,3.5,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="447461144" Position="98,50.5,7.999" Rotation="2.2182" Scale="1,1,1" Type="Korhal_Mart_Destroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
     <ObjectDoodad Id="1383468470" Variation="2" Position="112.5,87,7.9987" Rotation="5.842" Scale="1,1,1" Type="WreckedSandbags">
+        <Flag Index="HeightAbsolute" Value="1"/>
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="447461144" Position="98,50.5,7.999" Rotation="2.2182" Scale="1,1,1" Type="Korhal_Mart_Destroyed"/>
-    <ObjectDoodad Id="350444455" Position="33.5,40.5,7.999" Rotation="1.9343" Scale="1,1,1" Type="BunkerWrecked"/>
-    <ObjectDoodad Id="234890187" Position="10.5,8.5,7.9987" Rotation="4.6982" Scale="0.9396,0.9396,0.9396" Type="InfestedHomeSmall"/>
-    <ObjectDoodad Id="346546419" Variation="4" Position="59.5,58.5,9.9992" Rotation="1.011" Scale="1,1,1" Type="ColonistSupplyCrate"/>
+    <ObjectDoodad Id="2140896340" Position="20.5,37.5,7.9987" Rotation="0.3466" Scale="1,1,1" Type="WreckedVehicles">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1256511663" Variation="7" Position="88,3.5,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="350444455" Position="33.5,40.5,7.999" Rotation="1.9343" Scale="1,1,1" Type="BunkerWrecked">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="234890187" Position="10.5,8.5,7.9987" Rotation="4.6982" Scale="0.9396,0.9396,0.9396" Type="InfestedHomeSmall">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="346546419" Variation="4" Position="59.5,58.5,9.9992" Rotation="1.011" Scale="1,1,1" Type="ColonistSupplyCrate">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
     <ObjectDoodad Id="1888335602" Position="117.5,81.5,7.9987" Rotation="3.0974" Scale="1,1,1" Type="BarracksWrecked" Pitch="6.0588" Roll="0.301">
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="1336669461" Variation="8" Position="84.5,26,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight"/>
-    <ObjectDoodad Id="101818084" Variation="1" Position="75.5,29.5,7.999" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight"/>
-    <ObjectDoodad Id="1487140097" Position="35.5,32.5,7.9987" Rotation="1.2387" Scale="1,1,1" Type="WreckedCargoTruckCorpse"/>
-    <ObjectDoodad Id="407429094" Variation="1" Position="63,21.5,7.9987" Rotation="4.0026" Scale="1,1,1" Type="TrucksDestroyed"/>
-    <ObjectDoodad Id="513146479" Variation="6" Position="28.5,26.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight"/>
-    <ObjectDoodad Id="1139928611" Variation="4" Position="67.5,57.5,9.9992" Rotation="4.9946" Scale="1,1,1" Type="ColonistSupplyCrate"/>
-    <ObjectDoodad Id="1689720874" Position="8,18,7.9987" Rotation="5.955" Scale="0.9892,0.9892,0.9892" Type="InfestedHomeLarge"/>
-    <ObjectDoodad Id="1845115906" Position="53.5,34.5,7.9992" Rotation="0.498" Scale="1,1,1" Type="BunkerWrecked"/>
-    <ObjectDoodad Id="1629089225" Position="96.5,90.5,7.9987" Rotation="1.72" Scale="1,1,1" Type="Korhal_SiegeTank_Destroyed"/>
-    <ObjectDoodad Id="1834870233" Variation="7" Position="74,9,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="478096399" Variation="4" Position="24.5,12,7.9987" Rotation="5.2268" Scale="1,1,1" Type="Tarsonis_Rubble"/>
-    <ObjectDoodad Id="1839233459" Variation="1" Position="13.5,90.5,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="1896779342" Variation="5" Position="53,11.5,7.9987" Scale="1,1,1" Type="Tarsonis_Building_Barricade"/>
-    <ObjectDoodad Id="715187041" Variation="7" Position="31.5,93.5,7.999" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="1891897542" Variation="2" Position="76.5,60.5,9.9992" Rotation="3.9775" Scale="1,1,1" Type="ColonistSupplyCrate"/>
-    <ObjectDoodad Id="2123191846" Variation="1" Position="119,93,7.9987" Rotation="5.3957" Scale="1,1,1" Type="WreckedMule"/>
-    <ObjectDoodad Id="1799557538" Variation="1" Position="122,12.5,7.9987" Rotation="5.4514" Scale="1,1,1" Type="KorhalDestroyedBuilding"/>
-    <ObjectDoodad Id="2088888141" Variation="1" Position="57.5,52.5,9.9992" Rotation="0.5324" Scale="1,1,1" Type="ColonistSupplyCrate"/>
-    <ObjectDoodad Id="427228550" Variation="5" Position="70.5,66.5,9.9992" Rotation="4.1696" Scale="1,1,1" Type="ColonistSupplyCrate"/>
-    <ObjectDoodad Id="1456203213" Position="57.5,24,7.9987" Rotation="5.4975" Scale="1,1,1" Type="TrucksDestroyed"/>
-    <ObjectDoodad Id="2001183181" Variation="4" Position="6,94.5,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="1776426084" Variation="9" Position="42,88,7.9992" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="59639403" Variation="9" Position="8.5,101,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="1297856198" Variation="7" Position="29.5,31.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight"/>
+    <ObjectDoodad Id="1336669461" Variation="8" Position="84.5,26,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="101818084" Variation="1" Position="75.5,29.5,7.999" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="407429094" Variation="1" Position="63,21.5,7.9987" Rotation="4.0026" Scale="1,1,1" Type="TrucksDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1487140097" Position="35.5,32.5,7.9987" Rotation="1.2387" Scale="1,1,1" Type="WreckedCargoTruckCorpse">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="513146479" Variation="6" Position="28.5,26.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1689720874" Position="8,18,7.9987" Rotation="5.955" Scale="0.9892,0.9892,0.9892" Type="InfestedHomeLarge">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1139928611" Variation="4" Position="67.5,57.5,9.9992" Rotation="4.9946" Scale="1,1,1" Type="ColonistSupplyCrate">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1845115906" Position="53.5,34.5,7.9992" Rotation="0.498" Scale="1,1,1" Type="BunkerWrecked">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1629089225" Position="96.5,90.5,7.9987" Rotation="1.72" Scale="1,1,1" Type="Korhal_SiegeTank_Destroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="478096399" Variation="4" Position="24.5,12,7.9987" Rotation="5.2268" Scale="1,1,1" Type="Tarsonis_Rubble">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1834870233" Variation="7" Position="74,9,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1839233459" Variation="1" Position="13.5,90.5,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="715187041" Variation="7" Position="31.5,93.5,7.999" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1896779342" Variation="5" Position="53,11.5,7.9987" Scale="1,1,1" Type="Tarsonis_Building_Barricade">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1891897542" Variation="2" Position="76.5,60.5,9.9992" Rotation="3.9775" Scale="1,1,1" Type="ColonistSupplyCrate">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="2123191846" Variation="1" Position="119,93,7.9987" Rotation="5.3957" Scale="1,1,1" Type="WreckedMule">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1799557538" Variation="1" Position="122,12.5,7.9987" Rotation="5.4514" Scale="1,1,1" Type="KorhalDestroyedBuilding">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="2088888141" Variation="1" Position="57.5,52.5,9.9992" Rotation="0.5324" Scale="1,1,1" Type="ColonistSupplyCrate">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1456203213" Position="57.5,24,7.9987" Rotation="5.4975" Scale="1,1,1" Type="TrucksDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="427228550" Variation="5" Position="70.5,66.5,9.9992" Rotation="4.1696" Scale="1,1,1" Type="ColonistSupplyCrate">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="2001183181" Variation="4" Position="6,94.5,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1776426084" Variation="9" Position="42,88,7.9992" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="59639403" Variation="9" Position="8.5,101,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
     <ObjectDoodad Id="668473011" Position="76,24.5,7.9987" Rotation="6.229" Scale="1,1,1" Type="Korhal_Thor_Building_Destroyed">
         <Flag Index="HeightOffset" Value="1"/>
+        <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="1770114771" Variation="7" Position="59.5,74.5,9.9992" Rotation="4.318" Scale="1,1,1" Type="ColonistSupplyCrate"/>
-    <ObjectDoodad Id="1484713574" Variation="3" Position="13.5,98.5,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="2068110331" Position="26,73.5,7.9987" Scale="1,1,1" Type="Tarsonis_Building_Barricade"/>
+    <ObjectDoodad Id="1297856198" Variation="7" Position="29.5,31.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1484713574" Variation="3" Position="13.5,98.5,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1770114771" Variation="7" Position="59.5,74.5,9.9992" Rotation="4.318" Scale="1,1,1" Type="ColonistSupplyCrate">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="2068110331" Position="26,73.5,7.9987" Scale="1,1,1" Type="Tarsonis_Building_Barricade">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
     <ObjectDoodad Id="806994176" Variation="2" Position="111.5,88,7.9987" Rotation="3.569" Scale="1,1,1" Type="WreckedSandbags">
+        <Flag Index="HeightAbsolute" Value="1"/>
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectDoodad>
     <ObjectDoodad Id="1077511596" Position="106,79,7.9987" Rotation="0.1586" Scale="1,1,1" Type="WreckedSandbags">
         <Flag Index="HeightOffset" Value="1"/>
+        <Flag Index="HeightAbsolute" Value="1"/>
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="1577424672" Variation="2" Position="114,91,7.9987" Rotation="6.2165" Scale="1,1,1" Type="WreckedMule"/>
-    <ObjectDoodad Id="386703947" Variation="7" Position="88,9,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="468511372" Variation="4" Position="121,36,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight"/>
-    <ObjectDoodad Id="518840552" Variation="3" Position="68.5,73.5,9.9992" Rotation="3.304" Scale="1,1,1" Type="ColonistSupplyCrate"/>
-    <ObjectDoodad Id="1955843420" Variation="11" Position="49,23.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight"/>
+    <ObjectDoodad Id="1577424672" Variation="2" Position="114,91,7.9987" Rotation="6.2165" Scale="1,1,1" Type="WreckedMule">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="468511372" Variation="4" Position="121,36,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="386703947" Variation="7" Position="88,9,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="518840552" Variation="3" Position="68.5,73.5,9.9992" Rotation="3.304" Scale="1,1,1" Type="ColonistSupplyCrate">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
     <ObjectDoodad Id="1643191782" Position="32.5,83,7.9992" Rotation="6.1267" Scale="1,1,1" Type="KorhalDestroyedBuilding">
         <Flag Index="HeightOffset" Value="1"/>
+        <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="1248105535" Position="89.5,48.5,7.9992" Rotation="5.6816" Scale="1,1,1" Type="BunkerWrecked"/>
-    <ObjectDoodad Id="2067740385" Position="112,25,7.9987" Rotation="4.1384" Scale="0.9277,0.9277,0.9277" Type="InfestedHomeLarge"/>
-    <ObjectDoodad Id="2047843751" Position="90.5,101.5,7.9987" Rotation="4.7255" Scale="1,1,1" Type="Korhal_Mart_Destroyed"/>
-    <ObjectDoodad Id="501327677" Variation="8" Position="114,39.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight"/>
-    <ObjectDoodad Id="58728625" Variation="8" Position="71.5,54.5,9.9992" Rotation="2.9982" Scale="1,1,1" Type="ColonistSupplyCrate"/>
-    <ObjectDoodad Id="702018575" Position="114.5,76.5,7.9987" Rotation="2.7258" Scale="1,1,1" Type="BarracksWrecked"/>
-    <ObjectDoodad Id="341421805" Variation="6" Position="24,101,7.999" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="453166172" Variation="1" Position="59,20,7.9987" Rotation="3.0332" Scale="1,1,1" Type="TrucksDestroyed"/>
-    <ObjectDoodad Id="736742428" Variation="7" Position="74,3,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed"/>
-    <ObjectDoodad Id="2056415281" Position="69,17.5,7.9987" Rotation="5.3923" Scale="1,1,1" Type="TrucksDestroyed"/>
-    <ObjectDoodad Id="1310619446" Variation="3" Position="68.5,70.5,9.9992" Rotation="0.8461" Scale="1,1,1" Type="Streetlight"/>
-    <ObjectDoodad Id="1790191421" Position="112,88,7.9987" Rotation="6.0002" Scale="1,1,1" Type="WreckedSandbags"/>
+    <ObjectDoodad Id="1955843420" Variation="11" Position="49,23.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1248105535" Position="89.5,48.5,7.9992" Rotation="5.6816" Scale="1,1,1" Type="BunkerWrecked">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="2067740385" Position="112,25,7.9987" Rotation="4.1384" Scale="0.9277,0.9277,0.9277" Type="InfestedHomeLarge">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="2047843751" Position="90.5,101.5,7.9987" Rotation="4.7255" Scale="1,1,1" Type="Korhal_Mart_Destroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="501327677" Variation="8" Position="114,39.5,7.9987" Scale="1,1,1" Type="Tarsonis_BuildingWall_Concrete_Straight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="702018575" Position="114.5,76.5,7.9987" Rotation="2.7258" Scale="1,1,1" Type="BarracksWrecked">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="58728625" Variation="8" Position="71.5,54.5,9.9992" Rotation="2.9982" Scale="1,1,1" Type="ColonistSupplyCrate">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="341421805" Variation="6" Position="24,101,7.999" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="453166172" Variation="1" Position="59,20,7.9987" Rotation="3.0332" Scale="1,1,1" Type="TrucksDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="2056415281" Position="69,17.5,7.9987" Rotation="5.3923" Scale="1,1,1" Type="TrucksDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="736742428" Variation="7" Position="74,3,7.9987" Scale="1,1,1" Type="DefendersCity_Buildings_IndustrialDestroyed">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1310619446" Variation="3" Position="68.5,70.5,9.9992" Rotation="0.8461" Scale="1,1,1" Type="Streetlight">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1790191421" Position="112,88,7.9987" Rotation="6.0002" Scale="1,1,1" Type="WreckedSandbags">
+        <Flag Index="HeightAbsolute" Value="1"/>
+    </ObjectDoodad>
     <ObjectPoint Id="1442256660" Position="78.48,64.71,0" Scale="1,1,1" Type="Normal" Name="East Bunker" Color="0,0,0,0"/>
     <ObjectPoint Id="1850856916" Position="57.896,51.0834,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 3 Point" Color="0,0,0,0"/>
     <ObjectPoint Id="1869422634" Position="47.2,64.5598,0" Scale="1,1,1" Type="Normal" Name="West Bunker" Color="0,0,0,0"/>
+    <ObjectPoint Id="504983897" Position="53.5,64.5,0" Scale="1,1,1" Type="Normal" Name="Barracks" Color="0,0,0,0"/>
     <ObjectPoint Id="1666459151" Position="64.0197,82.13,0" Scale="1,1,1" Type="Normal" Name="North Bunker" Color="0,0,0,0"/>
     <ObjectPoint Id="1632167838" Position="70.0397,51.19,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 5 Point" Color="0,0,0,0"/>
     <ObjectPoint Id="1254703413" Position="49.88,57.39,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 1 Point" Color="0,0,0,0"/>
     <ObjectPoint Id="1498365247" Position="64,68,0" Scale="1,1,1" Type="Normal" Name="AmovePoint" Color="0,0,0,0"/>
     <ObjectPoint Id="359470782" Position="49.8298,70.49,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 2 Point" Color="0,0,0,0"/>
-    <ObjectPoint Id="843315713" Position="63.91,49.5,0" Scale="1,1,1" Type="Normal" Name="South Bunker" Color="0,0,0,0"/>
     <ObjectPoint Id="1014000409" Position="57.9,79.3698,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 4 Point" Color="0,0,0,0"/>
+    <ObjectPoint Id="843315713" Position="63.91,49.5,0" Scale="1,1,1" Type="Normal" Name="South Bunker" Color="0,0,0,0"/>
     <ObjectPoint Id="939566783" Position="77,57.24,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 7 Point" Color="0,0,0,0"/>
     <ObjectPoint Id="1027684936" Position="77.1198,71.38,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 8 Point" Color="0,0,0,0"/>
     <ObjectPoint Id="1837512800" Position="71.0898,79.42,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 6 Point" Color="0,0,0,0"/>
-    <ObjectUnit Id="1140454451" Position="49.4165,63.7163,0" Rotation="2.5434" Scale="1,1,1" UnitType="Marine" Player="1"/>
-    <ObjectUnit Id="984815440" Position="77,69,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
-    <ObjectUnit Id="909851322" Variation="3" Position="63.5,71.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="ColonistBiodome"/>
+    <ObjectUnit Id="909851322" Variation="3" Position="63.5,71.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="ColonistBiodome" Player="1"/>
     <ObjectUnit Id="817907881" Position="50,73,0" Scale="1,1,1" UnitType="DestructibleCityDebris2x4Horizontal"/>
-    <ObjectUnit Id="471083584" Position="67,52,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
-    <ObjectUnit Id="509598892" Position="109,78,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
     <ObjectUnit Id="254011185" Position="71.5,64.5,0" Rotation="2.7832" Scale="1,1,1" UnitType="Bunker" Player="1">
         <Flag Index="HeightOffset" Value="1"/>
     </ObjectUnit>
-    <ObjectUnit Id="1083481896" Position="13.5,14.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="2"/>
+    <ObjectUnit Id="509598892" Position="109,78,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
+    <ObjectUnit Id="471083584" Position="67,52,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
+    <ObjectUnit Id="687521640" Variation="4" Position="58.5,68.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CivSpawner" Player="1"/>
+    <ObjectUnit Id="1248913455" Variation="7" Position="55.5,60.5,0" Rotation="0.2404" Scale="1,1,1" UnitType="ColonistHut" Player="1"/>
+    <ObjectUnit Id="151118617" Position="97,94,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
+    <ObjectUnit Id="380155187" Position="60,52,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
+    <ObjectUnit Id="488005032" Position="111,75,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
+    <ObjectUnit Id="1322413874" Variation="3" Position="59.5,56.5,0" Rotation="4.5781" Scale="1,1,1" UnitType="ColonistHut" Player="1">
+        <Flag Index="ForcePlacement" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="224206406" Position="76,78,0" Scale="1,1,1" UnitType="DestructibleCityDebris2x4Horizontal"/>
+    <ObjectUnit Id="450797209" Position="60,78,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
+    <ObjectUnit Id="604180338" Position="63.5,59.5,0" Rotation="3.098" Scale="1,1,1" UnitType="CleaningBot" Player="1"/>
+    <ObjectUnit Id="837653440" Variation="3" Position="72.5,67.5,0" Rotation="3.1225" Scale="1,1,1" UnitType="ColonistHut" Player="1">
+        <Flag Index="ForcePlacement" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="1061943518" Variation="3" Position="64,57,0" Rotation="6.095" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
+    <ObjectUnit Id="1152666181" Variation="3" Position="69.5,53.5,0" Rotation="6.1186" Scale="1,1,1" UnitType="ColonistHut" Player="1"/>
+    <ObjectUnit Id="666571995" Position="124,83,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
+    <ObjectUnit Id="916130827" Variation="4" Position="116,95.5,0" Scale="1,1,1" UnitType="MineralField"/>
+    <ObjectUnit Id="1499230176" Position="68,76,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
+    <ObjectUnit Id="54961566" Position="101,94,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
+    <ObjectUnit Id="496745205" Position="71,79,0" Rotation="2.749" Scale="1,1,1" UnitType="AutoTurret" Player="1"/>
+    <ObjectUnit Id="845122450" Position="53,60,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
+    <ObjectUnit Id="145097636" Position="74.5,70.5,0" Rotation="3.6506" Scale="1,1,1" UnitType="ColonistHut" Player="1"/>
+    <ObjectUnit Id="1805907476" Variation="1" Position="62,58,0" Rotation="2.4042" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
+    <ObjectUnit Id="1895936593" Variation="7" Position="56.5,68.5,0" Rotation="4.328" Scale="1,1,1" UnitType="ColonistHut" Player="1">
+        <Flag Index="ForcePlacement" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="982909657" Variation="6" Position="52.5,70.5,0" Rotation="2.7402" Scale="1,1,1" UnitType="ColonistHut" Player="1"/>
+    <ObjectUnit Id="531312709" Position="68,78,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
+    <ObjectUnit Id="1124788479" Position="58,51,0" Rotation="2.7492" Scale="1,1,1" UnitType="AutoTurret" Player="1"/>
+    <ObjectUnit Id="141475282" Position="125,85,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
+    <ObjectUnit Id="1059060294" Position="109,76,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
+    <ObjectUnit Id="833093383" Variation="7" Position="74.5,60.5,0" Rotation="1.0136" Scale="1,1,1" UnitType="ColonistHut" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="1516766081" Variation="4" Position="58.5,60.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CivSpawner" Player="1"/>
+    <ObjectUnit Id="1917612395" Variation="7" Position="70.5,73.5,0" Rotation="1.843" Scale="1,1,1" UnitType="ColonistHut" Player="1"/>
+    <ObjectUnit Id="2018740584" Position="50,70,0" Rotation="2.749" Scale="1,1,1" UnitType="AutoTurret" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="337158176" Position="63.5,56.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="EngineeringBay" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="413244663" Position="67,54,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
+    <ObjectUnit Id="835939183" Position="50.1503,63.0571,0" Rotation="6.1557" Scale="1,1,1" UnitType="Marine" Player="1"/>
+    <ObjectUnit Id="273686341" Variation="2" Position="120,95.5,0" Scale="1,1,1" UnitType="MineralField"/>
+    <ObjectUnit Id="1470335702" Position="77,53,0" Rotation="1.5705" Scale="1,1,1" UnitType="DestructibleCityDebris2x6Vertical"/>
+    <ObjectUnit Id="1843390899" Position="111,77,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
+    <ObjectUnit Id="1595114554" Position="53,58,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
+    <ObjectUnit Id="1146560453" Position="53.5,64.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CustomBarracks" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="1545419560" Position="63.5,54.5,0" Rotation="5.0712" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
+    <ObjectUnit Id="1140454451" Position="49.4165,63.7163,0" Rotation="2.5434" Scale="1,1,1" UnitType="Marine" Player="1"/>
+    <ObjectUnit Id="984815440" Position="77,69,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
     <ObjectUnit Id="1369964722" Variation="1" Position="52.5,63,0" Rotation="5.2751" Scale="1,1,1" UnitType="Civilian" Player="1">
         <Texture TexSlot="main" TexProps="male,helmet,01" TexLink=""/>
     </ObjectUnit>
+    <ObjectUnit Id="1083481896" Position="13.5,14.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="2"/>
     <ObjectUnit Id="2020208731" Position="50.122,64.5927,0" Rotation="0.6142" Scale="1,1,1" UnitType="Marine" Player="1"/>
+    <ObjectUnit Id="108459423" Variation="3" Position="61.5,56,0" Rotation="6.1367" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="1064702915" Position="99,93,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
-    <ObjectUnit Id="687521640" Variation="4" Position="58.5,68.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CivSpawner" Player="1"/>
-    <ObjectUnit Id="108459423" Variation="3" Position="53.5,52.5,0" Rotation="6.1367" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="1206497206" Position="51,79,0" Scale="1,1,1" UnitType="DestructibleCityDebris2x4Horizontal"/>
-    <ObjectUnit Id="1248913455" Variation="7" Position="55.5,60.5,0" Rotation="0.2404" Scale="1,1,1" UnitType="ColonistHut"/>
     <ObjectUnit Id="872414282" Position="122,82,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
-    <ObjectUnit Id="151118617" Position="97,94,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
     <ObjectUnit Id="1199064782" Position="50,57,0" Rotation="2.749" Scale="1,1,1" UnitType="AutoTurret" Player="1">
         <Flag Index="HeightOffset" Value="1"/>
     </ObjectUnit>
-    <ObjectUnit Id="380155187" Position="60,52,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
     <ObjectUnit Id="929466421" Position="51,68,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
-    <ObjectUnit Id="488005032" Position="111,75,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
-    <ObjectUnit Id="1322413874" Variation="3" Position="59.5,56.5,0" Rotation="4.5781" Scale="1,1,1" UnitType="ColonistHut">
-        <Flag Index="ForcePlacement" Value="1"/>
-    </ObjectUnit>
     <ObjectUnit Id="1068545712" Variation="6" Position="55.5,57.5,0" Rotation="0.2756" Scale="1,1,1" UnitType="ColonistHut" Player="1"/>
+    <ObjectUnit Id="1004822785" Variation="4" Position="65,59,0" Rotation="0.208" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="1523977809" Position="78,56,0" Scale="1,1,1" UnitType="DestructibleCityDebris2x4Horizontal"/>
-    <ObjectUnit Id="1004822785" Variation="4" Position="57,55.5,0" Rotation="0.208" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
-    <ObjectUnit Id="450797209" Position="60,78,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
     <ObjectUnit Id="978070432" Position="60,76,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
-    <ObjectUnit Id="224206406" Position="76,78,0" Scale="1,1,1" UnitType="DestructibleCityDebris2x4Horizontal"/>
-    <ObjectUnit Id="604180338" Position="63.5,59.5,0" Rotation="3.098" Scale="1,1,1" UnitType="CleaningBot" Player="1"/>
-    <ObjectUnit Id="1823175494" Variation="7" Position="70.5,59.5,0" Rotation="0.6223" Scale="1,1,1" UnitType="ColonistHut">
-        <Flag Index="ForcePlacement" Value="1"/>
-    </ObjectUnit>
-    <ObjectUnit Id="837653440" Variation="3" Position="72.5,67.5,0" Rotation="3.1225" Scale="1,1,1" UnitType="ColonistHut">
+    <ObjectUnit Id="1823175494" Variation="7" Position="70.5,59.5,0" Rotation="0.6223" Scale="1,1,1" UnitType="ColonistHut" Player="1">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectUnit>
     <ObjectUnit Id="758019242" Position="105.5,22.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="2"/>
-    <ObjectUnit Id="1167889177" Position="77,76,0" Rotation="1.5705" Scale="1,1,1" UnitType="DestructibleCityDebris2x6Vertical"/>
     <ObjectUnit Id="1997866697" Position="48.9606,62.812,0" Rotation="0.28" Scale="1,1,1" UnitType="Marine" Player="1"/>
+    <ObjectUnit Id="1167889177" Position="77,76,0" Rotation="1.5705" Scale="1,1,1" UnitType="DestructibleCityDebris2x6Vertical"/>
     <ObjectUnit Id="897348449" Variation="7" Position="57.5,73.5,0" Rotation="6.125" Scale="1,1,1" UnitType="ColonistHut" Player="1"/>
-    <ObjectUnit Id="1061943518" Variation="3" Position="56,53.5,0" Rotation="6.095" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="1668414435" Position="50,52,0" Rotation="1.5705" Scale="1,1,1" UnitType="DestructibleCityDebris2x6Vertical"/>
-    <ObjectUnit Id="666571995" Position="124,83,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
-    <ObjectUnit Id="1152666181" Variation="3" Position="69.5,53.5,0" Rotation="6.1186" Scale="1,1,1" UnitType="ColonistHut" Player="1"/>
-    <ObjectUnit Id="1499230176" Position="68,76,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
-    <ObjectUnit Id="916130827" Variation="4" Position="116,95.5,0" Scale="1,1,1" UnitType="MineralField"/>
+    <ObjectUnit Id="869213068" Position="106.5,106.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="2"/>
     <ObjectUnit Id="303992615" Position="49,55,0" Scale="1,1,1" UnitType="DestructibleCityDebris2x4Horizontal"/>
     <ObjectUnit Id="2122305101" Variation="8" Position="123,93.5,0" Scale="1,1,1" UnitType="MineralField"/>
     <ObjectUnit Id="1167312507" Variation="7" Position="74.5,57.5,0" Rotation="1.0136" Scale="1,1,1" UnitType="ColonistHut" Player="1">
         <Flag Index="HeightOffset" Value="1"/>
     </ObjectUnit>
     <ObjectUnit Id="2000468100" Position="63.5,64.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="TownHall" Player="1"/>
-    <ObjectUnit Id="54961566" Position="101,94,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
     <ObjectUnit Id="2027491687" Variation="4" Position="69.5,68.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CivSpawner" Player="1"/>
     <ObjectUnit Id="1788554473" Position="58,79,0" Rotation="2.749" Scale="1,1,1" UnitType="AutoTurret" Player="1">
         <Flag Index="HeightOffset" Value="1"/>
     </ObjectUnit>
-    <ObjectUnit Id="1342298440" Position="99,95,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
+    <ObjectUnit Id="81926108" Position="17.5,109.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="2"/>
     <ObjectUnit Id="859236030" Position="77,50,0" Scale="1,1,1" UnitType="DestructibleCityDebris2x4Horizontal"/>
+    <ObjectUnit Id="1342298440" Position="99,95,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
     <ObjectUnit Id="333199435" Position="57.5,76.5,0" Rotation="0.873" Scale="1,1,1" UnitType="ColonistHut" Player="1"/>
-    <ObjectUnit Id="496745205" Position="71,79,0" Rotation="2.749" Scale="1,1,1" UnitType="AutoTurret" Player="1"/>
-    <ObjectUnit Id="1102433611" Position="60,54,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
     <ObjectUnit Id="956586374" Position="50,76,0" Rotation="1.5705" Scale="1,1,1" UnitType="DestructibleCityDebris2x6Vertical"/>
-    <ObjectUnit Id="845122450" Position="53,60,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
-    <ObjectUnit Id="145097636" Position="74.5,70.5,0" Rotation="3.6506" Scale="1,1,1" UnitType="ColonistHut" Player="1"/>
-    <ObjectUnit Id="1805907476" Variation="1" Position="54,54.5,0" Rotation="2.4042" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
-    <ObjectUnit Id="1895936593" Variation="7" Position="56.5,68.5,0" Rotation="4.328" Scale="1,1,1" UnitType="ColonistHut">
-        <Flag Index="ForcePlacement" Value="1"/>
-    </ObjectUnit>
-    <ObjectUnit Id="2074915891" Variation="3" Position="54,56,0" Rotation="5.1115" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
-    <ObjectUnit Id="982909657" Variation="6" Position="52.5,70.5,0" Rotation="2.7402" Scale="1,1,1" UnitType="ColonistHut"/>
+    <ObjectUnit Id="1102433611" Position="60,54,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
+    <ObjectUnit Id="2074915891" Variation="3" Position="62,59.5,0" Rotation="5.1115" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="1230292133" Position="77,59,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
-    <ObjectUnit Id="531312709" Position="68,78,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
-    <ObjectUnit Id="552781914" Variation="5" Position="57.5,66.5,0" Rotation="1.9072" Scale="1,1,1" UnitType="ColonistHut">
+    <ObjectUnit Id="552781914" Variation="5" Position="57.5,66.5,0" Rotation="1.9072" Scale="1,1,1" UnitType="ColonistHut" Player="1">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectUnit>
-    <ObjectUnit Id="1124788479" Position="58,51,0" Rotation="2.7492" Scale="1,1,1" UnitType="AutoTurret" Player="1"/>
-    <ObjectUnit Id="141475282" Position="125,85,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
-    <ObjectUnit Id="1059060294" Position="109,76,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
     <ObjectUnit Id="1548413122" Position="77,57,0" Rotation="2.749" Scale="1,1,1" UnitType="AutoTurret" Player="1">
         <Flag Index="HeightOffset" Value="1"/>
     </ObjectUnit>
     <ObjectUnit Id="1325730094" Position="70,51,0" Rotation="2.749" Scale="1,1,1" UnitType="AutoTurret" Player="1">
         <Flag Index="HeightOffset" Value="1"/>
     </ObjectUnit>
-    <ObjectUnit Id="833093383" Variation="7" Position="74.5,60.5,0" Rotation="1.0136" Scale="1,1,1" UnitType="ColonistHut" Player="1">
-        <Flag Index="HeightOffset" Value="1"/>
-    </ObjectUnit>
     <ObjectUnit Id="74971372" Position="77,71,0" Rotation="2.749" Scale="1,1,1" UnitType="AutoTurret" Player="1"/>
-    <ObjectUnit Id="1437561023" Position="118,96.5,0" Scale="1,1,1" UnitType="MineralField"/>
     <ObjectUnit Id="781666874" Variation="6" Position="70.5,76.5,0" Rotation="6.2495" Scale="1,1,1" UnitType="ColonistHut" Player="1"/>
-    <ObjectUnit Id="1516766081" Variation="4" Position="58.5,60.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CivSpawner" Player="1"/>
+    <ObjectUnit Id="1437561023" Position="118,96.5,0" Scale="1,1,1" UnitType="MineralField"/>
     <ObjectUnit Id="429633449" Variation="3" Position="69.5,56.5,0" Rotation="1.9855" Scale="1,1,1" UnitType="ColonistHut" Player="1"/>
-    <ObjectUnit Id="1917612395" Variation="7" Position="70.5,73.5,0" Rotation="1.843" Scale="1,1,1" UnitType="ColonistHut" Player="1"/>
-    <ObjectUnit Id="337158176" Position="63.5,56.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="EngineeringBay" Player="1">
-        <Flag Index="HeightOffset" Value="1"/>
-    </ObjectUnit>
-    <ObjectUnit Id="2018740584" Position="50,70,0" Rotation="2.749" Scale="1,1,1" UnitType="AutoTurret" Player="1">
-        <Flag Index="HeightOffset" Value="1"/>
-    </ObjectUnit>
-    <ObjectUnit Id="413244663" Position="67,54,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
-    <ObjectUnit Id="273686341" Variation="2" Position="120,95.5,0" Scale="1,1,1" UnitType="MineralField"/>
-    <ObjectUnit Id="835939183" Position="50.1503,63.0571,0" Rotation="6.1557" Scale="1,1,1" UnitType="Marine" Player="1"/>
-    <ObjectUnit Id="1595114554" Position="53,58,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot" Player="1"/>
-    <ObjectUnit Id="1843390899" Position="111,77,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
-    <ObjectUnit Id="1470335702" Position="77,53,0" Rotation="1.5705" Scale="1,1,1" UnitType="DestructibleCityDebris2x6Vertical"/>
     <ObjectUnit Id="1746630043" Variation="4" Position="67.5,60.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CivSpawner" Player="1"/>
-    <ObjectUnit Id="201736867" Variation="7" Position="122,94.5,0" Scale="1,1,1" UnitType="MineralField"/>
     <ObjectUnit Id="2116110264" Position="51,50,0" Scale="1,1,1" UnitType="DestructibleCityDebris2x4Horizontal"/>
+    <ObjectUnit Id="201736867" Variation="7" Position="122,94.5,0" Scale="1,1,1" UnitType="MineralField"/>
     <ObjectUnit Id="365122568" Variation="7" Position="123,91.5,0" Scale="1,1,1" UnitType="MineralField"/>
     <ObjectUnit Id="687000942" Variation="1" Position="61,59.5,0" Rotation="3.1367" Scale="1,1,1" UnitType="Civilian" Player="1">
         <Texture TexSlot="main" TexProps="male,helmet,01" TexLink=""/>
     </ObjectUnit>
-    <ObjectUnit Id="1767712618" Variation="5" Position="74.5,67.5,0" Rotation="1.7573" Scale="1,1,1" UnitType="ColonistHut"/>
-    <ObjectUnit Id="2042422764" Position="78,73,0" Scale="1,1,1" UnitType="DestructibleCityDebris2x4Horizontal"/>
     <ObjectUnit Id="2139432243" Variation="3" Position="57.5,54.5,0" Rotation="5.209" Scale="1,1,1" UnitType="ColonistHut" Player="1"/>
-    <ObjectUnit Id="1545419560" Position="55.5,51,0" Rotation="5.0712" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
-    <ObjectUnit Id="1146560453" Position="53.5,64.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CustomBarracks" Player="1">
-        <Flag Index="HeightOffset" Value="1"/>
-    </ObjectUnit>
+    <ObjectUnit Id="2042422764" Position="78,73,0" Scale="1,1,1" UnitType="DestructibleCityDebris2x4Horizontal"/>
+    <ObjectUnit Id="1767712618" Variation="5" Position="74.5,67.5,0" Rotation="1.7573" Scale="1,1,1" UnitType="ColonistHut" Player="1"/>
     <Group Type="ObjectUnit" Name="Civilians " Id="1">
         <GroupObject Id="687000942"/>
     </Group>
@@ -319,5 +571,48 @@
     </Group>
     <Group Type="ObjectUnit" Name="Primary Bunkers " Id="5">
         <GroupObject Id="254011185"/>
+    </Group>
+    <Group Type="ObjectUnit" Name="Town Structures
+" Id="6">
+        <GroupObject Id="145097636"/>
+        <GroupObject Id="333199435"/>
+        <GroupObject Id="380155187"/>
+        <GroupObject Id="413244663"/>
+        <GroupObject Id="429633449"/>
+        <GroupObject Id="450797209"/>
+        <GroupObject Id="471083584"/>
+        <GroupObject Id="531312709"/>
+        <GroupObject Id="552781914"/>
+        <GroupObject Id="781666874"/>
+        <GroupObject Id="833093383"/>
+        <GroupObject Id="837653440"/>
+        <GroupObject Id="845122450"/>
+        <GroupObject Id="897348449"/>
+        <GroupObject Id="909851322"/>
+        <GroupObject Id="929466421"/>
+        <GroupObject Id="978070432"/>
+        <GroupObject Id="982909657"/>
+        <GroupObject Id="984815440"/>
+        <GroupObject Id="1068545712"/>
+        <GroupObject Id="1102433611"/>
+        <GroupObject Id="1152666181"/>
+        <GroupObject Id="1167312507"/>
+        <GroupObject Id="1230292133"/>
+        <GroupObject Id="1248913455"/>
+        <GroupObject Id="1322413874"/>
+        <GroupObject Id="1499230176"/>
+        <GroupObject Id="1595114554"/>
+        <GroupObject Id="1767712618"/>
+        <GroupObject Id="1823175494"/>
+        <GroupObject Id="1895936593"/>
+        <GroupObject Id="1917612395"/>
+        <GroupObject Id="2139432243"/>
+    </Group>
+    <Group Type="ObjectUnit" Name="Civ Spawners
+" Id="7">
+        <GroupObject Id="687521640"/>
+        <GroupObject Id="1516766081"/>
+        <GroupObject Id="1746630043"/>
+        <GroupObject Id="2027491687"/>
     </Group>
 </PlacedObjects>

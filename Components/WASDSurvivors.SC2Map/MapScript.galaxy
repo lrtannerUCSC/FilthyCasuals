@@ -18,37 +18,11 @@ void InitLibs () {
 //--------------------------------------------------------------------------------------------------
 // Global Variables
 //--------------------------------------------------------------------------------------------------
+unitgroup gv_townStructuresGroup;
 int[17] gv_wASDState;
 unit[17] gv_controlledUnits;
 unit[17] gv_uncontrolledUnits;
 int[2] gv_interact;
-int gv_textH1;
-int gv_textH2;
-int gv_textH3;
-int gv_textH4;
-int gv_textH5;
-int gv_textH6;
-int gv_textH8;
-int gv_textH9;
-int gv_textH10;
-revealer gv_revealH1;
-revealer gv_revealH2;
-revealer gv_revealH3;
-revealer gv_revealH4;
-revealer gv_revealH5;
-revealer gv_revealH6;
-revealer gv_revealH8;
-revealer gv_revealH9;
-revealer gv_revealH10;
-int gv_h1Level;
-int gv_h2Level;
-int gv_h3Level;
-int gv_h4Level;
-int gv_h5Level;
-int gv_h6Level;
-int gv_h8Level;
-int gv_h9Level;
-int gv_h10Level;
 unitgroup gv_civUnitGroup;
 unitgroup gv_marineTrainingGroup;
 int gv_barracksDialog;
@@ -98,181 +72,14 @@ int gv_upgradeMainDialog;
 int gv_minimizeMainDialog;
 int gv_openUpgradesButton;
 int gv_minimizedUpgradeDialog;
-int gv_protossSpecialUpgradesDialog;
-int gv_minimizeProtossSpecialUpgrades;
-int gv_fluxVanes;
-int gv_gravitonCatapult;
-int gv_overcharge;
-int gv_deepDisruptors;
-int gv_khaydarinAmulet;
-int gv_psiStorm;
-int gv_charge;
-int gv_blink;
-int gv_graviticBoostersDrive;
-int gv_extendedThermalLance;
-int gv_backtoMainProtoss;
-int gv_terranSpecialUpgradesDialog;
-int gv_minimizeTerranSpecialUpgradesDialog;
-int gv_jotunBoosters;
-int gv_yamatoCannon;
-int gv_behemothReactor;
-int gv_ghostCloak;
-int gv_moebiusReactor;
-int gv_stimpack;
-int gv_combatShield;
-int gv_concussiveShells;
-int gv_siegeMode;
-int gv_infernalPreigniter;
-int gv__250mmCannons;
-int gv_bansheeCloak;
-int gv_corvidCaduceusReactor;
-int gv_seekerMissile;
-int gv_durableMaterials;
-int gv_backtoMainTerran;
-int gv_armorDialog;
-int gv_armor1;
-int gv_armor2;
-int gv_armor3;
-int gv_armor4;
-int gv_armor5;
-int gv_armor6;
-int gv_armor7;
-int gv_armor8;
-int gv_armor9;
-int gv_armor10;
-int gv_minimizeArmor;
-int gv_backtoMainArmor;
-int gv_healthDialog;
-int gv_health1;
-int gv_health2;
-int gv_health3;
-int gv_health4;
-int gv_health5;
-int gv_health6;
-int gv_health7;
-int gv_health8;
-int gv_health9;
-int gv_health10;
-int gv_minimizeHealth;
-int gv_backtoMainHealth;
-int gv_weaponsDialog;
-int gv_weapons1;
-int gv_weapons2;
-int gv_weapons3;
-int gv_weapons4;
-int gv_weapons5;
-int gv_weapons6;
-int gv_weapons7;
-int gv_weapons8;
-int gv_weapons9;
-int gv_weapons10;
-int gv_minimizeWeapons;
-int gv_backtoMainWeapons;
-int gv_chooseUpgradesSectionProtoss;
-int gv_airUpgradesButton;
-int gv_groundUpgradesButton;
-int gv_protossSpecialUpgradesButton;
-int gv_shieldsButton1;
-int gv_shieldsButton2;
-int gv_minimizeProtossUpgradesDialog;
-int gv_backtoUpgradesProtoss;
-int gv_groundUpgradesDialog;
-int gv_minimizeGroundUpgrades;
-int gv_groundArmor1Button;
-int gv_groundArmor2Button;
-int gv_groundArmor3Button;
-int gv_groundArmor4Button;
-int gv_groundArmor5Button;
-int gv_groundWeaponsButton1;
-int gv_groundWeaponsButton2;
-int gv_groundWeaponsButton3;
-int gv_groundWeaponsButton4;
-int gv_groundWeaponsButton5;
-int gv_backtoProtossGround;
-int gv_airUpgradesDialog;
-int gv_minimizeAirUpgrades;
-int gv_airArmorButton1;
-int gv_airArmorButton2;
-int gv_airArmorButton3;
-int gv_airArmorButton4;
-int gv_airArmorButton5;
-int gv_airWeaponsButton1;
-int gv_airWeaponsButton2;
-int gv_airWeaponsButton3;
-int gv_airWeaponsButton4;
-int gv_airWeaponsButton5;
-int gv_backtoProtossAir;
-int gv_chooseUpgradesSectionTerran;
-int gv_minimizeTerranUpgradesDialog;
-int gv_infantryUpgradesButton;
-int gv_vehicleUpgradesButton;
-int gv_shipUpgradesButton;
-int gv_terranSpecialUpgradesButton;
-int gv_backtoUpgradesTerran;
-int gv_infantryUpgradesDialog;
-int gv_minimizeInfantryUpgradesDialog;
-int gv_infantryArmorButton1;
-int gv_infantryArmorButton2;
-int gv_infantryArmorButton3;
-int gv_infantryArmorButton4;
-int gv_infantryArmorButton5;
-int gv_infantryWeaponsButton1;
-int gv_infantryWeaponsButton2;
-int gv_infantryWeaponsButton3;
-int gv_infantryWeaponsButton4;
-int gv_infantryWeaponsButton5;
-int gv_backtoTerranInfantry;
-int gv_vehicleUpgradesDialog;
-int gv_minimizeVehicleUpgradesDialog;
-int gv_vehicleArmorButton1;
-int gv_vehicleArmorButton2;
-int gv_vehicleArmorButton3;
-int gv_vehicleArmorButton4;
-int gv_vehicleArmorButton5;
-int gv_vehicleWeaponsButton1;
-int gv_vehicleWeaponsButton2;
-int gv_vehicleWeaponsButton3;
-int gv_vehicleWeaponsButton4;
-int gv_vehicleWeaponsButton5;
-int gv_backtoTerranVehicle;
-int gv_shipUpgradesDialog;
-int gv_minimizeShipUpgradesDialog;
-int gv_shipArmorButton1;
-int gv_shipArmorButton2;
-int gv_shipArmorButton3;
-int gv_shipArmorButton4;
-int gv_shipArmorButton5;
-int gv_shipWeaponsButton1;
-int gv_shipWeaponsButton2;
-int gv_shipWeaponsButton3;
-int gv_shipWeaponsButton4;
-int gv_shipWeaponsButton5;
-int gv_backtoTerranShip;
 
 void InitGlobals () {
     int init_i;
 
+    gv_townStructuresGroup = UnitGroupFromId(6);
     for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_interact[init_i] = c_invalidDialogId;
     }
-    gv_textH1 = c_textTagNone;
-    gv_textH2 = c_textTagNone;
-    gv_textH3 = c_textTagNone;
-    gv_textH4 = c_textTagNone;
-    gv_textH5 = c_textTagNone;
-    gv_textH6 = c_textTagNone;
-    gv_textH8 = c_textTagNone;
-    gv_textH9 = c_textTagNone;
-    gv_textH10 = c_textTagNone;
-    gv_h1Level = 1;
-    gv_h2Level = 1;
-    gv_h3Level = 1;
-    gv_h4Level = 1;
-    gv_h5Level = 1;
-    gv_h6Level = 1;
-    gv_h8Level = 1;
-    gv_h9Level = 1;
-    gv_h10Level = 1;
     gv_civUnitGroup = UnitGroupFromId(1);
     gv_marineTrainingGroup = UnitGroupFromId(2);
     gv_barracksDialog = c_invalidDialogId;
@@ -318,156 +125,6 @@ void InitGlobals () {
     gv_minimizeMainDialog = c_invalidDialogControlId;
     gv_openUpgradesButton = c_invalidDialogControlId;
     gv_minimizedUpgradeDialog = c_invalidDialogId;
-    gv_protossSpecialUpgradesDialog = c_invalidDialogId;
-    gv_minimizeProtossSpecialUpgrades = c_invalidDialogControlId;
-    gv_fluxVanes = c_invalidDialogControlId;
-    gv_gravitonCatapult = c_invalidDialogControlId;
-    gv_overcharge = c_invalidDialogControlId;
-    gv_deepDisruptors = c_invalidDialogControlId;
-    gv_khaydarinAmulet = c_invalidDialogControlId;
-    gv_psiStorm = c_invalidDialogControlId;
-    gv_charge = c_invalidDialogControlId;
-    gv_blink = c_invalidDialogControlId;
-    gv_graviticBoostersDrive = c_invalidDialogControlId;
-    gv_extendedThermalLance = c_invalidDialogControlId;
-    gv_backtoMainProtoss = c_invalidDialogControlId;
-    gv_terranSpecialUpgradesDialog = c_invalidDialogId;
-    gv_minimizeTerranSpecialUpgradesDialog = c_invalidDialogControlId;
-    gv_jotunBoosters = c_invalidDialogControlId;
-    gv_yamatoCannon = c_invalidDialogControlId;
-    gv_behemothReactor = c_invalidDialogControlId;
-    gv_ghostCloak = c_invalidDialogControlId;
-    gv_moebiusReactor = c_invalidDialogControlId;
-    gv_stimpack = c_invalidDialogControlId;
-    gv_combatShield = c_invalidDialogControlId;
-    gv_concussiveShells = c_invalidDialogControlId;
-    gv_siegeMode = c_invalidDialogControlId;
-    gv_infernalPreigniter = c_invalidDialogControlId;
-    gv__250mmCannons = c_invalidDialogControlId;
-    gv_bansheeCloak = c_invalidDialogControlId;
-    gv_corvidCaduceusReactor = c_invalidDialogControlId;
-    gv_seekerMissile = c_invalidDialogControlId;
-    gv_durableMaterials = c_invalidDialogControlId;
-    gv_backtoMainTerran = c_invalidDialogControlId;
-    gv_armorDialog = c_invalidDialogId;
-    gv_armor1 = c_invalidDialogControlId;
-    gv_armor2 = c_invalidDialogControlId;
-    gv_armor3 = c_invalidDialogControlId;
-    gv_armor4 = c_invalidDialogControlId;
-    gv_armor5 = c_invalidDialogControlId;
-    gv_armor6 = c_invalidDialogControlId;
-    gv_armor7 = c_invalidDialogControlId;
-    gv_armor8 = c_invalidDialogControlId;
-    gv_armor9 = c_invalidDialogControlId;
-    gv_armor10 = c_invalidDialogControlId;
-    gv_minimizeArmor = c_invalidDialogControlId;
-    gv_backtoMainArmor = c_invalidDialogControlId;
-    gv_healthDialog = c_invalidDialogId;
-    gv_health1 = c_invalidDialogControlId;
-    gv_health2 = c_invalidDialogControlId;
-    gv_health3 = c_invalidDialogControlId;
-    gv_health4 = c_invalidDialogControlId;
-    gv_health5 = c_invalidDialogControlId;
-    gv_health6 = c_invalidDialogControlId;
-    gv_health7 = c_invalidDialogControlId;
-    gv_health8 = c_invalidDialogControlId;
-    gv_health9 = c_invalidDialogControlId;
-    gv_health10 = c_invalidDialogControlId;
-    gv_minimizeHealth = c_invalidDialogControlId;
-    gv_backtoMainHealth = c_invalidDialogControlId;
-    gv_weaponsDialog = c_invalidDialogId;
-    gv_weapons1 = c_invalidDialogControlId;
-    gv_weapons2 = c_invalidDialogControlId;
-    gv_weapons3 = c_invalidDialogControlId;
-    gv_weapons4 = c_invalidDialogControlId;
-    gv_weapons5 = c_invalidDialogControlId;
-    gv_weapons6 = c_invalidDialogControlId;
-    gv_weapons7 = c_invalidDialogControlId;
-    gv_weapons8 = c_invalidDialogControlId;
-    gv_weapons9 = c_invalidDialogControlId;
-    gv_weapons10 = c_invalidDialogControlId;
-    gv_minimizeWeapons = c_invalidDialogControlId;
-    gv_backtoMainWeapons = c_invalidDialogControlId;
-    gv_chooseUpgradesSectionProtoss = c_invalidDialogId;
-    gv_airUpgradesButton = c_invalidDialogControlId;
-    gv_groundUpgradesButton = c_invalidDialogControlId;
-    gv_protossSpecialUpgradesButton = c_invalidDialogControlId;
-    gv_shieldsButton1 = c_invalidDialogControlId;
-    gv_shieldsButton2 = c_invalidDialogControlId;
-    gv_minimizeProtossUpgradesDialog = c_invalidDialogControlId;
-    gv_backtoUpgradesProtoss = c_invalidDialogControlId;
-    gv_groundUpgradesDialog = c_invalidDialogId;
-    gv_minimizeGroundUpgrades = c_invalidDialogControlId;
-    gv_groundArmor1Button = c_invalidDialogControlId;
-    gv_groundArmor2Button = c_invalidDialogControlId;
-    gv_groundArmor3Button = c_invalidDialogControlId;
-    gv_groundArmor4Button = c_invalidDialogControlId;
-    gv_groundArmor5Button = c_invalidDialogControlId;
-    gv_groundWeaponsButton1 = c_invalidDialogControlId;
-    gv_groundWeaponsButton2 = c_invalidDialogControlId;
-    gv_groundWeaponsButton3 = c_invalidDialogControlId;
-    gv_groundWeaponsButton4 = c_invalidDialogControlId;
-    gv_groundWeaponsButton5 = c_invalidDialogControlId;
-    gv_backtoProtossGround = c_invalidDialogControlId;
-    gv_airUpgradesDialog = c_invalidDialogId;
-    gv_minimizeAirUpgrades = c_invalidDialogControlId;
-    gv_airArmorButton1 = c_invalidDialogControlId;
-    gv_airArmorButton2 = c_invalidDialogControlId;
-    gv_airArmorButton3 = c_invalidDialogControlId;
-    gv_airArmorButton4 = c_invalidDialogControlId;
-    gv_airArmorButton5 = c_invalidDialogControlId;
-    gv_airWeaponsButton1 = c_invalidDialogControlId;
-    gv_airWeaponsButton2 = c_invalidDialogControlId;
-    gv_airWeaponsButton3 = c_invalidDialogControlId;
-    gv_airWeaponsButton4 = c_invalidDialogControlId;
-    gv_airWeaponsButton5 = c_invalidDialogControlId;
-    gv_backtoProtossAir = c_invalidDialogControlId;
-    gv_chooseUpgradesSectionTerran = c_invalidDialogId;
-    gv_minimizeTerranUpgradesDialog = c_invalidDialogControlId;
-    gv_infantryUpgradesButton = c_invalidDialogControlId;
-    gv_vehicleUpgradesButton = c_invalidDialogControlId;
-    gv_shipUpgradesButton = c_invalidDialogControlId;
-    gv_terranSpecialUpgradesButton = c_invalidDialogControlId;
-    gv_backtoUpgradesTerran = c_invalidDialogControlId;
-    gv_infantryUpgradesDialog = c_invalidDialogId;
-    gv_minimizeInfantryUpgradesDialog = c_invalidDialogControlId;
-    gv_infantryArmorButton1 = c_invalidDialogControlId;
-    gv_infantryArmorButton2 = c_invalidDialogControlId;
-    gv_infantryArmorButton3 = c_invalidDialogControlId;
-    gv_infantryArmorButton4 = c_invalidDialogControlId;
-    gv_infantryArmorButton5 = c_invalidDialogControlId;
-    gv_infantryWeaponsButton1 = c_invalidDialogControlId;
-    gv_infantryWeaponsButton2 = c_invalidDialogControlId;
-    gv_infantryWeaponsButton3 = c_invalidDialogControlId;
-    gv_infantryWeaponsButton4 = c_invalidDialogControlId;
-    gv_infantryWeaponsButton5 = c_invalidDialogControlId;
-    gv_backtoTerranInfantry = c_invalidDialogControlId;
-    gv_vehicleUpgradesDialog = c_invalidDialogId;
-    gv_minimizeVehicleUpgradesDialog = c_invalidDialogControlId;
-    gv_vehicleArmorButton1 = c_invalidDialogControlId;
-    gv_vehicleArmorButton2 = c_invalidDialogControlId;
-    gv_vehicleArmorButton3 = c_invalidDialogControlId;
-    gv_vehicleArmorButton4 = c_invalidDialogControlId;
-    gv_vehicleArmorButton5 = c_invalidDialogControlId;
-    gv_vehicleWeaponsButton1 = c_invalidDialogControlId;
-    gv_vehicleWeaponsButton2 = c_invalidDialogControlId;
-    gv_vehicleWeaponsButton3 = c_invalidDialogControlId;
-    gv_vehicleWeaponsButton4 = c_invalidDialogControlId;
-    gv_vehicleWeaponsButton5 = c_invalidDialogControlId;
-    gv_backtoTerranVehicle = c_invalidDialogControlId;
-    gv_shipUpgradesDialog = c_invalidDialogId;
-    gv_minimizeShipUpgradesDialog = c_invalidDialogControlId;
-    gv_shipArmorButton1 = c_invalidDialogControlId;
-    gv_shipArmorButton2 = c_invalidDialogControlId;
-    gv_shipArmorButton3 = c_invalidDialogControlId;
-    gv_shipArmorButton4 = c_invalidDialogControlId;
-    gv_shipArmorButton5 = c_invalidDialogControlId;
-    gv_shipWeaponsButton1 = c_invalidDialogControlId;
-    gv_shipWeaponsButton2 = c_invalidDialogControlId;
-    gv_shipWeaponsButton3 = c_invalidDialogControlId;
-    gv_shipWeaponsButton4 = c_invalidDialogControlId;
-    gv_shipWeaponsButton5 = c_invalidDialogControlId;
-    gv_backtoTerranShip = c_invalidDialogControlId;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -483,22 +140,11 @@ void gf_WASDSetControlledUnit (int lp_player, unit lp_unit);
 // Trigger Variables
 //--------------------------------------------------------------------------------------------------
 trigger gt_MeleeInitialization;
-trigger gt_DebugMessages;
+trigger gt_LossCondition;
 trigger gt_Player1Cameratest;
 trigger gt_WASDSetControlledUnit;
 trigger gt_WASDKeyDownCheck;
 trigger gt_WASDKeyUpCheck;
-trigger gt_StartTimedUpgradesinfirstarea;
-trigger gt_Hatch1a;
-trigger gt_Hatch2a;
-trigger gt_StartTimedUpgradesinsecondarea;
-trigger gt_Hatch3a;
-trigger gt_Hatch4a;
-trigger gt_Hatch5a;
-trigger gt_Hatch6a;
-trigger gt_Hatch8a;
-trigger gt_Hatch9a;
-trigger gt_Hatch10a;
 trigger gt_CivSpawnerGrouper;
 trigger gt_UpgradesDialogButtons;
 trigger gt_TroopTrainingFilter;
@@ -517,34 +163,6 @@ trigger gt_EBayButtons;
 trigger gt_EBayInteractPopUp;
 trigger gt_EBayRemovePopUp;
 trigger gt_EBayDialogInitialization;
-trigger gt_MinimizedDialog;
-trigger gt_MaximizeUpgrades;
-trigger gt_MainUpgradesDialog;
-trigger gt_MinimizeRaceDialog;
-trigger gt_ProtossSpecialUpgradesDialog;
-trigger gt_ProtossSpecialUpgradesButtons;
-trigger gt_TerranSpecialUpgradesDialog;
-trigger gt_TerranSpecialUpgradesButtons;
-trigger gt_ArmorDialog;
-trigger gt_ArmorDialogButtons;
-trigger gt_HealthDialog;
-trigger gt_HealthDialogButtons;
-trigger gt_WeaponsDialog;
-trigger gt_WeaponsDialogButtons;
-trigger gt_ProtossUpgradesDialog;
-trigger gt_ProtossUpgradesButtons;
-trigger gt_GroundUpgradesDialog;
-trigger gt_GroundUpgradesButtons;
-trigger gt_AirUpgradesDialog;
-trigger gt_AirUpgradesButtons;
-trigger gt_TerranUpgradesDialog;
-trigger gt_TerranUpgradesButtons;
-trigger gt_InfantryUpgradesDialog;
-trigger gt_InfantryUpgradesButtons;
-trigger gt_VehicleUpgradesDialog;
-trigger gt_VehicleUpgradesButtons;
-trigger gt_ShipUpgradesDialog;
-trigger gt_ShipUpgradesButtons;
 trigger gt_Upgrade1;
 trigger gt_Upgrade2;
 trigger gt_Upgrade3;
@@ -557,6 +175,8 @@ trigger gt_Upgrade9;
 trigger gt_Upgrade10;
 trigger gt_ZombieRunnerA;
 trigger gt_ZombieRunnerB;
+trigger gt_ZombieRunnerC;
+trigger gt_ZombieRunnerD;
 trigger gt_BloodsplatCreation;
 trigger gt_BloodToMinerals;
 
@@ -821,17 +441,37 @@ void gt_MeleeInitialization_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: Debug Messages
+// Trigger: Loss Condition
 //--------------------------------------------------------------------------------------------------
-bool gt_DebugMessages_Func (bool testConds, bool runActions) {
+bool gt_LossCondition_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetOwner(EventUnit()) == 1))) {
+            return false;
+        }
+
+        if (!((UnitGroupHasUnit(gv_townStructuresGroup, EventUnit()) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((UnitGroupCount(gv_townStructuresGroup, c_unitCountAlive) <= 0)) {
+        GameOver(1, c_gameOverDefeat, true, true);
+    }
+
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_DebugMessages_Init () {
-    gt_DebugMessages = TriggerCreate("gt_DebugMessages_Func");
-    TriggerAddEventTimePeriodic(gt_DebugMessages, 1.0, c_timeGame);
+void gt_LossCondition_Init () {
+    gt_LossCondition = TriggerCreate("gt_LossCondition_Func");
+    TriggerAddEventUnitDied(gt_LossCondition, null);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -918,396 +558,6 @@ void gt_WASDKeyUpCheck_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: Start Timed Upgrades in first area
-//--------------------------------------------------------------------------------------------------
-bool gt_StartTimedUpgradesinfirstarea_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if (true) {
-        TriggerExecute(gt_Hatch1a, true, false);
-    }
-
-    if (true) {
-        TriggerExecute(gt_Hatch2a, true, false);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_StartTimedUpgradesinfirstarea_Init () {
-    gt_StartTimedUpgradesinfirstarea = TriggerCreate("gt_StartTimedUpgradesinfirstarea_Func");
-    TriggerAddEventTimeElapsed(gt_StartTimedUpgradesinfirstarea, 200.0, c_timeGame);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Hatch 1a
-//--------------------------------------------------------------------------------------------------
-bool gt_Hatch1a_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    const int autoF382441D_ae = 5;
-    const int autoF382441D_ai = 1;
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    gv_revealH1 = VisRevealerLastCreated();
-    gv_textH1 = TextTagLastCreated();
-    TextTagSetColor(gv_textH1, c_textTagColorText, Color(100.00, 100.00, 0.00));
-    gv_h1Level = 1;
-    for ( ; ( (autoF382441D_ai >= 0 && gv_h1Level <= autoF382441D_ae) || (autoF382441D_ai < 0 && gv_h1Level >= autoF382441D_ae) ) ; gv_h1Level += autoF382441D_ai ) {
-        TechTreeUpgradeAddLevel(8, "ZergHPUpgradeH1", 1);
-        TechTreeUpgradeAddLevel(8, "ZergWeaponsH01", 1);
-        TextTagSetText(gv_textH1, IntToText(gv_h1Level));
-        Wait(120.0, c_timeGame);
-        if (true) {
-            Wait(120.0, c_timeGame);
-        }
-
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_Hatch1a_Init () {
-    gt_Hatch1a = TriggerCreate("gt_Hatch1a_Func");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Hatch 2a
-//--------------------------------------------------------------------------------------------------
-bool gt_Hatch2a_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    const int auto37CA289D_ae = 5;
-    const int auto37CA289D_ai = 1;
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    gv_revealH2 = VisRevealerLastCreated();
-    gv_textH2 = TextTagLastCreated();
-    TextTagSetColor(gv_textH2, c_textTagColorText, Color(100.00, 100.00, 0.00));
-    gv_h2Level = 1;
-    for ( ; ( (auto37CA289D_ai >= 0 && gv_h2Level <= auto37CA289D_ae) || (auto37CA289D_ai < 0 && gv_h2Level >= auto37CA289D_ae) ) ; gv_h2Level += auto37CA289D_ai ) {
-        TechTreeUpgradeAddLevel(8, "ZergHPUpgradeH2", 1);
-        TechTreeUpgradeAddLevel(8, "ZergWeaponsH02", 1);
-        TextTagSetText(gv_textH2, IntToText(gv_h2Level));
-        Wait(120.0, c_timeGame);
-        if (true) {
-            Wait(120.0, c_timeGame);
-        }
-
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_Hatch2a_Init () {
-    gt_Hatch2a = TriggerCreate("gt_Hatch2a_Func");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Start Timed Upgrades in second area
-//--------------------------------------------------------------------------------------------------
-bool gt_StartTimedUpgradesinsecondarea_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    Wait(30.0, c_timeGame);
-    if (true) {
-        TriggerExecute(gt_Hatch3a, true, false);
-    }
-
-    if (true) {
-        TriggerExecute(gt_Hatch4a, true, false);
-    }
-
-    if (true) {
-        TriggerExecute(gt_Hatch5a, true, false);
-    }
-
-    if (true) {
-        TriggerExecute(gt_Hatch6a, true, false);
-    }
-
-    if (true) {
-        TriggerExecute(gt_Hatch8a, true, false);
-    }
-
-    if (true) {
-        TriggerExecute(gt_Hatch9a, true, false);
-    }
-
-    if (true) {
-        TriggerExecute(gt_Hatch10a, true, false);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_StartTimedUpgradesinsecondarea_Init () {
-    gt_StartTimedUpgradesinsecondarea = TriggerCreate("gt_StartTimedUpgradesinsecondarea_Func");
-    TriggerEnable(gt_StartTimedUpgradesinsecondarea, false);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Hatch 3a
-//--------------------------------------------------------------------------------------------------
-bool gt_Hatch3a_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    const int autoB6A6FF07_ae = 5;
-    const int autoB6A6FF07_ai = 1;
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    gv_revealH3 = VisRevealerLastCreated();
-    gv_textH3 = TextTagLastCreated();
-    TextTagSetColor(gv_textH3, c_textTagColorText, Color(100.00, 100.00, 0.00));
-    gv_h3Level = 1;
-    for ( ; ( (autoB6A6FF07_ai >= 0 && gv_h3Level <= autoB6A6FF07_ae) || (autoB6A6FF07_ai < 0 && gv_h3Level >= autoB6A6FF07_ae) ) ; gv_h3Level += autoB6A6FF07_ai ) {
-        TechTreeUpgradeAddLevel(8, "ZergHPUpgradeH3", 1);
-        TechTreeUpgradeAddLevel(8, "ZergWeaponsH03", 1);
-        TextTagSetText(gv_textH3, IntToText(gv_h3Level));
-        Wait(120.0, c_timeGame);
-        if (true) {
-            Wait(120.0, c_timeGame);
-        }
-
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_Hatch3a_Init () {
-    gt_Hatch3a = TriggerCreate("gt_Hatch3a_Func");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Hatch 4a
-//--------------------------------------------------------------------------------------------------
-bool gt_Hatch4a_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    const int auto2A6BDF6C_ae = 5;
-    const int auto2A6BDF6C_ai = 1;
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    gv_revealH4 = VisRevealerLastCreated();
-    gv_textH4 = TextTagLastCreated();
-    TextTagSetColor(gv_textH4, c_textTagColorText, Color(100.00, 100.00, 0.00));
-    gv_h4Level = 1;
-    for ( ; ( (auto2A6BDF6C_ai >= 0 && gv_h4Level <= auto2A6BDF6C_ae) || (auto2A6BDF6C_ai < 0 && gv_h4Level >= auto2A6BDF6C_ae) ) ; gv_h4Level += auto2A6BDF6C_ai ) {
-        TechTreeUpgradeAddLevel(8, "ZergHPUpgradeH4", 1);
-        TechTreeUpgradeAddLevel(8, "ZergWeaponsH04", 1);
-        TextTagSetText(gv_textH4, IntToText(gv_h4Level));
-        Wait(120.0, c_timeGame);
-        if (true) {
-            Wait(120.0, c_timeGame);
-        }
-
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_Hatch4a_Init () {
-    gt_Hatch4a = TriggerCreate("gt_Hatch4a_Func");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Hatch 5a
-//--------------------------------------------------------------------------------------------------
-bool gt_Hatch5a_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    const int auto642DD033_ae = 5;
-    const int auto642DD033_ai = 1;
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    gv_revealH5 = VisRevealerLastCreated();
-    gv_textH5 = TextTagLastCreated();
-    TextTagSetColor(gv_textH5, c_textTagColorText, Color(100.00, 100.00, 0.00));
-    gv_h5Level = 1;
-    for ( ; ( (auto642DD033_ai >= 0 && gv_h5Level <= auto642DD033_ae) || (auto642DD033_ai < 0 && gv_h5Level >= auto642DD033_ae) ) ; gv_h5Level += auto642DD033_ai ) {
-        TechTreeUpgradeAddLevel(8, "ZergHPUpgradeH5", 1);
-        TechTreeUpgradeAddLevel(8, "ZergWeaponsH05", 1);
-        TextTagSetText(gv_textH5, IntToText(gv_h5Level));
-        Wait(120.0, c_timeGame);
-        if (true) {
-            Wait(120.0, c_timeGame);
-        }
-
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_Hatch5a_Init () {
-    gt_Hatch5a = TriggerCreate("gt_Hatch5a_Func");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Hatch 6a
-//--------------------------------------------------------------------------------------------------
-bool gt_Hatch6a_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    const int autoF8528880_ae = 5;
-    const int autoF8528880_ai = 1;
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    gv_revealH6 = VisRevealerLastCreated();
-    gv_textH6 = TextTagLastCreated();
-    TextTagSetColor(gv_textH6, c_textTagColorText, Color(100.00, 100.00, 0.00));
-    gv_h6Level = 1;
-    for ( ; ( (autoF8528880_ai >= 0 && gv_h6Level <= autoF8528880_ae) || (autoF8528880_ai < 0 && gv_h6Level >= autoF8528880_ae) ) ; gv_h6Level += autoF8528880_ai ) {
-        TechTreeUpgradeAddLevel(8, "ZergHPUpgradeH6", 1);
-        TechTreeUpgradeAddLevel(8, "ZergWeaponsH06", 1);
-        TextTagSetText(gv_textH6, IntToText(gv_h6Level));
-        Wait(120.0, c_timeGame);
-        if (true) {
-            Wait(120.0, c_timeGame);
-        }
-
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_Hatch6a_Init () {
-    gt_Hatch6a = TriggerCreate("gt_Hatch6a_Func");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Hatch 8a
-//--------------------------------------------------------------------------------------------------
-bool gt_Hatch8a_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    const int auto5FB802F4_ae = 5;
-    const int auto5FB802F4_ai = 1;
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    gv_revealH8 = VisRevealerLastCreated();
-    gv_textH8 = TextTagLastCreated();
-    TextTagSetColor(gv_textH8, c_textTagColorText, Color(100.00, 100.00, 0.00));
-    gv_h8Level = 1;
-    for ( ; ( (auto5FB802F4_ai >= 0 && gv_h8Level <= auto5FB802F4_ae) || (auto5FB802F4_ai < 0 && gv_h8Level >= auto5FB802F4_ae) ) ; gv_h8Level += auto5FB802F4_ai ) {
-        TechTreeUpgradeAddLevel(8, "ZergHPUpgradeH8", 1);
-        TechTreeUpgradeAddLevel(8, "ZergWeaponsH08", 1);
-        TextTagSetText(gv_textH8, IntToText(gv_h8Level));
-        Wait(120.0, c_timeGame);
-        if (true) {
-            Wait(120.0, c_timeGame);
-        }
-
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_Hatch8a_Init () {
-    gt_Hatch8a = TriggerCreate("gt_Hatch8a_Func");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Hatch 9a
-//--------------------------------------------------------------------------------------------------
-bool gt_Hatch9a_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    const int auto6F3AA68F_ae = 5;
-    const int auto6F3AA68F_ai = 1;
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    gv_revealH9 = VisRevealerLastCreated();
-    gv_textH9 = TextTagLastCreated();
-    TextTagSetColor(gv_textH9, c_textTagColorText, Color(100.00, 100.00, 0.00));
-    gv_h9Level = 1;
-    for ( ; ( (auto6F3AA68F_ai >= 0 && gv_h9Level <= auto6F3AA68F_ae) || (auto6F3AA68F_ai < 0 && gv_h9Level >= auto6F3AA68F_ae) ) ; gv_h9Level += auto6F3AA68F_ai ) {
-        TechTreeUpgradeAddLevel(8, "ZergHPUpgradeH9", 1);
-        TechTreeUpgradeAddLevel(8, "ZergWeaponsH09", 1);
-        TextTagSetText(gv_textH9, IntToText(gv_h9Level));
-        Wait(120.0, c_timeGame);
-        if (true) {
-            Wait(120.0, c_timeGame);
-        }
-
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_Hatch9a_Init () {
-    gt_Hatch9a = TriggerCreate("gt_Hatch9a_Func");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Hatch 10a
-//--------------------------------------------------------------------------------------------------
-bool gt_Hatch10a_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    const int auto34DF7EC5_ae = 5;
-    const int auto34DF7EC5_ai = 1;
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    gv_revealH10 = VisRevealerLastCreated();
-    gv_textH10 = TextTagLastCreated();
-    TextTagSetColor(gv_textH10, c_textTagColorText, Color(100.00, 100.00, 0.00));
-    gv_h10Level = 1;
-    for ( ; ( (auto34DF7EC5_ai >= 0 && gv_h10Level <= auto34DF7EC5_ae) || (auto34DF7EC5_ai < 0 && gv_h10Level >= auto34DF7EC5_ae) ) ; gv_h10Level += auto34DF7EC5_ai ) {
-        TechTreeUpgradeAddLevel(8, "ZergHPUpgradeH10", 1);
-        TechTreeUpgradeAddLevel(8, "ZergWeaponsH10", 1);
-        TextTagSetText(gv_textH10, IntToText(gv_h10Level));
-        Wait(120.0, c_timeGame);
-        if (true) {
-            Wait(120.0, c_timeGame);
-        }
-
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_Hatch10a_Init () {
-    gt_Hatch10a = TriggerCreate("gt_Hatch10a_Func");
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: CivSpawnerGrouper
 //--------------------------------------------------------------------------------------------------
 bool gt_CivSpawnerGrouper_Func (bool testConds, bool runActions) {
@@ -1333,6 +583,9 @@ bool gt_CivSpawnerGrouper_Func (bool testConds, bool runActions) {
 void gt_CivSpawnerGrouper_Init () {
     gt_CivSpawnerGrouper = TriggerCreate("gt_CivSpawnerGrouper_Func");
     TriggerAddEventUnitCreated(gt_CivSpawnerGrouper, UnitRefFromUnit(UnitFromId(2027491687)), null, null);
+    TriggerAddEventUnitCreated(gt_CivSpawnerGrouper, UnitRefFromUnit(UnitFromId(1746630043)), null, null);
+    TriggerAddEventUnitCreated(gt_CivSpawnerGrouper, UnitRefFromUnit(UnitFromId(687521640)), null, null);
+    TriggerAddEventUnitCreated(gt_CivSpawnerGrouper, UnitRefFromUnit(UnitFromId(1516766081)), null, null);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -1343,16 +596,6 @@ bool gt_UpgradesDialogButtons_Func (bool testConds, bool runActions) {
     // Actions
     if (!runActions) {
         return true;
-    }
-
-    if ((EventDialogControl() == gv_armorUpgrades)) {
-        DialogSetVisible(gv_upgradeMainDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_armorDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_weaponUpgrades)) {
-        DialogSetVisible(gv_upgradeMainDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_weaponsDialog, PlayerGroupSingle(EventPlayer()), true);
     }
 
     if ((EventDialogControl() == gv_eBayInteractButton)) {
@@ -1400,7 +643,7 @@ bool gt_TroopTrainingFilter_Func (bool testConds, bool runActions) {
         UnitPutInTransport(EventUnit(), UnitFromId(1146560453));
         UnitIssueOrder(UnitFromId(1146560453), Order(AbilityCommand("BarracksTrain", 0)), c_orderQueueAddToEnd);
         TriggerDebugOutput(1, StringExternal("Param/Value/ABB6D938"), true);
-        Wait(24.0, c_timeGame);
+        Wait(20.0, c_timeGame);
         UnitRemove(EventUnit());
         TriggerDebugOutput(1, StringExternal("Param/Value/801D3673"), true);
     }
@@ -1464,7 +707,7 @@ bool gt_BarracksDialogButtons_Func (bool testConds, bool runActions) {
         if ((UnitQueueItemCount(UnitFromId(1146560453), 4) < 1)) {
             if ((UnitGroupCount(gv_civUnitGroup, c_unitCountAll) >= 1)) {
                 TriggerDebugOutput(1, StringExternal("Param/Value/ECB7C7D0"), true);
-                lv_civ = UnitGroupRandomUnit(gv_civUnitGroup, c_unitCountAlive);
+                lv_civ = UnitGroupClosestToPoint(gv_civUnitGroup, PointFromId(504983897));
                 UnitGroupRemove(gv_civUnitGroup, lv_civ);
                 UnitGroupAdd(gv_marineTrainingGroup, lv_civ);
                 UnitIssueOrder(lv_civ, OrderTargetingUnit(AbilityCommand("move", 0), UnitFromId(1146560453)), c_orderQueueReplace);
@@ -1601,7 +844,8 @@ bool gt_TownHallButtons_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    if ((EventDialogControl() == gv_townHall1)) {
+    if ((EventDialogControl() == gv_townHall1) && (AIHasRes(1, 200, 0) == true)) {
+        PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 200);
         auto1F72CC95_g = gv_primaryTurretGroup;
         auto1F72CC95_u = UnitGroupCount(auto1F72CC95_g, c_unitCountAll);
         for (;; auto1F72CC95_u -= 1) {
@@ -1635,7 +879,7 @@ bool gt_TownHallButtons_Func (bool testConds, bool runActions) {
         gv_primaryTurret8 = UnitLastCreated();
     }
 
-    if ((EventDialogControl() == gv_townHall2)) {
+    if ((EventDialogControl() == gv_townHall2) && (AIHasRes(1, 400, 0) == true)) {
         if (((UnitGetType(gv_primaryTurret1) != "AutoTurret") && (UnitGetType(gv_primaryTurret1) != "GatlingTurret"))) {
             libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(1254703413));
             UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
@@ -1649,36 +893,42 @@ bool gt_TownHallButtons_Func (bool testConds, bool runActions) {
         }
 
         if (((UnitGetType(gv_primaryTurret3) != "AutoTurret") && (UnitGetType(gv_primaryTurret3) != "GatlingTurret"))) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 50);
             libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(1850856916));
             UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
             gv_primaryTurret3 = UnitLastCreated();
         }
 
         if (((UnitGetType(gv_primaryTurret4) != "AutoTurret") && (UnitGetType(gv_primaryTurret4) != "GatlingTurret"))) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 50);
             libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(1014000409));
             UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
             gv_primaryTurret4 = UnitLastCreated();
         }
 
         if (((UnitGetType(gv_primaryTurret5) != "AutoTurret") && (UnitGetType(gv_primaryTurret5) != "GatlingTurret"))) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 50);
             libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(1632167838));
             UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
             gv_primaryTurret5 = UnitLastCreated();
         }
 
         if (((UnitGetType(gv_primaryTurret6) != "AutoTurret") && (UnitGetType(gv_primaryTurret6) != "GatlingTurret"))) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 50);
             libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(1837512800));
             UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
             gv_primaryTurret6 = UnitLastCreated();
         }
 
         if (((UnitGetType(gv_primaryTurret7) != "AutoTurret") && (UnitGetType(gv_primaryTurret7) != "GatlingTurret"))) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 50);
             libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(939566783));
             UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
             gv_primaryTurret7 = UnitLastCreated();
         }
 
         if (((UnitGetType(gv_primaryTurret8) != "AutoTurret") && (UnitGetType(gv_primaryTurret8) != "GatlingTurret"))) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 50);
             libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(1027684936));
             UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
             gv_primaryTurret8 = UnitLastCreated();
@@ -1686,26 +936,30 @@ bool gt_TownHallButtons_Func (bool testConds, bool runActions) {
 
     }
 
-    if ((EventDialogControl() == gv_townHall3)) {
+    if ((EventDialogControl() == gv_townHall3) && (AIHasRes(1, 400, 0) == true)) {
         if ((UnitGetType(gv_primaryBunkerSouth) != "Bunker")) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 100);
             libNtve_gf_CreateUnitsWithDefaultFacing(1, "Bunker", 0, 1, PointFromId(843315713));
             UnitGroupAdd(gv_primaryBunkerGroup, UnitLastCreated());
             gv_primaryBunkerSouth = UnitLastCreated();
         }
 
         if ((UnitGetType(gv_primaryBunkerNorth) != "Bunker")) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 100);
             libNtve_gf_CreateUnitsWithDefaultFacing(1, "Bunker", 0, 1, PointFromId(1666459151));
             UnitGroupAdd(gv_primaryBunkerGroup, UnitLastCreated());
             gv_primaryBunkerNorth = UnitLastCreated();
         }
 
         if ((UnitGetType(gv_primaryBunkerEast) != "Bunker")) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 100);
             libNtve_gf_CreateUnitsWithDefaultFacing(1, "Bunker", 0, 1, PointFromId(1442256660));
             UnitGroupAdd(gv_primaryBunkerGroup, UnitLastCreated());
             gv_primaryBunkerEast = UnitLastCreated();
         }
 
         if ((UnitGetType(gv_primaryBunkerWest) != "Bunker")) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 100);
             libNtve_gf_CreateUnitsWithDefaultFacing(1, "Bunker", 0, 1, PointFromId(1869422634));
             UnitGroupAdd(gv_primaryBunkerGroup, UnitLastCreated());
             gv_primaryBunkerWest = UnitLastCreated();
@@ -1913,1931 +1167,6 @@ bool gt_EBayDialogInitialization_Func (bool testConds, bool runActions) {
 void gt_EBayDialogInitialization_Init () {
     gt_EBayDialogInitialization = TriggerCreate("gt_EBayDialogInitialization_Func");
     TriggerAddEventMapInit(gt_EBayDialogInitialization);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Minimized Dialog
-//--------------------------------------------------------------------------------------------------
-bool gt_MinimizedDialog_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    DialogCreate(300, 75, c_anchorTopLeft, 0, 35, false);
-    gv_minimizedUpgradeDialog = DialogLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_minimizedUpgradeDialog, 250, 50, c_anchorCenter, 0, 0, StringExternal("Param/Value/70C3A390"), StringExternal("Param/Value/05C4937D"), "");
-    gv_openUpgradesButton = DialogControlLastCreated();
-    DialogSetVisible(gv_minimizedUpgradeDialog, PlayerGroupAll(), true);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_MinimizedDialog_Init () {
-    gt_MinimizedDialog = TriggerCreate("gt_MinimizedDialog_Func");
-    TriggerAddEventMapInit(gt_MinimizedDialog);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Maximize Upgrades
-//--------------------------------------------------------------------------------------------------
-bool gt_MaximizeUpgrades_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((EventDialogControl() == gv_openUpgradesButton)) {
-        DialogSetVisible(gv_minimizedUpgradeDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_upgradeMainDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_MaximizeUpgrades_Init () {
-    gt_MaximizeUpgrades = TriggerCreate("gt_MaximizeUpgrades_Func");
-    TriggerAddEventDialogControl(gt_MaximizeUpgrades, EventPlayer(), c_invalidDialogControlId, c_triggerControlEventTypeClick);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Main Upgrades Dialog
-//--------------------------------------------------------------------------------------------------
-bool gt_MainUpgradesDialog_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    DialogCreate(500, 800, c_anchorTopLeft, 0, 35, false);
-    gv_upgradeMainDialog = DialogLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_upgradeMainDialog, 150, 50, c_anchorTopLeft, 50, 50, StringExternal("Param/Value/0E3E7DE2"), StringExternal("Param/Value/4CA0A023"), "");
-    gv_armorUpgrades = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_upgradeMainDialog, 150, 50, c_anchorTopRight, 150, 50, StringExternal("Param/Value/C9803897"), StringExternal("Param/Value/DB0BAC03"), "");
-    gv_healthUpgrades = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_upgradeMainDialog, 150, 50, c_anchorTopLeft, 50, 100, StringExternal("Param/Value/2B970AFF"), StringExternal("Param/Value/814F1491"), "");
-    gv_weaponUpgrades = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_upgradeMainDialog, 200, 50, c_anchorTopLeft, 50, 150, StringExternal("Param/Value/5A2F5F27"), StringExternal("Param/Value/627F449C"), "");
-    gv_protossSpecialsButton = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_upgradeMainDialog, 200, 50, c_anchorTopLeft, 50, 200, StringExternal("Param/Value/2815DA11"), StringExternal("Param/Value/33FCCD83"), "");
-    gv_terranSpecialsButton = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_upgradeMainDialog, 50, 50, c_anchorTopRight, 50, 50, StringExternal("Param/Value/8F1BE2EC"), StringExternal("Param/Value/8E825056"), "");
-    gv_minimizeMainDialog = DialogControlLastCreated();
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_MainUpgradesDialog_Init () {
-    gt_MainUpgradesDialog = TriggerCreate("gt_MainUpgradesDialog_Func");
-    TriggerAddEventMapInit(gt_MainUpgradesDialog);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Minimize Race Dialog
-//--------------------------------------------------------------------------------------------------
-bool gt_MinimizeRaceDialog_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((EventDialogControl() == gv_minimizeMainDialog)) {
-        DialogSetVisible(gv_upgradeMainDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_minimizedUpgradeDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_MinimizeRaceDialog_Init () {
-    gt_MinimizeRaceDialog = TriggerCreate("gt_MinimizeRaceDialog_Func");
-    TriggerAddEventDialogControl(gt_MinimizeRaceDialog, EventPlayer(), c_invalidDialogControlId, c_triggerControlEventTypeClick);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Protoss Special Upgrades Dialog
-//--------------------------------------------------------------------------------------------------
-bool gt_ProtossSpecialUpgradesDialog_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    DialogCreate(500, 800, c_anchorTopLeft, 0, 35, false);
-    gv_protossSpecialUpgradesDialog = DialogLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_protossSpecialUpgradesDialog, 50, 50, c_anchorTopRight, 50, 50, StringExternal("Param/Value/E2648057"), StringExternal("Param/Value/0A7CD2C8"), "");
-    gv_minimizeProtossSpecialUpgrades = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_protossSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 50, StringExternal("Param/Value/CE3D230F"), StringExternal("Param/Value/A2374692"), "");
-    gv_gravitonCatapult = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_protossSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 100, StringExternal("Param/Value/3EB482D3"), StringExternal("Param/Value/F25723BF"), "");
-    gv_overcharge = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_protossSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 150, StringExternal("Param/Value/06937B01"), StringExternal("Param/Value/C2490AC2"), "");
-    gv_deepDisruptors = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_protossSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 200, StringExternal("Param/Value/3AFDA1E9"), StringExternal("Param/Value/48CF6F9A"), "");
-    gv_khaydarinAmulet = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_protossSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 250, StringExternal("Param/Value/A5D52F0C"), StringExternal("Param/Value/E99694C4"), "");
-    gv_psiStorm = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_protossSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 300, StringExternal("Param/Value/8AA1A90C"), StringExternal("Param/Value/EE521B65"), "");
-    gv_charge = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_protossSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 350, StringExternal("Param/Value/09A27F95"), StringExternal("Param/Value/B15A9F73"), "");
-    gv_blink = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_protossSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 400, StringExternal("Param/Value/A8E7C6BF"), StringExternal("Param/Value/93DA9951"), "");
-    gv_graviticBoostersDrive = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_protossSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 450, StringExternal("Param/Value/566C5585"), StringExternal("Param/Value/0BE91F7A"), "");
-    gv_extendedThermalLance = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_protossSpecialUpgradesDialog, 75, 50, c_anchorTopRight, 25, 100, StringExternal("Param/Value/2736DB5A"), StringExternal("Param/Value/B3AED65D"), "");
-    gv_backtoMainProtoss = DialogControlLastCreated();
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_ProtossSpecialUpgradesDialog_Init () {
-    gt_ProtossSpecialUpgradesDialog = TriggerCreate("gt_ProtossSpecialUpgradesDialog_Func");
-    TriggerAddEventMapInit(gt_ProtossSpecialUpgradesDialog);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Protoss Special Upgrades Buttons
-//--------------------------------------------------------------------------------------------------
-bool gt_ProtossSpecialUpgradesButtons_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((EventDialogControl() == gv_gravitonCatapult)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 500) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropVespene) > 0)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "CarrierLaunchSpeedUpgrade", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-            PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_overcharge)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 500) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropVespene) > 0)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "Overcharge", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-            PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_deepDisruptors)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 500) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropVespene) > 0)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "DeepDisruptors", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-            PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_khaydarinAmulet)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 400) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropVespene) > 0)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "HighTemplarKhaydarinAmulet", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-            PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_psiStorm)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 100)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "PsiStormTech", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_charge)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "Charge", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_blink)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 500) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropVespene) > 0)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "BlinkTech", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-            PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_graviticBoostersDrive)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ObserverGraviticBooster", 1);
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "GraviticDrive", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_extendedThermalLance)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 500) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropVespene) > 0)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ExtendedThermalLance", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-            PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_minimizeProtossSpecialUpgrades)) {
-        DialogSetVisible(gv_protossSpecialUpgradesDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_minimizedUpgradeDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_backtoMainProtoss)) {
-        DialogSetVisible(gv_protossSpecialUpgradesDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_upgradeMainDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_ProtossSpecialUpgradesButtons_Init () {
-    gt_ProtossSpecialUpgradesButtons = TriggerCreate("gt_ProtossSpecialUpgradesButtons_Func");
-    TriggerAddEventDialogControl(gt_ProtossSpecialUpgradesButtons, EventPlayer(), c_invalidDialogControlId, c_triggerControlEventTypeClick);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Terran Special Upgrades Dialog
-//--------------------------------------------------------------------------------------------------
-bool gt_TerranSpecialUpgradesDialog_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    DialogCreate(500, 850, c_anchorTopLeft, 0, 35, false);
-    gv_terranSpecialUpgradesDialog = DialogLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_terranSpecialUpgradesDialog, 50, 50, c_anchorTopRight, 50, 50, StringExternal("Param/Value/47737614"), StringExternal("Param/Value/46EF467A"), "");
-    gv_minimizeTerranSpecialUpgradesDialog = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_terranSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 50, StringExternal("Param/Value/AD25E568"), StringExternal("Param/Value/6ADEC283"), "");
-    gv_jotunBoosters = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_terranSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 100, StringExternal("Param/Value/65E111C1"), StringExternal("Param/Value/C2EB4620"), "");
-    gv_yamatoCannon = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_terranSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 150, StringExternal("Param/Value/E3F43C4A"), StringExternal("Param/Value/8AD44235"), "");
-    gv_behemothReactor = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_terranSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 200, StringExternal("Param/Value/ED41E300"), StringExternal("Param/Value/04B39E18"), "");
-    gv_ghostCloak = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_terranSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 250, StringExternal("Param/Value/CABD562B"), StringExternal("Param/Value/F75867F0"), "");
-    gv_moebiusReactor = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_terranSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 300, StringExternal("Param/Value/A90D651B"), StringExternal("Param/Value/B5151371"), "");
-    gv_stimpack = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_terranSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 350, StringExternal("Param/Value/66F5DC90"), StringExternal("Param/Value/883C9134"), "");
-    gv_combatShield = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_terranSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 400, StringExternal("Param/Value/D2721C91"), StringExternal("Param/Value/C3C14D4F"), "");
-    gv_concussiveShells = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_terranSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 450, StringExternal("Param/Value/9FC4B755"), StringExternal("Param/Value/C13A3BD3"), "");
-    gv_siegeMode = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_terranSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 500, StringExternal("Param/Value/73B10319"), StringExternal("Param/Value/8683F17C"), "");
-    gv_infernalPreigniter = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_terranSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 550, StringExternal("Param/Value/534E9B2B"), StringExternal("Param/Value/0547C2A0"), "");
-    gv__250mmCannons = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_terranSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 600, StringExternal("Param/Value/2DE3B398"), StringExternal("Param/Value/08DB2876"), "");
-    gv_bansheeCloak = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_terranSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 650, StringExternal("Param/Value/A4860CC6"), StringExternal("Param/Value/137BC38C"), "");
-    gv_corvidCaduceusReactor = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_terranSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 700, StringExternal("Param/Value/B3DD1D0A"), StringExternal("Param/Value/D5DDEC3B"), "");
-    gv_seekerMissile = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_terranSpecialUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 750, StringExternal("Param/Value/DF4ECD3B"), StringExternal("Param/Value/C3DAF53B"), "");
-    gv_durableMaterials = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_terranSpecialUpgradesDialog, 75, 50, c_anchorTopRight, 25, 100, StringExternal("Param/Value/9CD871DF"), StringExternal("Param/Value/EC77E070"), "");
-    gv_backtoMainTerran = DialogControlLastCreated();
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_TerranSpecialUpgradesDialog_Init () {
-    gt_TerranSpecialUpgradesDialog = TriggerCreate("gt_TerranSpecialUpgradesDialog_Func");
-    TriggerAddEventMapInit(gt_TerranSpecialUpgradesDialog);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Terran Special Upgrades Buttons
-//--------------------------------------------------------------------------------------------------
-bool gt_TerranSpecialUpgradesButtons_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((EventDialogControl() == gv_jotunBoosters)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 500) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropVespene) > 0)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "VikingJotunBoosters", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-            PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_yamatoCannon)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 500) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropVespene) > 0)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "BattlecruiserEnableSpecializations", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-            PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_behemothReactor)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 300)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "BattlecruiserBehemothReactor", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_ghostCloak)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 500) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropVespene) > 0)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "PersonalCloaking", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-            PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_moebiusReactor)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 300)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "GhostMoebiusReactor", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_stimpack)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 500) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropVespene) > 0)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "Stimpack", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-            PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_combatShield)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 400)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ShieldWall", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_concussiveShells)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 100)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "PunisherGrenades", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_siegeMode)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 500) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropVespene) > 0)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "SiegeTech", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-            PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_infernalPreigniter)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "HighCapacityBarrels", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv__250mmCannons)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 500) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropVespene) > 0)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "StrikeCannons", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-            PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_bansheeCloak)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 500) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropVespene) > 0)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "BansheeCloak", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-            PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_corvidCaduceusReactor)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 500) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropVespene) > 1)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "RavenCorvidReactor", 1);
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "MedivacCaduceusReactor", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-            PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 1);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_seekerMissile)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "HunterSeeker", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_durableMaterials)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 200)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "DurableMaterials", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_minimizeTerranSpecialUpgradesDialog)) {
-        DialogSetVisible(gv_terranSpecialUpgradesDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_minimizedUpgradeDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_backtoMainTerran)) {
-        DialogSetVisible(gv_terranSpecialUpgradesDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_upgradeMainDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_TerranSpecialUpgradesButtons_Init () {
-    gt_TerranSpecialUpgradesButtons = TriggerCreate("gt_TerranSpecialUpgradesButtons_Func");
-    TriggerAddEventDialogControl(gt_TerranSpecialUpgradesButtons, EventPlayer(), c_invalidDialogControlId, c_triggerControlEventTypeClick);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Armor Dialog
-//--------------------------------------------------------------------------------------------------
-bool gt_ArmorDialog_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    DialogCreate(500, 800, c_anchorTopLeft, 0, 35, false);
-    gv_armorDialog = DialogLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_armorDialog, 50, 50, c_anchorTopRight, 50, 50, StringExternal("Param/Value/382EDFEA"), StringExternal("Param/Value/5480E1DB"), "");
-    gv_minimizeArmor = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_armorDialog, 350, 50, c_anchorTopLeft, 50, 50, StringExternal("Param/Value/A937F986"), StringExternal("Param/Value/EAEE77B6"), "");
-    gv_armor1 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_armorDialog, 350, 50, c_anchorTopLeft, 50, 100, StringExternal("Param/Value/FC1801E0"), StringExternal("Param/Value/2A08427A"), "");
-    gv_armor2 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_armorDialog, 350, 50, c_anchorTopLeft, 50, 150, StringExternal("Param/Value/894F9CEA"), StringExternal("Param/Value/1ED75AA5"), "");
-    gv_armor3 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_armorDialog, 350, 50, c_anchorTopLeft, 50, 200, StringExternal("Param/Value/4D5A4273"), StringExternal("Param/Value/B47D7151"), "");
-    gv_armor4 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_armorDialog, 350, 50, c_anchorTopLeft, 50, 250, StringExternal("Param/Value/DB930280"), StringExternal("Param/Value/FD9956DE"), "");
-    gv_armor5 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_armorDialog, 350, 50, c_anchorTopLeft, 50, 300, StringExternal("Param/Value/77B9387A"), StringExternal("Param/Value/F1713483"), "");
-    gv_armor6 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_armorDialog, 350, 50, c_anchorTopLeft, 50, 350, StringExternal("Param/Value/E492FE80"), StringExternal("Param/Value/4B93206F"), "");
-    gv_armor7 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_armorDialog, 350, 50, c_anchorTopLeft, 50, 400, StringExternal("Param/Value/512DF78C"), StringExternal("Param/Value/43029675"), "");
-    gv_armor8 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_armorDialog, 350, 50, c_anchorTopLeft, 50, 450, StringExternal("Param/Value/714E238E"), StringExternal("Param/Value/937E8841"), "");
-    gv_armor9 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_armorDialog, 350, 50, c_anchorTopLeft, 50, 500, StringExternal("Param/Value/F1DAFAA3"), StringExternal("Param/Value/CBE5FC33"), "");
-    gv_armor10 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_armorDialog, 75, 50, c_anchorTopRight, 25, 100, StringExternal("Param/Value/03B42CE5"), StringExternal("Param/Value/F657CF39"), "");
-    gv_backtoMainArmor = DialogControlLastCreated();
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_ArmorDialog_Init () {
-    gt_ArmorDialog = TriggerCreate("gt_ArmorDialog_Func");
-    TriggerAddEventMapInit(gt_ArmorDialog);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Armor Dialog Buttons
-//--------------------------------------------------------------------------------------------------
-bool gt_ArmorDialogButtons_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((EventDialogControl() == gv_armor1)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 500)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "ArmorUpgradeNew1", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_armor2)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 500) && (TechTreeUpgradeCount(EventPlayer(), "ArmorUpgradeNew1", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "ArmorUpgradeNew2", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_armor3)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 500) && (TechTreeUpgradeCount(EventPlayer(), "ArmorUpgradeNew2", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "ArmorUpgradeNew3", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_armor4)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 500) && (TechTreeUpgradeCount(EventPlayer(), "ArmorUpgradeNew3", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "ArmorUpgradeNew4", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_armor5)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 500) && (TechTreeUpgradeCount(EventPlayer(), "ArmorUpgradeNew4", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "ArmorUpgradeNew5", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_armor6)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 500) && (TechTreeUpgradeCount(EventPlayer(), "ArmorUpgradeNew5", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "ArmorUpgradeNew6", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_armor7)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 500) && (TechTreeUpgradeCount(EventPlayer(), "ArmorUpgradeNew6", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "ArmorUpgradeNew7", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_armor8)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 500) && (TechTreeUpgradeCount(EventPlayer(), "ArmorUpgradeNew7", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "ArmorUpgradeNew8", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_armor9)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 500) && (TechTreeUpgradeCount(EventPlayer(), "ArmorUpgradeNew8", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "ArmorUpgradeNew9", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_armor10)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 500) && (TechTreeUpgradeCount(EventPlayer(), "ArmorUpgradeNew9", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "ArmorUpgradeNew10", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_minimizeArmor)) {
-        DialogSetVisible(gv_armorDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_minimizedUpgradeDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_backtoMainArmor)) {
-        DialogSetVisible(gv_armorDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_upgradeMainDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_ArmorDialogButtons_Init () {
-    gt_ArmorDialogButtons = TriggerCreate("gt_ArmorDialogButtons_Func");
-    TriggerAddEventDialogControl(gt_ArmorDialogButtons, EventPlayer(), c_invalidDialogControlId, c_triggerControlEventTypeClick);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Health Dialog
-//--------------------------------------------------------------------------------------------------
-bool gt_HealthDialog_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    DialogCreate(500, 800, c_anchorTopLeft, 0, 35, false);
-    gv_healthDialog = DialogLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_healthDialog, 50, 50, c_anchorTopRight, 50, 50, StringExternal("Param/Value/0B108520"), StringExternal("Param/Value/C09D998C"), "");
-    gv_minimizeHealth = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_healthDialog, 350, 50, c_anchorTopLeft, 50, 50, StringExternal("Param/Value/B3AD403B"), StringExternal("Param/Value/43B0D257"), "");
-    gv_health1 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_healthDialog, 350, 50, c_anchorTopLeft, 50, 100, StringExternal("Param/Value/5667CA1B"), StringExternal("Param/Value/B360DE17"), "");
-    gv_health2 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_healthDialog, 350, 50, c_anchorTopLeft, 50, 150, StringExternal("Param/Value/CA539EF1"), StringExternal("Param/Value/7E19FEC4"), "");
-    gv_health3 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_healthDialog, 350, 50, c_anchorTopLeft, 50, 200, StringExternal("Param/Value/290ABF02"), StringExternal("Param/Value/C337626A"), "");
-    gv_health4 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_healthDialog, 350, 50, c_anchorTopLeft, 50, 250, StringExternal("Param/Value/384CABEF"), StringExternal("Param/Value/4CFDD802"), "");
-    gv_health5 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_healthDialog, 350, 50, c_anchorTopLeft, 50, 300, StringExternal("Param/Value/F1A93D87"), StringExternal("Param/Value/FD2A2D9E"), "");
-    gv_health6 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_healthDialog, 350, 50, c_anchorTopLeft, 50, 350, StringExternal("Param/Value/7B655763"), StringExternal("Param/Value/83FC7ECF"), "");
-    gv_health7 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_healthDialog, 350, 50, c_anchorTopLeft, 50, 400, StringExternal("Param/Value/4D5C0640"), StringExternal("Param/Value/80CB6B8A"), "");
-    gv_health8 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_healthDialog, 350, 50, c_anchorTopLeft, 50, 450, StringExternal("Param/Value/AC0CEB18"), StringExternal("Param/Value/5EE24413"), "");
-    gv_health9 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_healthDialog, 350, 50, c_anchorTopLeft, 50, 500, StringExternal("Param/Value/838F0505"), StringExternal("Param/Value/7B4C0EEA"), "");
-    gv_health10 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_healthDialog, 75, 50, c_anchorTopRight, 25, 100, StringExternal("Param/Value/416BD481"), StringExternal("Param/Value/8B36BC74"), "");
-    gv_backtoMainHealth = DialogControlLastCreated();
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_HealthDialog_Init () {
-    gt_HealthDialog = TriggerCreate("gt_HealthDialog_Func");
-    TriggerAddEventMapInit(gt_HealthDialog);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Health Dialog Buttons
-//--------------------------------------------------------------------------------------------------
-bool gt_HealthDialogButtons_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((EventDialogControl() == gv_health1)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 1000)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "HPUpgradeNew1", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_health2)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 1000) && (TechTreeUpgradeCount(EventPlayer(), "HPUpgradeNew1", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "HPUpgradeNew2", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_health3)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 1000) && (TechTreeUpgradeCount(EventPlayer(), "HPUpgradeNew2", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "HPUpgradeNew3", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_health4)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 1000) && (TechTreeUpgradeCount(EventPlayer(), "HPUpgradeNew3", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "HPUpgradeNew4", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_health5)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 1000) && (TechTreeUpgradeCount(EventPlayer(), "HPUpgradeNew4", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "HPUpgradeNew5", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_health6)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 1000) && (TechTreeUpgradeCount(EventPlayer(), "HPUpgradeNew5", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "HPUpgradeNew6", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_health7)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 1000) && (TechTreeUpgradeCount(EventPlayer(), "HPUpgradeNew6", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "HPUpgradeNew7", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_health8)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 1000) && (TechTreeUpgradeCount(EventPlayer(), "HPUpgradeNew7", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "HPUpgradeNew8", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_health9)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 1000) && (TechTreeUpgradeCount(EventPlayer(), "HPUpgradeNew8", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "HPUpgradeNew9", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_health10)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 1000) && (TechTreeUpgradeCount(EventPlayer(), "HPUpgradeNew9", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "HPUpgradeNew10", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_minimizeHealth)) {
-        DialogSetVisible(gv_healthDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_minimizedUpgradeDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_backtoMainHealth)) {
-        DialogSetVisible(gv_healthDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_upgradeMainDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_HealthDialogButtons_Init () {
-    gt_HealthDialogButtons = TriggerCreate("gt_HealthDialogButtons_Func");
-    TriggerAddEventDialogControl(gt_HealthDialogButtons, EventPlayer(), c_invalidDialogControlId, c_triggerControlEventTypeClick);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Weapons Dialog
-//--------------------------------------------------------------------------------------------------
-bool gt_WeaponsDialog_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    DialogCreate(500, 800, c_anchorTopLeft, 0, 35, false);
-    gv_weaponsDialog = DialogLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_weaponsDialog, 50, 50, c_anchorTopRight, 50, 50, StringExternal("Param/Value/BB76A582"), StringExternal("Param/Value/4A288831"), "");
-    gv_minimizeWeapons = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_weaponsDialog, 350, 50, c_anchorTopLeft, 50, 50, StringExternal("Param/Value/FA43FC27"), StringExternal("Param/Value/8213B07F"), "");
-    gv_weapons1 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_weaponsDialog, 350, 50, c_anchorTopLeft, 50, 100, StringExternal("Param/Value/5BF76330"), StringExternal("Param/Value/5C8681EF"), "");
-    gv_weapons2 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_weaponsDialog, 350, 50, c_anchorTopLeft, 50, 150, StringExternal("Param/Value/B2EF4E99"), StringExternal("Param/Value/41C71114"), "");
-    gv_weapons3 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_weaponsDialog, 350, 50, c_anchorTopLeft, 50, 200, StringExternal("Param/Value/4FB6A6DB"), StringExternal("Param/Value/5FB604DF"), "");
-    gv_weapons4 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_weaponsDialog, 350, 50, c_anchorTopLeft, 50, 250, StringExternal("Param/Value/4F93AAF7"), StringExternal("Param/Value/FFE5CB15"), "");
-    gv_weapons5 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_weaponsDialog, 350, 50, c_anchorTopLeft, 50, 300, StringExternal("Param/Value/F66434B8"), StringExternal("Param/Value/3CE3E65F"), "");
-    gv_weapons6 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_weaponsDialog, 350, 50, c_anchorTopLeft, 50, 350, StringExternal("Param/Value/A7356BDC"), StringExternal("Param/Value/29807540"), "");
-    gv_weapons7 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_weaponsDialog, 350, 50, c_anchorTopLeft, 50, 400, StringExternal("Param/Value/7B631D69"), StringExternal("Param/Value/A3F7EAE4"), "");
-    gv_weapons8 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_weaponsDialog, 350, 50, c_anchorTopLeft, 50, 450, StringExternal("Param/Value/81479A76"), StringExternal("Param/Value/8F685C0D"), "");
-    gv_weapons9 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_weaponsDialog, 350, 50, c_anchorTopLeft, 50, 500, StringExternal("Param/Value/9969ED0A"), StringExternal("Param/Value/43921D1A"), "");
-    gv_weapons10 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_weaponsDialog, 75, 50, c_anchorTopRight, 25, 100, StringExternal("Param/Value/320684B9"), StringExternal("Param/Value/6DF27FA8"), "");
-    gv_backtoMainWeapons = DialogControlLastCreated();
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_WeaponsDialog_Init () {
-    gt_WeaponsDialog = TriggerCreate("gt_WeaponsDialog_Func");
-    TriggerAddEventMapInit(gt_WeaponsDialog);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Weapons Dialog Buttons
-//--------------------------------------------------------------------------------------------------
-bool gt_WeaponsDialogButtons_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((EventDialogControl() == gv_weapons1)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 1000)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "ProtossAirWeaponsLevel12", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "ProtossGroundWeaponsLevel12", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranInfantryWeaponsLevel12", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranShipWeaponsLevel12", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranVehicleWeaponsLevel12", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_weapons2)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 1000) && (TechTreeUpgradeCount(EventPlayer(), "ProtossAirWeaponsLevel12", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "ProtossAirWeaponsLevel122", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "ProtossGroundWeaponsLevel122", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranInfantryWeaponsLevel122", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranShipWeaponsLevel122", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranVehicleWeaponsLevel122", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_weapons3)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 1000) && (TechTreeUpgradeCount(EventPlayer(), "ProtossAirWeaponsLevel122", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "ProtossAirWeaponsLevel123", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "ProtossGroundWeaponsLevel123", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranInfantryWeaponsLevel123", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranShipWeaponsLevel123", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranVehicleWeaponsLevel123", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_weapons4)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 1000) && (TechTreeUpgradeCount(EventPlayer(), "ProtossAirWeaponsLevel123", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "ProtossAirWeaponsLevel124", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "ProtossGroundWeaponsLevel124", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranInfantryWeaponsLevel124", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranShipWeaponsLevel124", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranVehicleWeaponsLevel124", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_weapons5)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 1000) && (TechTreeUpgradeCount(EventPlayer(), "ProtossAirWeaponsLevel124", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "ProtossAirWeaponsLevel125", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "ProtossGroundWeaponsLevel125", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranInfantryWeaponsLevel125", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranShipWeaponsLevel125", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranVehicleWeaponsLevel125", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_weapons6)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 1000) && (TechTreeUpgradeCount(EventPlayer(), "ProtossAirWeaponsLevel125", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "ProtossAirWeaponsLevel126", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "ProtossGroundWeaponsLevel126", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranInfantryWeaponsLevel126", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranShipWeaponsLevel126", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranVehicleWeaponsLevel126", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_weapons7)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 1000) && (TechTreeUpgradeCount(EventPlayer(), "ProtossAirWeaponsLevel126", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "ProtossAirWeaponsLevel127", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "ProtossGroundWeaponsLevel127", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranInfantryWeaponsLevel127", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranShipWeaponsLevel127", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranVehicleWeaponsLevel127", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_weapons8)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 1000) && (TechTreeUpgradeCount(EventPlayer(), "ProtossAirWeaponsLevel127", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "ProtossAirWeaponsLevel128", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "ProtossGroundWeaponsLevel128", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranInfantryWeaponsLevel128", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranShipWeaponsLevel128", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranVehicleWeaponsLevel128", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_weapons9)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 1000) && (TechTreeUpgradeCount(EventPlayer(), "ProtossAirWeaponsLevel128", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "ProtossAirWeaponsLevel129", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "ProtossGroundWeaponsLevel129", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranInfantryWeaponsLevel129", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranShipWeaponsLevel129", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranVehicleWeaponsLevel129", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_weapons10)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) >= 1000) && (TechTreeUpgradeCount(EventPlayer(), "ProtossAirWeaponsLevel129", c_techCountCompleteOnly) == 1)) {
-            TechTreeUpgradeAddLevel(EventPlayer(), "ProtossAirWeaponsLevel1210", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "ProtossGroundWeaponsLevel1210", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranInfantryWeaponsLevel1210", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranShipWeaponsLevel1210", 1);
-            TechTreeUpgradeAddLevel(EventPlayer(), "TerranVehicleWeaponsLevel1210", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_minimizeWeapons)) {
-        DialogSetVisible(gv_weaponsDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_minimizedUpgradeDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_backtoMainWeapons)) {
-        DialogSetVisible(gv_weaponsDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_upgradeMainDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_WeaponsDialogButtons_Init () {
-    gt_WeaponsDialogButtons = TriggerCreate("gt_WeaponsDialogButtons_Func");
-    TriggerAddEventDialogControl(gt_WeaponsDialogButtons, EventPlayer(), c_invalidDialogControlId, c_triggerControlEventTypeClick);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Protoss Upgrades Dialog
-//--------------------------------------------------------------------------------------------------
-bool gt_ProtossUpgradesDialog_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    DialogCreate(500, 800, c_anchorTopLeft, 0, 35, false);
-    gv_chooseUpgradesSectionProtoss = DialogLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_chooseUpgradesSectionProtoss, 50, 50, c_anchorTopRight, 50, 50, StringExternal("Param/Value/4CAD54D1"), StringExternal("Param/Value/F6B914F8"), "");
-    gv_minimizeProtossUpgradesDialog = DialogControlLastCreated();
-    libNtve_gf_SetDialogItemColor(gv_minimizeProtossUpgradesDialog, Color(0,66*100/255,100), PlayerGroupSingle(EventPlayer()));
-    libNtve_gf_CreateDialogItemButton(gv_chooseUpgradesSectionProtoss, 250, 50, c_anchorTopLeft, 50, 50, StringExternal("Param/Value/90ECABA0"), StringExternal("Param/Value/31DCD0EF"), "");
-    gv_groundUpgradesButton = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_chooseUpgradesSectionProtoss, 250, 50, c_anchorTopLeft, 50, 100, StringExternal("Param/Value/090D6973"), StringExternal("Param/Value/E5715E7A"), "");
-    gv_airUpgradesButton = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_chooseUpgradesSectionProtoss, 250, 50, c_anchorTopLeft, 50, 150, StringExternal("Param/Value/5965C539"), StringExternal("Param/Value/DC7A3D3B"), "");
-    gv_protossSpecialUpgradesButton = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_chooseUpgradesSectionProtoss, 300, 50, c_anchorTopLeft, 50, 200, StringExternal("Param/Value/1CCD0A51"), StringExternal("Param/Value/149D895C"), "");
-    gv_shieldsButton1 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_chooseUpgradesSectionProtoss, 300, 50, c_anchorTopLeft, 50, 250, StringExternal("Param/Value/2A0BBD91"), StringExternal("Param/Value/7953AE57"), "");
-    gv_shieldsButton2 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_chooseUpgradesSectionProtoss, 75, 50, c_anchorBottomRight, 25, 25, StringExternal("Param/Value/B285E108"), StringExternal("Param/Value/53A8704A"), "");
-    gv_backtoUpgradesProtoss = DialogControlLastCreated();
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_ProtossUpgradesDialog_Init () {
-    gt_ProtossUpgradesDialog = TriggerCreate("gt_ProtossUpgradesDialog_Func");
-    TriggerAddEventMapInit(gt_ProtossUpgradesDialog);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Protoss Upgrades Buttons
-//--------------------------------------------------------------------------------------------------
-bool gt_ProtossUpgradesButtons_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((EventDialogControl() == gv_groundUpgradesButton)) {
-        DialogSetVisible(gv_chooseUpgradesSectionProtoss, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_groundUpgradesDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_airUpgradesButton)) {
-        DialogSetVisible(gv_chooseUpgradesSectionProtoss, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_airUpgradesDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_protossSpecialUpgradesButton)) {
-        DialogSetVisible(gv_chooseUpgradesSectionProtoss, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_protossSpecialUpgradesDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_shieldsButton1)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "ProtossShieldsLevel1", c_techCountCompleteOnly) != 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 1250)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossShieldsLevel1", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_shieldsButton2)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "ProtossShieldsLevel2", c_techCountCompleteOnly) != 1) && (TechTreeUpgradeCount(EventPlayer(), "ProtossShieldsLevel1", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 1250)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossShieldsLevel2", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_minimizeProtossUpgradesDialog)) {
-        DialogSetVisible(gv_chooseUpgradesSectionProtoss, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_minimizedUpgradeDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_backtoUpgradesProtoss)) {
-        DialogSetVisible(gv_chooseUpgradesSectionProtoss, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_upgradeMainDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_ProtossUpgradesButtons_Init () {
-    gt_ProtossUpgradesButtons = TriggerCreate("gt_ProtossUpgradesButtons_Func");
-    TriggerAddEventDialogControl(gt_ProtossUpgradesButtons, EventPlayer(), c_invalidDialogControlId, c_triggerControlEventTypeClick);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Ground Upgrades Dialog
-//--------------------------------------------------------------------------------------------------
-bool gt_GroundUpgradesDialog_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    DialogCreate(500, 800, c_anchorTopLeft, 0, 35, false);
-    gv_groundUpgradesDialog = DialogLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_groundUpgradesDialog, 50, 50, c_anchorTopRight, 50, 50, StringExternal("Param/Value/CD4A7C08"), StringExternal("Param/Value/A8FCDE2A"), "");
-    gv_minimizeGroundUpgrades = DialogControlLastCreated();
-    libNtve_gf_SetDialogItemColor(gv_minimizeGroundUpgrades, Color(0,66*100/255,100), PlayerGroupSingle(EventPlayer()));
-    libNtve_gf_CreateDialogItemButton(gv_groundUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 50, StringExternal("Param/Value/FE198804"), StringExternal("Param/Value/C8EF447D"), "");
-    gv_groundArmor1Button = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_groundUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 100, StringExternal("Param/Value/C4246BAE"), StringExternal("Param/Value/882B7F39"), "");
-    gv_groundArmor2Button = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_groundUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 150, StringExternal("Param/Value/5B27966A"), StringExternal("Param/Value/70160765"), "");
-    gv_groundArmor3Button = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_groundUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 200, StringExternal("Param/Value/2B3EF117"), StringExternal("Param/Value/221CFBEF"), "");
-    gv_groundArmor4Button = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_groundUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 250, StringExternal("Param/Value/4BD87427"), StringExternal("Param/Value/939AE400"), "");
-    gv_groundArmor5Button = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_groundUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 300, StringExternal("Param/Value/12798867"), StringExternal("Param/Value/8F834D41"), "");
-    gv_groundWeaponsButton1 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_groundUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 350, StringExternal("Param/Value/3943F6A7"), StringExternal("Param/Value/9C529FCB"), "");
-    gv_groundWeaponsButton2 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_groundUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 400, StringExternal("Param/Value/047996B3"), StringExternal("Param/Value/5F6DE942"), "");
-    gv_groundWeaponsButton3 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_groundUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 450, StringExternal("Param/Value/0DD4561A"), StringExternal("Param/Value/0B6077C1"), "");
-    gv_groundWeaponsButton4 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_groundUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 500, StringExternal("Param/Value/3F2AD29E"), StringExternal("Param/Value/52E1C184"), "");
-    gv_groundWeaponsButton5 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_groundUpgradesDialog, 75, 50, c_anchorBottomRight, 25, 25, StringExternal("Param/Value/3C12DBEB"), StringExternal("Param/Value/2FBA86AC"), "");
-    gv_backtoProtossGround = DialogControlLastCreated();
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_GroundUpgradesDialog_Init () {
-    gt_GroundUpgradesDialog = TriggerCreate("gt_GroundUpgradesDialog_Func");
-    TriggerAddEventMapInit(gt_GroundUpgradesDialog);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Ground Upgrades Buttons
-//--------------------------------------------------------------------------------------------------
-bool gt_GroundUpgradesButtons_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((EventDialogControl() == gv_groundArmor1Button)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 1250)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossGroundArmorsLevel1", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_groundArmor2Button)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 1250) && (TechTreeUpgradeCount(EventPlayer(), "ProtossGroundArmorsLevel1", c_techCountCompleteOnly) == 1)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossGroundArmorsLevel2", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_groundArmor3Button)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "ProtossGroundArmorsLevel2", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 1250)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossGroundArmorsLevel3", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_groundArmor4Button)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "ProtossGroundArmorsLevel3", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 1250)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossGroundArmorsLevel4", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_groundArmor5Button)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "ProtossGroundArmorsLevel4", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 1250)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossGroundArmorsLevel5", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_groundWeaponsButton1)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossGroundWeaponsLevel1", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_groundWeaponsButton2)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "ProtossGroundWeaponsLevel1", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossGroundWeaponsLevel2", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_groundWeaponsButton3)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "ProtossGroundWeaponsLevel2", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossGroundWeaponsLevel3", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_groundWeaponsButton4)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "ProtossGroundWeaponsLevel3", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossGroundWeaponsLevel4", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_groundWeaponsButton5)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "ProtossGroundWeaponsLevel4", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossGroundWeaponsLevel5", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_minimizeGroundUpgrades)) {
-        DialogSetVisible(gv_groundUpgradesDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_minimizedUpgradeDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_backtoProtossGround)) {
-        DialogSetVisible(gv_groundUpgradesDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_chooseUpgradesSectionProtoss, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_GroundUpgradesButtons_Init () {
-    gt_GroundUpgradesButtons = TriggerCreate("gt_GroundUpgradesButtons_Func");
-    TriggerAddEventDialogControl(gt_GroundUpgradesButtons, EventPlayer(), c_invalidDialogControlId, c_triggerControlEventTypeClick);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Air Upgrades Dialog
-//--------------------------------------------------------------------------------------------------
-bool gt_AirUpgradesDialog_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    DialogCreate(500, 800, c_anchorTopLeft, 0, 35, false);
-    gv_airUpgradesDialog = DialogLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_airUpgradesDialog, 50, 50, c_anchorTopRight, 50, 50, StringExternal("Param/Value/5E3AA275"), StringExternal("Param/Value/64DE03F1"), "");
-    gv_minimizeAirUpgrades = DialogControlLastCreated();
-    libNtve_gf_SetDialogItemColor(gv_minimizeAirUpgrades, Color(0,66*100/255,100), PlayerGroupSingle(EventPlayer()));
-    libNtve_gf_CreateDialogItemButton(gv_airUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 50, StringExternal("Param/Value/A107F3D0"), StringExternal("Param/Value/538D2D8E"), "");
-    gv_airArmorButton1 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_airUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 100, StringExternal("Param/Value/9DE2EBAB"), StringExternal("Param/Value/4ACB7793"), "");
-    gv_airArmorButton2 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_airUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 150, StringExternal("Param/Value/5AC2D093"), StringExternal("Param/Value/432ADB2B"), "");
-    gv_airArmorButton3 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_airUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 200, StringExternal("Param/Value/55E2C46B"), StringExternal("Param/Value/0A71008F"), "");
-    gv_airArmorButton4 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_airUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 250, StringExternal("Param/Value/8DF5635D"), StringExternal("Param/Value/6452111B"), "");
-    gv_airArmorButton5 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_airUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 300, StringExternal("Param/Value/B5B69EB8"), StringExternal("Param/Value/56984D34"), "");
-    gv_airWeaponsButton1 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_airUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 350, StringExternal("Param/Value/B720C934"), StringExternal("Param/Value/29CDEA11"), "");
-    gv_airWeaponsButton2 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_airUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 400, StringExternal("Param/Value/118FD926"), StringExternal("Param/Value/4DF252E4"), "");
-    gv_airWeaponsButton3 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_airUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 450, StringExternal("Param/Value/574F0DA1"), StringExternal("Param/Value/F721EAF3"), "");
-    gv_airWeaponsButton4 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_airUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 500, StringExternal("Param/Value/60688257"), StringExternal("Param/Value/84185846"), "");
-    gv_airWeaponsButton5 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_airUpgradesDialog, 75, 50, c_anchorBottomRight, 25, 25, StringExternal("Param/Value/C8FFE218"), StringExternal("Param/Value/5E987B4A"), "");
-    gv_backtoProtossAir = DialogControlLastCreated();
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_AirUpgradesDialog_Init () {
-    gt_AirUpgradesDialog = TriggerCreate("gt_AirUpgradesDialog_Func");
-    TriggerAddEventMapInit(gt_AirUpgradesDialog);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Air Upgrades Buttons
-//--------------------------------------------------------------------------------------------------
-bool gt_AirUpgradesButtons_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((EventDialogControl() == gv_airArmorButton1)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 1250)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossAirArmorsLevel1", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_airArmorButton2)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 1250) && (TechTreeUpgradeCount(EventPlayer(), "ProtossAirArmorsLevel1", c_techCountCompleteOnly) == 1)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossAirArmorsLevel2", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_airArmorButton3)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "ProtossAirArmorsLevel2", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 1250)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossAirArmorsLevel3", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_airArmorButton4)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "ProtossAirArmorsLevel3", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 1250)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossAirArmorLevel4", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_airArmorButton5)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "ProtossAirArmorLevel4", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 1250)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossAirArmorLevel5", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_airWeaponsButton1)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossAirWeaponsLevel1", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_airWeaponsButton2)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "ProtossAirWeaponsLevel1", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossAirWeaponsLevel2", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_airWeaponsButton3)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "ProtossAirWeaponsLevel2", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossAirWeaponsLevel3", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_airWeaponsButton4)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "ProtossAirWeaponsLevel3", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossAirWeaponsLevel4", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_airWeaponsButton5)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "ProtossAirWeaponsLevel4", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "ProtossAirWeaponsLevel5", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_minimizeAirUpgrades)) {
-        DialogSetVisible(gv_airUpgradesDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_minimizedUpgradeDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_backtoProtossAir)) {
-        DialogSetVisible(gv_airUpgradesDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_chooseUpgradesSectionProtoss, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_AirUpgradesButtons_Init () {
-    gt_AirUpgradesButtons = TriggerCreate("gt_AirUpgradesButtons_Func");
-    TriggerAddEventDialogControl(gt_AirUpgradesButtons, EventPlayer(), c_invalidDialogControlId, c_triggerControlEventTypeClick);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Terran Upgrades Dialog
-//--------------------------------------------------------------------------------------------------
-bool gt_TerranUpgradesDialog_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    DialogCreate(500, 800, c_anchorTopLeft, 0, 35, false);
-    gv_chooseUpgradesSectionTerran = DialogLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_chooseUpgradesSectionTerran, 50, 50, c_anchorTopRight, 50, 50, StringExternal("Param/Value/FDFCFD97"), StringExternal("Param/Value/CFBC83F4"), "");
-    gv_minimizeTerranUpgradesDialog = DialogControlLastCreated();
-    libNtve_gf_SetDialogItemColor(gv_minimizeInfantryUpgradesDialog, Color(0,66*100/255,100), PlayerGroupSingle(EventPlayer()));
-    libNtve_gf_CreateDialogItemButton(gv_chooseUpgradesSectionTerran, 250, 50, c_anchorTopLeft, 50, 50, StringExternal("Param/Value/73D5669D"), StringExternal("Param/Value/56EFCB7F"), "");
-    gv_infantryUpgradesButton = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_chooseUpgradesSectionTerran, 250, 50, c_anchorTopLeft, 50, 100, StringExternal("Param/Value/4FBA49DA"), StringExternal("Param/Value/58633DD1"), "");
-    gv_vehicleUpgradesButton = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_chooseUpgradesSectionTerran, 250, 50, c_anchorTopLeft, 50, 150, StringExternal("Param/Value/D23B6102"), StringExternal("Param/Value/D3872980"), "");
-    gv_shipUpgradesButton = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_chooseUpgradesSectionTerran, 250, 50, c_anchorTopLeft, 50, 200, StringExternal("Param/Value/88332EB2"), StringExternal("Param/Value/4819BBB6"), "");
-    gv_terranSpecialUpgradesButton = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_chooseUpgradesSectionTerran, 75, 50, c_anchorBottomRight, 25, 25, StringExternal("Param/Value/0D316228"), StringExternal("Param/Value/21774B55"), "");
-    gv_backtoUpgradesTerran = DialogControlLastCreated();
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_TerranUpgradesDialog_Init () {
-    gt_TerranUpgradesDialog = TriggerCreate("gt_TerranUpgradesDialog_Func");
-    TriggerAddEventMapInit(gt_TerranUpgradesDialog);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Terran Upgrades Buttons
-//--------------------------------------------------------------------------------------------------
-bool gt_TerranUpgradesButtons_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((EventDialogControl() == gv_infantryUpgradesButton)) {
-        DialogSetVisible(gv_chooseUpgradesSectionTerran, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_infantryUpgradesDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_vehicleUpgradesButton)) {
-        DialogSetVisible(gv_chooseUpgradesSectionTerran, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_vehicleUpgradesDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_shipUpgradesButton)) {
-        DialogSetVisible(gv_chooseUpgradesSectionTerran, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_shipUpgradesDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_terranSpecialUpgradesButton)) {
-        DialogSetVisible(gv_chooseUpgradesSectionTerran, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_terranSpecialUpgradesDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_minimizeTerranUpgradesDialog)) {
-        DialogSetVisible(gv_chooseUpgradesSectionTerran, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_minimizedUpgradeDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_backtoUpgradesTerran)) {
-        DialogSetVisible(gv_chooseUpgradesSectionTerran, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_upgradeMainDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_TerranUpgradesButtons_Init () {
-    gt_TerranUpgradesButtons = TriggerCreate("gt_TerranUpgradesButtons_Func");
-    TriggerAddEventDialogControl(gt_TerranUpgradesButtons, EventPlayer(), c_invalidDialogControlId, c_triggerControlEventTypeClick);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Infantry Upgrades Dialog
-//--------------------------------------------------------------------------------------------------
-bool gt_InfantryUpgradesDialog_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    DialogCreate(500, 800, c_anchorTopLeft, 0, 35, false);
-    gv_infantryUpgradesDialog = DialogLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_infantryUpgradesDialog, 50, 50, c_anchorTopRight, 50, 50, StringExternal("Param/Value/64CE9B33"), StringExternal("Param/Value/05B8B153"), "");
-    gv_minimizeInfantryUpgradesDialog = DialogControlLastCreated();
-    libNtve_gf_SetDialogItemColor(gv_minimizeInfantryUpgradesDialog, Color(0,66*100/255,100), PlayerGroupSingle(EventPlayer()));
-    libNtve_gf_CreateDialogItemButton(gv_infantryUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 50, StringExternal("Param/Value/06B6B0B1"), StringExternal("Param/Value/56487217"), "");
-    gv_infantryArmorButton1 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_infantryUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 100, StringExternal("Param/Value/A6B74D3B"), StringExternal("Param/Value/47D2FB84"), "");
-    gv_infantryArmorButton2 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_infantryUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 150, StringExternal("Param/Value/8E187833"), StringExternal("Param/Value/69D1D638"), "");
-    gv_infantryArmorButton3 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_infantryUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 200, StringExternal("Param/Value/BEA51E1A"), StringExternal("Param/Value/92E10A91"), "");
-    gv_infantryArmorButton4 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_infantryUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 250, StringExternal("Param/Value/7651CA13"), StringExternal("Param/Value/C4415C7E"), "");
-    gv_infantryArmorButton5 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_infantryUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 300, StringExternal("Param/Value/26B654B8"), StringExternal("Param/Value/F4A27B71"), "");
-    gv_infantryWeaponsButton1 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_infantryUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 350, StringExternal("Param/Value/803DA452"), StringExternal("Param/Value/0516A0EE"), "");
-    gv_infantryWeaponsButton2 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_infantryUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 400, StringExternal("Param/Value/FACA71E6"), StringExternal("Param/Value/408328B7"), "");
-    gv_infantryWeaponsButton3 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_infantryUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 450, StringExternal("Param/Value/146E9690"), StringExternal("Param/Value/A26F4180"), "");
-    gv_infantryWeaponsButton4 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_infantryUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 500, StringExternal("Param/Value/7D4149CE"), StringExternal("Param/Value/85DF8435"), "");
-    gv_infantryWeaponsButton5 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_infantryUpgradesDialog, 75, 50, c_anchorBottomRight, 25, 25, StringExternal("Param/Value/8F57161C"), StringExternal("Param/Value/3CA5FD15"), "");
-    gv_backtoTerranInfantry = DialogControlLastCreated();
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_InfantryUpgradesDialog_Init () {
-    gt_InfantryUpgradesDialog = TriggerCreate("gt_InfantryUpgradesDialog_Func");
-    TriggerAddEventMapInit(gt_InfantryUpgradesDialog);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Infantry Upgrades Buttons
-//--------------------------------------------------------------------------------------------------
-bool gt_InfantryUpgradesButtons_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((EventDialogControl() == gv_infantryArmorButton1)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranInfantryArmorsLevel1", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_infantryArmorButton2)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500) && (TechTreeUpgradeCount(EventPlayer(), "TerranInfantryArmorsLevel1", c_techCountCompleteOnly) == 1)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranInfantryArmorsLevel2", 1);
-            DialogControlDestroy(EventDialogControl());
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_infantryArmorButton3)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranInfantryArmorsLevel2", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranInfantryArmorsLevel3", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_infantryArmorButton4)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranInfantryArmorsLevel3", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranInfantryArmorLevel4", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_infantryArmorButton5)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranInfantryArmorLevel4", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranInfantryArmorLevel5", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_infantryWeaponsButton1)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranInfantryWeaponsLevel1", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_infantryWeaponsButton2)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranInfantryWeaponsLevel1", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranInfantryWeaponsLevel2", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_infantryWeaponsButton3)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranInfantryWeaponsLevel2", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranInfantryWeaponsLevel3", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_infantryWeaponsButton4)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranInfantryWeaponsLevel3", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranInfantryWeaponsLevel4", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_infantryWeaponsButton5)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranInfantryWeaponsLevel4", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranInfantryWeaponsLevel5", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_minimizeInfantryUpgradesDialog)) {
-        DialogSetVisible(gv_infantryUpgradesDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_minimizedUpgradeDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_backtoTerranInfantry)) {
-        DialogSetVisible(gv_infantryUpgradesDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_chooseUpgradesSectionTerran, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_InfantryUpgradesButtons_Init () {
-    gt_InfantryUpgradesButtons = TriggerCreate("gt_InfantryUpgradesButtons_Func");
-    TriggerAddEventDialogControl(gt_InfantryUpgradesButtons, EventPlayer(), c_invalidDialogControlId, c_triggerControlEventTypeClick);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Vehicle Upgrades Dialog
-//--------------------------------------------------------------------------------------------------
-bool gt_VehicleUpgradesDialog_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    DialogCreate(500, 800, c_anchorTopLeft, 0, 35, false);
-    gv_vehicleUpgradesDialog = DialogLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_vehicleUpgradesDialog, 50, 50, c_anchorTopRight, 50, 50, StringExternal("Param/Value/BC4FD11A"), StringExternal("Param/Value/C97FCD5F"), "");
-    gv_minimizeVehicleUpgradesDialog = DialogControlLastCreated();
-    libNtve_gf_SetDialogItemColor(gv_minimizeVehicleUpgradesDialog, Color(0,66*100/255,100), PlayerGroupSingle(EventPlayer()));
-    libNtve_gf_CreateDialogItemButton(gv_vehicleUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 50, StringExternal("Param/Value/7E105153"), StringExternal("Param/Value/6ACE8BA6"), "");
-    gv_vehicleArmorButton1 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_vehicleUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 100, StringExternal("Param/Value/55C43E45"), StringExternal("Param/Value/A0A2E578"), "");
-    gv_vehicleArmorButton2 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_vehicleUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 150, StringExternal("Param/Value/9EE8347B"), StringExternal("Param/Value/F46C2D94"), "");
-    gv_vehicleArmorButton3 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_vehicleUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 200, StringExternal("Param/Value/6873C22F"), StringExternal("Param/Value/8035685C"), "");
-    gv_vehicleArmorButton4 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_vehicleUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 250, StringExternal("Param/Value/D9EE05D6"), StringExternal("Param/Value/386D5FBC"), "");
-    gv_vehicleArmorButton5 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_vehicleUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 300, StringExternal("Param/Value/5AE18E3C"), StringExternal("Param/Value/F5D3297B"), "");
-    gv_vehicleWeaponsButton1 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_vehicleUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 350, StringExternal("Param/Value/9520A7F2"), StringExternal("Param/Value/3F8DC54A"), "");
-    gv_vehicleWeaponsButton2 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_vehicleUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 400, StringExternal("Param/Value/62B7BB86"), StringExternal("Param/Value/AD418DFD"), "");
-    gv_vehicleWeaponsButton3 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_vehicleUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 450, StringExternal("Param/Value/85DFC3AF"), StringExternal("Param/Value/04F5E67B"), "");
-    gv_vehicleWeaponsButton4 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_vehicleUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 500, StringExternal("Param/Value/EBDCD7CE"), StringExternal("Param/Value/679E2793"), "");
-    gv_vehicleWeaponsButton5 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_vehicleUpgradesDialog, 75, 50, c_anchorBottomRight, 25, 25, StringExternal("Param/Value/DA117219"), StringExternal("Param/Value/95201071"), "");
-    gv_backtoTerranVehicle = DialogControlLastCreated();
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_VehicleUpgradesDialog_Init () {
-    gt_VehicleUpgradesDialog = TriggerCreate("gt_VehicleUpgradesDialog_Func");
-    TriggerAddEventMapInit(gt_VehicleUpgradesDialog);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Vehicle Upgrades Buttons
-//--------------------------------------------------------------------------------------------------
-bool gt_VehicleUpgradesButtons_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((EventDialogControl() == gv_vehicleArmorButton1)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranVehicleArmorsLevel1", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_vehicleArmorButton2)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500) && (TechTreeUpgradeCount(EventPlayer(), "TerranVehicleArmorsLevel1", c_techCountCompleteOnly) == 1)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranVehicleArmorsLevel2", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_vehicleArmorButton3)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranVehicleArmorsLevel2", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranVehicleArmorsLevel3", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_vehicleArmorButton4)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranVehicleArmorsLevel3", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranVehiclePlatingLevel4", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_vehicleArmorButton5)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranVehiclePlatingLevel4", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranVehiclePlatingLevel5", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_vehicleWeaponsButton1)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranVehicleWeaponsLevel1", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_vehicleWeaponsButton2)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranVehicleWeaponsLevel1", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranVehicleWeaponsLevel2", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_vehicleWeaponsButton3)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranVehicleWeaponsLevel2", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranVehicleWeaponsLevel3", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_vehicleWeaponsButton4)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranVehicleWeaponsLevel3", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranVehicleWeaponsLevel4", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_vehicleWeaponsButton5)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranVehicleWeaponsLevel4", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranVehicleWeaponsLevel5", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_minimizeVehicleUpgradesDialog)) {
-        DialogSetVisible(gv_vehicleUpgradesDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_minimizedUpgradeDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_backtoTerranVehicle)) {
-        DialogSetVisible(gv_vehicleUpgradesDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_chooseUpgradesSectionTerran, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_VehicleUpgradesButtons_Init () {
-    gt_VehicleUpgradesButtons = TriggerCreate("gt_VehicleUpgradesButtons_Func");
-    TriggerAddEventDialogControl(gt_VehicleUpgradesButtons, EventPlayer(), c_invalidDialogControlId, c_triggerControlEventTypeClick);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Ship Upgrades Dialog
-//--------------------------------------------------------------------------------------------------
-bool gt_ShipUpgradesDialog_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    DialogCreate(500, 800, c_anchorTopLeft, 0, 35, false);
-    gv_shipUpgradesDialog = DialogLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_shipUpgradesDialog, 50, 50, c_anchorTopRight, 50, 50, StringExternal("Param/Value/FC8C1C85"), StringExternal("Param/Value/1B389283"), "");
-    gv_minimizeShipUpgradesDialog = DialogControlLastCreated();
-    libNtve_gf_SetDialogItemColor(gv_minimizeShipUpgradesDialog, Color(0,66*100/255,100), PlayerGroupSingle(EventPlayer()));
-    libNtve_gf_CreateDialogItemButton(gv_shipUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 50, StringExternal("Param/Value/196E6553"), StringExternal("Param/Value/5CE0E52C"), "");
-    gv_shipArmorButton1 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_shipUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 100, StringExternal("Param/Value/C6B016C3"), StringExternal("Param/Value/522070A6"), "");
-    gv_shipArmorButton2 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_shipUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 150, StringExternal("Param/Value/E9E7CB28"), StringExternal("Param/Value/20DFE799"), "");
-    gv_shipArmorButton3 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_shipUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 200, StringExternal("Param/Value/FAFB4F62"), StringExternal("Param/Value/41F1721B"), "");
-    gv_shipArmorButton4 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_shipUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 250, StringExternal("Param/Value/0E6A0785"), StringExternal("Param/Value/58F3A639"), "");
-    gv_shipArmorButton5 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_shipUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 300, StringExternal("Param/Value/0BDF97A8"), StringExternal("Param/Value/29C47DD9"), "");
-    gv_shipWeaponsButton1 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_shipUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 350, StringExternal("Param/Value/579F5188"), StringExternal("Param/Value/D2801D63"), "");
-    gv_shipWeaponsButton2 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_shipUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 400, StringExternal("Param/Value/C40886AC"), StringExternal("Param/Value/C79E14AE"), "");
-    gv_shipWeaponsButton3 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_shipUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 450, StringExternal("Param/Value/7A36065F"), StringExternal("Param/Value/22114EA1"), "");
-    gv_shipWeaponsButton4 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_shipUpgradesDialog, 350, 50, c_anchorTopLeft, 50, 500, StringExternal("Param/Value/90081933"), StringExternal("Param/Value/53174881"), "");
-    gv_shipWeaponsButton5 = DialogControlLastCreated();
-    libNtve_gf_CreateDialogItemButton(gv_shipUpgradesDialog, 75, 50, c_anchorBottomRight, 25, 25, StringExternal("Param/Value/B07BACFE"), StringExternal("Param/Value/1197AFCD"), "");
-    gv_backtoTerranShip = DialogControlLastCreated();
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_ShipUpgradesDialog_Init () {
-    gt_ShipUpgradesDialog = TriggerCreate("gt_ShipUpgradesDialog_Func");
-    TriggerAddEventMapInit(gt_ShipUpgradesDialog);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Ship Upgrades Buttons
-//--------------------------------------------------------------------------------------------------
-bool gt_ShipUpgradesButtons_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((EventDialogControl() == gv_shipArmorButton1)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranShipArmorsLevel1", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_shipArmorButton2)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500) && (TechTreeUpgradeCount(EventPlayer(), "TerranShipArmorsLevel1", c_techCountCompleteOnly) == 1)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranShipArmorsLevel2", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_shipArmorButton3)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranShipArmorsLevel2", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranShipArmorsLevel3", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_shipArmorButton4)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranShipArmorsLevel3", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranShipPlatingLevel4", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_shipArmorButton5)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranShipPlatingLevel4", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranShipPlatingLevel5", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_shipWeaponsButton1)) {
-        if ((PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranShipWeaponsLevel1", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_shipWeaponsButton2)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranShipWeaponsLevel1", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranShipWeaponsLevel2", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_shipWeaponsButton3)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranShipWeaponsLevel2", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranShipWeaponsLevel3", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_shipWeaponsButton4)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranShipWeaponsLevel3", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranShipWeaponsLevel4", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_shipWeaponsButton5)) {
-        if ((TechTreeUpgradeCount(EventPlayer(), "TerranShipWeaponsLevel4", c_techCountCompleteOnly) == 1) && (PlayerGetPropertyInt(EventPlayer(), c_playerPropMinerals) > 2500)) {
-            libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "TerranShipWeaponsLevel5", 1);
-            DialogControlSetVisible(EventDialogControl(), PlayerGroupSingle(EventPlayer()), false);
-        }
-
-    }
-
-    if ((EventDialogControl() == gv_minimizeShipUpgradesDialog)) {
-        DialogSetVisible(gv_shipUpgradesDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_minimizedUpgradeDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_backtoTerranShip)) {
-        DialogSetVisible(gv_shipUpgradesDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_chooseUpgradesSectionTerran, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_ShipUpgradesButtons_Init () {
-    gt_ShipUpgradesButtons = TriggerCreate("gt_ShipUpgradesButtons_Func");
-    TriggerAddEventDialogControl(gt_ShipUpgradesButtons, EventPlayer(), c_invalidDialogControlId, c_triggerControlEventTypeClick);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -4311,6 +1640,48 @@ void gt_ZombieRunnerB_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: ZombieRunnerC
+//--------------------------------------------------------------------------------------------------
+bool gt_ZombieRunnerC_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    Wait(2.0, c_timeGame);
+    UnitIssueOrder(EventUnit(), OrderTargetingPoint(AbilityCommand("attack", 2), PointFromId(1498365247)), c_orderQueueReplace);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_ZombieRunnerC_Init () {
+    gt_ZombieRunnerC = TriggerCreate("gt_ZombieRunnerC_Func");
+    TriggerAddEventUnitRegion(gt_ZombieRunnerC, null, RegionFromId(7), true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: ZombieRunnerD
+//--------------------------------------------------------------------------------------------------
+bool gt_ZombieRunnerD_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    Wait(2.0, c_timeGame);
+    UnitIssueOrder(EventUnit(), OrderTargetingPoint(AbilityCommand("attack", 2), PointFromId(1498365247)), c_orderQueueReplace);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_ZombieRunnerD_Init () {
+    gt_ZombieRunnerD = TriggerCreate("gt_ZombieRunnerD_Func");
+    TriggerAddEventUnitRegion(gt_ZombieRunnerD, null, RegionFromId(8), true);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Bloodsplat Creation
 //--------------------------------------------------------------------------------------------------
 bool gt_BloodsplatCreation_Func (bool testConds, bool runActions) {
@@ -4364,22 +1735,11 @@ void gt_BloodToMinerals_Init () {
 //--------------------------------------------------------------------------------------------------
 void InitTriggers () {
     gt_MeleeInitialization_Init();
-    gt_DebugMessages_Init();
+    gt_LossCondition_Init();
     gt_Player1Cameratest_Init();
     gt_WASDSetControlledUnit_Init();
     gt_WASDKeyDownCheck_Init();
     gt_WASDKeyUpCheck_Init();
-    gt_StartTimedUpgradesinfirstarea_Init();
-    gt_Hatch1a_Init();
-    gt_Hatch2a_Init();
-    gt_StartTimedUpgradesinsecondarea_Init();
-    gt_Hatch3a_Init();
-    gt_Hatch4a_Init();
-    gt_Hatch5a_Init();
-    gt_Hatch6a_Init();
-    gt_Hatch8a_Init();
-    gt_Hatch9a_Init();
-    gt_Hatch10a_Init();
     gt_CivSpawnerGrouper_Init();
     gt_UpgradesDialogButtons_Init();
     gt_TroopTrainingFilter_Init();
@@ -4398,34 +1758,6 @@ void InitTriggers () {
     gt_EBayInteractPopUp_Init();
     gt_EBayRemovePopUp_Init();
     gt_EBayDialogInitialization_Init();
-    gt_MinimizedDialog_Init();
-    gt_MaximizeUpgrades_Init();
-    gt_MainUpgradesDialog_Init();
-    gt_MinimizeRaceDialog_Init();
-    gt_ProtossSpecialUpgradesDialog_Init();
-    gt_ProtossSpecialUpgradesButtons_Init();
-    gt_TerranSpecialUpgradesDialog_Init();
-    gt_TerranSpecialUpgradesButtons_Init();
-    gt_ArmorDialog_Init();
-    gt_ArmorDialogButtons_Init();
-    gt_HealthDialog_Init();
-    gt_HealthDialogButtons_Init();
-    gt_WeaponsDialog_Init();
-    gt_WeaponsDialogButtons_Init();
-    gt_ProtossUpgradesDialog_Init();
-    gt_ProtossUpgradesButtons_Init();
-    gt_GroundUpgradesDialog_Init();
-    gt_GroundUpgradesButtons_Init();
-    gt_AirUpgradesDialog_Init();
-    gt_AirUpgradesButtons_Init();
-    gt_TerranUpgradesDialog_Init();
-    gt_TerranUpgradesButtons_Init();
-    gt_InfantryUpgradesDialog_Init();
-    gt_InfantryUpgradesButtons_Init();
-    gt_VehicleUpgradesDialog_Init();
-    gt_VehicleUpgradesButtons_Init();
-    gt_ShipUpgradesDialog_Init();
-    gt_ShipUpgradesButtons_Init();
     gt_Upgrade1_Init();
     gt_Upgrade2_Init();
     gt_Upgrade3_Init();
@@ -4438,6 +1770,8 @@ void InitTriggers () {
     gt_Upgrade10_Init();
     gt_ZombieRunnerA_Init();
     gt_ZombieRunnerB_Init();
+    gt_ZombieRunnerC_Init();
+    gt_ZombieRunnerD_Init();
     gt_BloodsplatCreation_Init();
     gt_BloodToMinerals_Init();
 }

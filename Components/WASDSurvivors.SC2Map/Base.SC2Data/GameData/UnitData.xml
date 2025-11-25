@@ -42,8 +42,6 @@
         <AbilArray Link="Rally"/>
         <AbilArray Link="BarracksAddOns"/>
         <AbilArray Link="BarracksLiftOff"/>
-        <AbilArray Link="MengskMercTrain"/>
-        <AbilArray Link="TrainKorhalMercenaries"/>
         <AbilArray Link="BunkerTransport"/>
         <BehaviorArray Link="TerranBuildingBurnDown"/>
         <BehaviorArray Link="ReactorQueue"/>
@@ -320,6 +318,7 @@
     </CUnit>
     <CUnit id="Marine">
         <CostResource index="Minerals" value="0"/>
+        <CargoSize value="0"/>
     </CUnit>
     <CUnit id="Bloodsplat" parent="Shape"/>
     <CUnit id="TownHall">
