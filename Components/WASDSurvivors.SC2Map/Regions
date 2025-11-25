@@ -17,7 +17,7 @@
     <region id="2">
         <name value="Barracks"/>
         <shape type="circle">
-            <center value="54.5004,64.001"/>
+            <center value="53.452,64.5607"/>
             <radius value="2.5"/>
         </shape>
     </region>
@@ -31,7 +31,7 @@
     <region id="3">
         <name value="Engineering Bay"/>
         <shape type="circle">
-            <center value="65.5002,56.001"/>
+            <center value="63.3132,56.667"/>
             <radius value="2.2753"/>
         </shape>
     </region>

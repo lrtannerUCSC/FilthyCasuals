@@ -1,15 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Preload>
 <Actor id="SYSTEM_ActorConfig"/>
+<Actor id="DefendersCity_Buildings_IndustrialDestroyed" Variations="0,1,2,3,4,5,6,7,8,9,10"/>
+<Actor id="KorhalDestroyedBuilding" Variations="0,1,2"/>
+<Actor id="Korhal_Mart_Destroyed" Variations="0,1,2"/>
+<Actor id="Korhal_SiegeTank_Destroyed"/>
+<Actor id="Korhal_Thor_Building_Destroyed"/>
+<Actor id="Tarsonis_BuildingWall_Concrete_Straight" Variations="0,1,2,4,5,6,7,8,10,11"/>
+<Actor id="Tarsonis_Building_Barricade" Variations="0,2,3,5"/>
+<Actor id="Tarsonis_Rubble" Variations="3,4"/>
+<Actor id="BarracksWrecked"/>
+<Actor id="BunkerWrecked"/>
+<Actor id="CommandCenterWrecked"/>
+<Actor id="Streetlight" Variations="3"/>
+<Actor id="WreckedCargoTruckCorpse" Variations="0,1,2"/>
+<Actor id="WreckedMule" Variations="0,1,2"/>
+<Actor id="WreckedSandbags" Variations="0,2"/>
+<Actor id="WreckedVehicles" Variations="0,1,2,4,5"/>
+<Actor id="TrucksDestroyed" Variations="0,1,2"/>
+<Actor id="ColonistSupplyCrate" Variations="0,1,2,3,4,5,6,7,8"/>
+<Actor id="InfestedHomeLarge" Variations="0,1"/>
+<Actor id="InfestedHomeSmall" Variations="0,1"/>
 <Sound id="Alert_ZergEvolutionComplete" Variations="0"/>
 <Terrain id="TheVoid"/>
+<Unit id="SupplyDepot"/>
 <Unit id="EngineeringBay"/>
 <Unit id="Bunker"/>
 <Unit id="AutoTurret"/>
-<Unit id="SupplyDepotLowered"/>
 <Unit id="Marine"/>
+<Unit id="MineralField" Variations="0,2,4,7,8"/>
 <Unit id="Civilian" Variations="1"/>
+<Unit id="ColonistHut" Variations="0,3,5,6,7"/>
+<Unit id="ColonistBiodome" Variations="3"/>
 <Unit id="CleaningBot"/>
+<Unit id="DestructibleCityDebris2x4Horizontal"/>
+<Unit id="DestructibleCityDebris2x6Vertical"/>
 <Unit id="CustomBarracks"/>
 <Unit id="InfestedTerranSpawner"/>
 <Unit id="GatlingTurret"/>
