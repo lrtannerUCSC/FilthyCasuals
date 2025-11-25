@@ -881,12 +881,14 @@ bool gt_TownHallButtons_Func (bool testConds, bool runActions) {
 
     if ((EventDialogControl() == gv_townHall2) && (AIHasRes(1, 400, 0) == true)) {
         if (((UnitGetType(gv_primaryTurret1) != "AutoTurret") && (UnitGetType(gv_primaryTurret1) != "GatlingTurret"))) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 50);
             libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(1254703413));
             UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
             gv_primaryTurret1 = UnitLastCreated();
         }
 
         if (((UnitGetType(gv_primaryTurret2) != "AutoTurret") && (UnitGetType(gv_primaryTurret2) != "GatlingTurret"))) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 50);
             libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(359470782));
             UnitGroupAdd(gv_primaryTurretGroup, UnitLastCreated());
             gv_primaryTurret2 = UnitLastCreated();
@@ -1086,9 +1088,16 @@ bool gt_EBayButtons_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    if ((EventDialogControl() == gv_eBay1)) {
+    if ((EventDialogControl() == gv_eBay1) && (AIHasRes(1, 300, 0) == true)) {
+        PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 300);
         UnitSetPropertyFixed(UnitFromId(604180338), c_unitPropEnergyMax, (UnitGetPropertyInt(UnitFromId(604180338), c_unitPropEnergyMax, c_unitPropCurrent)+2.0));
         TriggerDebugOutput(1, StringExternal("Param/Value/A8D80365"), true);
+    }
+
+    if ((EventDialogControl() == gv_eBay2) && (AIHasRes(1, 200, 0) == true)) {
+        PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 200);
+        UnitSetPropertyFixed(UnitFromId(604180338), c_unitPropBaseMovementSpeed, (UnitGetPropertyInt(UnitFromId(604180338), c_unitPropBaseMovementSpeed, c_unitPropCurrent)+1.0));
+        TriggerDebugOutput(1, StringExternal("Param/Value/45541FD1"), true);
     }
 
     if ((EventDialogControl() == gv_minimizeEBay)) {
