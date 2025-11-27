@@ -466,8 +466,15 @@
     </ObjectUnit>
     <ObjectUnit Id="1248913455" Variation="7" Position="55.5,60.5,0" Rotation="0.2404" Scale="1,1,1" UnitType="ColonistHut" Player="1"/>
     <ObjectUnit Id="151118617" Position="97,94,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
+    <ObjectUnit Id="624518050" Position="66,53.5,0" Rotation="0.2797" Scale="1,1,1" UnitType="Marine" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+        <Flag Index="ForcePlacement" Value="1"/>
+    </ObjectUnit>
     <ObjectUnit Id="90847561" Position="79,124,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1">
         <Flag Index="UnitHidden" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="1121424472" Position="62.5,78.5,0" Rotation="2.5432" Scale="1,1,1" UnitType="Marine" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
     </ObjectUnit>
     <ObjectUnit Id="488005032" Position="111,75,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
     <ObjectUnit Id="1177309666" Position="71,124,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1">
@@ -478,6 +485,9 @@
         <Texture TexSlot="main" TexProps="male,helmet,01" TexLink=""/>
     </ObjectUnit>
     <ObjectUnit Id="604180338" Position="60,62.5,0" Rotation="3.098" Scale="1,1,1" UnitType="CleaningBot" Player="1"/>
+    <ObjectUnit Id="1304505180" Position="65,54,0" Rotation="0.614" Scale="1,1,1" UnitType="Marine" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
     <ObjectUnit Id="837653440" Variation="3" Position="72.5,67.5,0" Rotation="3.1225" Scale="1,1,1" UnitType="ColonistHut" Player="1">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectUnit>
@@ -490,6 +500,10 @@
     <ObjectUnit Id="1061943518" Variation="3" Position="74.5,65,0" Rotation="6.095" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="1816013632" Position="75,120,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1">
         <Flag Index="UnitHidden" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="991131791" Position="52,60.5,0" Rotation="0.2797" Scale="1,1,1" UnitType="Marine" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+        <Flag Index="ForcePlacement" Value="1"/>
     </ObjectUnit>
     <ObjectUnit Id="1271346598" Position="77,124,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1">
         <Flag Index="UnitHidden" Value="1"/>
@@ -506,16 +520,37 @@
     <ObjectUnit Id="1877887060" Position="69,124,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1">
         <Flag Index="UnitHidden" Value="1"/>
     </ObjectUnit>
+    <ObjectUnit Id="145192461" Position="51.5,62.5,0" Rotation="4.134" Scale="1,1,1" UnitType="Firebat" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="1915456384" Position="77.5,63.5,0" Rotation="2.5432" Scale="1,1,1" UnitType="Marine" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
     <ObjectUnit Id="240199101" Position="76,126,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1">
         <Flag Index="UnitHidden" Value="1"/>
     </ObjectUnit>
     <ObjectUnit Id="496745205" Position="71,79,0" Rotation="2.749" Scale="1,1,1" UnitType="AutoTurret" Player="1"/>
+    <ObjectUnit Id="146319019" Position="77.5,61.5,0" Rotation="6.1555" Scale="1,1,1" UnitType="Marine" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="558151156" Position="62.5,76.5,0" Rotation="6.1555" Scale="1,1,1" UnitType="Marine" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="1891334111" Position="76.5,64.5,0" Rotation="4.134" Scale="1,1,1" UnitType="Firebat" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="1553969558" Position="52.5,59.5,0" Rotation="6.1555" Scale="1,1,1" UnitType="Marine" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
     <ObjectUnit Id="1805907476" Variation="1" Position="57,63.5,0" Rotation="2.4042" Scale="1,1,1" UnitType="Bloodsplat" Player="1"/>
     <ObjectUnit Id="146535387" Variation="1" Position="60.5,65,0" Rotation="3.1364" Scale="1,1,1" UnitType="Civilian" Player="1">
         <Texture TexSlot="main" TexProps="male,helmet,01" TexLink=""/>
     </ObjectUnit>
     <ObjectUnit Id="1895936593" Variation="7" Position="54.5,69.5,0" Rotation="4.328" Scale="1,1,1" UnitType="ColonistHut" Player="1">
         <Flag Index="ForcePlacement" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="1596472435" Position="65.5,55,0" Rotation="4.134" Scale="1,1,1" UnitType="Firebat" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
     </ObjectUnit>
     <ObjectUnit Id="1124788479" Position="58,51,0" Rotation="2.7492" Scale="1,1,1" UnitType="AutoTurret" Player="1"/>
     <ObjectUnit Id="141475282" Position="125,85,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
@@ -556,6 +591,9 @@
     <ObjectUnit Id="1140454451" Position="68,66.5,0" Rotation="2.5434" Scale="1,1,1" UnitType="Marine" Player="1">
         <Flag Index="HeightOffset" Value="1"/>
     </ObjectUnit>
+    <ObjectUnit Id="590734519" Position="76,63,0" Rotation="0.614" Scale="1,1,1" UnitType="Marine" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
     <ObjectUnit Id="1335701340" Position="72,122,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1">
         <Flag Index="UnitHidden" Value="1"/>
     </ObjectUnit>
@@ -574,6 +612,16 @@
     <ObjectUnit Id="1206497206" Position="51,79,0" Scale="1,1,1" UnitType="DestructibleCityDebris2x4Horizontal"/>
     <ObjectUnit Id="872414282" Position="122,82,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
     <ObjectUnit Id="1199064782" Position="50,57,0" Rotation="2.749" Scale="1,1,1" UnitType="AutoTurret" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="1835953547" Position="77,62.5,0" Rotation="0.2797" Scale="1,1,1" UnitType="Marine" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+        <Flag Index="ForcePlacement" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="1395854135" Position="61,78,0" Rotation="0.614" Scale="1,1,1" UnitType="Marine" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="2047157217" Position="66.5,52.5,0" Rotation="6.1555" Scale="1,1,1" UnitType="Marine" Player="1">
         <Flag Index="HeightOffset" Value="1"/>
     </ObjectUnit>
     <ObjectUnit Id="1068545712" Variation="6" Position="55.5,57.5,0" Rotation="0.2756" Scale="1,1,1" UnitType="ColonistHut" Player="1"/>
@@ -605,15 +653,28 @@
     </ObjectUnit>
     <ObjectUnit Id="2000468100" Position="63.5,64.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="TownHall" Player="1"/>
     <ObjectUnit Id="2027491687" Variation="4" Position="69.5,68.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CivSpawner" Player="1"/>
+    <ObjectUnit Id="830721291" Position="52.5,61.5,0" Rotation="2.5432" Scale="1,1,1" UnitType="Marine" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="1410765573" Position="51,61,0" Rotation="0.614" Scale="1,1,1" UnitType="Marine" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+    </ObjectUnit>
     <ObjectUnit Id="1788554473" Position="58,79,0" Rotation="2.749" Scale="1,1,1" UnitType="AutoTurret" Player="1">
         <Flag Index="HeightOffset" Value="1"/>
     </ObjectUnit>
     <ObjectUnit Id="81926108" Position="17.5,109.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="InfestedTerranSpawner" Player="2"/>
+    <ObjectUnit Id="2053059066" Position="62,77.5,0" Rotation="0.2797" Scale="1,1,1" UnitType="Marine" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
+        <Flag Index="ForcePlacement" Value="1"/>
+    </ObjectUnit>
     <ObjectUnit Id="1342298440" Position="99,95,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
     <ObjectUnit Id="859236030" Position="77,50,0" Scale="1,1,1" UnitType="DestructibleCityDebris2x4Horizontal"/>
     <ObjectUnit Id="333199435" Position="57.5,76.5,0" Rotation="0.873" Scale="1,1,1" UnitType="ColonistHut" Player="1"/>
     <ObjectUnit Id="1561881163" Position="70,122,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1">
         <Flag Index="UnitHidden" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="142741042" Position="66.5,54.5,0" Rotation="2.5432" Scale="1,1,1" UnitType="Marine" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
     </ObjectUnit>
     <ObjectUnit Id="956586374" Position="50,76,0" Rotation="1.5705" Scale="1,1,1" UnitType="DestructibleCityDebris2x6Vertical"/>
     <ObjectUnit Id="1943673711" Position="78,122,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1">
@@ -652,6 +713,9 @@
     </ObjectUnit>
     <ObjectUnit Id="395306477" Position="79,120,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1">
         <Flag Index="UnitHidden" Value="1"/>
+    </ObjectUnit>
+    <ObjectUnit Id="792711811" Position="63.5,77.5,0" Rotation="4.134" Scale="1,1,1" UnitType="Firebat" Player="1">
+        <Flag Index="HeightOffset" Value="1"/>
     </ObjectUnit>
     <ObjectUnit Id="1746630043" Variation="4" Position="69.5,58.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CivSpawner" Player="1">
         <Flag Index="ForcePlacement" Value="1"/>
