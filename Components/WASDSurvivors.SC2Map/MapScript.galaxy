@@ -18,6 +18,7 @@ void InitLibs () {
 //--------------------------------------------------------------------------------------------------
 // Global Variables
 //--------------------------------------------------------------------------------------------------
+int gv_domeCivCount;
 unitgroup gv_townStructuresGroup;
 int[17] gv_wASDState;
 unit[17] gv_controlledUnits;
@@ -76,6 +77,7 @@ int gv_minimizedUpgradeDialog;
 void InitGlobals () {
     int init_i;
 
+    gv_domeCivCount = 1;
     gv_townStructuresGroup = UnitGroupFromId(6);
     for (init_i = 0; init_i <= 1; init_i += 1) {
         gv_interact[init_i] = c_invalidDialogId;
@@ -140,6 +142,9 @@ void gf_WASDSetControlledUnit (int lp_player, unit lp_unit);
 // Trigger Variables
 //--------------------------------------------------------------------------------------------------
 trigger gt_MeleeInitialization;
+trigger gt_DomeCivEnter;
+trigger gt_DomeCivExit;
+trigger gt_DomeTick;
 trigger gt_LossCondition;
 trigger gt_Player1Cameratest;
 trigger gt_WASDSetControlledUnit;
@@ -441,6 +446,81 @@ void gt_MeleeInitialization_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: DomeCivEnter
+//--------------------------------------------------------------------------------------------------
+bool gt_DomeCivEnter_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((UnitGroupHasUnit(UnitGroupFromId(1), EventUnit()) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitPutInTransport(UnitLastCreated(), UnitFromId(909851322));
+    gv_domeCivCount += 1;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_DomeCivEnter_Init () {
+    gt_DomeCivEnter = TriggerCreate("gt_DomeCivEnter_Func");
+    TriggerAddEventUnitRegion(gt_DomeCivEnter, null, RegionFromId(9), true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DomeCivExit
+//--------------------------------------------------------------------------------------------------
+bool gt_DomeCivExit_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((UnitGroupHasUnit(UnitGroupFromId(1), EventUnit()) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    gv_domeCivCount -= 1;
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_DomeCivExit_Init () {
+    gt_DomeCivExit = TriggerCreate("gt_DomeCivExit_Func");
+    TriggerAddEventUnitRegion(gt_DomeCivExit, null, RegionFromId(9), false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DomeTick
+//--------------------------------------------------------------------------------------------------
+bool gt_DomeTick_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperAdd, gv_domeCivCount);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_DomeTick_Init () {
+    gt_DomeTick = TriggerCreate("gt_DomeTick_Func");
+    TriggerAddEventTimePeriodic(gt_DomeTick, 1.0, c_timeGame);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Loss Condition
 //--------------------------------------------------------------------------------------------------
 bool gt_LossCondition_Func (bool testConds, bool runActions) {
@@ -639,7 +719,7 @@ bool gt_TroopTrainingFilter_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    if ((UnitGroupHasUnit(gv_marineTrainingGroup, EventUnit()) == true)) {
+    if ((UnitGroupHasUnit(gv_civUnitGroup, EventUnit()) == true)) {
         UnitPutInTransport(EventUnit(), UnitFromId(1146560453));
         UnitIssueOrder(UnitFromId(1146560453), Order(AbilityCommand("BarracksTrain", 0)), c_orderQueueAddToEnd);
         TriggerDebugOutput(1, StringExternal("Param/Value/ABB6D938"), true);
@@ -704,7 +784,7 @@ bool gt_BarracksDialogButtons_Func (bool testConds, bool runActions) {
     }
 
     if ((EventDialogControl() == gv_barracksTroop1)) {
-        if ((UnitQueueItemCount(UnitFromId(1146560453), 4) < 1)) {
+        if ((UnitQueueItemCount(UnitFromId(1146560453), 7) < 1)) {
             if ((UnitGroupCount(gv_civUnitGroup, c_unitCountAll) >= 1)) {
                 TriggerDebugOutput(1, StringExternal("Param/Value/ECB7C7D0"), true);
                 lv_civ = UnitGroupClosestToPoint(gv_civUnitGroup, PointFromId(504983897));
@@ -1744,6 +1824,9 @@ void gt_BloodToMinerals_Init () {
 //--------------------------------------------------------------------------------------------------
 void InitTriggers () {
     gt_MeleeInitialization_Init();
+    gt_DomeCivEnter_Init();
+    gt_DomeCivExit_Init();
+    gt_DomeTick_Init();
     gt_LossCondition_Init();
     gt_Player1Cameratest_Init();
     gt_WASDSetControlledUnit_Init();

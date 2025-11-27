@@ -32,6 +32,14 @@
 <Unit id="Civilian" Variations="1"/>
 <Unit id="ColonistHut" Variations="0,3,5,6,7"/>
 <Unit id="ColonistBiodome" Variations="3"/>
+<Unit id="DefenseWallE" Variations="3"/>
+<Unit id="DefenseWallS" Variations="0"/>
+<Unit id="DefenseWallW" Variations="4"/>
+<Unit id="DefenseWallN" Variations="4"/>
+<Unit id="DefenseWallNE" Variations="0,2"/>
+<Unit id="DefenseWallSW" Variations="2,4"/>
+<Unit id="DefenseWallNW" Variations="0,3"/>
+<Unit id="DefenseWallSE" Variations="1,4"/>
 <Unit id="CleaningBot"/>
 <Unit id="DestructibleCityDebris2x4Horizontal"/>
 <Unit id="DestructibleCityDebris2x6Vertical"/>

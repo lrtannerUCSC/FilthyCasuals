@@ -58,4 +58,11 @@
             <radius value="5.3298"/>
         </shape>
     </region>
+    <region id="9">
+        <name value="Dome"/>
+        <shape type="circle">
+            <center value="63.5,72"/>
+            <radius value="3.905"/>
+        </shape>
+    </region>
 </Regions>
