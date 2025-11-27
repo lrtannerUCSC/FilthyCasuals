@@ -22,8 +22,6 @@ unitgroup gv_townStructuresGroup;
 int[17] gv_wASDState;
 unit[17] gv_controlledUnits;
 unit[17] gv_uncontrolledUnits;
-unitgroup gv_civUnitGroup;
-int[2] gv_interact;
 int gv_barracksTroop1;
 int gv_barracksTroop2;
 int gv_barracksTroop3;
@@ -34,11 +32,28 @@ int gv_barracksInteractDialog;
 int gv_barracksInteractButton;
 unitgroup gv_marineUnitGroup;
 unitgroup gv_firebatUnitGroup;
+int gv_townHallDialog;
+int gv_townHall1;
+int gv_townHall2;
+int gv_townHall3;
+int gv_townHall4;
+int gv_townHall5;
+int gv_minimizeTownHall;
+int gv_townHallInteractDialog;
+int gv_townHallInteractButton;
 unit gv_primaryBunkerWest;
 unit gv_primaryBunkerNorth;
 unit gv_primaryBunkerEast;
 unit gv_primaryBunkerSouth;
 unitgroup gv_primaryBunkerGroup;
+unit gv_secondarySouthTurret1;
+unit gv_secondarySouthTurret2;
+unit gv_secondaryNorthTurret1;
+unit gv_secondaryNorthTurret2;
+unit gv_secondaryWestTurret1;
+unit gv_secondaryWestTurret2;
+unit gv_secondaryEastTurret1;
+unit gv_secondaryEastTurret2;
 unit gv_primaryTurret1;
 unit gv_primaryTurret2;
 unit gv_primaryTurret3;
@@ -48,14 +63,6 @@ unit gv_primaryTurret6;
 unit gv_primaryTurret7;
 unit gv_primaryTurret8;
 unitgroup gv_primaryTurretGroup;
-int gv_townHallDialog;
-int gv_townHall1;
-int gv_townHall2;
-int gv_townHall3;
-int gv_townHall4;
-int gv_minimizeTownHall;
-int gv_townHallInteractDialog;
-int gv_townHallInteractButton;
 unit gv_eastBar1;
 unit gv_eastBar2;
 unit gv_eastBar3;
@@ -85,15 +92,13 @@ int gv_minimizeEBay;
 int gv_eBayInteractDialog;
 int gv_eBayInteractButton;
 int gv_domeCivCount;
+unitgroup gv_civUnitGroup;
+int[2] gv_interact;
 
 void InitGlobals () {
     int init_i;
 
     gv_townStructuresGroup = UnitGroupFromId(7);
-    gv_civUnitGroup = UnitGroupFromId(1);
-    for (init_i = 0; init_i <= 1; init_i += 1) {
-        gv_interact[init_i] = c_invalidDialogId;
-    }
     gv_barracksTroop1 = c_invalidDialogControlId;
     gv_barracksTroop2 = c_invalidDialogControlId;
     gv_barracksTroop3 = c_invalidDialogControlId;
@@ -104,6 +109,15 @@ void InitGlobals () {
     gv_barracksInteractButton = c_invalidDialogControlId;
     gv_marineUnitGroup = UnitGroupFromId(8);
     gv_firebatUnitGroup = UnitGroupFromId(9);
+    gv_townHallDialog = c_invalidDialogId;
+    gv_townHall1 = c_invalidDialogControlId;
+    gv_townHall2 = c_invalidDialogControlId;
+    gv_townHall3 = c_invalidDialogControlId;
+    gv_townHall4 = c_invalidDialogControlId;
+    gv_townHall5 = c_invalidDialogControlId;
+    gv_minimizeTownHall = c_invalidDialogControlId;
+    gv_townHallInteractDialog = c_invalidDialogId;
+    gv_townHallInteractButton = c_invalidDialogControlId;
     gv_primaryBunkerGroup = UnitGroupFromId(5);
     gv_primaryTurret1 = UnitFromId(1199064782);
     gv_primaryTurret2 = UnitFromId(2018740584);
@@ -114,14 +128,6 @@ void InitGlobals () {
     gv_primaryTurret7 = UnitFromId(1548413122);
     gv_primaryTurret8 = UnitFromId(74971372);
     gv_primaryTurretGroup = UnitGroupFromId(4);
-    gv_townHallDialog = c_invalidDialogId;
-    gv_townHall1 = c_invalidDialogControlId;
-    gv_townHall2 = c_invalidDialogControlId;
-    gv_townHall3 = c_invalidDialogControlId;
-    gv_townHall4 = c_invalidDialogControlId;
-    gv_minimizeTownHall = c_invalidDialogControlId;
-    gv_townHallInteractDialog = c_invalidDialogId;
-    gv_townHallInteractButton = c_invalidDialogControlId;
     gv_eBayDialog = c_invalidDialogId;
     gv_eBay1 = c_invalidDialogControlId;
     gv_eBay2 = c_invalidDialogControlId;
@@ -131,6 +137,10 @@ void InitGlobals () {
     gv_eBayInteractDialog = c_invalidDialogId;
     gv_eBayInteractButton = c_invalidDialogControlId;
     gv_domeCivCount = 1;
+    gv_civUnitGroup = UnitGroupFromId(1);
+    for (init_i = 0; init_i <= 1; init_i += 1) {
+        gv_interact[init_i] = c_invalidDialogId;
+    }
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -153,9 +163,6 @@ trigger gt_WASDKeyDownCheck;
 trigger gt_WASDKeyUpCheck;
 trigger gt_BloodsplatCreation;
 trigger gt_BloodToMinerals;
-trigger gt_CivSpawnerGrouper;
-trigger gt_CivIdle;
-trigger gt_UpgradesDialogButtons;
 trigger gt_TroopTrainingFilter;
 trigger gt_BarracksUnitGrouper;
 trigger gt_BarracksDialog;
@@ -176,6 +183,9 @@ trigger gt_EBayDialogInitialization;
 trigger gt_DomeTick;
 trigger gt_DomeCivEnter;
 trigger gt_DomeCivExit;
+trigger gt_CivSpawnerGrouper;
+trigger gt_CivIdle;
+trigger gt_UpgradesDialogButtons;
 trigger gt_Upgrade1;
 trigger gt_Upgrade2;
 trigger gt_Upgrade3;
@@ -447,7 +457,7 @@ bool gt_MeleeInitialization_Func (bool testConds, bool runActions) {
         if (auto5480AAE8_var == null) { break; }
         UnitIssueOrder(auto5480AAE8_var, OrderTargetingPoint(AbilityCommand("move", 0), RegionRandomPoint(RegionFromId(10))), c_orderQueueReplace);
     }
-    PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSetTo, 300);
+    PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSetTo, 1000);
     DialogCreate(500, 400, c_anchorCenter, 0, 0, true);
     gv_interact[0] = DialogLastCreated();
     MeleeInitUnits();
@@ -626,100 +636,6 @@ bool gt_BloodToMinerals_Func (bool testConds, bool runActions) {
 void gt_BloodToMinerals_Init () {
     gt_BloodToMinerals = TriggerCreate("gt_BloodToMinerals_Func");
     TriggerAddEventUnitRange(gt_BloodToMinerals, null, UnitFromId(604180338), UnitGetPropertyInt(UnitFromId(604180338), c_unitPropEnergyMax, c_unitPropCurrent), true);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CivSpawnerGrouper
-//--------------------------------------------------------------------------------------------------
-bool gt_CivSpawnerGrouper_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    unit lv_civ;
-    int lv_numCivs;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    lv_civ = EventUnitCreatedUnit();
-    UnitGroupAdd(gv_civUnitGroup, lv_civ);
-    UnitIssueOrder(lv_civ, OrderTargetingPoint(AbilityCommand("move", 0), RegionRandomPoint(RegionFromId(10))), c_orderQueueReplace);
-    lv_numCivs = UnitGroupCount(gv_civUnitGroup, c_unitCountAll);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_CivSpawnerGrouper_Init () {
-    gt_CivSpawnerGrouper = TriggerCreate("gt_CivSpawnerGrouper_Func");
-    TriggerAddEventUnitCreated(gt_CivSpawnerGrouper, UnitRefFromUnit(UnitFromId(2027491687)), null, null);
-    TriggerAddEventUnitCreated(gt_CivSpawnerGrouper, UnitRefFromUnit(UnitFromId(1746630043)), null, null);
-    TriggerAddEventUnitCreated(gt_CivSpawnerGrouper, UnitRefFromUnit(UnitFromId(687521640)), null, null);
-    TriggerAddEventUnitCreated(gt_CivSpawnerGrouper, UnitRefFromUnit(UnitFromId(1516766081)), null, null);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CivIdle
-//--------------------------------------------------------------------------------------------------
-bool gt_CivIdle_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!((UnitGroupHasUnit(gv_civUnitGroup, EventUnit()) == true))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    Wait(RandomInt(0, 5), c_timeGame);
-    UnitIssueOrder(EventUnit(), OrderTargetingPoint(AbilityCommand("move", 0), RegionRandomPoint(RegionFromId(10))), c_orderQueueReplace);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_CivIdle_Init () {
-    gt_CivIdle = TriggerCreate("gt_CivIdle_Func");
-    TriggerAddEventUnitBecomesIdle(gt_CivIdle, null, true);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Upgrades Dialog Buttons
-//--------------------------------------------------------------------------------------------------
-bool gt_UpgradesDialogButtons_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((EventDialogControl() == gv_eBayInteractButton)) {
-        DialogSetVisible(gv_eBayInteractDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_eBayDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_barracksInteractButton)) {
-        DialogSetVisible(gv_barracksInteractDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_barracksDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    if ((EventDialogControl() == gv_townHallInteractButton)) {
-        DialogSetVisible(gv_townHallInteractDialog, PlayerGroupSingle(EventPlayer()), false);
-        DialogSetVisible(gv_townHallDialog, PlayerGroupSingle(EventPlayer()), true);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_UpgradesDialogButtons_Init () {
-    gt_UpgradesDialogButtons = TriggerCreate("gt_UpgradesDialogButtons_Func");
-    TriggerAddEventDialogControl(gt_UpgradesDialogButtons, EventPlayer(), c_invalidDialogControlId, c_triggerControlEventTypeClick);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -960,7 +876,7 @@ bool gt_TownHallDialog_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    DialogCreate(500, 800, c_anchorTopLeft, 0, 35, false);
+    DialogCreate(500, 900, c_anchorTopLeft, 0, 35, false);
     gv_townHallDialog = DialogLastCreated();
     libNtve_gf_CreateDialogItemButton(gv_townHallDialog, 50, 50, c_anchorTopRight, 50, 50, StringExternal("Param/Value/5BBED23F"), StringExternal("Param/Value/715345B5"), "");
     gv_minimizeTownHall = DialogControlLastCreated();
@@ -972,6 +888,8 @@ bool gt_TownHallDialog_Func (bool testConds, bool runActions) {
     gv_townHall3 = DialogControlLastCreated();
     libNtve_gf_CreateDialogItemButton(gv_townHallDialog, 350, 50, c_anchorTopLeft, 50, 200, StringExternal("Param/Value/A2500631"), StringExternal("Param/Value/0D36C365"), "");
     gv_townHall4 = DialogControlLastCreated();
+    libNtve_gf_CreateDialogItemButton(gv_townHallDialog, 350, 50, c_anchorTopLeft, 50, 250, StringExternal("Param/Value/18C80732"), StringExternal("Param/Value/0482B312"), "");
+    gv_townHall5 = DialogControlLastCreated();
     return true;
 }
 
@@ -1239,6 +1157,57 @@ bool gt_TownHallButtons_Func (bool testConds, bool runActions) {
             PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 20);
             libNtve_gf_CreateUnitsWithDefaultFacing(1, "DefenseWallW", 0, 1, PointFromId(204342844));
             gv_westBar5 = UnitLastCreated();
+        }
+
+    }
+
+    if ((EventDialogControl() == gv_townHall5) && (AIHasRes(1, 400, 0) == true)) {
+        if ((UnitGetType(gv_secondarySouthTurret1) != "AutoTurret") && (UnitGetType(gv_secondarySouthTurret1) != "GatlingTurret")) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 50);
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(1935696625));
+            gv_secondarySouthTurret1 = UnitLastCreated();
+        }
+
+        if ((UnitGetType(gv_secondarySouthTurret2) != "AutoTurret") && (UnitGetType(gv_secondarySouthTurret2) != "GatlingTurret")) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 50);
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(1437073395));
+            gv_secondarySouthTurret2 = UnitLastCreated();
+        }
+
+        if ((UnitGetType(gv_secondaryNorthTurret1) != "AutoTurret") && (UnitGetType(gv_secondaryNorthTurret1) != "GatlingTurret")) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 50);
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(2005549203));
+            gv_secondaryNorthTurret1 = UnitLastCreated();
+        }
+
+        if ((UnitGetType(gv_secondaryNorthTurret2) != "AutoTurret") && (UnitGetType(gv_secondaryNorthTurret2) != "GatlingTurret")) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 50);
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(882660020));
+            gv_secondaryNorthTurret2 = UnitLastCreated();
+        }
+
+        if ((UnitGetType(gv_secondaryWestTurret1) != "AutoTurret") && (UnitGetType(gv_secondaryWestTurret1) != "GatlingTurret")) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 50);
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(1850934419));
+            gv_secondaryWestTurret1 = UnitLastCreated();
+        }
+
+        if ((UnitGetType(gv_secondaryWestTurret2) != "AutoTurret") && (UnitGetType(gv_secondaryWestTurret2) != "GatlingTurret")) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 50);
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(608526818));
+            gv_secondaryWestTurret2 = UnitLastCreated();
+        }
+
+        if ((UnitGetType(gv_secondaryEastTurret1) != "AutoTurret") && (UnitGetType(gv_secondaryEastTurret1) != "GatlingTurret")) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 50);
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(592684769));
+            gv_secondaryEastTurret1 = UnitLastCreated();
+        }
+
+        if ((UnitGetType(gv_secondaryEastTurret2) != "AutoTurret") && (UnitGetType(gv_secondaryEastTurret2) != "GatlingTurret")) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSubtract, 50);
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "AutoTurret", 0, 1, PointFromId(1243486229));
+            gv_secondaryEastTurret2 = UnitLastCreated();
         }
 
     }
@@ -1525,6 +1494,100 @@ bool gt_DomeCivExit_Func (bool testConds, bool runActions) {
 void gt_DomeCivExit_Init () {
     gt_DomeCivExit = TriggerCreate("gt_DomeCivExit_Func");
     TriggerAddEventUnitRegion(gt_DomeCivExit, null, RegionFromId(9), false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CivSpawnerGrouper
+//--------------------------------------------------------------------------------------------------
+bool gt_CivSpawnerGrouper_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_civ;
+    int lv_numCivs;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_civ = EventUnitCreatedUnit();
+    UnitGroupAdd(gv_civUnitGroup, lv_civ);
+    UnitIssueOrder(lv_civ, OrderTargetingPoint(AbilityCommand("move", 0), RegionRandomPoint(RegionFromId(10))), c_orderQueueReplace);
+    lv_numCivs = UnitGroupCount(gv_civUnitGroup, c_unitCountAll);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_CivSpawnerGrouper_Init () {
+    gt_CivSpawnerGrouper = TriggerCreate("gt_CivSpawnerGrouper_Func");
+    TriggerAddEventUnitCreated(gt_CivSpawnerGrouper, UnitRefFromUnit(UnitFromId(2027491687)), null, null);
+    TriggerAddEventUnitCreated(gt_CivSpawnerGrouper, UnitRefFromUnit(UnitFromId(1746630043)), null, null);
+    TriggerAddEventUnitCreated(gt_CivSpawnerGrouper, UnitRefFromUnit(UnitFromId(687521640)), null, null);
+    TriggerAddEventUnitCreated(gt_CivSpawnerGrouper, UnitRefFromUnit(UnitFromId(1516766081)), null, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CivIdle
+//--------------------------------------------------------------------------------------------------
+bool gt_CivIdle_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((UnitGroupHasUnit(gv_civUnitGroup, EventUnit()) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    Wait(RandomInt(0, 5), c_timeGame);
+    UnitIssueOrder(EventUnit(), OrderTargetingPoint(AbilityCommand("move", 0), RegionRandomPoint(RegionFromId(10))), c_orderQueueReplace);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_CivIdle_Init () {
+    gt_CivIdle = TriggerCreate("gt_CivIdle_Func");
+    TriggerAddEventUnitBecomesIdle(gt_CivIdle, null, true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Upgrades Dialog Buttons
+//--------------------------------------------------------------------------------------------------
+bool gt_UpgradesDialogButtons_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((EventDialogControl() == gv_eBayInteractButton)) {
+        DialogSetVisible(gv_eBayInteractDialog, PlayerGroupSingle(EventPlayer()), false);
+        DialogSetVisible(gv_eBayDialog, PlayerGroupSingle(EventPlayer()), true);
+    }
+
+    if ((EventDialogControl() == gv_barracksInteractButton)) {
+        DialogSetVisible(gv_barracksInteractDialog, PlayerGroupSingle(EventPlayer()), false);
+        DialogSetVisible(gv_barracksDialog, PlayerGroupSingle(EventPlayer()), true);
+    }
+
+    if ((EventDialogControl() == gv_townHallInteractButton)) {
+        DialogSetVisible(gv_townHallInteractDialog, PlayerGroupSingle(EventPlayer()), false);
+        DialogSetVisible(gv_townHallDialog, PlayerGroupSingle(EventPlayer()), true);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_UpgradesDialogButtons_Init () {
+    gt_UpgradesDialogButtons = TriggerCreate("gt_UpgradesDialogButtons_Func");
+    TriggerAddEventDialogControl(gt_UpgradesDialogButtons, EventPlayer(), c_invalidDialogControlId, c_triggerControlEventTypeClick);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -2051,9 +2114,6 @@ void InitTriggers () {
     gt_WASDKeyUpCheck_Init();
     gt_BloodsplatCreation_Init();
     gt_BloodToMinerals_Init();
-    gt_CivSpawnerGrouper_Init();
-    gt_CivIdle_Init();
-    gt_UpgradesDialogButtons_Init();
     gt_TroopTrainingFilter_Init();
     gt_BarracksUnitGrouper_Init();
     gt_BarracksDialog_Init();
@@ -2074,6 +2134,9 @@ void InitTriggers () {
     gt_DomeTick_Init();
     gt_DomeCivEnter_Init();
     gt_DomeCivExit_Init();
+    gt_CivSpawnerGrouper_Init();
+    gt_CivIdle_Init();
+    gt_UpgradesDialogButtons_Init();
     gt_Upgrade1_Init();
     gt_Upgrade2_Init();
     gt_Upgrade3_Init();

@@ -376,6 +376,13 @@
         <AbilArray index="1" Link="move"/>
         <AbilArray index="2" Link="Stimpack"/>
         <AbilArray index="3" removed="1"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="1" Face="MoveHoldPosition" AbilCmd="move,HoldPos" Column="2"/>
+            <LayoutButtons index="2" Face="Attack" AbilCmd="attack,Execute" Column="4"/>
+            <LayoutButtons index="3" Face="MovePatrol" AbilCmd="move,Patrol" Column="3"/>
+            <LayoutButtons index="4" Face="Stim" AbilCmd="Stimpack,Execute" Row="2" Column="0"/>
+            <LayoutButtons index="5" removed="1"/>
+        </CardLayouts>
     </CUnit>
     <CUnit id="Bloodsplat" parent="Shape"/>
     <CUnit id="TownHall">

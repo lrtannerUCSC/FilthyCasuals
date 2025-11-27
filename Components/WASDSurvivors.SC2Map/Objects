@@ -410,10 +410,12 @@
     <ObjectDoodad Id="1790191421" Position="112,88,7.9987" Rotation="6.0002" Scale="1,1,1" Type="WreckedSandbags">
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
-    <ObjectPoint Id="1850856916" Position="57.896,51.0834,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 3 Point" Color="0,0,0,0"/>
+    <ObjectPoint Id="1850934419" Position="50,60.5,0" Scale="1,1,1" Type="Normal" Name="Secondary West Turret 1" Color="0,0,0,0"/>
+    <ObjectPoint Id="1850856916" Position="57.9,51.0798,0" Scale="1,1,1" Type="Normal" Name="Primary South Turret 1" Color="0,0,0,0"/>
     <ObjectPoint Id="729327495" Position="81,58,0" Scale="1,1,1" Type="Normal" Name="EastWall5" Color="0,0,0,0"/>
     <ObjectPoint Id="1869422634" Position="50.5,64,0" Scale="1,1,1" Type="Normal" Name="West Bunker" Color="0,0,0,0"/>
     <ObjectPoint Id="809449468" Position="63.5,48,0" Scale="1,1,1" Type="Normal" Name="SouthWall3" Color="0,0,0,0"/>
+    <ObjectPoint Id="2005549203" Position="61,79,0" Scale="1,1,1" Type="Normal" Name="Secondary North Turret 1" Color="0,0,0,0"/>
     <ObjectPoint Id="325876135" Position="58,48,0" Scale="1,1,1" Type="Normal" Name="SouthWall1" Color="0,0,0,0"/>
     <ObjectPoint Id="388058717" Position="81,66,0" Scale="1,1,1" Type="Normal" Name="EastWall2" Color="0,0,0,0"/>
     <ObjectPoint Id="250857219" Position="70,81,0" Scale="1,1,1" Type="Normal" Name="NorthWall5" Color="0,0,0,0"/>
@@ -428,26 +430,32 @@
     <ObjectPoint Id="1442256660" Position="74,63.5,0" Scale="1,1,1" Type="Normal" Name="East Bunker" Color="0,0,0,0"/>
     <ObjectPoint Id="428990624" Position="46,64,0" Scale="1,1,1" Type="Normal" Name="WestWall3" Color="0,0,0,0"/>
     <ObjectPoint Id="1028270247" Position="62,81.5,0" Scale="1,1,1" Type="Normal" Name="NorthWall2" Color="0,0,0,0"/>
+    <ObjectPoint Id="1243486229" Position="79,61.5,0" Scale="1,1,1" Type="Normal" Name="Secondary East Turret 2" Color="0,0,0,0"/>
     <ObjectPoint Id="504983897" Position="53.5,64.5,0" Scale="1,1,1" Type="Normal" Name="Barracks" Color="0,0,0,0"/>
+    <ObjectPoint Id="608526818" Position="49.5,67.5,0" Scale="1,1,1" Type="Normal" Name="Secondary West Turret 2" Color="0,0,0,0"/>
     <ObjectPoint Id="1666459151" Position="63,76,0" Scale="1,1,1" Type="Normal" Name="North Bunker" Color="0,0,0,0"/>
     <ObjectPoint Id="648815174" Position="46,66.5,0" Scale="1,1,1" Type="Normal" Name="WestWall2" Color="0,0,0,0"/>
     <ObjectPoint Id="246399302" Position="69,47.5,0" Scale="1,1,1" Type="Normal" Name="SouthWall5" Color="0,0,0,0"/>
-    <ObjectPoint Id="1632167838" Position="70.0397,51.19,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 5 Point" Color="0,0,0,0"/>
+    <ObjectPoint Id="882660020" Position="67.5,78.5,0" Scale="1,1,1" Type="Normal" Name="Secondary North Turret 2" Color="0,0,0,0"/>
+    <ObjectPoint Id="1437073395" Position="67.5,50.5,0" Scale="1,1,1" Type="Normal" Name="Secondary South Turret 2" Color="0,0,0,0"/>
+    <ObjectPoint Id="1632167838" Position="70.0397,51.19,0" Scale="1,1,1" Type="Normal" Name="Primary South Turret 2" Color="0,0,0,0"/>
     <ObjectPoint Id="820574418" Position="67.5,81,0" Scale="1,1,1" Type="Normal" Name="NorthWall4" Color="0,0,0,0"/>
     <ObjectPoint Id="204342844" Position="46,58.5,0" Scale="1,1,1" Type="Normal" Name="WestWall5" Color="0,0,0,0"/>
+    <ObjectPoint Id="1935696625" Position="61,51,0" Scale="1,1,1" Type="Normal" Name="Secondary South Turret 1" Color="0,0,0,0"/>
     <ObjectPoint Id="1254703413" Position="49.88,57.39,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 1 Point" Color="0,0,0,0"/>
     <ObjectPoint Id="1498365247" Position="64,68,0" Scale="1,1,1" Type="Normal" Name="AmovePoint" Color="0,0,0,0"/>
     <ObjectPoint Id="461199066" Position="46,61,0" Scale="1,1,1" Type="Normal" Name="WestWall4" Color="0,0,0,0"/>
+    <ObjectPoint Id="592684769" Position="78.5,68.5,0" Scale="1,1,1" Type="Normal" Name="Secondary East Turret 1" Color="0,0,0,0"/>
     <ObjectPoint Id="1372981949" Position="66.5,47.5,0" Scale="1,1,1" Type="Normal" Name="SouthWall4" Color="0,0,0,0"/>
     <ObjectPoint Id="359470782" Position="49.8298,70.49,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 2 Point" Color="0,0,0,0"/>
     <ObjectPoint Id="1263914937" Position="61,48,0" Scale="1,1,1" Type="Normal" Name="SouthWall2" Color="0,0,0,0"/>
-    <ObjectPoint Id="843315713" Position="63.5,52.5,0" Scale="1,1,1" Type="Normal" Name="South Bunker" Color="0,0,0,0"/>
+    <ObjectPoint Id="843315713" Position="64.5,52.5,0" Scale="1,1,1" Type="Normal" Name="South Bunker" Color="0,0,0,0"/>
     <ObjectPoint Id="1014000409" Position="57.9,79.3698,0" Scale="1,1,1" Type="Normal" Name="Primary Turret 4 Point" Color="0,0,0,0"/>
     <ObjectPoint Id="1880075375" Position="59,81.5,0" Scale="1,1,1" Type="Normal" Name="NorthWall1" Color="0,0,0,0"/>
     <ObjectUnit Id="909851322" Variation="3" Position="63.5,71.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="ColonistBiodome" Player="1"/>
     <ObjectUnit Id="817907881" Position="50,73,0" Scale="1,1,1" UnitType="DestructibleCityDebris2x4Horizontal"/>
     <ObjectUnit Id="509598892" Position="109,78,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepot"/>
-    <ObjectUnit Id="254011185" Position="71.5,63.5,0" Rotation="2.7832" Scale="1,1,1" UnitType="Bunker" Player="1">
+    <ObjectUnit Id="254011185" Position="74.5,115.5,0" Rotation="2.7832" Scale="1,1,1" UnitType="Bunker" Player="1">
         <Flag Index="UnitHidden" Value="1"/>
     </ObjectUnit>
     <ObjectUnit Id="1003036470" Position="78,126,0" Rotation="5.4975" Scale="1,1,1" UnitType="SupplyDepotLowered" Player="1">
@@ -701,17 +709,25 @@
     <Group Type="ObjectUnit" Name="Town Structures
 " Id="7">
         <GroupObject Id="333199435"/>
+        <GroupObject Id="337158176"/>
         <GroupObject Id="429633449"/>
+        <GroupObject Id="687521640"/>
         <GroupObject Id="781666874"/>
         <GroupObject Id="837653440"/>
         <GroupObject Id="897348449"/>
+        <GroupObject Id="909851322"/>
         <GroupObject Id="1068545712"/>
+        <GroupObject Id="1146560453"/>
         <GroupObject Id="1152666181"/>
         <GroupObject Id="1167312507"/>
         <GroupObject Id="1248913455"/>
+        <GroupObject Id="1516766081"/>
+        <GroupObject Id="1746630043"/>
         <GroupObject Id="1767712618"/>
         <GroupObject Id="1895936593"/>
         <GroupObject Id="1917612395"/>
+        <GroupObject Id="2000468100"/>
+        <GroupObject Id="2027491687"/>
         <GroupObject Id="2139432243"/>
     </Group>
 </PlacedObjects>
