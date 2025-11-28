@@ -451,7 +451,7 @@
     </CUnit>
     <CUnit id="CleaningBot">
         <CardLayouts index="0">
-            <LayoutButtons index="4" removed="1"/>
+            <LayoutButtons index="4" Face="Attack2" AbilCmd="attack2,Execute"/>
         </CardLayouts>
         <EnergyMax value="2"/>
         <AttackTargetPriority value="0"/>
@@ -463,7 +463,10 @@
         <Collide index="ForceField" value="0"/>
         <Collide index="Locust" value="0"/>
         <Collide index="Small" value="0"/>
+        <Collide index="Flying6" value="1"/>
         <Speed value="3"/>
+        <AbilArray Link="attack2"/>
+        <WeaponArray Link="MoopyStick"/>
     </CUnit>
     <CUnit id="EngineeringBay">
         <AbilArray index="2" Link="CleaningBotUpgrades"/>

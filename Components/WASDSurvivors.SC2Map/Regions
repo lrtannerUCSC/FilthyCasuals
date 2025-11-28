@@ -72,4 +72,11 @@
             <radius value="8.3251"/>
         </shape>
     </region>
+    <region id="11">
+        <name value="BloodRegion"/>
+        <shape type="circle">
+            <center value="63.75,47.75"/>
+            <radius value="0.3535"/>
+        </shape>
+    </region>
 </Regions>

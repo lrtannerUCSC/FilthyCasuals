@@ -18,6 +18,8 @@ void InitLibs () {
 //--------------------------------------------------------------------------------------------------
 // Global Variables
 //--------------------------------------------------------------------------------------------------
+unitgroup gv_cleaningBotGroup;
+unitgroup gv_bloodsplatGroup;
 unitgroup gv_townStructuresGroup;
 int[17] gv_wASDState;
 unit[17] gv_controlledUnits;
@@ -98,6 +100,8 @@ int[2] gv_interact;
 void InitGlobals () {
     int init_i;
 
+    gv_cleaningBotGroup = UnitGroupFromId(2);
+    gv_bloodsplatGroup = UnitGroupFromId(3);
     gv_townStructuresGroup = UnitGroupFromId(7);
     gv_barracksTroop1 = c_invalidDialogControlId;
     gv_barracksTroop2 = c_invalidDialogControlId;
@@ -156,6 +160,7 @@ void gf_WASDSetControlledUnit (int lp_player, unit lp_unit);
 // Trigger Variables
 //--------------------------------------------------------------------------------------------------
 trigger gt_MeleeInitialization;
+trigger gt_Cleaning;
 trigger gt_LossCondition;
 trigger gt_Player1Cameratest;
 trigger gt_WASDSetControlledUnit;
@@ -473,6 +478,42 @@ void gt_MeleeInitialization_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: Cleaning
+//--------------------------------------------------------------------------------------------------
+bool gt_Cleaning_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    unitgroup auto8F8F600D_g;
+    int auto8F8F600D_u;
+    unit auto8F8F600D_var;
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto8F8F600D_g = gv_cleaningBotGroup;
+    auto8F8F600D_u = UnitGroupCount(auto8F8F600D_g, c_unitCountAll);
+    for (;; auto8F8F600D_u -= 1) {
+        auto8F8F600D_var = UnitGroupUnitFromEnd(auto8F8F600D_g, auto8F8F600D_u);
+        if (auto8F8F600D_var == null) { break; }
+        UnitIssueOrder(auto8F8F600D_var, OrderTargetingUnit(AbilityCommand("move", 0), UnitGroupClosestToPoint(gv_bloodsplatGroup, UnitGetPosition(auto8F8F600D_var))), c_orderQueueAddToEnd);
+        if ((UnitInRangeAndAbleToAttackTarget(auto8F8F600D_var, UnitGroupClosestToPoint(gv_bloodsplatGroup, UnitGetPosition(auto8F8F600D_var))) == true)) {
+            PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperAdd, 10);
+            UnitRemove(UnitGroupClosestToPoint(gv_bloodsplatGroup, UnitGetPosition(auto8F8F600D_var)));
+            TriggerDebugOutput(1, StringExternal("Param/Value/235F016D"), true);
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_Cleaning_Init () {
+    gt_Cleaning = TriggerCreate("gt_Cleaning_Func");
+    TriggerAddEventTimePeriodic(gt_Cleaning, 0.1, c_timeGame);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Loss Condition
 //--------------------------------------------------------------------------------------------------
 bool gt_LossCondition_Func (bool testConds, bool runActions) {
@@ -600,6 +641,7 @@ bool gt_BloodsplatCreation_Func (bool testConds, bool runActions) {
     }
 
     libNtve_gf_CreateUnitsWithDefaultFacing(1, "Bloodsplat", 0, 0, UnitGetPosition(EventUnit()));
+    UnitGroupAdd(gv_bloodsplatGroup, UnitLastCreated());
     return true;
 }
 
@@ -2107,6 +2149,7 @@ void gt_ZombieRunnerD_Init () {
 //--------------------------------------------------------------------------------------------------
 void InitTriggers () {
     gt_MeleeInitialization_Init();
+    gt_Cleaning_Init();
     gt_LossCondition_Init();
     gt_Player1Cameratest_Init();
     gt_WASDSetControlledUnit_Init();

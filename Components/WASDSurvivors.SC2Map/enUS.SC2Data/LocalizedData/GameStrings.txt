@@ -73,6 +73,7 @@ Param/Value/0AD92554=The Zerg have upgraded!
 Param/Value/0D36C365=Barricades
 Param/Value/174580F4=Interact
 Param/Value/18C80732=Cost: 400 minerals
+Param/Value/235F016D=+10 minerals
 Param/Value/239E8691=Cost: 200 minerals
 Param/Value/24C6221D=Train marine into firebat.
 Param/Value/24F416DC=_
