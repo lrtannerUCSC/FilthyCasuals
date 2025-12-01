@@ -21,6 +21,7 @@ void InitLibs () {
 unitgroup gv_cleaningBotGroup;
 unitgroup gv_bloodsplatGroup;
 unitgroup gv_townStructuresGroup;
+bool gv_cameraLockVar;
 int[17] gv_wASDState;
 unit[17] gv_controlledUnits;
 unit[17] gv_uncontrolledUnits;
@@ -103,6 +104,7 @@ void InitGlobals () {
     gv_cleaningBotGroup = UnitGroupFromId(2);
     gv_bloodsplatGroup = UnitGroupFromId(3);
     gv_townStructuresGroup = UnitGroupFromId(7);
+    gv_cameraLockVar = true;
     gv_barracksTroop1 = c_invalidDialogControlId;
     gv_barracksTroop2 = c_invalidDialogControlId;
     gv_barracksTroop3 = c_invalidDialogControlId;
@@ -162,7 +164,8 @@ void gf_WASDSetControlledUnit (int lp_player, unit lp_unit);
 trigger gt_MeleeInitialization;
 trigger gt_Cleaning;
 trigger gt_LossCondition;
-trigger gt_Player1Cameratest;
+trigger gt_CameraLock;
+trigger gt_CameraLockSwitch;
 trigger gt_WASDSetControlledUnit;
 trigger gt_WASDKeyDownCheck;
 trigger gt_WASDKeyUpCheck;
@@ -548,26 +551,51 @@ void gt_LossCondition_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: Player 1 Camera test
+// Trigger: Camera Lock
 //--------------------------------------------------------------------------------------------------
-bool gt_Player1Cameratest_Func (bool testConds, bool runActions) {
+bool gt_CameraLock_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     // Actions
     if (!runActions) {
         return true;
     }
 
-    while (true) {
+    if ((gv_cameraLockVar == true)) {
         CameraPan(1, UnitGetPosition(gv_controlledUnits[1]), 0.06, -1, 0.0, false);
-        Wait(0.0, c_timeReal);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_CameraLock_Init () {
+    gt_CameraLock = TriggerCreate("gt_CameraLock_Func");
+    TriggerAddEventTimePeriodic(gt_CameraLock, 0.0, c_timeGame);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Camera Lock Switch
+//--------------------------------------------------------------------------------------------------
+bool gt_CameraLockSwitch_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((gv_cameraLockVar == true)) {
+        gv_cameraLockVar = false;
+    }
+    else {
+        gv_cameraLockVar = true;
     }
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_Player1Cameratest_Init () {
-    gt_Player1Cameratest = TriggerCreate("gt_Player1Cameratest_Func");
-    TriggerAddEventMapInit(gt_Player1Cameratest);
+void gt_CameraLockSwitch_Init () {
+    gt_CameraLockSwitch = TriggerCreate("gt_CameraLockSwitch_Func");
+    TriggerAddEventKeyPressed(gt_CameraLockSwitch, c_playerAny, c_keyY, true, c_keyModifierStateIgnore, c_keyModifierStateIgnore, c_keyModifierStateIgnore);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -2151,7 +2179,8 @@ void InitTriggers () {
     gt_MeleeInitialization_Init();
     gt_Cleaning_Init();
     gt_LossCondition_Init();
-    gt_Player1Cameratest_Init();
+    gt_CameraLock_Init();
+    gt_CameraLockSwitch_Init();
     gt_WASDSetControlledUnit_Init();
     gt_WASDKeyDownCheck_Init();
     gt_WASDKeyUpCheck_Init();
