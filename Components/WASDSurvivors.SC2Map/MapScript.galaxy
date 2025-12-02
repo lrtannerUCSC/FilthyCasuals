@@ -7,6 +7,7 @@
 //==================================================================================================
 include "TriggerLibs/NativeLib"
 include "aiBC416B17"
+include "ai501F80B0"
 
 //--------------------------------------------------------------------------------------------------
 // Library Initialization
@@ -204,10 +205,8 @@ trigger gt_Upgrade7;
 trigger gt_Upgrade8;
 trigger gt_Upgrade9;
 trigger gt_Upgrade10;
-trigger gt_ZombieRunnerA;
-trigger gt_ZombieRunnerB;
-trigger gt_ZombieRunnerC;
-trigger gt_ZombieRunnerD;
+trigger gt_ZombieSpawnerSpawner;
+trigger gt_ZombieRunnerBasic;
 
 //--------------------------------------------------------------------------------------------------
 // Custom AI Functions
@@ -231,6 +230,7 @@ void cai_start (string ai, int p) {
     cai_playerAI[p] = ai;
 
     if (cai_playerAI[p] == "aiBC416B17") { aiBC416B17_start(p); }
+    if (cai_playerAI[p] == "ai501F80B0") { ai501F80B0_start(p); }
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -239,6 +239,7 @@ void cai_setDefGather (int p, point val) {
         return;
     }
     if (cai_playerAI[p] == "aiBC416B17") { aiBC416B17_setDefGather(p, val); }
+    if (cai_playerAI[p] == "ai501F80B0") { ai501F80B0_setDefGather(p, val); }
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -247,6 +248,7 @@ string cai_getCustomData (int p) {
         return null;
     }
     if (cai_playerAI[p] == "aiBC416B17") { return aiBC416B17_getCustomData(p); }
+    if (cai_playerAI[p] == "ai501F80B0") { return ai501F80B0_getCustomData(p); }
     return null;
 }
 
@@ -256,6 +258,7 @@ wave cai_getLastWave (int p) {
         return null;
     }
     if (cai_playerAI[p] == "aiBC416B17") { return aiBC416B17_getLastWave(p); }
+    if (cai_playerAI[p] == "ai501F80B0") { return ai501F80B0_getLastWave(p); }
     return null;
 }
 
@@ -265,6 +268,7 @@ void cai_waves_run (int p, playergroup target) {
         return;
     }
     if (cai_playerAI[p] == "aiBC416B17") { aiBC416B17_waves_run(p, target); }
+    if (cai_playerAI[p] == "ai501F80B0") { ai501F80B0_waves_run(p, target); }
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -273,11 +277,13 @@ void cai_waves_enable (int p, bool val) {
         return;
     }
     if (cai_playerAI[p] == "aiBC416B17") { aiBC416B17_waves_enable(p, val); }
+    if (cai_playerAI[p] == "ai501F80B0") { ai501F80B0_waves_enable(p, val); }
 }
 
 //--------------------------------------------------------------------------------------------------
 void cai_waves_stop (string ai) {
     if (ai == "aiBC416B17") { aiBC416B17_waves_stop(); }
+    if (ai == "ai501F80B0") { ai501F80B0_waves_stop(); }
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -286,6 +292,7 @@ void cai_wave_run (int w, int p, playergroup target, bool wait) {
         return;
     }
     if (cai_playerAI[p] == "aiBC416B17") { aiBC416B17_wave_run(w, p, target, wait); }
+    if (cai_playerAI[p] == "ai501F80B0") { ai501F80B0_wave_run(w, p, target, wait); }
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -294,6 +301,7 @@ void cai_wave_enable (int w, int p, bool val) {
         return;
     }
     if (cai_playerAI[p] == "aiBC416B17") { aiBC416B17_wave_enable(w, p, val); }
+    if (cai_playerAI[p] == "ai501F80B0") { ai501F80B0_wave_enable(w, p, val); }
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -302,6 +310,7 @@ bool cai_wave_isEnabled (int w, int p) {
         return false;
     }
     if (cai_playerAI[p] == "aiBC416B17") { return aiBC416B17_wave_isEnabled(w, p); }
+    if (cai_playerAI[p] == "ai501F80B0") { return ai501F80B0_wave_isEnabled(w, p); }
     return false;
 }
 
@@ -311,6 +320,7 @@ unitgroup cai_wave_createdUnits (int w, int p) {
         return null;
     }
     if (cai_playerAI[p] == "aiBC416B17") { return aiBC416B17_wave_createdUnits(w, p); }
+    if (cai_playerAI[p] == "ai501F80B0") { return ai501F80B0_wave_createdUnits(w, p); }
     return null;
 }
 
@@ -320,6 +330,7 @@ wave cai_wave_createdWave (int w, int p) {
         return null;
     }
     if (cai_playerAI[p] == "aiBC416B17") { return aiBC416B17_wave_createdWave(w, p); }
+    if (cai_playerAI[p] == "ai501F80B0") { return ai501F80B0_wave_createdWave(w, p); }
     return null;
 }
 
@@ -471,6 +482,7 @@ bool gt_MeleeInitialization_Func (bool testConds, bool runActions) {
     MeleeInitUnits();
     MeleeInitAI();
     MeleeInitOptions();
+    VisRevealArea(1, RegionFromId(12), 0.0, false);
     return true;
 }
 
@@ -2090,51 +2102,37 @@ void gt_Upgrade10_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: ZombieRunnerA
+// Trigger: ZombieSpawnerSpawner
 //--------------------------------------------------------------------------------------------------
-bool gt_ZombieRunnerA_Func (bool testConds, bool runActions) {
+bool gt_ZombieSpawnerSpawner_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     // Actions
     if (!runActions) {
         return true;
     }
 
-    UnitIssueOrder(EventUnit(), OrderTargetingPoint(AbilityCommand("attack", 2), RegionRandomPoint(RegionFromId(4))), c_orderQueueReplace);
+    libNtve_gf_CreateUnitsAtPoint2(1, "InfestedTerranSpawner", 0, 2, UnitTypePlacementFromPoint("InfestedTerranSpawner", 2, RegionRandomPoint(RegionFromId(13)), 60.0));
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_ZombieRunnerA_Init () {
-    gt_ZombieRunnerA = TriggerCreate("gt_ZombieRunnerA_Func");
-    TriggerAddEventUnitRegion(gt_ZombieRunnerA, null, RegionFromId(5), true);
+void gt_ZombieSpawnerSpawner_Init () {
+    gt_ZombieSpawnerSpawner = TriggerCreate("gt_ZombieSpawnerSpawner_Func");
+    TriggerAddEventTimePeriodic(gt_ZombieSpawnerSpawner, 30.0, c_timeGame);
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: ZombieRunnerB
+// Trigger: ZombieRunner(Basic)
 //--------------------------------------------------------------------------------------------------
-bool gt_ZombieRunnerB_Func (bool testConds, bool runActions) {
+bool gt_ZombieRunnerBasic_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetOwner(EventUnit()) == 2))) {
+            return false;
+        }
     }
 
-    Wait(2.0, c_timeGame);
-    UnitIssueOrder(EventUnit(), OrderTargetingPoint(AbilityCommand("attack", 2), PointFromId(1498365247)), c_orderQueueReplace);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_ZombieRunnerB_Init () {
-    gt_ZombieRunnerB = TriggerCreate("gt_ZombieRunnerB_Func");
-    TriggerAddEventUnitRegion(gt_ZombieRunnerB, null, RegionFromId(6), true);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: ZombieRunnerC
-//--------------------------------------------------------------------------------------------------
-bool gt_ZombieRunnerC_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
     // Actions
     if (!runActions) {
         return true;
@@ -2146,30 +2144,9 @@ bool gt_ZombieRunnerC_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void gt_ZombieRunnerC_Init () {
-    gt_ZombieRunnerC = TriggerCreate("gt_ZombieRunnerC_Func");
-    TriggerAddEventUnitRegion(gt_ZombieRunnerC, null, RegionFromId(7), true);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: ZombieRunnerD
-//--------------------------------------------------------------------------------------------------
-bool gt_ZombieRunnerD_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    Wait(2.0, c_timeGame);
-    UnitIssueOrder(EventUnit(), OrderTargetingPoint(AbilityCommand("attack", 2), PointFromId(1498365247)), c_orderQueueReplace);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_ZombieRunnerD_Init () {
-    gt_ZombieRunnerD = TriggerCreate("gt_ZombieRunnerD_Func");
-    TriggerAddEventUnitRegion(gt_ZombieRunnerD, null, RegionFromId(8), true);
+void gt_ZombieRunnerBasic_Init () {
+    gt_ZombieRunnerBasic = TriggerCreate("gt_ZombieRunnerBasic_Func");
+    TriggerAddEventUnitRegion(gt_ZombieRunnerBasic, null, RegionFromId(12), true);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -2219,10 +2196,8 @@ void InitTriggers () {
     gt_Upgrade8_Init();
     gt_Upgrade9_Init();
     gt_Upgrade10_Init();
-    gt_ZombieRunnerA_Init();
-    gt_ZombieRunnerB_Init();
-    gt_ZombieRunnerC_Init();
-    gt_ZombieRunnerD_Init();
+    gt_ZombieSpawnerSpawner_Init();
+    gt_ZombieRunnerBasic_Init();
 }
 
 //--------------------------------------------------------------------------------------------------

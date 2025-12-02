@@ -1,4 +1,5 @@
-﻿AI/Name/BC416B17=Survivor AI
+﻿AI/Name/501F80B0=Zombie AI
+AI/Name/BC416B17=Survivor AI
 Abil/EditorPrefix/GatlingTurretUpgrade=Turret -
 Abil/EditorPrefix/TrainCivilians=Civilian -
 Abil/EditorSuffix/BurrowInfestedExploderDown2=(Volatile Infested)
