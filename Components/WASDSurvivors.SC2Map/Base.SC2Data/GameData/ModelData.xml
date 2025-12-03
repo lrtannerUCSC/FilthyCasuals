@@ -11,6 +11,10 @@
         <Model value="Assets\Effects\Zerg\CorrosiveBileImpact\CorrosiveBileImpact.m3"/>
         <EditorCategories value="Race:Zerg"/>
     </CModel>
+    <CModel id="FirebatAttackLaunch">
+        <ScaleMax value="1.000000,2.500000,1.000000"/>
+        <ScaleMin value="1.000000,2.500000,1.000000"/>
+    </CModel>
     <CModel id="InfestedExploderPortrait2" parent="Portrait" Race="Zerg">
         <Model value="Assets\Portraits\Zerg\InfestedColonistPortrait\InfestedColonistPortrait.m3"/>
         <FacialController value="LocalizedData\Facial\InfestedCivilianPortrait.fxa"/>

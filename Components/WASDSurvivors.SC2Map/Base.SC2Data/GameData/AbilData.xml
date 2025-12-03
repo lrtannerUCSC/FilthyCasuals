@@ -61,11 +61,16 @@
     <CAbilTrain id="InfestedMonsterTrain">
         <InfoArray index="Train1">
             <Vital index="Energy" value="5"/>
+            <Unit value="InfestedCivilian"/>
             <Flags index="AutoCast" value="1"/>
             <Flags index="AutoCastOn" value="1"/>
         </InfoArray>
         <InfoArray index="Train2">
-            <Cooldown TimeStart="8" TimeUse="8"/>
+            <Cooldown TimeStart="1" TimeUse="35"/>
+            <Unit value="InfestedCivilian"/>
+            <Unit value="InfestedCivilian"/>
+            <Unit value="InfestedCivilian"/>
+            <Unit value="InfestedTerranCampaign"/>
             <Flags index="AutoCast" value="1"/>
             <Flags index="AutoCastOn" value="1"/>
         </InfoArray>
@@ -74,11 +79,13 @@
                 <CountMax value="1"/>
                 <CountStart value="1"/>
                 <CountUse value="1"/>
-                <TimeUse value="15"/>
+                <TimeUse value="20"/>
             </Charge>
             <Button DefaultButtonFace="MasteryStukovVolatileChance" State="Available"/>
             <Unit index="0" value="InfestedExploder"/>
             <Unit value="InfestedCivilian"/>
+            <Unit value="InfestedCivilian"/>
+            <Unit value="InfestedExploder"/>
             <Flags index="AutoCast" value="1"/>
             <Flags index="AutoCastOn" value="1"/>
         </InfoArray>

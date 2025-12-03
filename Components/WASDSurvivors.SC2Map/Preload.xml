@@ -47,4 +47,5 @@
 <Unit id="Bloodsplat" Variations="0,1,3,4"/>
 <Unit id="TownHall"/>
 <Unit id="CivSpawner" Variations="4"/>
+<Weapon id="InfestedClaws"/>
 </Preload>

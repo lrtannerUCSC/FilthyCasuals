@@ -6,10 +6,40 @@
         <AttackTargetPriority value="25"/>
     </CUnit>
     <CUnit id="Civilian">
+        <Response value="Flee"/>
         <AbilArray index="0" Link="move"/>
         <AbilArray index="1" Link="MorphToInfestedCivilian"/>
         <AbilArray index="2" removed="1"/>
         <AbilArray index="3" removed="1"/>
+        <CardLayouts index="0">
+            <LayoutButtons>
+                <Face value="MorphToInfestedCivilian"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="MorphToInfestedCivilian,Execute"/>
+                <ShowInGlossary value="0"/>
+                <Row value="2"/>
+                <Column value="0"/>
+            </LayoutButtons>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="CleaningBot">
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Hero" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="ForceField" value="0"/>
+        <Collide index="Locust" value="0"/>
+        <Collide index="Small" value="0"/>
+        <Collide index="Flying6" value="1"/>
+        <EnergyMax value="2"/>
+        <Speed value="3"/>
+        <AttackTargetPriority value="0"/>
+        <AbilArray Link="attack2"/>
+        <WeaponArray Link="MoopyStick"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="4" Face="Attack2" AbilCmd="attack2,Execute"/>
+        </CardLayouts>
+        <Radius value="0.5"/>
     </CUnit>
     <CUnit id="ColonistBiodome">
         <AttackTargetPriority value="25"/>
@@ -141,6 +171,10 @@
         <AbilArray index="1" Link="move"/>
         <AbilArray index="2" removed="1"/>
     </CUnit>
+    <CUnit id="HotSSplitterlingMedium">
+        <LifeStart value="5"/>
+        <LifeMax value="5"/>
+    </CUnit>
     <CUnit id="HotSSplitterlingMedium2">
         <Subtitle value="UnitSubtitle/HotSSplitterling"/>
         <DeathRevealRadius value="3"/>
@@ -227,13 +261,48 @@
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
     </CUnit>
-    <CUnit id="InfestedCivilian"/>
+    <CUnit id="InfestedCivilian">
+        <Collide index="Swarm" value="1"/>
+        <LifeStart value="10"/>
+        <LifeMax value="10"/>
+        <LifeRegenRate value="-0.1015"/>
+        <LifeRegenRateCreep value="0.3007"/>
+        <Speed value="0.75"/>
+        <SpeedBonusCreep value="0.5"/>
+        <AttackTargetPriority value="15"/>
+        <KillXP value="1"/>
+        <SeparationRadius value="0.5"/>
+        <GlossaryPriority value="20"/>
+        <GlossaryWeakArray index="0" value="GatlingTurret"/>
+        <GlossaryWeakArray value="AutoTurret"/>
+        <GlossaryWeakArray value="Marine"/>
+    </CUnit>
     <CUnit id="InfestedExploder">
         <CostResource index="Minerals" value="0"/>
         <AbilArray Link="GenerateCreep"/>
         <HotkeyAlias value="InfestedExploder"/>
+        <FlagArray index="AlwaysThreatens" value="1"/>
+        <PushPriority value="69"/>
+        <Collide index="Colossus" value="1"/>
+        <Collide index="Small" value="0"/>
+        <LifeStart value="5"/>
+        <LifeMax value="5"/>
+        <LifeRegenRate value="0.1015"/>
+        <AttackTargetPriority value="69"/>
+        <KillXP value="60"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="5" Requirements=""/>
+            <LayoutButtons index="6" Requirements="LearnCombatDrugs"/>
+        </CardLayouts>
     </CUnit>
-    <CUnit id="InfestedTerranCampaign"/>
+    <CUnit id="InfestedTerranCampaign">
+        <Attributes index="Armored" value="1"/>
+        <LifeStart value="25"/>
+        <LifeMax value="25"/>
+        <LifeRegenRate value="-0.0507"/>
+        <LifeRegenRateCreep value="0.1992"/>
+        <Speed value="0.8007"/>
+    </CUnit>
     <CUnit id="InfestedTerranSpawner">
         <DeathRevealRadius value="3"/>
         <ReviveType value="InfestedBunker"/>
@@ -383,8 +452,17 @@
             <LayoutButtons index="4" Face="Stim" AbilCmd="Stimpack,Execute" Row="2" Column="0"/>
             <LayoutButtons index="5" removed="1"/>
         </CardLayouts>
+        <StationaryTurningRate value="749.8828"/>
     </CUnit>
     <CUnit id="Bloodsplat" parent="Shape"/>
+    <CUnit id="Roachling">
+        <LifeRegenRate value="-0.3007"/>
+    </CUnit>
+    <CUnit id="StukovInfestedTerran">
+        <LifeStart value="15"/>
+        <LifeMax value="15"/>
+        <LifeRegenRate value="-0.1015"/>
+    </CUnit>
     <CUnit id="TownHall">
         <DeathRevealRadius value="3"/>
         <ReviveType value="CommandCenter"/>
@@ -448,25 +526,6 @@
             <Charge Link="InfestedBunker/Revive"/>
             <Cooldown Link="InfestedBunker/Revive"/>
         </ReviveInfoBase>
-    </CUnit>
-    <CUnit id="CleaningBot">
-        <CardLayouts index="0">
-            <LayoutButtons index="4" Face="Attack2" AbilCmd="attack2,Execute"/>
-        </CardLayouts>
-        <EnergyMax value="2"/>
-        <AttackTargetPriority value="0"/>
-        <Radius value="0.5"/>
-        <FlagArray index="Untargetable" value="1"/>
-        <FlagArray index="Hero" value="1"/>
-        <FlagArray index="Invulnerable" value="1"/>
-        <Collide index="Ground" value="0"/>
-        <Collide index="ForceField" value="0"/>
-        <Collide index="Locust" value="0"/>
-        <Collide index="Small" value="0"/>
-        <Collide index="Flying6" value="1"/>
-        <Speed value="3"/>
-        <AbilArray Link="attack2"/>
-        <WeaponArray Link="MoopyStick"/>
     </CUnit>
     <CUnit id="EngineeringBay">
         <AbilArray index="2" Link="CleaningBotUpgrades"/>

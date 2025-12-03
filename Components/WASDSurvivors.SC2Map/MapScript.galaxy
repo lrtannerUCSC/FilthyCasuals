@@ -207,6 +207,7 @@ trigger gt_Upgrade9;
 trigger gt_Upgrade10;
 trigger gt_ZombieSpawnerSpawner;
 trigger gt_ZombieRunnerBasic;
+trigger gt_UnitInfectionTriggernotWorking2;
 
 //--------------------------------------------------------------------------------------------------
 // Custom AI Functions
@@ -2111,14 +2112,14 @@ bool gt_ZombieSpawnerSpawner_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    libNtve_gf_CreateUnitsAtPoint2(1, "InfestedTerranSpawner", 0, 2, UnitTypePlacementFromPoint("InfestedTerranSpawner", 2, RegionRandomPoint(RegionFromId(13)), 60.0));
+    libNtve_gf_CreateUnitsAtPoint2(1, "InfestedTerranSpawner", 0, 2, UnitTypePlacementFromPoint("InfestedTerranSpawner", 2, RegionRandomPoint(RegionFromId(13)), 15.0));
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
 void gt_ZombieSpawnerSpawner_Init () {
     gt_ZombieSpawnerSpawner = TriggerCreate("gt_ZombieSpawnerSpawner_Func");
-    TriggerAddEventTimePeriodic(gt_ZombieSpawnerSpawner, 30.0, c_timeGame);
+    TriggerAddEventTimePeriodic(gt_ZombieSpawnerSpawner, 120.0, c_timeGame);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -2139,7 +2140,7 @@ bool gt_ZombieRunnerBasic_Func (bool testConds, bool runActions) {
     }
 
     Wait(2.0, c_timeGame);
-    UnitIssueOrder(EventUnit(), OrderTargetingPoint(AbilityCommand("attack", 2), PointFromId(1498365247)), c_orderQueueReplace);
+    UnitIssueOrder(EventUnit(), OrderTargetingRelativePoint(AbilityCommand("attack", 0), PointFromId(1498365247)), c_orderQueueReplace);
     return true;
 }
 
@@ -2147,6 +2148,34 @@ bool gt_ZombieRunnerBasic_Func (bool testConds, bool runActions) {
 void gt_ZombieRunnerBasic_Init () {
     gt_ZombieRunnerBasic = TriggerCreate("gt_ZombieRunnerBasic_Func");
     TriggerAddEventUnitRegion(gt_ZombieRunnerBasic, null, RegionFromId(12), true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: UnitInfectionTrigger(notWorking) 2
+//--------------------------------------------------------------------------------------------------
+bool gt_UnitInfectionTriggernotWorking2_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!(((UnitGetOwner(EventUnit()) == 1) && (UnitWeaponGet(EventUnit(), 0) == "ThrowMolotov")))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_ReplaceUnit(EventUnit(), "StukovInfestedTerran", libNtve_ge_ReplaceUnitOptions_NewUnitsDefault);
+    libNtve_gf_RescueUnit(libNtve_gf_LastReplacedUnit(), 2, false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_UnitInfectionTriggernotWorking2_Init () {
+    gt_UnitInfectionTriggernotWorking2 = TriggerCreate("gt_UnitInfectionTriggernotWorking2_Func");
+    TriggerAddEventUnitAttacked2(gt_UnitInfectionTriggernotWorking2, null, "InfestedClaws");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -2198,6 +2227,7 @@ void InitTriggers () {
     gt_Upgrade10_Init();
     gt_ZombieSpawnerSpawner_Init();
     gt_ZombieRunnerBasic_Init();
+    gt_UnitInfectionTriggernotWorking2_Init();
 }
 
 //--------------------------------------------------------------------------------------------------

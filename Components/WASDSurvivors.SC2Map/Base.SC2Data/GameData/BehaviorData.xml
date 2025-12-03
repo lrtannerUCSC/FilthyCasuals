@@ -23,4 +23,10 @@
             <HeightTime index="Stop" value="0.25"/>
         </Modification>
     </CBehaviorBuff>
+    <CBehaviorBuff id="StukovInfestedTerranTimedLife">
+        <Duration value="8"/>
+    </CBehaviorBuff>
+    <CBehaviorCreepSource id="makeCreep2x2Purifier">
+        <Period value="0.75"/>
+    </CBehaviorCreepSource>
 </Catalog>

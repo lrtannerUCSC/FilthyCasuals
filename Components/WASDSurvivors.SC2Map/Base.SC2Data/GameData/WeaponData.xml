@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CWeaponLegacy id="DevilDogFlameThrower"/>
+    <CWeaponLegacy id="Firebat">
+        <Options index="ContinuousScan" value="1"/>
+        <Range value="3.5"/>
+        <Period value="1.6"/>
+        <PreswingBeforeAttack value="0.05"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="GuassRifle">
+        <Options index="NeverMiss" value="0"/>
+        <MinScanRange value="7"/>
+        <Range value="7"/>
+        <Period value="0.7"/>
+        <PreswingBeforeAttack value="0.2"/>
+        <Backswing value="0.95"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="HotSBanelingExplode2">
         <EditorCategories value="Race:Zerg"/>
         <Options index="Hidden" value="1"/>
@@ -33,5 +48,15 @@
         <Effect value="HotSBanelingExplodeLargeTarget2"/>
         <LegacyOptions index="NoDeceleration" value="1"/>
         <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="InfestedTerranCampaign">
+        <Range value="2"/>
+        <RandomDelayMin value="-0.0825"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="MengskFirebat"/>
+    <CWeaponLegacy id="TwinGatlingCannon">
+        <Options index="IgnoreThreat" value="1"/>
+        <Options index="IgnoreAttackPriority" value="1"/>
+        <Range value="7"/>
     </CWeaponLegacy>
 </Catalog>
