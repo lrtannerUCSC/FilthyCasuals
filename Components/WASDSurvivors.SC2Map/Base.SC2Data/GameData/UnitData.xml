@@ -11,16 +11,6 @@
         <AbilArray index="1" Link="MorphToInfestedCivilian"/>
         <AbilArray index="2" removed="1"/>
         <AbilArray index="3" removed="1"/>
-        <CardLayouts index="0">
-            <LayoutButtons>
-                <Face value="MorphToInfestedCivilian"/>
-                <Type value="AbilCmd"/>
-                <AbilCmd value="MorphToInfestedCivilian,Execute"/>
-                <ShowInGlossary value="0"/>
-                <Row value="2"/>
-                <Column value="0"/>
-            </LayoutButtons>
-        </CardLayouts>
         <FlagArray index="Worker" value="1"/>
         <FlagArray index="Untargetable" value="0"/>
     </CUnit>
@@ -42,6 +32,10 @@
             <LayoutButtons index="4" Face="Attack2" AbilCmd="attack2,Execute"/>
         </CardLayouts>
         <Radius value="0.5"/>
+        <Fidget>
+            <ChanceArray index="Idle" value="40"/>
+            <ChanceArray index="Move" value="0"/>
+        </Fidget>
     </CUnit>
     <CUnit id="ColonistBiodome">
         <AttackTargetPriority value="25"/>
@@ -457,7 +451,9 @@
         <StationaryTurningRate value="749.8828"/>
         <FlagArray index="Worker" value="1"/>
     </CUnit>
-    <CUnit id="Bloodsplat" parent="Shape"/>
+    <CUnit id="Bloodsplat" parent="Shape">
+        <BehaviorArray Link="StukovInfestedTerranTimedLife"/>
+    </CUnit>
     <CUnit id="Roachling">
         <LifeRegenRate value="-0.3007"/>
     </CUnit>

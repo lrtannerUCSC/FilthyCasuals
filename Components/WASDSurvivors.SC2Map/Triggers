@@ -167,6 +167,7 @@
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000150"/>
     </Element>
     <Element Type="FunctionCall" Id="9DD90BF5">
+        <Disabled/>
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000148"/>
     </Element>
     <Element Type="FunctionCall" Id="F2CA938D">
