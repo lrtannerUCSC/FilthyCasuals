@@ -36,6 +36,7 @@ int gv_barracksInteractDialog;
 int gv_barracksInteractButton;
 unitgroup gv_marineUnitGroup;
 unitgroup gv_firebatUnitGroup;
+unitgroup gv_escortGroup;
 int gv_townHallDialog;
 int gv_townHall1;
 int gv_townHall2;
@@ -116,6 +117,7 @@ void InitGlobals () {
     gv_barracksInteractButton = c_invalidDialogControlId;
     gv_marineUnitGroup = UnitGroupFromId(8);
     gv_firebatUnitGroup = UnitGroupFromId(9);
+    gv_escortGroup = AIGetAllEscorts(UnitFromId(1410765573));
     gv_townHallDialog = c_invalidDialogId;
     gv_townHall1 = c_invalidDialogControlId;
     gv_townHall2 = c_invalidDialogControlId;
@@ -470,6 +472,8 @@ bool gt_MeleeInitialization_Func (bool testConds, bool runActions) {
         return true;
     }
 
+    MeleeInitUnits();
+    MeleeInitAI();
     auto5480AAE8_g = gv_civUnitGroup;
     auto5480AAE8_u = UnitGroupCount(auto5480AAE8_g, c_unitCountAll);
     for (;; auto5480AAE8_u -= 1) {
@@ -477,11 +481,9 @@ bool gt_MeleeInitialization_Func (bool testConds, bool runActions) {
         if (auto5480AAE8_var == null) { break; }
         UnitIssueOrder(auto5480AAE8_var, OrderTargetingPoint(AbilityCommand("move", 0), RegionRandomPoint(RegionFromId(10))), c_orderQueueReplace);
     }
-    PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSetTo, 1000);
+    PlayerModifyPropertyInt(1, c_playerPropMinerals, c_playerPropOperSetTo, 100);
     DialogCreate(500, 400, c_anchorCenter, 0, 0, true);
     gv_interact[0] = DialogLastCreated();
-    MeleeInitUnits();
-    MeleeInitAI();
     VisRevealArea(1, RegionFromId(12), 0.0, false);
     return true;
 }
